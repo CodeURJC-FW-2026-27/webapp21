@@ -17,4 +17,4 @@
 
 ### Buscador y Categorización
 * **Buscador:** Búsqueda por texto de los títulos de los simulacros.
-* **Categorización/Filtrado:** Filtrado de simulacros por asignatura y dificultad.
+* **Categorización/Filtrado:** Filtrado de los simulacros por asignatura y dificultad.
