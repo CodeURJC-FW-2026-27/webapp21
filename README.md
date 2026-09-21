@@ -1,9 +1,15 @@
 # Ensaya
 
 ## Integrantes
-* **Irene Ramos Martínez-Campos**
-* **Antonio Manuel Machuca Hortelano**
-* **David Sebastián Sticea Covaciu**
+* **Irene Ramos Martínez-Campos** 
+  * Correo URJC: `i.ramosm.2023@alumnos.urjc.es`
+  * Usuario GitHub: `irenermc`
+* **Antonio Manuel Machuca Hortelano** 
+  * Correo URJC: `am.machuca.2023@alumnos.urjc.es`
+  * Usuario GitHub: `antoniomachuca`
+* **David Sebastián Sticea Covaciu** 
+  * Correo URJC: `ds.sticea.2023@alumnos.urjc.es`
+  * Usuario GitHub: `David-2885`
 
 ## Funcionalidad
 
