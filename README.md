@@ -1,4 +1,4 @@
-# Ensaya
+# Ensaya — Simulacros de examen
 
 ## Integrantes
 * **Irene Ramos Martínez-Campos** 
@@ -10,6 +10,9 @@
 * **David Sebastián Sticea Covaciu** 
   * Correo URJC: `ds.sticea.2023@alumnos.urjc.es`
   * Usuario GitHub: `David-2885`
+
+## Coordinación del equipo
+* **Tablero de Trello:** [https://trello.com/b/3T1RV9Hp](https://trello.com/b/3T1RV9Hp)
 
 ## Funcionalidad
 
