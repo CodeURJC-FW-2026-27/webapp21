@@ -1,0 +1,66 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDEs and Editors
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+.springBeans
+.sts4-cache/
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+
+# Build & Dependency Directories
+target/
+.gradle/
+node_modules/
+
+# Compiled files & packages
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment and Secrets
+.env
+.env.local
+.env.*.local
+
+# Databases & Temporary Files
+*.db
+*.sqlite
+*.sqlite3
+*.h2.db
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
