@@ -1,11 +1,61 @@
 /* ==========================================================================
-   Estilos personalizados - Ensaya
+   Custom styles - Ensaya
    Fundamentos de la Web - Proyecto 2026/2027
    ========================================================================== */
 
-/* 
- * Aquí pondrmeos nuestros estilos propios y modificaciones sobre Bootstrap.
- * .
- */
 
 
+/* URJC brand colors and typography: defined here so we can tweak the theme globally anytime by defining them in :root. */
+/*source: https://www.urjc.es/images/facultades/Manual_de_Identidad_Corporativa_2.pdf*/
+
+ :root{ 
+   --urjc-red: #CB0017;
+   --urjc-red-hover: #A60013;
+   --urjc-black: #000000;
+   --urjc-white: #FFFFFF;
+   --urjc-dark: #212529;
+   --urjc-gray-light: #F8F9FA;
+   --urjc-border: #DEE2E6;
+   --urjc-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+ }
+
+ /*apply the font to the web*/
+ body{
+   font-family: var(--urjc-font);
+   color: var(--urjc-dark);
+ }
+
+
+ /*redefine btn of bootstrap template with the URJC's visual identity colors*/
+.btn-urjc{
+   background-color: var(--urjc-red);
+   border-color: var(--urjc-red); /*we need to define this too because the original btn of bootstrap had a different color*/
+   color: var(--urjc-white); /*font color*/
+   font-weight: 500; 
+   transition: background-color 0.2s ease-in-out; /* 200ms ease-in-out hover feedback for background and border*/
+}
+
+
+/*With the hover and focus we can change the button colors when the pointer is on the button or when the button has focus*/
+.btn-urjc:hover,
+.btn-urjc:focus{
+   background-color: var(--urjc-red-hover);
+   border-color: var(--urjc-red-hover);
+   color: var(--urjc-white);
+}
+
+
+/*updated Navbar to match the colors of the URJC*/
+.navbar{
+   border-bottom: 3px solid var(--urjc-red) !important; /*we put important to force this law to be the n1 priority ignoring the old bootstrap style*/
+}
+
+
+/*classes that could be usefull in the future*/
+.text-urjc{
+   color: var(--urjc-red) !important;
+}
+
+.bg-urjc{
+   background-color: var(--urjc-red) !important;
+}
