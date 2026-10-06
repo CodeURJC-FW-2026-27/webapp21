@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Redes de Computadores",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El modelo OSI organiza la comunicación en capas. ¿Qué modelo de internet cita la guía junto a él?",
+      "opciones": {
+        "A": "Entidad-relación",
+        "B": "TCP/IP",
+        "C": "CMMI",
+        "D": "Von Neumann"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "DNS traduce nombres a direcciones. ¿En qué capa sitúa la guía la web, el correo, FTP, DNS y P2P?",
+      "opciones": {
+        "A": "En la capa de aplicación",
+        "B": "En la capa de enlace únicamente",
+        "C": "En la capa de red únicamente",
+        "D": "En la capa física"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "UDP y TCP son protocolos de transporte. ¿Cuál de los dos orienta la conexión y controla la congestión en el tratamiento habitual del tema?",
+      "opciones": {
+        "A": "UDP",
+        "B": "Ethernet",
+        "C": "TCP",
+        "D": "IP"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "IP encamina paquetes entre redes. ¿En qué capa está, según el tema correspondiente?",
+      "opciones": {
+        "A": "En la capa de transporte",
+        "B": "En la capa de aplicación",
+        "C": "En la capa de red",
+        "D": "En la capa de presentación del OSI, como función de IP"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un protocolo es un conjunto de reglas para comunicarse. ¿En qué tema se define, junto con el modelo OSI?",
+      "opciones": {
+        "A": "En la capa de enlace únicamente",
+        "B": "En la introducción a las redes",
+        "C": "En Ethernet únicamente",
+        "D": "En los sockets únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "HTTP, el correo y FTP son servicios de aplicación. ¿Qué otro servicio de nombres estudia esa capa?",
+      "opciones": {
+        "A": "TCP",
+        "B": "DNS",
+        "C": "IP",
+        "D": "Ethernet"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "UDP no establece conexión ni retransmite por sí mismo. ¿Con qué protocolo de transporte lo contrasta el tema?",
+      "opciones": {
+        "A": "Con DNS",
+        "B": "Con IP",
+        "C": "Con TCP",
+        "D": "Con Ethernet"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El encaminamiento elige el camino de un paquete entre redes. ¿En qué capa lo sitúa el tema de IP?",
+      "opciones": {
+        "A": "En la de transporte",
+        "B": "En la física únicamente",
+        "C": "En la de aplicación",
+        "D": "En la capa de red"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El retardo de propagación y el de transmisión son fuentes distintas de espera. ¿Qué otro fenómeno de la red analiza el tema de introducción?",
+      "opciones": {
+        "A": "La herencia",
+        "B": "La fragmentación de una base de datos",
+        "C": "La congestión",
+        "D": "La compilación"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una dirección física identifica la tarjeta en el segmento local. ¿En qué capas se estudia el direccionamiento de ese tipo?",
+      "opciones": {
+        "A": "En la de internet, como sinónimo de DNS",
+        "B": "En enlace y física",
+        "C": "En aplicación",
+        "D": "En transporte"
+      },
+      "correcta": "B"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Calidad del Software",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "ISO 25010 es un modelo de calidad del producto software. ¿Qué marco de la guía describe niveles de madurez de la organización?",
+      "opciones": {
+        "A": "PCI Express",
+        "B": "TOEIC",
+        "C": "CMMI",
+        "D": "IEEE 754"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La complejidad ciclomática mide los caminos de decisión de un código. ¿En qué tema se usa como métrica?",
+      "opciones": {
+        "A": "En el análisis interno del código",
+        "B": "En las pruebas de aceptación únicamente",
+        "C": "En DevOps únicamente",
+        "D": "En ITIL únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El principio de responsabilidad única dice que un módulo tiene un solo motivo de cambio. ¿A qué conjunto pertenece?",
+      "opciones": {
+        "A": "A las leyes de Lehman",
+        "B": "A los principios SOLID",
+        "C": "A los patrones de microservicios únicamente",
+        "D": "A los modelos de colas"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una prueba de regresión comprueba que un cambio no rompe lo que ya funcionaba. ¿Cómo la clasifica la guía?",
+      "opciones": {
+        "A": "Por su propósito",
+        "B": "Por el conocimiento del código, como sinónimo de caja blanca",
+        "C": "Por el nivel, como sinónimo obligatorio de prueba unitaria",
+        "D": "Como métrica de acoplamiento"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "ITIL organiza la gestión de servicios de tecnologías de la información. ¿Junto a qué modelo de madurez lo cita el primer tema?",
+      "opciones": {
+        "A": "Junto a TOEIC",
+        "B": "Junto a Docker",
+        "C": "Junto a IEEE 754",
+        "D": "Junto a CMMI"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "ISO 25010 describe características de calidad del producto. ¿En qué tema está?",
+      "opciones": {
+        "A": "En DevOps únicamente",
+        "B": "En los code smells únicamente",
+        "C": "En las pruebas unitarias únicamente",
+        "D": "En los fundamentos de calidad del software"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El acoplamiento mide la dependencia entre módulos y la cohesión, lo unidos que están sus elementos. ¿Dónde son métricas?",
+      "opciones": {
+        "A": "En las leyes de Lehman únicamente",
+        "B": "En el despliegue blue-green",
+        "C": "En el análisis interno del código",
+        "D": "En ITIL"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El principio de sustitución de Liskov pertenece a SOLID. ¿Qué otro principio SOLID habla de no modificar lo estable y sí extenderlo?",
+      "opciones": {
+        "A": "El de inversión de dependencias únicamente",
+        "B": "El de segregación de interfaces únicamente",
+        "C": "El de responsabilidad única únicamente",
+        "D": "El de abierto/cerrado"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una prueba unitaria comprueba una unidad pequeña. ¿Cómo clasifica la guía las pruebas unitarias, de integración, de sistema y de aceptación?",
+      "opciones": {
+        "A": "Por nivel",
+        "B": "Como code smells",
+        "C": "Por conocimiento, como única clasificación",
+        "D": "Por propósito, como única clasificación"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un pipeline de CI construye y prueba al integrar. ¿Qué práctica de entrega continúa ese camino en la guía?",
+      "opciones": {
+        "A": "El modelo en cascada",
+        "B": "La complejidad ciclomática",
+        "C": "El despliegue continuo",
+        "D": "La refactorización únicamente"
+      },
+      "correcta": "C"
+    }
+  ]
+}

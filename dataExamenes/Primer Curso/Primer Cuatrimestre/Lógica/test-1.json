@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Lógica",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Antes de la lógica formal, la guía repasa nociones de conjuntos. ¿Qué estructuras trata ese tema junto con las funciones?",
+      "opciones": {
+        "A": "Las relaciones binarias",
+        "B": "Los grafos conexos",
+        "C": "Las colas de espera",
+        "D": "Las series numéricas"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "En la semántica de la lógica de proposiciones, una fórmula que es verdadera en toda interpretación recibe un nombre. ¿Cuál?",
+      "opciones": {
+        "A": "Contingencia",
+        "B": "Término",
+        "C": "Contradicción",
+        "D": "Tautología"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Los tableaux aparecen en la teoría interpretativa de proposiciones. ¿Como qué método los presenta la guía?",
+      "opciones": {
+        "A": "Como algoritmo A*",
+        "B": "Como método de refutación",
+        "C": "Como sistema de deducción natural de Gentzen",
+        "D": "Como criterio de Leibniz"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El sistema de deducción natural de Gentzen pertenece a la teoría de la demostración. ¿De qué bloque forma parte en primer lugar en esta guía?",
+      "opciones": {
+        "A": "De la estadística descriptiva",
+        "B": "De la lógica de proposiciones",
+        "C": "De la teoría de circuitos",
+        "D": "De la arquitectura von Neumann"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El alfabeto de la lógica de proposiciones fija los símbolos admitidos. ¿Qué se construye con ellos según el tema de sintaxis?",
+      "opciones": {
+        "A": "Las demostraciones de Gentzen",
+        "B": "Los tableaux ya evaluados",
+        "C": "Las fórmulas",
+        "D": "Las interpretaciones"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una contingencia es verdadera en unas interpretaciones y falsa en otras. ¿En qué tema se distingue de tautologías y contradicciones?",
+      "opciones": {
+        "A": "En los preliminares de conjuntos",
+        "B": "En la aritmética modular",
+        "C": "En la semántica de la lógica de proposiciones",
+        "D": "En la sintaxis, antes de definir fórmula"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un tableau cerrado muestra que un conjunto de fórmulas es insatisfacible. ¿Como qué método lo presenta la guía?",
+      "opciones": {
+        "A": "Como método de refutación",
+        "B": "Como relación de equivalencia",
+        "C": "Como sistema de Gentzen",
+        "D": "Como función biyectiva"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Gentzen organiza las demostraciones con reglas de introducción y eliminación. ¿A qué bloque pertenece ese sistema en proposiciones?",
+      "opciones": {
+        "A": "A la semántica de predicados únicamente",
+        "B": "A la teoría de la demostración",
+        "C": "A las relaciones binarias",
+        "D": "A la teoría de conjuntos"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una relación binaria sobre un conjunto liga pares de elementos. ¿En qué bloque preliminar está?",
+      "opciones": {
+        "A": "En la lógica de predicados",
+        "B": "En nociones de conjuntos, relaciones y funciones",
+        "C": "En los tableaux",
+        "D": "En la deducción natural"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Evaluar semánticamente una fórmula proposicional le asigna un valor de verdad. ¿Qué hace falta fijar antes?",
+      "opciones": {
+        "A": "Una interpretación",
+        "B": "Un sistema de Gentzen",
+        "C": "Una relación de orden",
+        "D": "Un conjunto cociente"
+      },
+      "correcta": "A"
+    }
+  ]
+}

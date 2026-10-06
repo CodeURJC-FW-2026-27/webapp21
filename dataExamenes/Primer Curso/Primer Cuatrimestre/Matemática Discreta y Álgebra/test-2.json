@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Matemática Discreta y Álgebra",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Una congruencia es una relación de la aritmética entera y modular. ¿Qué problema agrupa varias congruencias a la vez?",
+      "opciones": {
+        "A": "Un sistema de ecuaciones diferenciales",
+        "B": "Un contraste de hipótesis",
+        "C": "Un sistema de congruencias",
+        "D": "Un problema de satisfacción de restricciones"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Variaciones, permutaciones y combinaciones pertenecen a un mismo tema. ¿Cuál?",
+      "opciones": {
+        "A": "Espacios vectoriales",
+        "B": "Introducción a la combinatoria",
+        "C": "Diagonalización",
+        "D": "Teoría de grafos"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un grafo conexo admite un camino entre cualquier par de vértices que se consideren en la componente. ¿Qué otra noción estudia el tema junto con caminos?",
+      "opciones": {
+        "A": "Los diodos Zener",
+        "B": "Las series geométricas",
+        "C": "Los isomorfismos de grafos",
+        "D": "Los determinantes"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El rango de una matriz indica el número de filas o columnas linealmente independientes. ¿Con qué otro concepto del mismo tema se calcula a menudo la invertibilidad?",
+      "opciones": {
+        "A": "Con el grado de un vértice",
+        "B": "Con el determinante",
+        "C": "Con la moda",
+        "D": "Con la curtosis"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Gauss transforma un sistema mediante operaciones elementales hasta una forma escalonada. ¿Qué método lo continúa hasta la forma reducida?",
+      "opciones": {
+        "A": "Cramer únicamente",
+        "B": "El algoritmo de Dijkstra",
+        "C": "Gauss-Jordan",
+        "D": "La regla de Sarrus"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La dimensión es el número de vectores de cualquier base. ¿De qué objeto es un invariante?",
+      "opciones": {
+        "A": "De una permutación",
+        "B": "De un espacio vectorial",
+        "C": "De una congruencia",
+        "D": "De un grafo no conexo"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un valor propio cumple que la matriz aplicada al vector propio lo multiplica por ese escalar. ¿Para qué se usan en el tema 4?",
+      "opciones": {
+        "A": "Para diagonalizar la matriz cuando es posible",
+        "B": "Para decidir si un grafo es conexo",
+        "C": "Para contar combinaciones",
+        "D": "Para resolver congruencias"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La aritmética modular trabaja con restos al dividir por un módulo. ¿Qué relación expresa que dos enteros dejan el mismo resto?",
+      "opciones": {
+        "A": "Una congruencia",
+        "B": "Una dependencia lineal",
+        "C": "Un isomorfismo de grafos",
+        "D": "Un sistema generador"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una permutación es una variación en la que entran todos los elementos. ¿En qué tema se distingue de combinaciones y variaciones?",
+      "opciones": {
+        "A": "En teoría de grafos",
+        "B": "En espacios vectoriales",
+        "C": "En diagonalización",
+        "D": "En la introducción a la combinatoria"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un camino en un grafo es una sucesión de aristas encadenadas. ¿Qué propiedad tiene un grafo en el que todo par de vértices está unido por un camino?",
+      "opciones": {
+        "A": "Es conexo",
+        "B": "Es una base",
+        "C": "Tiene determinante 1",
+        "D": "Es un árbol con ciclos"
+      },
+      "correcta": "A"
+    }
+  ]
+}

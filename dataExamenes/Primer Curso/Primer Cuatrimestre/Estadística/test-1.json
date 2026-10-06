@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Estadística",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "En estadística descriptiva, la correlación se estudia junto con el resumen de datos bivariantes. ¿Qué gráfico usa la guía para representar dos variables a la vez?",
+      "opciones": {
+        "A": "Gráfico de sectores",
+        "B": "Diagrama de dispersión",
+        "C": "Diagrama de cajas de una sola variable",
+        "D": "Histograma de frecuencias acumuladas"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Según el temario de probabilidad, el teorema de Bayes se aplica junto con otra regla. ¿Cuál?",
+      "opciones": {
+        "A": "La regla de Barrow",
+        "B": "El criterio de Leibniz",
+        "C": "La regla de la probabilidad total",
+        "D": "El teorema central del límite"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una variable aleatoria queda descrita, entre otras cosas, por su esperanza y su varianza. ¿Qué funciones asignan probabilidad a valores o intervalos?",
+      "opciones": {
+        "A": "La función de masa o la función de densidad",
+        "B": "La función de verosimilitud del estimador",
+        "C": "La recta de regresión únicamente",
+        "D": "El contraste de hipótesis"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "En inferencia, el teorema central del límite relaciona la muestra con la distribución de la media muestral. ¿Qué otro par de ideas aparece en ese tema?",
+      "opciones": {
+        "A": "Capitalización simple y compuesta",
+        "B": "Permutaciones y combinaciones",
+        "C": "Pilas y colas",
+        "D": "Estimación puntual y por intervalos, y contrastes de hipótesis"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Además de la media aritmética, el tema de tendencia central cita otra media. ¿Cuál?",
+      "opciones": {
+        "A": "La curtosis",
+        "B": "La media geométrica",
+        "C": "La desviación típica",
+        "D": "La covarianza"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La desviación típica mide la dispersión alrededor de la media. ¿De qué medida es la raíz cuadrada positiva?",
+      "opciones": {
+        "A": "Del rango",
+        "B": "De la varianza",
+        "C": "De la moda",
+        "D": "De la correlación"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La asimetría y la curtosis describen la forma de una distribución. ¿Con qué distribución las relaciona el tema de forma?",
+      "opciones": {
+        "A": "Con una serie temporal ARIMA",
+        "B": "Con un contraste de hipótesis",
+        "C": "Con la distribución normal",
+        "D": "Con un diagrama de sectores"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Dos sucesos son independientes cuando la probabilidad de la intersección es el producto de las probabilidades. ¿Qué probabilidad deja de hacer falta en ese caso?",
+      "opciones": {
+        "A": "La esperanza",
+        "B": "La moda",
+        "C": "La probabilidad condicionada, que coincide con la marginal",
+        "D": "La probabilidad total"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un intervalo de confianza estima un parámetro con un margen. ¿A qué parte de la inferencia pertenece, junto con la estimación puntual?",
+      "opciones": {
+        "A": "A la probabilidad condicionada",
+        "B": "A la estimación por intervalos",
+        "C": "Al resumen gráfico",
+        "D": "A la regresión lineal simple"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "En regresión lineal simple se ajusta una recta a dos variables. ¿Qué hay que comprobar después, según el tema?",
+      "opciones": {
+        "A": "La descripción solo univariante",
+        "B": "La validación del modelo",
+        "C": "La independencia de los axiomas de Kolmogorov",
+        "D": "El teorema de Bayes"
+      },
+      "correcta": "B"
+    }
+  ]
+}

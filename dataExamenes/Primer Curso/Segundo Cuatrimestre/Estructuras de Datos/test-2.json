@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Estructuras de Datos",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La especificación, el diseño, la implementación y el uso se repiten en cada estructura lineal. ¿Qué estructura lineal estudia la guía justo después de las pilas?",
+      "opciones": {
+        "A": "Los grafos",
+        "B": "Las colas",
+        "C": "Los conjuntos",
+        "D": "Los árboles"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un conjunto, como tipo abstracto de la guía, se define por sus operaciones y no por una posición. ¿Qué propiedad lo diferencia de una lista?",
+      "opciones": {
+        "A": "No importa el orden de los elementos y no se repiten",
+        "B": "Solo admite enteros positivos",
+        "C": "Su tamaño máximo es fijo e igual a 10",
+        "D": "Siempre conserva el orden de inserción"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La complejidad algorítmica del tema introductorio sirve para comparar algoritmos. ¿Qué se compara, en ese contexto?",
+      "opciones": {
+        "A": "El precio del hardware",
+        "B": "El número de créditos de la asignatura",
+        "C": "Cómo crece el coste al crecer el tamaño de la entrada",
+        "D": "La licencia del compilador"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un grafo del temario se especifica como tipo abstracto. ¿Qué otros elementos forman el bloque no lineal junto con él?",
+      "opciones": {
+        "A": "Los registros de Pascal",
+        "B": "Los árboles",
+        "C": "Los diodos",
+        "D": "Las pilas y las colas"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El diseño de una pila elige la representación, por ejemplo un array o nodos enlazados. ¿Qué cuatro pasos repite la guía para cada estructura?",
+      "opciones": {
+        "A": "Especificación, diseño, implementación y uso",
+        "B": "Compilación, enlace, carga y ejecución",
+        "C": "Captura, cifrado, firma y hash",
+        "D": "Análisis, normalización, SQL y copias"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La pertenencia y la unión son operaciones típicas de un conjunto. ¿Qué no conserva un conjunto, a diferencia de una lista?",
+      "opciones": {
+        "A": "El tipo de sus elementos",
+        "B": "Las operaciones de consulta",
+        "C": "El orden y los elementos repetidos",
+        "D": "La posibilidad de estar vacío"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Recorrer un árbol en anchura o en profundidad depende de la implementación. ¿Qué pide la guía antes del recorrido?",
+      "opciones": {
+        "A": "La deducción natural",
+        "B": "La forma normal de Boyce-Codd",
+        "C": "La especificación y el diseño del tipo árbol",
+        "D": "El modelo de von Neumann"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un grafo se compone de vértices y aristas. ¿En qué bloque está?",
+      "opciones": {
+        "A": "En las estructuras de datos no lineales",
+        "B": "En los conjuntos únicamente",
+        "C": "En los preliminares",
+        "D": "En las lineales"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Comparar dos algoritmos por su complejidad evita elegir uno impracticable al crecer la entrada. ¿Dónde se revisa esa idea?",
+      "opciones": {
+        "A": "En el tema de introducción",
+        "B": "En el tema de colas únicamente",
+        "C": "En el uso de pilas únicamente",
+        "D": "En el tema de conjuntos únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Implementar una lista enlazada guarda en cada nodo el dato y la referencia al siguiente. ¿Qué separa la especificación de esa decisión?",
+      "opciones": {
+        "A": "La especificación obliga a usar un array",
+        "B": "La especificación prohíbe el tipo abstracto",
+        "C": "La especificación incluye el lenguaje ensamblador",
+        "D": "La especificación no fija la representación"
+      },
+      "correcta": "D"
+    }
+  ]
+}

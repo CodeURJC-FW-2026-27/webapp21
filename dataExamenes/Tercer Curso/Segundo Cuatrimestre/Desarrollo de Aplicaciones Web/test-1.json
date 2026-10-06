@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Desarrollo de Aplicaciones Web",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La guía construye el servidor con un framework concreto. ¿Cuál?",
+      "opciones": {
+        "A": "Django",
+        "B": "Express únicamente",
+        "C": "Spring",
+        "D": "Laravel"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una API REST expone recursos por HTTP. ¿En qué parte del temario se desarrolla con Spring?",
+      "opciones": {
+        "A": "En la publicación estática únicamente",
+        "B": "En las tecnologías web de servidor",
+        "C": "En la parte de SPA únicamente",
+        "D": "En la parte de Docker únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Docker empaqueta una aplicación con sus dependencias. ¿Qué otro concepto agrupa el tema de despliegue junto a los contenedores?",
+      "opciones": {
+        "A": "La memoria virtual del procesador",
+        "B": "La virtualización y la computación en la nube",
+        "C": "El modelo entidad-relación",
+        "D": "La deducción natural"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una SPA actualiza la vista sin recargar el documento completo. ¿En qué parte está ese tema?",
+      "opciones": {
+        "A": "En las tecnologías web avanzadas de cliente",
+        "B": "En las bases de datos con Spring únicamente",
+        "C": "En la seguridad de Spring únicamente",
+        "D": "En el despliegue con Docker únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Spring es el framework de servidor de la guía. ¿Con qué base de datos lo acompaña la primera parte?",
+      "opciones": {
+        "A": "Con MongoDB como única opción de la guía",
+        "B": "Con ficheros de Pascal",
+        "C": "Con MySQL",
+        "D": "Con SQLite únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una API REST modela recursos y usa verbos HTTP. ¿En qué parte se construye con Spring?",
+      "opciones": {
+        "A": "En la SPA únicamente",
+        "B": "En Docker únicamente",
+        "C": "En la publicación únicamente",
+        "D": "En las tecnologías web de servidor"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Desplegar una aplicación Spring la deja accesible en un entorno de ejecución. ¿Qué tema de la primera parte lo cubre?",
+      "opciones": {
+        "A": "Componentes de cliente",
+        "B": "Despliegue Spring",
+        "C": "Introducción a SPA",
+        "D": "Librerías de componentes"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La seguridad en Spring controla autenticación y autorización. ¿En qué parte está?",
+      "opciones": {
+        "A": "En la publicación estática",
+        "B": "En el servidor",
+        "C": "En la virtualización únicamente",
+        "D": "En la SPA únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un contenedor empaqueta código y dependencias. ¿Qué herramienta concreta estudia el tema?",
+      "opciones": {
+        "A": "FTP",
+        "B": "Docker",
+        "C": "Kubernetes como único contenido",
+        "D": "VirtualBox como único contenido"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una aplicación multipágina carga documentos distintos. ¿En qué parte se contrasta con las SPA?",
+      "opciones": {
+        "A": "En la seguridad de Spring",
+        "B": "En la virtualización",
+        "C": "En MySQL",
+        "D": "En las tecnologías avanzadas de cliente"
+      },
+      "correcta": "D"
+    }
+  ]
+}

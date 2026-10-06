@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Sistemas Operativos",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El intérprete de mandatos permite usar el sistema desde la línea de órdenes. ¿Qué otra habilidad práctica pide el primer tema?",
+      "opciones": {
+        "A": "El scripting",
+        "B": "La evaluación ATAM",
+        "C": "El diseño de ontologías",
+        "D": "La programación de una ALU"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un proceso pasa por estados como listo y en ejecución. ¿Qué tema estudia su creación, su comunicación y su planificación?",
+      "opciones": {
+        "A": "La introducción al intérprete",
+        "B": "La gestión y planificación de procesos",
+        "C": "El sistema de ficheros",
+        "D": "La gestión de memoria únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un hilo comparte el espacio de direcciones del proceso. ¿Qué mecanismo del mismo tema evita que dos tareas estropeen un dato común?",
+      "opciones": {
+        "A": "El sondeo de un periférico",
+        "B": "La sincronización",
+        "C": "La paginación exclusivamente",
+        "D": "El sistema de ficheros"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La memoria dinámica se pide y se libera en tiempo de ejecución. ¿Qué tema trata también el fichero ejecutable y la protección?",
+      "opciones": {
+        "A": "Las llamadas de entrada y salida únicamente",
+        "B": "El sistema de ficheros",
+        "C": "La gestión de memoria",
+        "D": "La gestión de procesos"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un mandato es una orden al intérprete. ¿Qué tema enseña mandatos básicos y scripting?",
+      "opciones": {
+        "A": "La introducción y el uso del sistema operativo",
+        "B": "La planificación",
+        "C": "El sistema de ficheros",
+        "D": "La gestión de memoria"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El sistema operativo ofrece servicios y esconde el hardware. ¿Qué tema describe su funcionamiento y su estructura?",
+      "opciones": {
+        "A": "El de ficheros únicamente",
+        "B": "El de hilos únicamente",
+        "C": "El tema titulado sistema operativo",
+        "D": "El de scripting únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Crear un proceso nuevo es un servicio del núcleo. ¿Qué tema estudia también su terminación y sus estados?",
+      "opciones": {
+        "A": "La gestión y planificación de procesos",
+        "B": "La memoria",
+        "C": "El intérprete",
+        "D": "Los ficheros"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Dos hilos de un mismo proceso comparten memoria. ¿Qué hace falta para que no se pisen al escribir un dato?",
+      "opciones": {
+        "A": "Un fichero ejecutable distinto",
+        "B": "Un directorio distinto",
+        "C": "Sincronización",
+        "D": "Un script de arranque"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El planificador elige qué proceso usa la CPU. ¿En qué tema está?",
+      "opciones": {
+        "A": "En el sistema de ficheros",
+        "B": "En la gestión y planificación de procesos",
+        "C": "En la protección de memoria únicamente",
+        "D": "En la introducción al intérprete"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La protección de memoria impide que un proceso lea la de otro. ¿Qué tema la estudia?",
+      "opciones": {
+        "A": "Los mandatos básicos",
+        "B": "La planificación",
+        "C": "La gestión de memoria",
+        "D": "El espacio libre del disco"
+      },
+      "correcta": "C"
+    }
+  ]
+}

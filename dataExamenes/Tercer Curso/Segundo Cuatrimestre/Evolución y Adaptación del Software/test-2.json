@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Evolución y Adaptación del Software",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "DDD organiza el software alrededor del dominio del negocio. ¿Cómo lo llama la guía?",
+      "opciones": {
+        "A": "Desarrollo dirigido por pruebas",
+        "B": "Despliegue dirigido por contenedores",
+        "C": "Diseño dirigido por el dominio",
+        "D": "Diseño dirigido por la base de datos"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una arquitectura de microservicios descompone el sistema en servicios independientes. ¿En qué bloque está?",
+      "opciones": {
+        "A": "En la reingeniería únicamente",
+        "B": "En la gestión de la configuración",
+        "C": "En las tendencias en evolución y adaptación",
+        "D": "En las leyes de Lehman"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Los principios de diseño guían la estructura para que el cambio sea local. ¿Junto a qué técnica del mismo bloque se estudian?",
+      "opciones": {
+        "A": "Junto a la planificación de procesos",
+        "B": "Junto al control de versiones",
+        "C": "Junto a las leyes de Lehman",
+        "D": "Junto a la reingeniería"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Conservar una versión permite recuperar un estado anterior del código. ¿Qué tema lo trata?",
+      "opciones": {
+        "A": "La gestión de la configuración y el control de versiones",
+        "B": "El diseño dirigido por el dominio",
+        "C": "Los microservicios",
+        "D": "Las leyes de Lehman"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "DDD pone el lenguaje del negocio en el centro del diseño. ¿Cómo lo nombra la guía?",
+      "opciones": {
+        "A": "Desarrollo dirigido por pruebas",
+        "B": "Despliegue continuo",
+        "C": "Diseño dirigido por el dominio",
+        "D": "Diseño dirigido por pruebas de carga"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Recuperar una versión antigua es posible si el cambio quedó registrado. ¿Qué tema lo permite?",
+      "opciones": {
+        "A": "Los microservicios",
+        "B": "Las leyes de Lehman",
+        "C": "La reingeniería, sin versiones",
+        "D": "La gestión de la configuración y el control de versiones"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La evolución continua implica que el sistema no se da por terminado al entregarlo. ¿Qué leyes lo resumen?",
+      "opciones": {
+        "A": "Las de Amdahl",
+        "B": "Las de Lehman",
+        "C": "Las de Newton",
+        "D": "Las de Kirchhoff"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Adaptar el software lo ajusta a un entorno o a un requisito nuevo. ¿En el título de qué bloque aparece junto al mantenimiento?",
+      "opciones": {
+        "A": "En el de microservicios",
+        "B": "En el de configuración",
+        "C": "En el de DDD",
+        "D": "En la introducción al mantenimiento y la evolución"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Partir un monolito en servicios es una forma de evolución arquitectónica. ¿Qué tema de tendencias lo trata?",
+      "opciones": {
+        "A": "Las arquitecturas de microservicios",
+        "B": "Las leyes de Lehman",
+        "C": "Los principios de diseño únicamente",
+        "D": "El control de versiones"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un principio de diseño bien aplicado localiza los cambios. ¿En qué bloque se estudia?",
+      "opciones": {
+        "A": "En las técnicas de evolución del software",
+        "B": "En la introducción, solo como leyes",
+        "C": "En el dominio, solo como DDD",
+        "D": "En la configuración"
+      },
+      "correcta": "A"
+    }
+  ]
+}

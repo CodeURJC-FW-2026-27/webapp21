@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Programación Orientada a Objetos",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Abstraer, encapsular, jerarquizar y modularizar son herramientas del tema de programación orientada a objetos. ¿Qué lenguaje usa la guía a partir del capítulo 2?",
+      "opciones": {
+        "A": "Pascal",
+        "B": "Java",
+        "C": "C puro",
+        "D": "Prolog"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La máquina virtual de Java ejecuta bytecode. ¿Qué otro elemento histórico cita el tema de introducción a Java?",
+      "opciones": {
+        "A": "La norma IEEE 754",
+        "B": "El algoritmo A*",
+        "C": "El modelo en cascada",
+        "D": "La breve historia de Java y el programa hola mundo"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La herencia permite que una clase reutilice miembros de otra. ¿Qué mecanismo elige en ejecución el método redefinido según el objeto real?",
+      "opciones": {
+        "A": "El sondeo de entrada y salida",
+        "B": "El polimorfismo dinámico",
+        "C": "La sobrecarga de operadores de Pascal",
+        "D": "La normalización"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una interfaz en Java declara un contrato sin implementación obligatoria de todos sus métodos en la propia interfaz. ¿En qué capítulo la sitúa la guía junto con la herencia?",
+      "opciones": {
+        "A": "En el capítulo de entrada y salida",
+        "B": "En el capítulo de herencia y genericidad",
+        "C": "En el capítulo de pruebas TDD únicamente",
+        "D": "En el capítulo de interfaces gráficas únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Encapsular oculta la representación y ofrece operaciones. ¿En qué capítulo se presenta junto con abstraer y modularizar?",
+      "opciones": {
+        "A": "En la introducción a la programación orientada a objetos",
+        "B": "En la entrada y salida",
+        "C": "En java.lang únicamente",
+        "D": "En las interfaces gráficas"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Los tipos primitivos de Java no son objetos. ¿En qué apartado se distinguen de las conversiones y los operadores?",
+      "opciones": {
+        "A": "En las interfaces",
+        "B": "En los layouts",
+        "C": "En los paquetes",
+        "D": "En expresiones básicas y control de flujo"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un modificador de acceso como private limita quién ve un miembro. ¿En qué apartado de las clases se detalla?",
+      "opciones": {
+        "A": "En los listeners",
+        "B": "En la máquina virtual únicamente",
+        "C": "En los modificadores de control de acceso",
+        "D": "En los streams"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un paquete agrupa clases relacionadas. ¿Qué capítulo lo trata después de las clases?",
+      "opciones": {
+        "A": "El de interfaces de usuario",
+        "B": "El de entrada y salida",
+        "C": "El de introducción al lenguaje Java",
+        "D": "El de diseño dirigido por pruebas únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Redefinir un método sustituye el comportamiento heredado. ¿Qué debe coordinarse con los constructores, según el tema de herencia?",
+      "opciones": {
+        "A": "El layout del GUI",
+        "B": "La llamada a los constructores de la superclase",
+        "C": "El iterador",
+        "D": "La serialización"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Cloneable, equals y hashCode se estudian al especializar Object. ¿En qué paquete está la clase Object?",
+      "opciones": {
+        "A": "En java.lang",
+        "B": "En java.awt",
+        "C": "En java.util",
+        "D": "En java.io"
+      },
+      "correcta": "A"
+    }
+  ]
+}

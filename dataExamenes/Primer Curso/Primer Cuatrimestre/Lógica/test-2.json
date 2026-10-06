@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Lógica",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La sintaxis de la lógica de predicados de primer orden distingue dos clases de expresiones bien formadas. ¿Cuáles?",
+      "opciones": {
+        "A": "Tautologías y contingencias",
+        "B": "Pilas y colas",
+        "C": "Matrices y determinantes",
+        "D": "Términos y fórmulas"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una contradicción, en la semántica proposicional de la guía, es una fórmula con un valor fijo. ¿Cuál?",
+      "opciones": {
+        "A": "Falsa en toda interpretación",
+        "B": "Sin alfabeto",
+        "C": "Verdadera en toda interpretación",
+        "D": "Verdadera solo en alguna interpretación"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La equivalencia de fórmulas aparece tanto en proposiciones como en predicados. ¿Qué significa que dos fórmulas son equivalentes?",
+      "opciones": {
+        "A": "Que usan exactamente los mismos símbolos",
+        "B": "Que tienen el mismo valor de verdad en las mismas interpretaciones",
+        "C": "Que una es premisa de la otra en Gentzen",
+        "D": "Que una es la negación de la otra"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Formalizar lenguaje natural es un apartado de sintaxis. ¿En qué consiste?",
+      "opciones": {
+        "A": "En traducir enunciados del lenguaje ordinario a fórmulas del lenguaje formal",
+        "B": "En evaluar una fórmula con tablas de verdad",
+        "C": "En aplicar el teorema de Bayes",
+        "D": "En diagonalizar una matriz"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El alfabeto de la lógica de predicados añade cuantificadores y símbolos de predicado. ¿Qué expresiones bien formadas define el tema?",
+      "opciones": {
+        "A": "Solo tableaux",
+        "B": "Solo tautologías",
+        "C": "Solo conjuntos cociente",
+        "D": "Términos y fórmulas"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La validez semántica de una fórmula de predicados significa que es verdadera en toda interpretación. ¿En qué tema se estudia?",
+      "opciones": {
+        "A": "En las funciones únicamente",
+        "B": "En la sintaxis proposicional",
+        "C": "En la semántica de la lógica de predicados",
+        "D": "En los preliminares"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Dos fórmulas equivalentes pueden sustituirse sin cambiar el valor de verdad. ¿En qué bloque de predicados aparece la equivalencia?",
+      "opciones": {
+        "A": "En la semántica",
+        "B": "En las relaciones binarias",
+        "C": "En el alfabeto, antes de los términos",
+        "D": "En las propiedades de conjuntos únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una función, en el bloque preliminar, asigna a cada elemento del dominio un único valor. ¿Junto a qué otra noción se estudia?",
+      "opciones": {
+        "A": "Junto a los cuantificadores",
+        "B": "Junto a Gentzen",
+        "C": "Junto a las relaciones binarias",
+        "D": "Junto a los tableaux"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Formalizar una frase del lenguaje natural produce una fórmula. ¿Qué hay que respetar?",
+      "opciones": {
+        "A": "La tabla de verdad ya calculada",
+        "B": "La teoría de conjuntos ingenua",
+        "C": "El sistema de deducción exclusivamente",
+        "D": "La sintaxis del lenguaje formal"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La deducción natural de predicados extiende la de proposiciones con reglas para cuantificadores. ¿De quién es el sistema que cita la guía?",
+      "opciones": {
+        "A": "De Aristóteles únicamente",
+        "B": "De Boole únicamente",
+        "C": "De Gentzen",
+        "D": "De Bayes"
+      },
+      "correcta": "C"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Diseño y Análisis de Algoritmos",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Los algoritmos en grafos tienen un tema propio. ¿Qué pide estudiar la guía de cada esquema, de forma repetida?",
+      "opciones": {
+        "A": "Solo el código en Java de colecciones",
+        "B": "La definición, el esquema algorítmico y ejemplos clásicos",
+        "C": "Solo la memoria caché",
+        "D": "Solo la prueba de caja negra"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El análisis de complejidad acompaña a los esquemas voraz, divide y vencerás, vuelta atrás y programación dinámica. ¿Qué mide ese análisis?",
+      "opciones": {
+        "A": "El número de líneas de la memoria del proyecto",
+        "B": "El consumo eléctrico de la CPU",
+        "C": "Cómo crecen el tiempo o el espacio con el tamaño de la entrada",
+        "D": "El número de actores de un caso de uso"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un ejemplo clásico de divide y vencerás es la ordenación que parte el vector. ¿Qué propiedad del esquema lo diferencia de un voraz?",
+      "opciones": {
+        "A": "Nunca parte la entrada",
+        "B": "Resuelve subproblemas independientes y combina sus resultados",
+        "C": "No admite recurrencia",
+        "D": "Siempre elige la arista de menor peso"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La vuelta atrás prueba una decisión y, si no conduce a solución, la deshace. ¿Qué estructura de control describe ese comportamiento?",
+      "opciones": {
+        "A": "Un cifrado de bloque",
+        "B": "Una búsqueda en profundidad con retroceso",
+        "C": "Una cola FIFO",
+        "D": "Un producto escalar"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un ejemplo clásico de voraz es elegir en cada paso la opción de mejor relación inmediata. ¿Qué riesgo tiene ese esquema?",
+      "opciones": {
+        "A": "Que no tenga complejidad",
+        "B": "Que no sirva en grafos",
+        "C": "Que exija siempre programación dinámica",
+        "D": "Que la decisión local no lleve al óptimo global"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La vuelta atrás explora una decisión y la deshace si falla. ¿Cómo se llama también ese retroceso?",
+      "opciones": {
+        "A": "Ordenación lineal",
+        "B": "Memoización",
+        "C": "Divide y vencerás",
+        "D": "Backtracking"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El análisis de complejidad de divide y vencerás suele plantear una recurrencia. ¿Qué describe esa recurrencia?",
+      "opciones": {
+        "A": "El retardo de la red",
+        "B": "El número de actores",
+        "C": "El coste en función del coste de los subproblemas",
+        "D": "El número de líneas del informe"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La poda corta nodos del árbol de búsqueda. ¿Qué hace falta conocer para podar con seguridad en ramificación y poda?",
+      "opciones": {
+        "A": "El certificado del servidor",
+        "B": "La clave primaria",
+        "C": "Una cota que garantice que esa rama no mejora la solución",
+        "D": "El código fuente del compilador"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Los cuatro esquemas avanzados de la guía, aparte de grafos, son voraz, divide y vencerás, vuelta atrás y otro. ¿Cuál?",
+      "opciones": {
+        "A": "Fuerza bruta sin esquema",
+        "B": "Recorrido de listas únicamente",
+        "C": "Búsqueda hashing únicamente",
+        "D": "Programación dinámica"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Estudiar ejemplos clásicos fija el esquema en problemas conocidos. ¿En cuántos de esos temas lo pide la guía de forma explícita junto a la definición?",
+      "opciones": {
+        "A": "En los de grafos, voraces, divide y vencerás, vuelta atrás y programación dinámica",
+        "B": "En ninguno",
+        "C": "Solo en grafos",
+        "D": "Solo en la introducción"
+      },
+      "correcta": "A"
+    }
+  ]
+}

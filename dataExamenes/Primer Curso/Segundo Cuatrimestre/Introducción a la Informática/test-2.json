@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Introducción a la Informática",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "ASCII es un código de caracteres del tema de representación. ¿Qué otros dos códigos introduce la guía al principio de ese tema?",
+      "opciones": {
+        "A": "El binario y el hexadecimal",
+        "B": "El BCD y el exceso 3 únicamente",
+        "C": "El Morse y el Baudot únicamente",
+        "D": "UTF-32 y el código Gray únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La fase de análisis y la fase de síntesis son fases de un compilador. ¿Qué herramienta formal introduce el tema antes de esas fases?",
+      "opciones": {
+        "A": "Las redes de Petri",
+        "B": "Las gramáticas formales",
+        "C": "Los diagramas de Gantt",
+        "D": "Los tableaux semánticos"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Polling, en el contexto de periféricos de esta asignatura, no es el término de la guía. ¿Cómo llama el tema a los dispositivos de entrada y de salida?",
+      "opciones": {
+        "A": "Protocolos de transporte",
+        "B": "Procesos",
+        "C": "Periféricos",
+        "D": "Buses"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El software de sistemas y el software de aplicaciones se distinguen en el tema 7. ¿Cuál de estos es software de sistemas?",
+      "opciones": {
+        "A": "Un editor de texto de usuario",
+        "B": "El sistema operativo",
+        "C": "Un videojuego",
+        "D": "Una hoja de cálculo"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un periférico es un dispositivo de entrada o de salida. ¿Qué tema define sus objetivos?",
+      "opciones": {
+        "A": "El de representación IEEE 754",
+        "B": "El de redes únicamente",
+        "C": "El de gramáticas",
+        "D": "El de periféricos y técnicas de gestión de entrada y salida"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El software de aplicaciones resuelve tareas del usuario. ¿Qué otro software introduce el tema 7?",
+      "opciones": {
+        "A": "El software de sistemas",
+        "B": "El firmware de una ALU únicamente",
+        "C": "Solo los compiladores de Pascal",
+        "D": "Solo los videojuegos"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una red de computadores conecta equipos para compartir información. ¿En qué tema se presentan sus conceptos básicos?",
+      "opciones": {
+        "A": "En los modos de direccionamiento",
+        "B": "En la introducción a las redes de computadores",
+        "C": "En el complemento a 2",
+        "D": "En las fases del compilador"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Las fases de análisis y de síntesis organizan un compilador. ¿Qué formalismo introduce antes el tema?",
+      "opciones": {
+        "A": "Las redes de Petri",
+        "B": "Las gramáticas formales",
+        "C": "Los circuitos secuenciales",
+        "D": "Los diagramas de Gantt"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "MIPS sirve como ejemplo de repertorio en el modelo de von Neumann. ¿Qué unidad ejecuta las operaciones aritméticas en ese modelo?",
+      "opciones": {
+        "A": "El encaminador",
+        "B": "La impresora",
+        "C": "La unidad aritmético-lógica",
+        "D": "El compilador"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "ASCII codifica caracteres con un patrón de bits. ¿En qué tema se estudia?",
+      "opciones": {
+        "A": "En las redes",
+        "B": "En el software de aplicaciones",
+        "C": "En los periféricos de salida únicamente",
+        "D": "En la representación de la información"
+      },
+      "correcta": "D"
+    }
+  ]
+}

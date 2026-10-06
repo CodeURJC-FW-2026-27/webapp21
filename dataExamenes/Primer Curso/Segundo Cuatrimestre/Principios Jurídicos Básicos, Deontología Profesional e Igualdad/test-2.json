@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Principios Jurídicos Básicos, Deontología Profesional e Igualdad",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Blockchain, contratos inteligentes e internet de las cosas aparecen como tecnologías emergentes. ¿En qué tema?",
+      "opciones": {
+        "A": "Derecho digital y de las TIC",
+        "B": "Licencias de software únicamente",
+        "C": "Gestión de memoria",
+        "D": "Teoría de colas"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El software libre y el software privativo se distinguen por las condiciones de uso. ¿Qué tema de la guía clasifica tipos de software y tipos de licencias?",
+      "opciones": {
+        "A": "Introducción al Derecho",
+        "B": "Licencias de software y modelos de negocio",
+        "C": "Protección de datos y compliance",
+        "D": "La profesión de ingeniero informático, solo en su apartado de agilidad"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un nombre de dominio identifica un sitio en internet y tiene un régimen jurídico propio. ¿En qué tema lo sitúa la guía?",
+      "opciones": {
+        "A": "En la protección jurídica del software",
+        "B": "En la arquitectura de computadores",
+        "C": "En la combinatoria",
+        "D": "En la estadística descriptiva"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La deontología profesional estudia los deberes del ejercicio de una profesión. ¿Qué documento suele concretar esos deberes, según el tema?",
+      "opciones": {
+        "A": "Un contrato de compraventa civil genérico sin más",
+        "B": "Una licencia BSD exclusivamente",
+        "C": "Un diagrama entidad-relación",
+        "D": "Un código deontológico"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Los derechos digitales nuevos responden a tecnologías como la inteligencia artificial. ¿En qué tema se tratan?",
+      "opciones": {
+        "A": "En la combinatoria",
+        "B": "En la deontología únicamente",
+        "C": "En el Derecho digital y de las TIC",
+        "D": "En los modelos de negocio únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La propiedad industrial incluye patentes y marcas, distintas del derecho de autor. ¿A quién protege la guía en ese apartado?",
+      "opciones": {
+        "A": "Al programador, en el régimen que corresponda",
+        "B": "Solo al registrador de dominios",
+        "C": "Solo al fabricante de hardware",
+        "D": "Solo a la autoridad de protección de datos"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El compliance en empresas TIC organiza el cumplimiento normativo. ¿En qué tema aparece?",
+      "opciones": {
+        "A": "En la agilidad profesional únicamente",
+        "B": "En protección de datos y compliance",
+        "C": "En licencias únicamente",
+        "D": "En la introducción al Derecho"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una licencia fija qué puede hacerse con un programa. ¿Qué tema clasifica tipos de software y tipos de licencia?",
+      "opciones": {
+        "A": "Introducción al Derecho",
+        "B": "Protección jurídica del software, solo en nombres de dominio",
+        "C": "Licencias de software y modelos de negocio",
+        "D": "Deontología profesional"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La agilidad cambia la forma de organizar el trabajo informático. ¿En qué tema profesional la cita la guía?",
+      "opciones": {
+        "A": "En la propiedad intelectual",
+        "B": "En la profesión de ingeniero informático",
+        "C": "En las fuentes del Derecho",
+        "D": "En los smart contracts"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Los postulados del buen profesional resumen deberes prácticos. ¿En qué bloque están?",
+      "opciones": {
+        "A": "En las licencias",
+        "B": "En la protección de datos",
+        "C": "En los principios jurídicos básicos, tema de la empresa",
+        "D": "En la deontología profesional"
+      },
+      "correcta": "D"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Redes de Computadores",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Ethernet es una tecnología de red local. ¿En qué tema la estudia la guía?",
+      "opciones": {
+        "A": "En la capa de aplicación",
+        "B": "En la capa de transporte",
+        "C": "En las capas de enlace y física",
+        "D": "En el tema de sockets únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un socket es el extremo de una comunicación para una aplicación. ¿En qué tema se introducen?",
+      "opciones": {
+        "A": "En la capa de aplicación",
+        "B": "En el encaminamiento IP",
+        "C": "En la capa física",
+        "D": "En el direccionamiento MAC exclusivamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El retardo de una comunicación tiene varias fuentes. ¿Qué otro fenómeno de las comunicaciones analiza el tema de introducción junto al retardo?",
+      "opciones": {
+        "A": "La diagonalización",
+        "B": "La recursión lineal",
+        "C": "La congestión",
+        "D": "La normalización de tablas"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una dirección MAC identifica una interfaz en la red local. ¿A qué capa corresponde ese direccionamiento en la guía?",
+      "opciones": {
+        "A": "A la capa de aplicación",
+        "B": "A la capa de enlace",
+        "C": "A la capa de transporte",
+        "D": "Al sistema de nombres DNS"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El modelo TCP/IP agrupa las funciones en menos capas que OSI. ¿Dónde lo presenta la guía?",
+      "opciones": {
+        "A": "En el tema de Ethernet únicamente",
+        "B": "En la introducción",
+        "C": "En la capa de red únicamente",
+        "D": "En el tema de sockets únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un socket identifica un extremo de la comunicación de una aplicación. ¿En qué capa se introducen?",
+      "opciones": {
+        "A": "En la de aplicación",
+        "B": "En la de red",
+        "C": "En la de enlace",
+        "D": "En la física"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "P2P reparte la carga entre iguales, sin un único servidor central. ¿En qué tema está, junto a la web y al correo?",
+      "opciones": {
+        "A": "En la capa de aplicación",
+        "B": "En la capa física",
+        "C": "En la de transporte",
+        "D": "En la capa de red"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "IP entrega datagramas de extremo a extremo entre redes. ¿Qué problema resuelve el enrutamiento de ese tema?",
+      "opciones": {
+        "A": "Abrir una conexión fiable",
+        "B": "Pintar una página",
+        "C": "Elegir por qué camino reenviar el paquete",
+        "D": "Asignar una dirección MAC"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un medio físico es el soporte por el que viaja la señal. ¿En qué tema se estudia?",
+      "opciones": {
+        "A": "En la introducción, solo como historia",
+        "B": "En la de transporte",
+        "C": "En la de aplicación",
+        "D": "En las capas de enlace y física"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Analizar un paquete permite ver cabeceras de varias capas. ¿En qué tema introduce la guía esa identificación?",
+      "opciones": {
+        "A": "En FTP únicamente",
+        "B": "En la introducción a las redes",
+        "C": "En DNS únicamente",
+        "D": "En los sockets únicamente"
+      },
+      "correcta": "B"
+    }
+  ]
+}

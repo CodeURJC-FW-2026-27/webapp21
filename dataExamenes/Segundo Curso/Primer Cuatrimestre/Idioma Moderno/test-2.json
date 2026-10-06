@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Idioma Moderno",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El alemán de la asignatura se orienta a un nivel del Goethe. ¿Cuál indica la guía?",
+      "opciones": {
+        "A": "TFI",
+        "B": "CILS",
+        "C": "Zertifikat Deutsch B1",
+        "D": "TOEIC"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Leseverstehen, Hörverstehen, Schreiben y Sprechen son destrezas del alemán. ¿A qué examen pertenecen en la guía?",
+      "opciones": {
+        "A": "Al CILS",
+        "B": "Al Goethe-Zertifikat Deutsch B1",
+        "C": "Al TFI",
+        "D": "Al TOEIC"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Incomplete Sentences, Text Completion y Reading Comprehension son partes escritas del inglés. ¿De qué examen?",
+      "opciones": {
+        "A": "Del TOEIC",
+        "B": "Del Zertifikat B1",
+        "C": "Del TFI",
+        "D": "Del CILS"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La guía permite elegir idioma. ¿Cuáles enumera?",
+      "opciones": {
+        "A": "Inglés, francés, italiano y alemán",
+        "B": "Solo chino y japonés",
+        "C": "Solo latín y griego",
+        "D": "Solo inglés y español"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Text Completion y Reading Comprehension cierran las partes escritas del TOEIC. ¿Qué otra parte escrita cita la guía antes?",
+      "opciones": {
+        "A": "Les articles partitifs",
+        "B": "Incomplete Sentences",
+        "C": "Passato prossimo",
+        "D": "Sprechen"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La negación, el subjuntivo y el condicional son puntos de gramática. ¿De qué idioma, en esta guía?",
+      "opciones": {
+        "A": "Del francés",
+        "B": "Del italiano, solo en las imágenes",
+        "C": "Del alemán, en la parte Sprechen",
+        "D": "Del inglés, en Photographs"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Descrivere immagini y la producción oral son estrategias del italiano. ¿Qué examen estructuran?",
+      "opciones": {
+        "A": "El Goethe",
+        "B": "El TOEIC",
+        "C": "El TFI",
+        "D": "El CILS"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Schreiben y Sprechen son las partes productivas del alemán. ¿Cuántas partes de escritura indica el temario del Zertifikat?",
+      "opciones": {
+        "A": "Siete",
+        "B": "Una",
+        "C": "Cinco, como el TOEIC",
+        "D": "Tres"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El alumno elige un idioma entre cuatro. ¿Cuáles?",
+      "opciones": {
+        "A": "Inglés, francés, italiano y alemán",
+        "B": "Latín, griego, inglés y francés",
+        "C": "Solo inglés",
+        "D": "Español, inglés, chino y árabe"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Superar la asignatura exige presentarse al examen oficial del idioma elegido. ¿Qué se hace con la nota de ese examen, según la guía?",
+      "opciones": {
+        "A": "Sustituye solo las prácticas y no la teoría",
+        "B": "Sirve únicamente como actividad voluntaria",
+        "C": "Se equipara con la calificación universitaria",
+        "D": "No cuenta para el expediente"
+      },
+      "correcta": "C"
+    }
+  ]
+}

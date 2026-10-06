@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Análisis e Ingeniería de Requisitos",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La ingeniería del software, en el tema introductorio, se organiza en niveles y procesos. ¿Qué lenguaje de modelado cita el tema de requisitos?",
+      "opciones": {
+        "A": "MIPS",
+        "B": "El lenguaje unificado de modelado",
+        "C": "SPARQL",
+        "D": "HTML"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un requisito funcional describe un servicio del sistema. ¿Qué otro gran grupo suele oponerse a él en las clasificaciones del tema?",
+      "opciones": {
+        "A": "Los requisitos de hardware de la ALU",
+        "B": "Los axiomas de Peano",
+        "C": "Los requisitos no funcionales",
+        "D": "Los requisitos de compilador"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La extracción de requisitos identifica necesidades con los actores. ¿Qué fase posterior deja los requisitos escritos y documentados?",
+      "opciones": {
+        "A": "El despliegue",
+        "B": "La validación únicamente",
+        "C": "La poda alfa-beta",
+        "D": "La especificación"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La validación comprueba que los requisitos son los que el cliente necesita. ¿Qué gestión acompaña a la calidad de los requisitos en ese tema?",
+      "opciones": {
+        "A": "La gestión de la caché",
+        "B": "La gestión del cambio",
+        "C": "La gestión de interrupciones",
+        "D": "La gestión de primitivas"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un proceso software ordena las actividades de construcción. ¿En qué tema introductorio se presentan los modelos de proceso?",
+      "opciones": {
+        "A": "En el análisis",
+        "B": "En la extracción",
+        "C": "En la validación",
+        "D": "En la introducción a la ingeniería del software"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un requisito no funcional impone una cualidad, como el rendimiento. ¿Dónde clasifica la guía los tipos de requisitos?",
+      "opciones": {
+        "A": "En la historia únicamente",
+        "B": "En la gestión del cambio únicamente",
+        "C": "En la introducción a la ingeniería de requisitos",
+        "D": "En el modelado UML únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Entrevistas y observación son técnicas habituales para obtener necesidades. ¿Qué tema las agrupa?",
+      "opciones": {
+        "A": "La validación",
+        "B": "La introducción histórica",
+        "C": "La extracción",
+        "D": "La especificación"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Documentar un requisito lo deja escrito de forma comprobable. ¿Qué tema trata las técnicas de documentación?",
+      "opciones": {
+        "A": "La extracción",
+        "B": "La perspectiva histórica",
+        "C": "La especificación",
+        "D": "Los modelos de proceso únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Modelar un requisito lo expresa con diagramas o descripciones estructuradas. ¿Qué tema lo cubre?",
+      "opciones": {
+        "A": "Los estándares, solo como lista",
+        "B": "La introducción a la ingeniería del software únicamente",
+        "C": "La extracción",
+        "D": "El análisis"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un cambio de requisito debe controlarse para no romper el acuerdo con el cliente. ¿En qué tema está esa gestión?",
+      "opciones": {
+        "A": "En la perspectiva histórica",
+        "B": "En los niveles de la ingeniería únicamente",
+        "C": "En el alfabeto de UML",
+        "D": "En la validación"
+      },
+      "correcta": "D"
+    }
+  ]
+}

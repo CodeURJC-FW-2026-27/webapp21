@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Procesos de Software",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El modelo en cascada encadena las fases en su forma clásica. ¿Qué modelo de la guía incorpora iteraciones y evaluación del riesgo?",
+      "opciones": {
+        "A": "El modelo en espiral",
+        "B": "Kanban",
+        "C": "Scrum",
+        "D": "El modelo incremental como sinónimo de cascada"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El modelo incremental construye el sistema por partes utilizables. ¿En qué tema se compara con la cascada y la espiral?",
+      "opciones": {
+        "A": "En la planificación exclusivamente",
+        "B": "En la gestión de necesidades exclusivamente",
+        "C": "En las leyes de Lehman",
+        "D": "En los modelos de procesos"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Scrum y Kanban son enfoques ágiles del tema de metodologías. ¿Qué otro enfoque clásico cita la guía en ese mismo tema?",
+      "opciones": {
+        "A": "La cascada",
+        "B": "ATAM",
+        "C": "Montecarlo",
+        "D": "Minimax"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un hito marca un punto de control en el calendario. ¿Qué tema trata la estimación de tiempos y las dependencias?",
+      "opciones": {
+        "A": "Las metodologías únicamente",
+        "B": "La planificación de procesos software",
+        "C": "Los modelos de proceso únicamente",
+        "D": "El ciclo de vida únicamente como definición"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El modelo en cascada sigue una secuencia de fases. ¿Qué inconveniente clásico tiene si los requisitos cambian tarde?",
+      "opciones": {
+        "A": "El coste de volver atrás es alto",
+        "B": "No documenta",
+        "C": "Impide hacer pruebas",
+        "D": "No tiene fases"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El modelo en espiral repite ciclos y mira el riesgo. ¿En qué tema se compara con la cascada y el incremental?",
+      "opciones": {
+        "A": "En las necesidades únicamente",
+        "B": "En los modelos de procesos",
+        "C": "En Scrum únicamente",
+        "D": "En la planificación únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El ciclo de vida incluye el retiro del sistema, no solo su construcción. ¿Qué aporta gestionarlo bien, según el tema?",
+      "opciones": {
+        "A": "La eliminación de las pruebas",
+        "B": "Un único lenguaje de programación",
+        "C": "La supresión del cliente",
+        "D": "Calidad a lo largo de las fases"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Kanban limita el trabajo en curso con un tablero. ¿En qué tema se estudia, junto con Scrum y Agile?",
+      "opciones": {
+        "A": "En los modelos de proceso únicamente",
+        "B": "En la gestión de necesidades únicamente",
+        "C": "En la planificación de hitos únicamente",
+        "D": "En las metodologías de desarrollo"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Estimar tiempos y marcar dependencias es planificar. ¿Qué otro elemento de control cita ese tema?",
+      "opciones": {
+        "A": "Los riesgos de la espiral únicamente",
+        "B": "Las entrevistas únicamente",
+        "C": "Los tableros Kanban únicamente",
+        "D": "Los hitos"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un cambio de requisito debe incorporarse sin perder la coherencia. ¿En qué tema se gestiona?",
+      "opciones": {
+        "A": "En el ciclo de vida, solo como retiro",
+        "B": "En Scrum, solo como rol",
+        "C": "En la gestión de las necesidades del proceso",
+        "D": "En el modelo en cascada, solo como definición"
+      },
+      "correcta": "C"
+    }
+  ]
+}
