@@ -59,3 +59,10 @@
 .bg-urjc{
    background-color: var(--urjc-red) !important;
 }
+
+
+/* Footer styling with inverted colors from the header */
+.footer-urjc {
+   background-color: var(--urjc-red);
+   border-top: 3px solid var(--urjc-dark);
+}
