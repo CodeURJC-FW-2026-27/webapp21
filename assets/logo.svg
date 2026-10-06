@@ -1,5 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="290" height="64" fill="none" viewBox="0 0 290 64"><defs><linearGradient id="urjcRedGrad" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#e2001a"/><stop offset="100%" stop-color="#a60013"/></linearGradient><linearGradient id="innerStroke" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#fff" stop-opacity=".35"/><stop offset="100%" stop-opacity=".15"/></linearGradient><filter id="badgeShadow" width="130%" height="130%" x="-10%" y="-10%"><feDropShadow dx="0" dy="3" flood-color="#cb0017" flood-opacity=".28" stdDeviation="3"/></filter></defs><g transform="translate(4 8)"><rect width="48" height="48" fill="url(#urjcRedGrad)" filter="url(#badgeShadow)" rx="14"/><rect width="47" height="47" x=".5" y=".5" stroke="url(#innerStroke)" rx="13.5"/><circle cx="12" cy="11" r="1.75" fill="#fff" fill-opacity=".5"/><circle cx="18" cy="11" r="1.75" fill="#fff" fill-opacity=".5"/><circle cx="24" cy="11" r="1.75" fill="#fff" fill-opacity=".5"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m18 20-7 9 7 9m12-18 7 9-7 9"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="m19 29.5 4.5 5 6-12.5"/></g><g font-family="'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"><text y="25" fill="#000" font-size="26" font-weight="800" letter-spacing="-.5" transform="translate(64 13)">
-      Ensaya<tspan fill="#cb0017">.</tspan>
-    </text><text x="1" y="39" fill="#6c757d" font-size="8.5" font-weight="700" letter-spacing="1.1" transform="translate(64 13)">
-      INGENIERÍA DEL SOFTWARE <tspan fill="#cb0017" font-weight="900">·</tspan> URJC
-    </text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176 64" width="176" height="64" fill="none">
+  <defs>
+    <!-- URJC Corporate Red Gradient (#CB0017 official Pantone 485 C) -->
+    <linearGradient id="urjcRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2001A"/>
+      <stop offset="100%" stop-color="#A60013"/>
+    </linearGradient>
+    
+    <!-- Subtle Inner Border Highlight -->
+    <linearGradient id="innerStroke" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.15"/>
+    </linearGradient>
+
+    <!-- Ambient Shadow for Badge -->
+    <filter id="badgeShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#CB0017" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <!-- ISOTYPE / ICON BADGE (48x48 rounded container) -->
+  <g transform="translate(4, 8)">
+    <rect x="0" y="0" width="48" height="48" rx="14" fill="url(#urjcRedGrad)" filter="url(#badgeShadow)"/>
+    <rect x="0.5" y="0.5" width="47" height="47" rx="13.5" stroke="url(#innerStroke)" fill="none"/>
+
+    <!-- Terminal / Editor Header Dots -->
+    <circle cx="12" cy="11" r="1.75" fill="#FFFFFF" fill-opacity="0.5"/>
+    <circle cx="18" cy="11" r="1.75" fill="#FFFFFF" fill-opacity="0.5"/>
+    <circle cx="24" cy="11" r="1.75" fill="#FFFFFF" fill-opacity="0.5"/>
+
+    <!-- Software Code Bracket: Left < -->
+    <path d="M 18 20 L 11 29 L 18 38" 
+          stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Software Code Bracket: Right > -->
+    <path d="M 30 20 L 37 29 L 30 38" 
+          stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Exam Verification Checkmark / Slash: ✓ -->
+    <path d="M 19 29.5 L 23.5 34.5 L 29.5 22" 
+          stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- LOGOTYPE TEXT -->
+  <g transform="translate(62, 13)">
+    <!-- Brand Name: Ensaya -->
+    <text x="0" y="25" font-family="'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="800" letter-spacing="-0.5" fill="#000000">
+      Ensaya<tspan fill="#CB0017">.</tspan>
+    </text>
+
+    <!-- Tagline: ING SOFT · URJC -->
+    <text x="1" y="39" font-family="'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" letter-spacing="1.2" fill="#6C757D">
+      ING SOFT <tspan fill="#CB0017" font-weight="900">·</tspan> URJC
+    </text>
+  </g>
+</svg>
