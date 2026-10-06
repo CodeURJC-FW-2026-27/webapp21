@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Investigación Operativa",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Una modelización fuerte de un problema entero recorta mejor el espacio de búsqueda que una débil. ¿En qué tema se contraponen?",
+      "opciones": {
+        "A": "En la teoría de colas",
+        "B": "En la simulación",
+        "C": "En la historia de la investigación operativa",
+        "D": "En la optimización lineal entera y combinatoria"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El método gráfico resuelve programas lineales de dos variables. ¿Qué otro contenido incluye ese tema?",
+      "opciones": {
+        "A": "Los hilos del sistema operativo",
+        "B": "RDF y OWL",
+        "C": "La formulación de modelos y el software de optimización",
+        "D": "Las pruebas de aceptación"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La generación de variables aleatorias alimenta una simulación. ¿Qué aplicación concreta cita el tema además de los fenómenos de espera?",
+      "opciones": {
+        "A": "La fiabilidad",
+        "B": "El cifrado AES",
+        "C": "La accesibilidad web",
+        "D": "La maquetación CSS"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La investigación operativa formula un modelo antes de resolverlo. ¿Qué bloque presenta esa metodología?",
+      "opciones": {
+        "A": "El bloque estocástico únicamente",
+        "B": "El bloque de enteros únicamente",
+        "C": "El bloque de redes de computadores",
+        "D": "El bloque de introducción"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una modelización débil deja una relajación poco ajustada. ¿Por qué prefiere la guía una modelización fuerte?",
+      "opciones": {
+        "A": "Porque elimina la función objetivo",
+        "B": "Porque convierte el problema en una cola",
+        "C": "Porque recorta mejor el conjunto de soluciones",
+        "D": "Porque evita usar software"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El preproceso simplifica un modelo entero antes de resolverlo. ¿En qué tema está?",
+      "opciones": {
+        "A": "En la simulación",
+        "B": "En la optimización lineal entera y combinatoria",
+        "C": "En los fenómenos de espera",
+        "D": "En la introducción"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Los elementos de una cola incluyen la llegada, el servicio y la disciplina. ¿Qué procesos matemáticos usa el tema como base?",
+      "opciones": {
+        "A": "Procesos estocásticos",
+        "B": "Procesos de compilación",
+        "C": "Procesos de Markov de Q-learning únicamente",
+        "D": "Procesos de desarrollo en cascada"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Simular un sistema de sucesos discretos avanza de evento en evento. ¿A qué dos aplicaciones destina el tema esa simulación?",
+      "opciones": {
+        "A": "A SQL y a la normalización",
+        "B": "A la fiabilidad y a los fenómenos de espera",
+        "C": "A la usabilidad y a la accesibilidad",
+        "D": "A la maquetación y al cifrado"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El software de optimización resuelve modelos que no pueden dibujarse. ¿En qué tema se cita?",
+      "opciones": {
+        "A": "En la historia únicamente",
+        "B": "En simulación únicamente",
+        "C": "En las colas únicamente",
+        "D": "En optimización lineal"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La historia de la investigación operativa explica su origen aplicado. ¿En qué tema está?",
+      "opciones": {
+        "A": "En la introducción",
+        "B": "En la dualidad",
+        "C": "En Montecarlo",
+        "D": "En la programación entera"
+      },
+      "correcta": "A"
+    }
+  ]
+}

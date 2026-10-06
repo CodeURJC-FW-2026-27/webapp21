@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Programación Orientada a Objetos",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "equals y hashCode son métodos de Object que la guía pide saber redefinir. ¿Qué interfaz ordena objetos de forma natural en ese mismo apartado?",
+      "opciones": {
+        "A": "Cloneable únicamente como orden",
+        "B": "Comparable",
+        "C": "Runnable",
+        "D": "Serializable"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una excepción altera el flujo cuando se produce un error controlado. ¿En qué paquete estudia la guía las excepciones?",
+      "opciones": {
+        "A": "java.lang",
+        "B": "java.awt",
+        "C": "java.net únicamente",
+        "D": "java.sql"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "TDD significa diseño dirigido por pruebas. ¿Qué ventaja busca según el capítulo de diseño de clases?",
+      "opciones": {
+        "A": "Sustituir UML por SQL",
+        "B": "Guiar el diseño con pruebas automáticas escritas de antemano",
+        "C": "Eliminar la herencia",
+        "D": "Evitar todo tipo de prueba"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Collection y Map son estructuras del paquete de colecciones. ¿Qué mecanismo recorre una colección sin exponer su representación?",
+      "opciones": {
+        "A": "Un listener de Swing",
+        "B": "Un iterador",
+        "C": "Un layout",
+        "D": "Un stream de bytes únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una clase genérica se parametriza con un tipo. ¿En qué capítulo se ve, junto con Map y los iteradores?",
+      "opciones": {
+        "A": "En los layouts",
+        "B": "En los streams de bytes únicamente",
+        "C": "En la introducción a la complejidad del software",
+        "D": "En genericidad y estructuras de datos predefinidas"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un stream de caracteres lee texto y uno de bytes lee datos binarios. ¿Qué capítulo los estudia?",
+      "opciones": {
+        "A": "El de entrada y salida",
+        "B": "El de interfaces gráficas",
+        "C": "El de herencia",
+        "D": "El de diseño UML"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Serializable permite guardar el estado de un objeto. ¿Junto a qué otro mecanismo de ficheros está?",
+      "opciones": {
+        "A": "Junto a synchronized únicamente",
+        "B": "Junto a los listeners",
+        "C": "Junto al manejo de ficheros",
+        "D": "Junto a los tipos enumerados"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un listener reacciona a un evento de la interfaz. ¿Qué otros elementos del GUI cita el último capítulo?",
+      "opciones": {
+        "A": "Componentes, contenedores y layouts",
+        "B": "Paquetes y módulos",
+        "C": "Colecciones y mapas",
+        "D": "Excepciones y enums"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "synchronized coordina hilos que comparten datos. ¿En qué apartado de java.lang está la concurrencia?",
+      "opciones": {
+        "A": "En las cadenas",
+        "B": "En los tipos enumerados",
+        "C": "En el dedicado a la palabra reservada synchronized",
+        "D": "En las envolturas"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El diseño top-down con UML relaciona clases por dependencia y asociación. ¿Qué otro enfoque de diseño estudia el capítulo 5?",
+      "opciones": {
+        "A": "El diseño dirigido por pruebas",
+        "B": "El diseño relacional",
+        "C": "El diseño de protocolos",
+        "D": "El diseño de una ALU"
+      },
+      "correcta": "A"
+    }
+  ]
+}

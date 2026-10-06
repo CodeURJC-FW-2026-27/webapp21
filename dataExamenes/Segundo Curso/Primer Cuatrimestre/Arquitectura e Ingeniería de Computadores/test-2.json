@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Arquitectura e Ingeniería de Computadores",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La espera activa, las interrupciones y el DMA son técnicas de gestión de entrada y salida. ¿Cómo llama también la guía a la espera activa?",
+      "opciones": {
+        "A": "Segmentación",
+        "B": "Arbitraje",
+        "C": "Sondeo o polling",
+        "D": "Paginación"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "PCI Express aparece como ejemplo de bus. ¿Qué tres aspectos del bus estudia ese tema además del ejemplo?",
+      "opciones": {
+        "A": "Normalización, SQL y vistas",
+        "B": "Cifrado, firma y hash",
+        "C": "Tipos, sincronismo y arbitraje",
+        "D": "Usabilidad, accesibilidad y evaluación"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La taxonomía de Flynn clasifica arquitecturas según flujos de instrucciones y de datos. ¿Qué riesgo de datos cita la guía al segmentar instrucciones?",
+      "opciones": {
+        "A": "El riesgo de desbordamiento de buffer",
+        "B": "El riesgo exclusivo de la caché L3",
+        "C": "El riesgo de abrazo mortal de ficheros",
+        "D": "El riesgo RAW"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un multiprocesador simétrico comparte memoria con acceso uniforme. ¿Qué organización cita la guía cuando el acceso a memoria no es uniforme?",
+      "opciones": {
+        "A": "RAID 0",
+        "B": "NUMA",
+        "C": "SISD",
+        "D": "DMA"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La sincronización marca cuándo avanzan los elementos del camino de datos. ¿Qué unidad produce las señales de control?",
+      "opciones": {
+        "A": "El árbitro",
+        "B": "El periférico",
+        "C": "La memoria caché",
+        "D": "La unidad de control"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una interrupción desvía la ejecución hacia una rutina de servicio. ¿Qué procesador usa la guía como ejemplo de manejo de interrupciones?",
+      "opciones": {
+        "A": "Un cluster",
+        "B": "Un procesador vectorial únicamente",
+        "C": "Una GPU únicamente",
+        "D": "MIPS"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El arbitraje del bus decide qué dispositivo lo usa. ¿Qué ejemplo de bus desarrolla el tema?",
+      "opciones": {
+        "A": "PCI Express",
+        "B": "I2C únicamente",
+        "C": "Ethernet",
+        "D": "USB únicamente como único ejemplo"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La taxonomía de Flynn clasifica máquinas por el número de flujos de instrucciones y de datos. ¿En qué tema está?",
+      "opciones": {
+        "A": "En la memoria virtual",
+        "B": "En los periféricos",
+        "C": "En la introducción a las arquitecturas avanzadas",
+        "D": "En la ALU"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un procesador superescalar lanza varias instrucciones por ciclo. ¿Qué otro paralelismo a nivel de instrucción cita antes la guía?",
+      "opciones": {
+        "A": "El DMA",
+        "B": "La segmentación",
+        "C": "Los clusters",
+        "D": "La memoria virtual"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una GPU explota el paralelismo de datos. ¿Junto a qué otros procesadores la agrupa el tema?",
+      "opciones": {
+        "A": "Junto a los uniciclo únicamente",
+        "B": "Junto a los procesadores vectoriales",
+        "C": "Junto a la caché de primer nivel",
+        "D": "Junto al bus serie únicamente"
+      },
+      "correcta": "B"
+    }
+  ]
+}

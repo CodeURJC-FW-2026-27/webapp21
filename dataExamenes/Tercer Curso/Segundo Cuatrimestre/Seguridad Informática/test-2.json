@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Seguridad Informática",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "AES es un cifrado de clave simétrica y RSA es de clave pública. ¿Qué mecanismo acompaña a la firma digital en ese tema?",
+      "opciones": {
+        "A": "La memoria caché",
+        "B": "El sondeo de periféricos",
+        "C": "El diagrama de Gantt",
+        "D": "Las funciones hash"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un cortafuegos filtra el tráfico del perímetro. ¿Qué zona cita la guía junto a los cortafuegos?",
+      "opciones": {
+        "A": "La memoria virtual",
+        "B": "El registro de activación",
+        "C": "La DMZ",
+        "D": "La cola de impresión"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "TLS protege el tráfico de aplicaciones como la web. ¿Con qué protocolo de VPN lo distingue el tema de contramedidas?",
+      "opciones": {
+        "A": "Con SMTP en claro",
+        "B": "Con DNS",
+        "C": "Con FTP",
+        "D": "Con IPsec"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un APT es una amenaza persistente y avanzada. ¿En qué bloque estudia la guía el cibercrimen y la seguridad en la nube?",
+      "opciones": {
+        "A": "En la introducción, solo como plan director",
+        "B": "En el malware, solo como virus clásico",
+        "C": "En la denegación de servicio volumétrica",
+        "D": "En las nuevas tendencias en seguridad informática"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "DES y AES son cifrados simétricos y RSA es asimétrico. ¿Qué uso tienen las funciones hash en ese tema?",
+      "opciones": {
+        "A": "Sustituir al cortafuegos",
+        "B": "Abrir una VPN por sí solas",
+        "C": "Resumir datos para integridad y para la firma",
+        "D": "Sustituir a la DMZ"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Kerberos autentica en un entorno de red con un tercero de confianza. ¿En qué tema está?",
+      "opciones": {
+        "A": "En la anatomía del ataque",
+        "B": "En el malware",
+        "C": "En la denegación de servicio",
+        "D": "En los mecanismos criptográficos"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una VPN cifra el tráfico entre sedes o clientes. ¿Qué protocolo de seguridad IP cita la guía?",
+      "opciones": {
+        "A": "FTP",
+        "B": "HTTP en claro",
+        "C": "Telnet",
+        "D": "IPsec"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "TLS protege sesiones de aplicación. ¿Qué práctica de desarrollador cierra las contramedidas, según el tema 9?",
+      "opciones": {
+        "A": "El diagrama de Gantt",
+        "B": "El plan de pruebas de usabilidad",
+        "C": "La codificación segura y las metodologías de desarrollo seguro",
+        "D": "El sondeo de periféricos"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una infraestructura crítica es un servicio esencial cuyo fallo es grave. ¿En qué bloque se estudia, junto al cibercrimen y la nube?",
+      "opciones": {
+        "A": "En los ataques de buffer",
+        "B": "En las nuevas tendencias",
+        "C": "En la introducción, solo como pilares",
+        "D": "En el malware clásico"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "BYOD permite usar equipos personales en la organización. ¿Qué otro entorno de la guía plantea un problema parecido de perímetro?",
+      "opciones": {
+        "A": "El modelo relacional",
+        "B": "El complemento a 2",
+        "C": "La nube",
+        "D": "La caché"
+      },
+      "correcta": "C"
+    }
+  ]
+}

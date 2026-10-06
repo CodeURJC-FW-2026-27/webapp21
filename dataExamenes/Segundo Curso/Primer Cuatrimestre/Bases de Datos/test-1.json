@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Bases de Datos",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Un sistema de ficheros y un sistema de gestión de bases de datos no organizan los datos del mismo modo. ¿Qué aporta el SGBD frente a ficheros aislados, según el enfoque del tema?",
+      "opciones": {
+        "A": "El cifrado del tráfico de red",
+        "B": "Únicamente más velocidad de disco",
+        "C": "Una gestión integrada de los datos con un modelo y un lenguaje comunes",
+        "D": "La compilación del código fuente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El modelo entidad-relación extendido sirve para el esquema conceptual. ¿Qué pregunta formula el tema de modelado conceptual?",
+      "opciones": {
+        "A": "Cómo realizar un buen diseño conceptual",
+        "B": "Cómo segmentar un cauce",
+        "C": "Cómo firmar un certificado digital",
+        "D": "Cómo calcular la complejidad ciclomática"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El modelo relacional tiene una parte estática y una dinámica. ¿Qué describe la parte estática?",
+      "opciones": {
+        "A": "Solo los índices físicos",
+        "B": "Solo las consultas de actualización",
+        "C": "Solo los usuarios y permisos",
+        "D": "Las estructuras: relaciones, atributos y restricciones"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La normalización pertenece al diseño lógico. ¿Qué persigue?",
+      "opciones": {
+        "A": "Reducir redundancias y anomalías de actualización mediante formas normales",
+        "B": "Aumentar el número de tablas sin criterio",
+        "C": "Cifrar todas las columnas",
+        "D": "Sustituir SQL por ficheros de texto"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un sistema de información usa datos para apoyar la actividad de una organización. ¿Qué tema lo relaciona con las bases de datos?",
+      "opciones": {
+        "A": "Lenguaje SQL",
+        "B": "Sistemas de información y bases de datos",
+        "C": "Normalización",
+        "D": "Modelo entidad-relación"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un fichero aislado obliga a cada programa a conocer el formato. ¿Qué sistema evita esa dependencia según el tema 2?",
+      "opciones": {
+        "A": "Un sistema operativo de tiempo real",
+        "B": "Un compilador",
+        "C": "Un bus",
+        "D": "Un sistema de gestión de bases de datos"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El modelo de datos fija estructuras y operaciones permitidas. ¿Qué tema define ese concepto, antes del entidad-relación?",
+      "opciones": {
+        "A": "El lenguaje de control",
+        "B": "La normalización",
+        "C": "El concepto de modelo de datos",
+        "D": "Los sistemas de ficheros"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Entidades, atributos y relaciones son piezas del modelo entidad-relación. ¿Para qué tipo de esquema sirve el tema extendido?",
+      "opciones": {
+        "A": "Para el código objeto",
+        "B": "Para el esquema físico de índices",
+        "C": "Para el esquema conceptual",
+        "D": "Para el plan de pruebas"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La dinámica del modelo relacional incluye las operaciones que consultan y modifican relaciones. ¿Qué describe la estática?",
+      "opciones": {
+        "A": "Solo los usuarios",
+        "B": "Las estructuras y las restricciones",
+        "C": "Solo los disparadores",
+        "D": "Solo los planes de ejecución"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "GRANT y REVOKE son típicos del control de acceso en SQL. ¿A qué sublenguaje los asigna la división de la guía?",
+      "opciones": {
+        "A": "Al lenguaje de definición",
+        "B": "Al lenguaje de manipulación",
+        "C": "Al lenguaje anfitrión",
+        "D": "Al lenguaje de control"
+      },
+      "correcta": "D"
+    }
+  ]
+}

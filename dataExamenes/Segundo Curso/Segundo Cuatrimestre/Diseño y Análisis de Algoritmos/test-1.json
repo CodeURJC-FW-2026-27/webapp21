@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Diseño y Análisis de Algoritmos",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Un algoritmo voraz toma en cada paso la decisión que parece mejor en ese momento. ¿Qué analiza la guía además del esquema?",
+      "opciones": {
+        "A": "Únicamente su implementación en Pascal",
+        "B": "Su complejidad y ejemplos clásicos",
+        "C": "La norma ISO 25010",
+        "D": "El protocolo TCP"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Divide y vencerás parte el problema, resuelve los subproblemas y combina. ¿Qué otro esquema de la guía explora un árbol de decisiones y puede deshacer una elección?",
+      "opciones": {
+        "A": "Ordenación por cubetas únicamente",
+        "B": "Vuelta atrás",
+        "C": "Búsqueda lineal únicamente",
+        "D": "Programación dinámica"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La programación dinámica guarda resultados de subproblemas para no repetirlos. ¿Cuándo resulta adecuada, según la idea del tema?",
+      "opciones": {
+        "A": "Cuando el grafo no tiene aristas",
+        "B": "Cuando solo existe una solución voraz",
+        "C": "Cuando hay subproblemas superpuestos y una subestructura óptima",
+        "D": "Cuando el problema no se puede partir"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Ramificación y poda mejora la búsqueda en un árbol de soluciones. ¿Con qué otro esquema comparte tema en la guía?",
+      "opciones": {
+        "A": "Con divide y vencerás",
+        "B": "Con la vuelta atrás",
+        "C": "Con el tema de grafos únicamente",
+        "D": "Con los algoritmos voraces"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El esquema voraz construye la solución por decisiones locales. ¿Qué más pide analizar la guía en ese tema?",
+      "opciones": {
+        "A": "La complejidad y ejemplos clásicos",
+        "B": "Solo el diagrama de clases",
+        "C": "Solo la prueba de usabilidad",
+        "D": "Solo el código de una lista enlazada"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Dividir el problema, resolver y combinar es el esquema de divide y vencerás. ¿Qué análisis acompaña a la definición?",
+      "opciones": {
+        "A": "El de la forma normal",
+        "B": "El de complejidad",
+        "C": "El de la capa física",
+        "D": "El de la interfaz gráfica"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La programación dinámica tabula subproblemas ya resueltos. ¿Qué evita con eso?",
+      "opciones": {
+        "A": "Definir el tamaño de la entrada",
+        "B": "Escribir ejemplos",
+        "C": "Usar recurrencia",
+        "D": "Repetir el mismo cálculo"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La ramificación y poda descarta ramas que no pueden mejorar la mejor solución conocida. ¿Con qué esquema comparte tema?",
+      "opciones": {
+        "A": "Con divide y vencerás",
+        "B": "Con los grafos únicamente",
+        "C": "Con la vuelta atrás",
+        "D": "Con el voraz"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un algoritmo sobre grafos recorre vértices y aristas. ¿Qué tema le dedica la guía?",
+      "opciones": {
+        "A": "Vuelta atrás únicamente",
+        "B": "Introducción, sin grafos",
+        "C": "Programación dinámica",
+        "D": "Algoritmos en grafos"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El tema de introducción abre la asignatura antes de los esquemas. ¿Qué viene inmediatamente después en el temario?",
+      "opciones": {
+        "A": "La vuelta atrás",
+        "B": "La programación dinámica",
+        "C": "El voraz",
+        "D": "Los algoritmos en grafos"
+      },
+      "correcta": "D"
+    }
+  ]
+}

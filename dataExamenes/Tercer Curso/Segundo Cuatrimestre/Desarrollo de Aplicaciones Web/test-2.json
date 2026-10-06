@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Desarrollo de Aplicaciones Web",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "MySQL aparece como base de datos de la parte de servidor. ¿Con qué tecnología de la guía se integra?",
+      "opciones": {
+        "A": "Con Spring",
+        "B": "Con el modelo OSI",
+        "C": "Con Pascal",
+        "D": "Con ensamblador MIPS"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La seguridad en Spring es un tema de la parte de servidor. ¿Qué otro tema de esa parte trata el acceso a datos?",
+      "opciones": {
+        "A": "Bases de datos con Spring",
+        "B": "Componentes de una SPA",
+        "C": "Docker",
+        "D": "Publicación de una SPA"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un componente de cliente encapsula vista y comportamiento. ¿En qué parte del temario se estudia?",
+      "opciones": {
+        "A": "En las tecnologías avanzadas de cliente",
+        "B": "En el despliegue de Spring únicamente",
+        "C": "En la virtualización únicamente",
+        "D": "En las APIs REST del servidor únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Publicar una aplicación es el último tema de cliente. ¿Qué tecnología de empaquetado estudia la parte de despliegue?",
+      "opciones": {
+        "A": "Wireshark",
+        "B": "Docker",
+        "C": "Git únicamente",
+        "D": "JUnit"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Las bases de datos con Spring conectan la aplicación con el almacenamiento. ¿Qué otra tecnología de esa parte expone servicios?",
+      "opciones": {
+        "A": "La publicación de estáticos",
+        "B": "Las librerías visuales de cliente",
+        "C": "Las APIs REST",
+        "D": "Docker únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Virtualización, nube y contenedores son tres formas de ejecutar aplicaciones. ¿En qué parte están?",
+      "opciones": {
+        "A": "En la seguridad únicamente",
+        "B": "En el despliegue de aplicaciones web",
+        "C": "En el cliente SPA",
+        "D": "En el tema de componentes"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un componente reutilizable encapsula una parte de la interfaz. ¿Qué tema de cliente lo sigue al hablar de piezas ya hechas?",
+      "opciones": {
+        "A": "MySQL",
+        "B": "La virtualización",
+        "C": "El despliegue Spring",
+        "D": "Las librerías de componentes"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Consumir una API REST desde el cliente pide datos y pinta la respuesta. ¿En qué parte está ese uso?",
+      "opciones": {
+        "A": "En la seguridad del servidor únicamente",
+        "B": "En el despliegue de Spring únicamente",
+        "C": "En las tecnologías avanzadas de cliente",
+        "D": "En Docker"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Publicar una aplicación de cliente la hace accesible a los usuarios. ¿Es el último tema de qué parte?",
+      "opciones": {
+        "A": "De Docker únicamente",
+        "B": "De la seguridad",
+        "C": "Del servidor",
+        "D": "De las tecnologías avanzadas de cliente"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Cloud computing alquila capacidad en lugar de mantener todas las máquinas. ¿Junto a qué lo introduce la guía?",
+      "opciones": {
+        "A": "Junto a MySQL únicamente",
+        "B": "Junto a las SPA",
+        "C": "Junto a los componentes visuales",
+        "D": "Junto a la virtualización y los contenedores"
+      },
+      "correcta": "D"
+    }
+  ]
+}

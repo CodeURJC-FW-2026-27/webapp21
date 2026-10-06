@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Métodos Operativos y Estadísticos de Gestión",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La investigación de operaciones ayuda a decidir en la empresa. ¿En qué tema introduce la guía la organización y la estructura de la empresa?",
+      "opciones": {
+        "A": "En el diseño de experimentos únicamente",
+        "B": "En la programación matemática únicamente",
+        "C": "En el tema de introducción",
+        "D": "En el diagrama de Gantt únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un modelo de programación matemática representa un problema de gestión con objetivo y restricciones. ¿Qué estudia el tema después de la resolución?",
+      "opciones": {
+        "A": "El cifrado RSA",
+        "B": "La memoria virtual",
+        "C": "La herencia en Java",
+        "D": "La postoptimización"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una decisión multicriterio considera varios objetivos a la vez. ¿Cómo se llama ese tema?",
+      "opciones": {
+        "A": "Introducción a la empresa",
+        "B": "Teoría de la decisión multicriterio",
+        "C": "Programación matemática",
+        "D": "Gestión de la calidad"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El diagrama de Gantt planifica actividades en el tiempo. ¿Qué otras ideas acompañan a la planificación de un proyecto en la guía?",
+      "opciones": {
+        "A": "Las actividades críticas y el balance de costes y recursos",
+        "B": "Los diodos y los transistores",
+        "C": "Las formas normales",
+        "D": "Los sockets y el DNS"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La estructura de la empresa reparte funciones y autoridad. ¿En qué tema se presenta, junto a los fines de la empresa?",
+      "opciones": {
+        "A": "En el diagrama de Gantt",
+        "B": "En la programación matemática",
+        "C": "En el diseño de experimentos",
+        "D": "En la introducción"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un modelo de optimización tiene función objetivo y restricciones. ¿Para qué ámbito de gestión lo plantea el tema?",
+      "opciones": {
+        "A": "Para el encaminamiento IP",
+        "B": "Para la gestión de empresas",
+        "C": "Para la compilación",
+        "D": "Para el núcleo del sistema operativo"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La postoptimización estudia la solución cuando cambian coeficientes o recursos. ¿De qué tema forma parte?",
+      "opciones": {
+        "A": "De la introducción",
+        "B": "De la programación matemática",
+        "C": "De la calidad",
+        "D": "De la decisión multicriterio"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Decidir con varios criterios a la vez no se reduce a un único número sin un método. ¿Cómo se llama ese tema?",
+      "opciones": {
+        "A": "Programación matemática",
+        "B": "Teoría de la decisión multicriterio",
+        "C": "Diseño de experimentos",
+        "D": "Gestión de proyectos"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El camino crítico marca las actividades que no pueden retrasarse. ¿En qué tema está, junto al Gantt?",
+      "opciones": {
+        "A": "En la gestión de proyectos",
+        "B": "En la calidad",
+        "C": "En la optimización lineal",
+        "D": "En la introducción"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un gráfico X-R controla la media y el recorrido de un proceso. ¿En qué tema se usa?",
+      "opciones": {
+        "A": "En la introducción a la empresa",
+        "B": "En la decisión multicriterio",
+        "C": "En gestión de la calidad y diseño de experimentos",
+        "D": "En la programación matemática"
+      },
+      "correcta": "C"
+    }
+  ]
+}

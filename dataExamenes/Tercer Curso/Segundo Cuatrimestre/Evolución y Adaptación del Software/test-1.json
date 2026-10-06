@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Evolución y Adaptación del Software",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El mantenimiento modifica un sistema que ya está en uso. ¿Con qué otro concepto abre el primer bloque?",
+      "opciones": {
+        "A": "Con la evolución del software",
+        "B": "Con el cifrado de clave pública",
+        "C": "Con la teoría de colas",
+        "D": "Con la búsqueda A*"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Las leyes de Lehman resumen regularidades de la evolución del software. ¿En qué bloque están?",
+      "opciones": {
+        "A": "En el diseño dirigido por el dominio únicamente",
+        "B": "En la introducción al mantenimiento y la evolución",
+        "C": "En la gestión de la configuración únicamente",
+        "D": "En las arquitecturas de microservicios"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La gestión de la configuración controla los elementos del producto y sus versiones. ¿Qué acompaña a ese tema en la guía?",
+      "opciones": {
+        "A": "Un analizador de protocolos",
+        "B": "El control de versiones",
+        "C": "Un planificador de procesos",
+        "D": "Un compilador de Pascal"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La reingeniería examina un sistema existente para reconstruirlo. ¿En qué bloque está?",
+      "opciones": {
+        "A": "En las tendencias, solo como microservicios",
+        "B": "En la introducción únicamente",
+        "C": "En la gestión de configuración únicamente",
+        "D": "En las técnicas de evolución del software"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Mantener un sistema corrige, adapta o mejora lo ya entregado. ¿Con qué proceso más amplio abre el tema 1?",
+      "opciones": {
+        "A": "Con las colas",
+        "B": "Con la búsqueda heurística",
+        "C": "Con el cifrado",
+        "D": "Con la evolución del software"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Las leyes de Lehman observan sistemas reales a lo largo del tiempo. ¿En qué bloque están?",
+      "opciones": {
+        "A": "En el control de versiones únicamente",
+        "B": "En el diseño dirigido por el dominio",
+        "C": "En los microservicios",
+        "D": "En la introducción al mantenimiento y la evolución"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La gestión de la configuración identifica los elementos y controla sus cambios. ¿Qué práctica de versiones la acompaña?",
+      "opciones": {
+        "A": "El DDD",
+        "B": "El control de versiones",
+        "C": "Las leyes de Lehman",
+        "D": "La reingeniería"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Reingenierizar un sistema lo analiza para volver a construirlo con mejor estructura. ¿En qué bloque está?",
+      "opciones": {
+        "A": "En las tendencias únicamente",
+        "B": "En las técnicas de evolución",
+        "C": "En la introducción únicamente",
+        "D": "En la configuración únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Los principios de diseño limitan el alcance de cada cambio. ¿Junto a qué técnica del mismo bloque se ven?",
+      "opciones": {
+        "A": "Junto a las leyes de Lehman",
+        "B": "Junto a los microservicios",
+        "C": "Junto al control de versiones",
+        "D": "Junto a la reingeniería"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un microservicio se despliega y escala aparte del resto. ¿En qué bloque de tendencias está?",
+      "opciones": {
+        "A": "En las tendencias en evolución y adaptación",
+        "B": "En las leyes de Lehman",
+        "C": "En la configuración",
+        "D": "En la introducción"
+      },
+      "correcta": "A"
+    }
+  ]
+}

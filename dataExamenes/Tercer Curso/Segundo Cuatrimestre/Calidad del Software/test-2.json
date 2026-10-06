@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Calidad del Software",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Un pipeline de integración continua construye y prueba el sistema al integrar cambios. ¿En qué tema está?",
+      "opciones": {
+        "A": "En el análisis de caja blanca únicamente",
+        "B": "En DevOps y calidad continua",
+        "C": "En las leyes de Lehman",
+        "D": "En ISO 25010 únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El despliegue blue-green mantiene dos entornos y conmuta el tráfico. ¿Junto a qué otras estrategias lo cita la guía?",
+      "opciones": {
+        "A": "Canary y rolling",
+        "B": "Cascada y espiral",
+        "C": "Polling y DMA",
+        "D": "Caja blanca y caja negra"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Las leyes de Lehman describen cómo evoluciona el software en uso. ¿Qué tendencia señalan?",
+      "opciones": {
+        "A": "La reducción automática del acoplamiento",
+        "B": "La evolución continua y el crecimiento de la complejidad",
+        "C": "La desaparición del mantenimiento",
+        "D": "La equivalencia entre Git y CMMI"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un code smell es una señal de diseño deficiente. ¿Qué técnica lo corrige en el tema de análisis interno?",
+      "opciones": {
+        "A": "La refactorización",
+        "B": "La normalización a primera forma normal únicamente",
+        "C": "El cifrado AES",
+        "D": "La poda alfa-beta"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Git y el versionado semántico controlan los cambios del código. ¿En qué tema los cita la guía?",
+      "opciones": {
+        "A": "En la observabilidad únicamente",
+        "B": "En los fundamentos de calidad",
+        "C": "En SOLID únicamente",
+        "D": "En las pruebas de interfaz únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Clean Architecture separa responsabilidades e invierte dependencias. ¿En qué tema se estudia?",
+      "opciones": {
+        "A": "En ISO 25010 únicamente",
+        "B": "En DevOps",
+        "C": "En el análisis interno del código",
+        "D": "En las pruebas de aceptación"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La caja negra no mira el código y la caja blanca sí. ¿Cómo llama la guía a esa clasificación?",
+      "opciones": {
+        "A": "Por madurez CMMI",
+        "B": "Por propósito",
+        "C": "Por conocimiento",
+        "D": "Por nivel"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Canary expone el cambio primero a una parte de los usuarios. ¿Junto a qué estrategias de despliegue está?",
+      "opciones": {
+        "A": "Caja blanca y caja negra",
+        "B": "Cascada y espiral",
+        "C": "Unitaria y de sistema",
+        "D": "Blue-green y rolling"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Logs, métricas y trazas permiten observar un sistema en producción. ¿En qué tema están?",
+      "opciones": {
+        "A": "En DevOps y calidad continua",
+        "B": "En los code smells",
+        "C": "En CMMI",
+        "D": "En las leyes de Lehman"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Las leyes de Lehman dicen que un sistema usado sigue cambiando y tiende a complicarse. ¿En qué tema se enuncian?",
+      "opciones": {
+        "A": "En las pruebas unitarias",
+        "B": "En los fundamentos de calidad",
+        "C": "En SOLID",
+        "D": "En el despliegue"
+      },
+      "correcta": "B"
+    }
+  ]
+}

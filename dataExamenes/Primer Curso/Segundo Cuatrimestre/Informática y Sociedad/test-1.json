@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Informática y Sociedad",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El tema de fundamentos de la sociedad de la información incluye la evolución del hardware y del software. ¿Qué movimiento cultural cita junto con la cultura libre?",
+      "opciones": {
+        "A": "La deducción natural",
+        "B": "El software libre",
+        "C": "La memoria virtual",
+        "D": "El modelo en cascada"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Web 2.0, periodismo digital y posverdad aparecen en el apartado de tecnologías de la información. ¿Qué desafío epistémico asocia la guía a la inteligencia artificial?",
+      "opciones": {
+        "A": "El de la complejidad ciclomática",
+        "B": "El de la segmentación de instrucciones",
+        "C": "El de la ciencia, el conocimiento y la sociedad",
+        "D": "El de la normalización de bases de datos"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La cuarta revolución industrial se estudia como transformación económica. ¿Qué otro reto empresarial cita ese apartado?",
+      "opciones": {
+        "A": "La poda alfa-beta",
+        "B": "La sostenibilidad",
+        "C": "El complemento a 2",
+        "D": "El teorema de Thevenin"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Los Objetivos de Desarrollo Sostenible vinculan la tecnología con un tipo de transformación. ¿Cuál señala la guía?",
+      "opciones": {
+        "A": "Solo la capa física de una red",
+        "B": "Transformaciones sociales y políticas",
+        "C": "Solo la integración de Riemann",
+        "D": "Solo la optimización lineal"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La evolución del hardware y del software forma parte de la historia de la informática. ¿En qué apartado está?",
+      "opciones": {
+        "A": "En las transformaciones políticas únicamente",
+        "B": "En los fundamentos de la sociedad de la información",
+        "C": "En los ODS únicamente",
+        "D": "En el humanismo únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La digitalización convierte información a formato tratable por computador. ¿Qué estilo de gestión cita el mismo apartado?",
+      "opciones": {
+        "A": "La gestión ágil de la información",
+        "B": "La gestión de colas",
+        "C": "La gestión de interrupciones",
+        "D": "La gestión de la caché"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La cultura libre defiende el acceso y la reutilización del conocimiento. ¿Qué movimiento informático la acompaña en la guía?",
+      "opciones": {
+        "A": "El software libre",
+        "B": "El modelo en cascada",
+        "C": "La memoria virtual",
+        "D": "El software privativo como único modelo"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La transformación digital cambia procesos de las organizaciones. ¿En qué bloque de transformaciones está?",
+      "opciones": {
+        "A": "En la democracia digital únicamente",
+        "B": "En las transformaciones económicas",
+        "C": "En la historia del hardware únicamente",
+        "D": "En los fundamentos epistémicos únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La democracia digital usa la tecnología en la participación política. ¿Qué otro par de ideas cierra ese apartado?",
+      "opciones": {
+        "A": "La normalización y SQL",
+        "B": "La web semántica y SPARQL",
+        "C": "La inducción electromagnética",
+        "D": "El humanismo y el transhumanismo"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Internet influye en la forma de informarse y de relacionarse. ¿En qué punto del temario se estudia esa influencia?",
+      "opciones": {
+        "A": "En los diodos",
+        "B": "En las tecnologías de la información y la comunicación",
+        "C": "En los grafos conexos",
+        "D": "En el cálculo de primitivas"
+      },
+      "correcta": "B"
+    }
+  ]
+}

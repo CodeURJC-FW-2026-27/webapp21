@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Idioma Moderno",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La guía prepara certificados oficiales. ¿Qué examen oficial corresponde al inglés?",
+      "opciones": {
+        "A": "CILS",
+        "B": "Goethe-Zertifikat Deutsch B1",
+        "C": "TFI",
+        "D": "TOEIC"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El francés de la guía se evalúa con un certificado distinto del TOEIC. ¿Cuál?",
+      "opciones": {
+        "A": "TOEIC",
+        "B": "CILS",
+        "C": "DELF únicamente, que la guía no nombra",
+        "D": "TFI"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Photographs, Question-Response y Conversations son partes del examen de inglés. ¿Cuántas partes tiene el TOEIC según la guía?",
+      "opciones": {
+        "A": "Tres",
+        "B": "Siete",
+        "C": "Diez",
+        "D": "Cuatro"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El italiano se prepara para un examen oficial concreto. ¿Cuál?",
+      "opciones": {
+        "A": "TFI",
+        "B": "TOEIC",
+        "C": "CILS",
+        "D": "Zertifikat Deutsch B1"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Photographs y Question-Response son partes orales del inglés. ¿De qué examen?",
+      "opciones": {
+        "A": "Del TOEIC",
+        "B": "Del CILS",
+        "C": "Del TFI",
+        "D": "Del Zertifikat B1"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Talks es otra parte del TOEIC. ¿Cuántas partes dice la guía que tiene ese examen?",
+      "opciones": {
+        "A": "Tres",
+        "B": "Nueve",
+        "C": "Siete",
+        "D": "Cuatro"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El vocabulario francés de la guía incluye la familia, la salud y el trabajo. ¿Qué certificado prepara el francés?",
+      "opciones": {
+        "A": "El TOEIC",
+        "B": "El Goethe B1",
+        "C": "El TFI",
+        "D": "El CILS"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Los artículos definidos, indefinidos y partitivos son gramática francesa. ¿En qué idioma los sitúa el temario?",
+      "opciones": {
+        "A": "En francés",
+        "B": "En la parte de Hörverstehen",
+        "C": "En la parte de Photographs",
+        "D": "En alemán"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El passato prossimo y el imperfetto son tiempos del italiano. ¿Para qué examen se estudian?",
+      "opciones": {
+        "A": "Para el TOEIC",
+        "B": "Para el Zertifikat",
+        "C": "Para el CILS",
+        "D": "Para el TFI"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Leseverstehen y Hörverstehen evalúan lectura y escucha en alemán. ¿De qué nivel es el certificado de la guía?",
+      "opciones": {
+        "A": "A1",
+        "B": "El de la ESO únicamente",
+        "C": "B1",
+        "D": "C2"
+      },
+      "correcta": "C"
+    }
+  ]
+}

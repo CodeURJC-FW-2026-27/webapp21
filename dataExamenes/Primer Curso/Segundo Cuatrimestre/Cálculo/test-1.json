@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Cálculo",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El valor absoluto es una propiedad de orden de la recta real en el primer tema. ¿Qué otro conjunto numérico introduce ese tema?",
+      "opciones": {
+        "A": "Los números complejos",
+        "B": "Las matrices cuadradas",
+        "C": "Los grafos dirigidos",
+        "D": "Los enteros módulo n solamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El teorema de Bolzano garantiza un cero en un intervalo cuando una función continua cambia de signo. ¿En qué tema está?",
+      "opciones": {
+        "A": "Continuidad de funciones",
+        "B": "Integrales impropias",
+        "C": "Series numéricas",
+        "D": "Polinomio de Taylor"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La regla de l'Hôpital resuelve ciertas formas indeterminadas. ¿Cuáles cita la guía en primer lugar?",
+      "opciones": {
+        "A": "Infinito menos infinito únicamente",
+        "B": "1 elevado a infinito únicamente",
+        "C": "0/0 e infinito/infinito",
+        "D": "0 por infinito únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La recta tangente se define a partir de la derivada. ¿Qué teorema del valor medio lleva el nombre de Rolle en ese tema?",
+      "opciones": {
+        "A": "Toda serie absoluta es convergente",
+        "B": "La integral de Riemann coincide con el área",
+        "C": "Toda función continua en un cerrado alcanza máximo y mínimo",
+        "D": "Si una función derivable toma el mismo valor en los extremos, su derivada se anula en algún punto interior"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El valor absoluto de un número real es su distancia al origen. ¿En qué tema se estudia, junto con el orden de la recta real?",
+      "opciones": {
+        "A": "En el polinomio de Taylor",
+        "B": "En las series",
+        "C": "En la recta real y los números complejos",
+        "D": "En las integrales impropias"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un límite lateral se calcula acercándose por un solo lado. ¿En qué tema está?",
+      "opciones": {
+        "A": "En sucesiones",
+        "B": "En derivadas únicamente",
+        "C": "En continuidad únicamente",
+        "D": "En límites de funciones"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una función continua en un intervalo cerrado y acotado alcanza máximo y mínimo. ¿Qué teorema lo afirma en la guía?",
+      "opciones": {
+        "A": "El teorema de Taylor",
+        "B": "El teorema de Rolle",
+        "C": "El criterio de Leibniz",
+        "D": "El teorema de Weierstrass"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La derivada en un punto es la pendiente de la recta tangente. ¿Qué tema define así la derivada?",
+      "opciones": {
+        "A": "El de números complejos",
+        "B": "El de primitivas",
+        "C": "El de derivación de funciones",
+        "D": "El de series"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una asíntota describe el comportamiento de la gráfica en el infinito o junto a una discontinuidad. ¿En qué estudio de funciones aparece?",
+      "opciones": {
+        "A": "En las series telescópicas",
+        "B": "En las sucesiones contractivas",
+        "C": "En las integrales racionales",
+        "D": "En la representación gráfica"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Integrar por cambio de variable sustituye la variable de integración. ¿En qué bloque está esa técnica?",
+      "opciones": {
+        "A": "En las sucesiones",
+        "B": "En el cálculo de primitivas",
+        "C": "En la continuidad",
+        "D": "En los límites"
+      },
+      "correcta": "B"
+    }
+  ]
+}

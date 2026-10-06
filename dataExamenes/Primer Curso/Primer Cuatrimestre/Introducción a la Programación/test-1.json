@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Introducción a la Programación",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La guía toma Pascal como lenguaje del tema de elementos básicos. ¿Qué incluye ese tema además de los tipos básicos?",
+      "opciones": {
+        "A": "Herencia y polimorfismo en Java",
+        "B": "Sockets TCP",
+        "C": "El modelo entidad-relación",
+        "D": "Tipos definidos por el programador y la documentación del programa"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Las instrucciones de selección y las de iteración forman parte de las instrucciones estructuradas. ¿Qué debe comprobarse al terminar de escribirlas, según el tema?",
+      "opciones": {
+        "A": "Su corrección y su depuración",
+        "B": "Su normalización en tercera forma normal",
+        "C": "Su compilación a código MIPS",
+        "D": "Su licencia de software"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un subprograma puede recibir parámetros. ¿Qué otro concepto del tema limita dónde se puede usar un identificador?",
+      "opciones": {
+        "A": "El diagrama de Gantt",
+        "B": "El rango de una matriz",
+        "C": "La vigencia y el ámbito",
+        "D": "La caché de instrucciones"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El tema de arrays distingue, como mínimo, dos dimensiones. ¿Cuáles cita la guía de forma explícita?",
+      "opciones": {
+        "A": "Arrays unidimensionales y bidimensionales",
+        "B": "Árboles y grafos",
+        "C": "Arrays solo de caracteres y de ficheros",
+        "D": "Arrays dinámicos de Java y listas enlazadas"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un tipo definido por el programador, en Pascal, se declara antes de usarse. ¿En qué tema está esa idea?",
+      "opciones": {
+        "A": "En elementos básicos de Pascal",
+        "B": "En arrays bidimensionales únicamente",
+        "C": "En ficheros únicamente",
+        "D": "En recursividad"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una instrucción compuesta agrupa varias instrucciones entre begin y end. ¿A qué tema pertenece?",
+      "opciones": {
+        "A": "A la recursión lineal",
+        "B": "A los subprogramas",
+        "C": "A los registros",
+        "D": "A las instrucciones estructuradas"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El diseño de un subprograma decide su nombre, sus parámetros y su tarea. ¿Qué aspecto metodológico lo acompaña en la guía?",
+      "opciones": {
+        "A": "Los aspectos metodológicos del propio tema de subprogramas",
+        "B": "La compatibilidad de tipos únicamente",
+        "C": "Los algoritmos de ordenación de arrays únicamente",
+        "D": "Las unidades de disco"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un array unidimensional es una secuencia indexada del mismo tipo. ¿Qué operaciones estudia el tema además de declarar el tipo?",
+      "opciones": {
+        "A": "La deducción natural",
+        "B": "La herencia de clases",
+        "C": "La lectura de un socket",
+        "D": "Las operaciones del tipo array y los algoritmos que lo usan"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La recursión lineal es aquella en la que cada llamada genera como mucho otra llamada. ¿En qué tema se introduce?",
+      "opciones": {
+        "A": "En los elementos básicos de Pascal",
+        "B": "En la introducción a la recursividad",
+        "C": "En los ficheros",
+        "D": "En la documentación del programa"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Documentar un programa explica su propósito y su uso. ¿En qué tema lo pide la guía?",
+      "opciones": {
+        "A": "En los arrays bidimensionales",
+        "B": "En la corrección de bucles únicamente",
+        "C": "En los elementos básicos de Pascal",
+        "D": "En las unidades"
+      },
+      "correcta": "C"
+    }
+  ]
+}

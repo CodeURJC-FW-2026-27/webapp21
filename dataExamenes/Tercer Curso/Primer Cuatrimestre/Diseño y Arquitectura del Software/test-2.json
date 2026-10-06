@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Diseño y Arquitectura del Software",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Un requisito no funcional expresa una cualidad del sistema, no una función concreta. ¿En qué tema se relaciona con la evaluación de la arquitectura?",
+      "opciones": {
+        "A": "En la historia de la Industria 4.0 únicamente",
+        "B": "En los patrones creacionales únicamente",
+        "C": "En el formato MADR únicamente como ejemplo de acta",
+        "D": "En la evaluación de atributos de calidad"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La Industria 4.0 sirve en la guía como contexto de arquitecturas actuales. ¿En qué bloque está ese tema?",
+      "opciones": {
+        "A": "En las pruebas de aceptación",
+        "B": "En la introducción a la arquitectura y los principios de diseño",
+        "C": "En la criptografía",
+        "D": "En la evaluación ATAM exclusivamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un patrón de comportamiento organiza la colaboración entre objetos. ¿Cuál de estos grupos de la guía lo incluye?",
+      "opciones": {
+        "A": "Los patrones de comportamiento, junto a los creacionales y los estructurales",
+        "B": "Los gráficos de control X-R",
+        "C": "Los protocolos de la capa física",
+        "D": "Los patrones de microservicios únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Capturar una decisión arquitectónica evita repetir el razonamiento. ¿Qué formato propone la guía?",
+      "opciones": {
+        "A": "UML solo como diagrama de Gantt",
+        "B": "IEEE 754",
+        "C": "JSON Schema únicamente",
+        "D": "MADR"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Los requisitos no funcionales alimentan la evaluación arquitectónica. ¿En qué tema se relacionan con los atributos de calidad?",
+      "opciones": {
+        "A": "En MADR, solo como acta",
+        "B": "En el concepto de arquitectura, sin evaluación",
+        "C": "En la evaluación de atributos de calidad",
+        "D": "En la Industria 4.0 únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Capturar una decisión permite recuperarla cuando el equipo cambia. ¿Qué tema lo trata?",
+      "opciones": {
+        "A": "Principios de diseño únicamente",
+        "B": "Decisiones de diseño y conocimiento arquitectónico",
+        "C": "Industria 4.0 únicamente",
+        "D": "Evaluación ATAM únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un estilo arquitectónico es más amplio que un patrón de clases. ¿En qué bloque se estudian los estilos?",
+      "opciones": {
+        "A": "En la evaluación",
+        "B": "En estilos, patrones y decisiones de diseño",
+        "C": "En la Industria 4.0, solo como ejemplos de negocio",
+        "D": "En la introducción, solo como definición de arquitectura"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "ATAM enfrenta la arquitectura a escenarios de calidad. ¿Qué no sustituye, según el enfoque del tema?",
+      "opciones": {
+        "A": "El análisis de compromisos",
+        "B": "El uso de escenarios",
+        "C": "La participación de interesados",
+        "D": "La necesidad de identificar atributos de calidad"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La guía menciona ayuda de IA generativa en dos sitios. ¿Cuáles?",
+      "opciones": {
+        "A": "En los patrones creacionales únicamente",
+        "B": "En la toma de decisiones y en la evaluación de calidad",
+        "C": "En ningún tema",
+        "D": "En la historia de la Industria 4.0 únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Separar un sistema en microservicios facilita desplegar partes distintas. ¿En qué tema de patrones se cita?",
+      "opciones": {
+        "A": "En estilos arquitectónicos y patrones de diseño",
+        "B": "En los principios, sin patrones",
+        "C": "En ATAM",
+        "D": "En MADR"
+      },
+      "correcta": "A"
+    }
+  ]
+}

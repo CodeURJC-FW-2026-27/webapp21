@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Metodología de la Programación",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El análisis orientado a objetos precede al diseño en el ciclo de la guía. ¿Qué fase viene después del diseño, antes de las pruebas?",
+      "opciones": {
+        "A": "La simulación de Montecarlo",
+        "B": "La extracción de requisitos de otra asignatura",
+        "C": "La codificación",
+        "D": "La gestión de colas"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un repositorio guarda el histórico del código. ¿En qué tema de codificación lo sitúa la guía?",
+      "opciones": {
+        "A": "En la especificación con predicados",
+        "B": "En la derivación formal",
+        "C": "En la fase de codificación, junto con la programación en equipo",
+        "D": "En la caja blanca únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una prueba de caja negra elige datos a partir de la especificación, sin mirar el código. ¿Qué no necesita conocer?",
+      "opciones": {
+        "A": "El resultado observable",
+        "B": "Las condiciones de la interfaz",
+        "C": "Las entradas y las salidas esperadas",
+        "D": "La implementación interna"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Derivar un algoritmo de forma formal parte de la especificación. ¿Qué lenguaje de condiciones usa el primer tema?",
+      "opciones": {
+        "A": "Hojas de estilo",
+        "B": "Ensamblador MIPS",
+        "C": "Predicados",
+        "D": "Sentencias GRANT"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un ciclo software ordena análisis, diseño, codificación y pruebas. ¿En qué tema se presenta la metodología?",
+      "opciones": {
+        "A": "En la especificación con predicados",
+        "B": "En las pruebas de caja negra",
+        "C": "En metodología y ciclo software",
+        "D": "En la verificación formal"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un patrón de diseño resuelve un problema de estructura que se repite. ¿En qué fase se estudia?",
+      "opciones": {
+        "A": "En la de análisis únicamente",
+        "B": "En la verificación",
+        "C": "En la especificación formal",
+        "D": "En la de diseño"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La caja blanca examina el código y la caja negra examina el comportamiento externo. ¿Qué tema las introduce?",
+      "opciones": {
+        "A": "El de derivación formal",
+        "B": "El de pruebas de software",
+        "C": "El de repositorios",
+        "D": "El de análisis"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un invariante de bucle es propio de la verificación formal. ¿Qué se demuestra con él?",
+      "opciones": {
+        "A": "Que el repositorio no tiene conflictos",
+        "B": "Que el bucle mantiene una propiedad cierta en cada iteración",
+        "C": "Que la prueba de caja negra cubre las clases de equivalencia",
+        "D": "Que la interfaz es usable"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Diseñar orientado a objetos decide clases y relaciones. ¿Qué fase lo precede en el bloque tercero?",
+      "opciones": {
+        "A": "La de codificación",
+        "B": "La de despliegue",
+        "C": "La de análisis",
+        "D": "La de pruebas"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Codificar transforma el diseño en un programa. ¿Qué fase viene después en el temario?",
+      "opciones": {
+        "A": "La derivación de predicados",
+        "B": "El análisis",
+        "C": "Las pruebas de software",
+        "D": "La especificación formal"
+      },
+      "correcta": "C"
+    }
+  ]
+}
