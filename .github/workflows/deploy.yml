@@ -1,0 +1,60 @@
+name: CI/CD - GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Integración Continua (CI): Validación de la estructura y archivos obligatorios
+  ci:
+    name: Integración Continua - Verificación
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar que existen los archivos obligatorios
+        run: |
+          echo "Comprobando archivos web esenciales..."
+          test -f index.html || (echo "Error: No se ha encontrado index.html ." && exit 1)
+          test -f css/custom.css || (echo "Error: No se ha encontrado custom.css ." && exit 2)
+          echo "Todos los archivos requeridos están presentes y verificados correctamente."
+
+  # Despliegue Continuo (CD): Despliegue de los archivos estáticos en GitHub Pages
+  deploy:
+    name: Despliegue Continuo - GitHub Pages
+    needs: ci
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empaquetar artefacto para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
