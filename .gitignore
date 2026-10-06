@@ -64,3 +64,6 @@ yarn-error.log*
 *.swp
 *.swo
 *~
+
+# Exam data, kept out of commits for now
+dataExamenes/

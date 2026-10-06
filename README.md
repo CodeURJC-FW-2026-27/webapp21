@@ -27,3 +27,7 @@
 ### Buscador y Categorización
 * **Buscador:** Búsqueda por texto de los títulos de los simulacros.
 * **Categorización/Filtrado:** Filtrado de los simulacros por asignatura y dificultad.
+
+### Referencias 
+* Plantilla elegida de Bootstrap: [Repositorio](https://github.com/StartBootstrap/startbootstrap-shop-homepage)
+
