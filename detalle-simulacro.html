@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Ensaya - Detalle del simulacro</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/custom.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Ensaya</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Simulacros</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-5 fw-bolder">Estructuras de datos</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">
+                        Curso 1 &middot; Primer cuatrimestre</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="py-5">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-5">
+                        <img class="img-fluid rounded" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="Portada del simulacro Estructuras de datos" />
+                    </div>
+                    <div class="col-md-7">
+                        <span class="badge bg-danger mb-2">Difícil</span>
+                        <span class="badge bg-secondary mb-2">90 min</span>
+                        <p class="mt-3">
+                            Simulacro centrado en pilas, colas, listas enlazadas y árboles binarios.
+                            Incluye preguntas teóricas y de análisis de complejidad.
+                        </p>
+                        <div class="d-flex gap-2 mt-4">
+                            <a href="#!" class="btn btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
+                            <a href="#!" class="btn btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</a>
+                            <a href="index.html" class="btn btn-dark">Volver a Inicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container px-4 px-lg-5">
+                <h2 class="fw-bolder mb-4">Preguntas</h2>
+
+                <div class="accordion" id="questionsAccordion">
+                    <div class="accordion-item mb-3">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#question1">
+                                1. ¿Qué estructura de datos sigue el principio LIFO?
+                            </button>
+                        </h3>
+                        <div id="question1" class="accordion-collapse collapse show" data-bs-parent="#questionsAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li class="list-group-item">a) Cola</li>
+                                    <li class="list-group-item">b) Pila</li>
+                                    <li class="list-group-item">c) Árbol</li>
+                                    <li class="list-group-item">d) Grafo</li>
+                                </ul>
+                                <div class="d-flex gap-2">
+                                    <a href="#!" class="btn btn-sm btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
+                                    <a href="#!" class="btn btn-sm btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question2">
+                                2. ¿Cuál es la complejidad de buscar en un árbol binario de búsqueda equilibrado?
+                            </button>
+                        </h3>
+                        <div id="question2" class="accordion-collapse collapse" data-bs-parent="#questionsAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li class="list-group-item">a) O(1)</li>
+                                    <li class="list-group-item">b) O(n)</li>
+                                    <li class="list-group-item">c) O(log n)</li>
+                                    <li class="list-group-item">d) O(n log n)</li>
+                                </ul>
+                                <div class="d-flex gap-2">
+                                    <a href="#!" class="btn btn-sm btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
+                                    <a href="#!" class="btn btn-sm btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                                        <div class="accordion-item mb-3">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question3">
+                                3. ¿Qué estructura usarías para implementar un algoritmo de recorrido en anchura (BFS)?
+                            </button>
+                        </h3>
+                        <div id="question3" class="accordion-collapse collapse" data-bs-parent="#questionsAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li class="list-group-item">a) Pila</li>
+                                    <li class="list-group-item">b) Cola</li>
+                                    <li class="list-group-item">c) Montículo (heap)</li>
+                                    <li class="list-group-item">d) Tabla hash</li>
+                                </ul>
+                                <div class="d-flex gap-2">
+                                    <a href="#!" class="btn btn-sm btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
+                                    <a href="#!" class="btn btn-sm btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container px-4 px-lg-5">
+                <h2 class="fw-bolder mb-4">Añadir nueva pregunta</h2>
+                <form class="row g-3">
+                    <div class="col-12">
+                        <label for="statement" class="form-label">Enunciado</label>
+                        <textarea class="form-control" id="statement" rows="2"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="option1" class="form-label">Opción A</label>
+                        <input type="text" class="form-control" id="option1" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="option2" class="form-label">Opción B</label>
+                        <input type="text" class="form-control" id="option2" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="option3" class="form-label">Opción C</label>
+                        <input type="text" class="form-control" id="option3" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="option4" class="form-label">Opción D</label>
+                        <input type="text" class="form-control" id="option4" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="correctOption" class="form-label">Respuesta correcta</label>
+                        <select id="correctOption" class="form-select">
+                            <option selected>Opción A</option>
+                            <option>Opción B</option>
+                            <option>Opción C</option>
+                            <option>Opción D</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label for="explanation" class="form-label">Explicación</label>
+                        <textarea class="form-control" id="explanation" rows="2"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-dark">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Ensaya 2026</p></div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
