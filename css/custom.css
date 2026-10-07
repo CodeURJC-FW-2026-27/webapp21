@@ -51,7 +51,7 @@
 }
 
 
-/*classes that could be usefull in the future*/
+/*classes that could be useful in the future*/
 .text-urjc{
    color: var(--urjc-red) !important;
 }
@@ -65,4 +65,16 @@
 .footer-urjc {
    background-color: var(--urjc-red);
    border-top: 3px solid var(--urjc-dark);
+}
+
+/* Photos style*/
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.subject-cover {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
