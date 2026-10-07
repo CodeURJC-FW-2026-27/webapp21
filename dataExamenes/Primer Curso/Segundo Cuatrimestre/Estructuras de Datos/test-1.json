@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Estructuras de Datos",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El primer tema revisa la complejidad algorítmica. ¿Sobre qué enfoque se apoya el tema de tipos abstractos de datos?",
+      "opciones": {
+        "A": "Sobre la normalización de tablas",
+        "B": "Sobre el modelo OSI",
+        "C": "Sobre la especificación formal del tipo, separada de su implementación",
+        "D": "Sobre el cableado de una ALU"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una pila sigue una política de acceso. ¿Cuál es la habitual al usar la estructura que describe la guía?",
+      "opciones": {
+        "A": "El primero en entrar es el primero en salir",
+        "B": "El acceso es solo por clave hash",
+        "C": "El último elemento en entrar es el primero en salir",
+        "D": "Cualquier elemento se borra en tiempo constante por índice"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una cola se usa cuando el orden de atención debe respetar la llegada. ¿Qué política describe ese uso?",
+      "opciones": {
+        "A": "El último en entrar es el primero en salir",
+        "B": "Se extrae siempre el mínimo",
+        "C": "Se recorre en inorden",
+        "D": "El primero en entrar es el primero en salir"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Listas, conjuntos, árboles y grafos son temas distintos. ¿Cuál de ellos agrupa la guía en el bloque de estructuras no lineales junto con los grafos?",
+      "opciones": {
+        "A": "Los ficheros secuenciales",
+        "B": "Las colas",
+        "C": "Los árboles",
+        "D": "Las pilas"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La complejidad algorítmica compara cómo crece el coste. ¿En qué tema se introduce, como repaso de asignaturas previas?",
+      "opciones": {
+        "A": "En la introducción",
+        "B": "En los grafos",
+        "C": "En los árboles",
+        "D": "En los conjuntos"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Especificar un tipo abstracto describe sus operaciones sin fijar la representación. ¿Qué enfoque de programación lo usa?",
+      "opciones": {
+        "A": "El basado en tipos abstractos de datos",
+        "B": "El basado en ficheros de texto",
+        "C": "El basado en la recursión lineal de Pascal",
+        "D": "El basado en la memoria caché"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Apilar un elemento y desapilarlo son operaciones de la pila. ¿Qué elemento devuelve desapilar?",
+      "opciones": {
+        "A": "Cualquiera, sin orden",
+        "B": "El de clave mínima",
+        "C": "El primero que se apiló",
+        "D": "El último que se apiló"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Encolar y desencolar definen la cola. ¿Qué elemento sale primero si no hay prioridades?",
+      "opciones": {
+        "A": "El último que entró",
+        "B": "El que lleva más tiempo en la cola",
+        "C": "La raíz del árbol",
+        "D": "El de mayor clave"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una lista permite insertar y borrar en posiciones intermedias. ¿En qué bloque de la guía están listas, pilas y colas?",
+      "opciones": {
+        "A": "En las estructuras de datos lineales",
+        "B": "En las no lineales",
+        "C": "En los grafos",
+        "D": "En los preliminares únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un árbol organiza los datos en una jerarquía con raíz y subárboles. ¿Qué otra estructura no lineal estudia la guía?",
+      "opciones": {
+        "A": "Las colas",
+        "B": "Las pilas",
+        "C": "Los grafos",
+        "D": "Los conjuntos"
+      },
+      "correcta": "C"
+    }
+  ]
+}

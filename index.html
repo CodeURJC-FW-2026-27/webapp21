@@ -6,56 +6,74 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Ensaya</title>
+        <!--FAV ICON (ICONO QUE APARECE EN EL NAVEGADOR)-->
+        <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" /> 
+        <!-- Google Fonts: Inter (Corporative typography of the URJC) -->                                                                                    
+        <link rel="preconnect" href="https://fonts.googleapis.com">                                                                                   
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>                                                                          
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Bootstrap CSS (v5.2.3)-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <!-- Estilos personalizados propios de la aplicación -->
+        <!-- Custom styles for the web -->
         <link href="css/custom.css" rel="stylesheet" />
     </head>
     <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <!-- nav:
+            - navbar & navbar-expand-lg: flexbox wrapper, collapses into a toggle menu below the 992px breakpoint (lg)
+            - navbar-dark & bg-dark: dark theme palette
+            - sticky-top: locks the navigation bar at the top of the viewport during scrolling -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"> 
+            <div class="container-fluid px-4 px-lg-5"> <!--with container-fluid we ensure full-width layout -->
+                <!--the web icon is the button to go back to index.html too-->
+                <a class="navbar-brand d-flex align-items-center me-1" href="index.html" aria-label="Ensaya - Inicio">
+                    <img src="assets/logo-white.svg" alt="Ensaya - Software Engineering URJC" height="55" class="d-inline-block" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-0">
+                        <li class="nav-item"><a class="nav-link" href="#simulacros">Simulacros</a></li><!--this is not implemented yet-->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Asignaturas</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                <li><a class="dropdown-item" href="#!">Fundamentos de la Web</a></li>
+                                <li><a class="dropdown-item" href="#!">Estructuras de Datos</a></li>
+                                <li><a class="dropdown-item" href="#!">Ingeniería de Requisitos</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                                <li><a class="dropdown-item" href="#!">Todas las asignaturas</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros</a></li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-light" href="#!">
+                            <i class="bi bi-person-circle me-1"></i>
+                            Mi Cuenta <!--in the next assignment the idea is to have SSO login using the URJC student's account -->
+                        </a>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </nav>    
         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">Ensaya</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Práctica y desarrolla todo tu potencial</p>
+                    <p class="lead fw-normal text-white-50 mb-0">Por estudiantes. Para estudiantes.</p>
                 </div>
             </div>
         </header>
-        <!-- Section-->
-        <section class="py-5">
+        <!-- Catalog section-->
+        <section class="py-5" id="simulacros">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <!-- Action button to create a new simulation -->
+                <div class="d-flex justify-content-end mb-4">
+                    <a href="nuevo-simulacro.html" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nuevo simulacro</a>
+                </div>
+                <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
@@ -78,7 +96,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <div class="badge bg-dark text-white position-absolute top-0 end-0 m-2">Sale</div>
                             <!-- Product image-->
                             <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                             <!-- Product details-->
@@ -108,7 +126,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <div class="badge bg-dark text-white position-absolute top-0 end-0 m-2">Sale</div>
                             <!-- Product image-->
                             <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                             <!-- Product details-->
@@ -157,7 +175,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <div class="badge bg-dark text-white position-absolute top-0 end-0 m-2">Sale</div>
                             <!-- Product image-->
                             <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                             <!-- Product details-->
@@ -198,7 +216,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <div class="badge bg-dark text-white position-absolute top-0 end-0 m-2">Sale</div>
                             <!-- Product image-->
                             <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                             <!-- Product details-->
@@ -255,9 +273,58 @@
                 </div>
             </div>
         </section>
+
+        <!-- About section (About us)-->
+        <section class="py-5 bg-light border-top" id="about">
+            <div class="container px-4 px-lg-5">
+                <!-- Centered Grid Layout:
+                    - justify-content-center: centers columns horizontally along the Flexbox row
+                    - col-lg-8: Limits width to 8 out of 12 columns on large screens -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-4">
+                            <!--title in bold-->
+                            <h2 class="fw-bolder">Sobre nosotros</h2>
+                            <!--subtitle-->
+                            <p class="text-muted mb-0">Por qué nació Ensaya</p>
+                        </div>
+                        <!-- Content Card:
+                            - border-0 & shadow-sm: Modern flat design using subtle box-shadow instead of standard borders.
+                            - p-4 p-md-5: Responsive internal padding (increases from level 4 to 5 on medium+ screens).
+                            - lead & fs-6: Introductory text styling with normalized font sizing. -->
+                        <div class="card border-0 shadow-sm p-4 p-md-5">
+                            <p class="lead fs-6 mb-3">
+                                Somos Antonio, Irene y David, tres estudiantes de Ingeniería del Software y Matemáticas en la URJC.
+                            </p>
+                            <p class="mb-3">
+                                La idea de montar esta página viene de nuestra propia experiencia en los primeros cursos: cuando estábamos perdidos con las asignaturas, tuvimos la suerte de que gente de cursos superiores nos echó un cable pasándonos preguntas tipo test, exámenes de convocatorias pasadas y consejos de  como debíamos enfrentarnos a cada asignatura.
+                            </p>
+                            <p class="mb-3">
+                                Ahora que estamos acabando la carrera, creemos que lo justo es hacer lo mismo. Queremos que los compañeros que venís por detrás tengáis un sitio cómodo donde ensayar con preguntas reales de las asignaturas sin tener que andar buscando PDFs con publicidad o recopilatorios por mil sitios.
+                            </p>
+                            <p class="mb-0 fw-bold">
+                                Un mismo <span class="text-urjc" >sitio</span>. Toda la <span class="text-urjc" >carrera</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        <footer class="py-4 footer-urjc">
+            <div class="container text-center text-white">
+                <p class="m-0 mb-1 fw-medium">
+                    Made by 
+                    <a href="https://github.com/irenermc" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline">Irene Ramos</a>, 
+                    <a href="https://github.com/David-2885" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline">David Sticea</a> &amp; 
+                    <a href="https://github.com/antoniomachuca" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline">Antonio Machuca</a> &mdash; 2026
+                </p>
+                <p class="m-0 small text-white-50">
+                    Ensaya &middot; Grado en Ingeniería del Software &middot; Fundamentos de la Web &middot; URJC
+                </p>
+            </div>
         </footer>
+        <!-- Bootstrap core JS, we should ask if we can put this or not-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

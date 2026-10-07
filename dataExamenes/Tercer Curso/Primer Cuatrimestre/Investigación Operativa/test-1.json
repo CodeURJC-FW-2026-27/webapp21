@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Investigación Operativa",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La solución gráfica de un problema lineal es práctica solo con pocas variables. ¿Qué análisis sigue a la solución en ese tema?",
+      "opciones": {
+        "A": "La dualidad y su interpretación económica",
+        "B": "La segmentación de instrucciones",
+        "C": "La usabilidad",
+        "D": "La firma digital"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una variable binaria solo toma los valores 0 o 1. ¿En qué tema se modela junto con la programación entera y mixta?",
+      "opciones": {
+        "A": "En la introducción histórica",
+        "B": "En los fenómenos de espera",
+        "C": "En la optimización lineal entera y combinatoria",
+        "D": "En la simulación de Montecarlo"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una cola de espera se describe con llegadas, servicio y disciplina. ¿Qué modelos cita la guía como caso básico?",
+      "opciones": {
+        "A": "Los modelos poissonianos",
+        "B": "Los modelos de von Neumann",
+        "C": "Los modelos de caja negra",
+        "D": "Los modelos entidad-relación"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La simulación de Montecarlo usa números aleatorios para estimar un resultado. ¿A qué bloque pertenece?",
+      "opciones": {
+        "A": "Al bloque de modelos estocásticos",
+        "B": "Al bloque de introducción únicamente",
+        "C": "Al bloque de modelos deterministas",
+        "D": "Al bloque de álgebra lineal"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Formular un modelo traduce el problema a variables, objetivo y restricciones. ¿Qué bloque enseña esa metodología?",
+      "opciones": {
+        "A": "El de introducción",
+        "B": "El de simulación únicamente",
+        "C": "El estocástico únicamente",
+        "D": "El de enteros únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La solución gráfica vale para programas lineales con dos variables. ¿Qué más incluye el tema de optimización lineal?",
+      "opciones": {
+        "A": "Algoritmos de resolución, software y dualidad",
+        "B": "Pruebas de caja negra",
+        "C": "Redes neuronales",
+        "D": "Protocolos de transporte"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La dualidad asocia a cada problema lineal otro con información económica. ¿En qué tema se interpreta?",
+      "opciones": {
+        "A": "En optimización lineal",
+        "B": "En la historia",
+        "C": "En fenómenos de espera",
+        "D": "En simulación"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una variable entera no puede fraccionarse. ¿Qué otras variables estudia el tema junto a las enteras?",
+      "opciones": {
+        "A": "Las de una distribución normal únicamente",
+        "B": "Las de un generador congruencial",
+        "C": "Las de estado de una cola",
+        "D": "Las binarias y las de los modelos mixtos"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un modelo poissoniano de colas supone llegadas con esa ley. ¿Qué medidas calcula el tema?",
+      "opciones": {
+        "A": "La cobertura de código",
+        "B": "Medidas de eficiencia de la cola",
+        "C": "La complejidad ciclomática",
+        "D": "El determinante"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Generar números aleatorios es el primer paso de muchas simulaciones. ¿Qué método cita la guía por su nombre?",
+      "opciones": {
+        "A": "ATAM",
+        "B": "El símplex",
+        "C": "Minimax",
+        "D": "La simulación de Montecarlo"
+      },
+      "correcta": "D"
+    }
+  ]
+}

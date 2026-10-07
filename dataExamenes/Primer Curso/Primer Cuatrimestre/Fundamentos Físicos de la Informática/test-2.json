@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Fundamentos Físicos de la Informática",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El diodo Zener y el diodo LED aparecen como aplicaciones del tema de diodos. ¿Qué curva caracteriza el comportamiento del diodo?",
+      "opciones": {
+        "A": "La curva característica tensión-corriente",
+        "B": "La curva de Gauss de una muestra",
+        "C": "La curva de aprendizaje de una red neuronal",
+        "D": "La curva de histéresis de un núcleo magnético aislado"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El transistor bipolar y el transistor de efecto de campo están en el mismo tema. ¿Qué circuitos digitales construye la guía con transistores?",
+      "opciones": {
+        "A": "Divisores de tensión únicamente",
+        "B": "Fuentes de Thevenin",
+        "C": "Puertas lógicas",
+        "D": "Buses PCI Express"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El tema de sistemas digitales distingue dos familias de circuitos. ¿Cuáles?",
+      "opciones": {
+        "A": "Combinacionales y secuenciales",
+        "B": "Intrínsecos y extrínsecos",
+        "C": "Analógicos y ópticos",
+        "D": "Continuos y de alterna"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La ley de Joule, en el tema de corriente continua, describe el efecto de la corriente en un conductor. ¿Con qué se relaciona de forma directa?",
+      "opciones": {
+        "A": "Con el campo magnético de un condensador ideal",
+        "B": "Con la energía disipada en forma de calor",
+        "C": "Con la frecuencia de un oscilador",
+        "D": "Con la masa de un portador en el vacío"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La ley de Ohm relaciona tensión y corriente mediante la resistencia. ¿En qué apartado está?",
+      "opciones": {
+        "A": "En sistemas combinacionales",
+        "B": "En la teoría de circuitos",
+        "C": "En semiconductores intrínsecos",
+        "D": "En electromagnetismo, como ley de Faraday"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Polarizar una unión P-N en directa o en inversa cambia la corriente que la atraviesa. ¿Qué dispositivo se basa en esa unión?",
+      "opciones": {
+        "A": "El diodo",
+        "B": "La resistencia óhmica",
+        "C": "La malla de Kirchhoff",
+        "D": "El condensador de placas"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El transistor bipolar tiene emisor, base y colector. ¿Qué otro transistor estudia el mismo tema?",
+      "opciones": {
+        "A": "El divisor de corriente",
+        "B": "El condensador",
+        "C": "El transistor de efecto de campo",
+        "D": "El diodo Zener"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un circuito combinacional depende solo de las entradas actuales. ¿De qué depende además un circuito secuencial?",
+      "opciones": {
+        "A": "Solo de la ley de Joule",
+        "B": "Solo del campo magnético externo",
+        "C": "Del estado anterior",
+        "D": "Solo de la temperatura del semiconductor intrínseco"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La corriente eléctrica es un movimiento de cargas. ¿En qué tema de la guía se define así?",
+      "opciones": {
+        "A": "En diodos LED únicamente",
+        "B": "En puertas lógicas",
+        "C": "En circuitos de corriente continua",
+        "D": "En sistemas digitales"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El apartado de introducción a los sistemas digitales cierra la asignatura. ¿Qué conceptos básicos pide?",
+      "opciones": {
+        "A": "Circuitos secuenciales y combinacionales, y sus aplicaciones",
+        "B": "Solo la unión P-N sin polarizar",
+        "C": "Solo condensadores",
+        "D": "Solo la ley de Ohm"
+      },
+      "correcta": "A"
+    }
+  ]
+}

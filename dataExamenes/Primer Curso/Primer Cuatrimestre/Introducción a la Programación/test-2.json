@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Introducción a la Programación",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La recursividad del temario se limita en una primera aproximación a un esquema. ¿Cuál?",
+      "opciones": {
+        "A": "La programación dinámica",
+        "B": "La recursión lineal",
+        "C": "La recursión mutua de tres procedimientos",
+        "D": "El backtracking con poda"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El tipo registro agrupa campos. ¿Con qué otro tipo lo estudia el último tema de la guía?",
+      "opciones": {
+        "A": "Con el tipo clase abstracta",
+        "B": "Con el tipo interfaz de Java",
+        "C": "Con el tipo puntero de C exclusivamente",
+        "D": "Con el tipo fichero"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La compatibilidad entre tipos aparece en el primer tema. ¿En qué lenguaje sitúa la guía esos elementos básicos?",
+      "opciones": {
+        "A": "Pascal",
+        "B": "Java",
+        "C": "SQL",
+        "D": "Python"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Unidad, en el tema de registros y ficheros, se refiere al soporte donde reside la información del fichero. ¿Qué otro aspecto cubre ese tema?",
+      "opciones": {
+        "A": "Los protocolos de la capa de transporte",
+        "B": "Los tipos de ficheros y su uso",
+        "C": "Los códigos deontológicos",
+        "D": "Los listeners de una interfaz gráfica"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La selección elige una rama según una condición. ¿Qué otra familia de instrucciones estructuradas repite un bloque?",
+      "opciones": {
+        "A": "Las instrucciones de iteración",
+        "B": "Los tipos definidos por el programador",
+        "C": "Las unidades",
+        "D": "Los registros"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El ámbito de un identificador es la zona del programa donde puede usarse. ¿En qué tema se estudia junto con la vigencia?",
+      "opciones": {
+        "A": "En subprogramas",
+        "B": "En recursividad",
+        "C": "En ficheros",
+        "D": "En arrays"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un array bidimensional se recorre con dos índices. ¿Para qué los usa el tema, además de almacenar datos?",
+      "opciones": {
+        "A": "Para abrir unidades de disco",
+        "B": "Para declarar subprogramas anidados únicamente",
+        "C": "Para algoritmos sobre arrays",
+        "D": "Para demostrar la recursión lineal"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un registro agrupa campos de tipos posiblemente distintos. ¿Cómo lo llama la guía?",
+      "opciones": {
+        "A": "Tipo registro",
+        "B": "Tipo array",
+        "C": "Tipo fichero",
+        "D": "Tipo subprograma"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un fichero de texto y un fichero binario no se leen igual. ¿Qué tema distingue los tipos de fichero y su uso?",
+      "opciones": {
+        "A": "El tema de instrucciones de selección",
+        "B": "El tema de registros y ficheros",
+        "C": "El tema de compatibilidad de tipos",
+        "D": "El tema de recursión lineal"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La corrección de una instrucción estructurada comprueba que hace lo previsto. ¿Qué actividad práctica la acompaña?",
+      "opciones": {
+        "A": "La compatibilidad entre reales y enteros",
+        "B": "La definición de un tipo enumerado",
+        "C": "La declaración de unidades",
+        "D": "La depuración"
+      },
+      "correcta": "D"
+    }
+  ]
+}

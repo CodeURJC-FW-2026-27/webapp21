@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Cálculo",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El polinomio de Taylor aproxima una función derivable. ¿Qué teorema justifica el resto de esa aproximación en la guía?",
+      "opciones": {
+        "A": "El teorema central del límite",
+        "B": "El teorema de Thevenin",
+        "C": "El teorema de Bayes",
+        "D": "El teorema de Taylor"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La integración por partes y el cambio de variable son técnicas de primitivas. ¿Qué regla evalúa una integral definida a partir de una primitiva?",
+      "opciones": {
+        "A": "La regla de la cadena",
+        "B": "La regla de Cramer",
+        "C": "La regla de Barrow",
+        "D": "La regla de Laplace"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una serie geométrica es un ejemplo de serie sumable del temario. ¿Qué criterio usa el signo alterno para la convergencia?",
+      "opciones": {
+        "A": "El criterio de Stolz",
+        "B": "El criterio de Leibniz",
+        "C": "El criterio de la raíz solamente",
+        "D": "El criterio de Gauss"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una sucesión monótona y acotada converge. ¿Qué teorema de la guía garantiza un punto de acumulación en un conjunto infinito y acotado de reales?",
+      "opciones": {
+        "A": "El teorema de Bolzano-Weierstrass",
+        "B": "El teorema fundamental del cálculo",
+        "C": "El teorema de Norton",
+        "D": "El teorema de Rolle"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Los números complejos extienden los reales con la unidad imaginaria. ¿En qué tema se introducen?",
+      "opciones": {
+        "A": "En el teorema de Rolle",
+        "B": "En las series numéricas",
+        "C": "En las integrales definidas",
+        "D": "En la recta real y los números complejos"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El teorema del valor medio de Lagrange relaciona el incremento de la función con una derivada intermedia. ¿Junto a qué otro teorema de valores medios lo cita la guía?",
+      "opciones": {
+        "A": "Junto al de Bolzano-Weierstrass únicamente",
+        "B": "Junto al de Cauchy y al de Rolle",
+        "C": "Junto al criterio de la raíz",
+        "D": "Junto a la regla de Barrow"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una integral impropia de primera especie tiene un intervalo de integración no acotado. ¿En qué tema se clasifican las de primera, segunda y tercera especie?",
+      "opciones": {
+        "A": "En límites",
+        "B": "En el polinomio de Taylor",
+        "C": "En sucesiones",
+        "D": "En integrales definidas"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una sucesión monótona y acotada converge. ¿Qué criterio usa subsucesiones para detectar divergencia en ese tema?",
+      "opciones": {
+        "A": "La regla de l'Hôpital",
+        "B": "El teorema fundamental del cálculo",
+        "C": "El criterio de Leibniz",
+        "D": "El criterio de divergencia basado en subsucesiones"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una serie geométrica de razón menor que uno en valor absoluto converge. ¿Qué otras series sumables cita el tema?",
+      "opciones": {
+        "A": "Las aritmético-geométricas y las telescópicas",
+        "B": "Las series de Fourier",
+        "C": "Las series de Taylor únicamente",
+        "D": "Las integrales racionales"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La convergencia absoluta implica la convergencia ordinaria. ¿En qué tema se estudia, junto al criterio de Leibniz?",
+      "opciones": {
+        "A": "En continuidad",
+        "B": "En primitivas",
+        "C": "En series de números",
+        "D": "En números complejos"
+      },
+      "correcta": "C"
+    }
+  ]
+}

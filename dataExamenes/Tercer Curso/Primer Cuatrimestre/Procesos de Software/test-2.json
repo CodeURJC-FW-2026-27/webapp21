@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Procesos de Software",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El ciclo de vida abarca desde la concepción hasta el retiro. ¿Qué fases intermedias describe el tema?",
+      "opciones": {
+        "A": "Solo entrevistas y contratos",
+        "B": "Planificación, análisis, diseño, implementación y pruebas",
+        "C": "Solo captura y cifrado",
+        "D": "Solo codificación y despliegue"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una entrevista con los interesados sirve para conocer necesidades. ¿En qué tema se usa junto con el modelado de requisitos?",
+      "opciones": {
+        "A": "En la gestión de las necesidades del proceso",
+        "B": "En Kanban, solo como tablero",
+        "C": "En los modelos en cascada, solo como historia",
+        "D": "En la estimación de hitos únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Agile prioriza la respuesta al cambio. ¿Frente a qué metodología secuencial lo contrasta el tema?",
+      "opciones": {
+        "A": "Frente a Docker",
+        "B": "Frente a CMMI como único opuesto",
+        "C": "Frente a la cascada",
+        "D": "Frente a ATAM"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Adaptar el modelo de proceso depende de la complejidad y del cliente. ¿Qué tema enseña a elegir entre cascada, espiral e incremental?",
+      "opciones": {
+        "A": "Los modelos de procesos en el desarrollo",
+        "B": "La gestión del cambio de requisitos únicamente",
+        "C": "La planificación de hitos únicamente",
+        "D": "Las metodologías ágiles únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Elegir cascada, espiral o incremental depende del proyecto. ¿Qué factores cita el tema de modelos?",
+      "opciones": {
+        "A": "La complejidad del sistema y las necesidades del cliente",
+        "B": "Solo el número de servidores",
+        "C": "Solo la licencia",
+        "D": "Solo el lenguaje de programación"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Planificar, analizar, diseñar, implementar y probar son fases del ciclo de vida. ¿Qué abarca además el tema?",
+      "opciones": {
+        "A": "Desde la concepción hasta el retiro",
+        "B": "Solo el contrato",
+        "C": "Solo la formación",
+        "D": "Solo la codificación"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Agile busca entregas frecuentes y respuesta al cambio. ¿Qué metodología secuencial usa el tema como contraste?",
+      "opciones": {
+        "A": "El modelo en espiral como sinónimo de Agile",
+        "B": "Kanban como sinónimo de cascada",
+        "C": "El ciclo de vida como sinónimo de Scrum",
+        "D": "La cascada"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Asignar tareas y detectar dependencias evita bloqueos. ¿En qué tema se hace?",
+      "opciones": {
+        "A": "En la retirada del sistema",
+        "B": "En los modelos únicamente",
+        "C": "En la planificación de procesos software",
+        "D": "En las metodologías únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Modelar requisitos y entrevistar a los interesados concreta las necesidades. ¿Qué hay que hacer si esas necesidades cambian?",
+      "opciones": {
+        "A": "Reiniciar el proyecto sin registro",
+        "B": "Congelar el código y no el requisito",
+        "C": "Gestionar el cambio y mantener la coherencia",
+        "D": "Ignorar al cliente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Scrum organiza el trabajo en iteraciones con roles y reuniones. ¿En qué tema está?",
+      "opciones": {
+        "A": "En las metodologías de desarrollo software",
+        "B": "En el modelo en cascada",
+        "C": "En el retiro del sistema",
+        "D": "En la estimación de hitos únicamente"
+      },
+      "correcta": "A"
+    }
+  ]
+}

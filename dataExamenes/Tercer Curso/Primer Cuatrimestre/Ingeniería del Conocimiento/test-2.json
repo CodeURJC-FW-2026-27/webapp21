@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Ingeniería del Conocimiento",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Q-learning es un método de aprendizaje por refuerzo. ¿Sobre qué modelo se apoya el tema?",
+      "opciones": {
+        "A": "Las redes de colas poissonianas",
+        "B": "La deducción natural de Gentzen",
+        "C": "Los procesos de decisión de Markov",
+        "D": "El modelo relacional"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "OWL es un lenguaje de ontologías. ¿Con qué lenguaje de consulta lo acompaña el tema de web semántica?",
+      "opciones": {
+        "A": "XPath únicamente",
+        "B": "SQL",
+        "C": "SPARQL",
+        "D": "Prolog únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un subconjunto borroso admite grados de pertenencia. ¿En qué tema se estudia la inferencia asociada?",
+      "opciones": {
+        "A": "En la búsqueda multiagente",
+        "B": "En el aprendizaje de redes neuronales únicamente",
+        "C": "En el razonamiento con imprecisión",
+        "D": "En la búsqueda en anchura"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El forward checking y la consistencia de arco mejoran la búsqueda con restricciones. ¿Qué algoritmo de consistencia cita la guía?",
+      "opciones": {
+        "A": "A*",
+        "B": "Minimax",
+        "C": "ID3",
+        "D": "MAC"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El diseño de una heurística cambia el rendimiento de A*. ¿Qué tema trata la calidad de esas funciones y la búsqueda en línea?",
+      "opciones": {
+        "A": "La búsqueda no informada",
+        "B": "El aprendizaje por refuerzo",
+        "C": "La búsqueda heurística avanzada",
+        "D": "Las ontologías"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El backtracking cronológico prueba un valor y vuelve atrás si falla. ¿En qué problemas se usa, según el tema 6?",
+      "opciones": {
+        "A": "En problemas de satisfacción de restricciones",
+        "B": "En juegos de suma cero únicamente",
+        "C": "En la web de datos únicamente",
+        "D": "En redes neuronales"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La consistencia de arco elimina valores imposibles antes de buscar. ¿Qué algoritmo la aplica en la guía?",
+      "opciones": {
+        "A": "Q-learning",
+        "B": "MAC",
+        "C": "Minimax",
+        "D": "ID3"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una red neuronal aprende pesos a partir de ejemplos. ¿Cómo llama el tema a ese aprendizaje?",
+      "opciones": {
+        "A": "Búsqueda no informada",
+        "B": "Razonamiento borroso",
+        "C": "Aprendizaje supervisado con ID3 únicamente",
+        "D": "Aprendizaje subsimbólico"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un conjunto borroso admite pertenencia parcial. ¿Qué operaciones estudia ese tema además de la definición?",
+      "opciones": {
+        "A": "Operaciones, implicación e inferencia borrosa",
+        "B": "Solo SPARQL",
+        "C": "Solo la poda alfa-beta",
+        "D": "Solo la búsqueda en anchura"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Q-learning actualiza el valor de una acción en un estado. ¿De qué procesos parte el tema?",
+      "opciones": {
+        "A": "De las colas M/M/1",
+        "B": "De las ontologías OWL",
+        "C": "De los procesos de decisión de Markov",
+        "D": "De la deducción natural"
+      },
+      "correcta": "C"
+    }
+  ]
+}

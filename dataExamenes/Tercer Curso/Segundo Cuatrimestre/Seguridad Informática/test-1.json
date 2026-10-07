@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Seguridad Informática",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La introducción de la guía cita tres pilares y un documento de estrategia. ¿Cómo se llama ese documento?",
+      "opciones": {
+        "A": "El diagrama de Gantt",
+        "B": "El esquema entidad-relación",
+        "C": "El plan director de seguridad",
+        "D": "El certificado TOEIC"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un exploit aprovecha una vulnerabilidad. ¿Qué es una vulnerabilidad en el tema de conceptos básicos?",
+      "opciones": {
+        "A": "Una política de seguridad",
+        "B": "Una debilidad que puede ser aprovechada",
+        "C": "Un certificado digital",
+        "D": "Un ataque ya consumado"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un ataque de hombre en el medio intercepta la comunicación entre dos partes. ¿En qué tema está?",
+      "opciones": {
+        "A": "En las contramedidas del desarrollador únicamente",
+        "B": "En la criptografía de clave pública únicamente",
+        "C": "En los ataques a redes IP y protocolos",
+        "D": "En el malware únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "XSS y XSRF son falsificaciones contra aplicaciones web. ¿En qué tema están?",
+      "opciones": {
+        "A": "En la denegación de servicio volumétrica",
+        "B": "En Kerberos",
+        "C": "En el malware",
+        "D": "En los ataques a aplicaciones y servicios"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El factor humano es una causa habitual de incidentes. ¿En qué tema de introducción lo cita la guía, junto a políticas y procedimientos?",
+      "opciones": {
+        "A": "En el malware",
+        "B": "En las VPN",
+        "C": "En la introducción a la seguridad",
+        "D": "En la criptografía"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una amenaza puede aprovechar una vulnerabilidad. ¿Qué objeto de ese tema es el fallo concreto del sistema?",
+      "opciones": {
+        "A": "El incidente ya cerrado",
+        "B": "La política",
+        "C": "La vulnerabilidad",
+        "D": "El plan director"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Recoger información es una fase temprana del ataque. ¿Qué tema describe las fases y los tipos de adversario?",
+      "opciones": {
+        "A": "Los mecanismos criptográficos",
+        "B": "Las contramedidas de usuario",
+        "C": "El presente y el futuro",
+        "D": "La anatomía de un ataque"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El secuestro de sesión toma una comunicación ya autenticada. ¿En qué tema de ataques de red está?",
+      "opciones": {
+        "A": "En el malware",
+        "B": "En XSS únicamente",
+        "C": "En ataques a redes IP y protocolos",
+        "D": "En los certificados"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un desbordamiento de buffer escribe fuera de la zona reservada. ¿Junto a qué otras técnicas de aplicación lo estudia la guía?",
+      "opciones": {
+        "A": "Junto a DES y AES únicamente",
+        "B": "Junto a la DMZ",
+        "C": "Junto a las inyecciones y a XSS y XSRF",
+        "D": "Junto a IPsec"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un virus, un gusano y un troyano son clases de malware. ¿Qué más estudia ese tema?",
+      "opciones": {
+        "A": "Solo el plan director",
+        "B": "Solo la firma digital",
+        "C": "Vectores de infección y mecanismos de defensa",
+        "D": "Solo las VPN"
+      },
+      "correcta": "C"
+    }
+  ]
+}

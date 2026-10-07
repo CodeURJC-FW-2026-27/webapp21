@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Informática y Sociedad",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Humanismo y transhumanismo cierran el apartado de transformaciones sociales. ¿En qué marco los sitúa la guía?",
+      "opciones": {
+        "A": "En el modelo relacional",
+        "B": "En la nueva era tecnológica",
+        "C": "En la arquitectura von Neumann",
+        "D": "En la teoría de colas"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La digitalización y la gestión ágil de la información pertenecen al desarrollo de la informática. ¿Qué historia pide estudiar ese apartado?",
+      "opciones": {
+        "A": "La historia de la deducción natural",
+        "B": "La historia del cálculo integral",
+        "C": "La historia de la informática",
+        "D": "La historia de Ethernet exclusivamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Internet influye en la sociedad según el temario de TIC. ¿Qué otro fenómeno informativo se estudia en ese mismo punto?",
+      "opciones": {
+        "A": "El algoritmo minimax",
+        "B": "El bus PCI Express",
+        "C": "La forma normal de Boyce-Codd",
+        "D": "El periodismo digital y la posverdad"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Los nuevos modelos de negocio aparecen entre las transformaciones económicas. ¿Qué proceso de las organizaciones los acompaña en la guía?",
+      "opciones": {
+        "A": "La compilación a ensamblador",
+        "B": "La gestión de interrupciones",
+        "C": "La factorización de matrices",
+        "D": "La transformación digital"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La posverdad describe un entorno en el que los hechos pesan menos que la emoción. ¿Junto a qué práctica informativa la cita la guía?",
+      "opciones": {
+        "A": "Junto a la teoría de colas",
+        "B": "Junto al periodismo digital y la web 2.0",
+        "C": "Junto a la lógica de predicados",
+        "D": "Junto al software de sistemas"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La cuarta revolución industrial se apoya en la digitalización de la producción. ¿Qué reto empresarial cita el mismo apartado?",
+      "opciones": {
+        "A": "La complejidad ciclomática",
+        "B": "La poda alfa-beta",
+        "C": "La sostenibilidad",
+        "D": "El complemento a 2"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Los Objetivos de Desarrollo Sostenible relacionan la tecnología con metas sociales. ¿En qué tipo de transformación los sitúa la guía?",
+      "opciones": {
+        "A": "En la estadística descriptiva",
+        "B": "En las transformaciones sociales y políticas",
+        "C": "En la arquitectura de computadores",
+        "D": "En la combinatoria"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Los nuevos modelos de negocio nacen de plataformas y datos. ¿Qué proceso de las organizaciones los precede en el temario?",
+      "opciones": {
+        "A": "La factorización de matrices",
+        "B": "La transformación digital",
+        "C": "La gestión de memoria",
+        "D": "La compilación"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El desafío de la inteligencia artificial, según la guía, afecta a la ciencia y al conocimiento. ¿En qué fundamento epistémico se plantea?",
+      "opciones": {
+        "A": "En el modelo relacional",
+        "B": "En el ensamblador",
+        "C": "En las licencias BSD",
+        "D": "En los de la sociedad de la información"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La historia de la informática sirve para entender la sociedad actual. ¿Qué dos evoluciones pide distinguir el primer apartado?",
+      "opciones": {
+        "A": "La de HTML y la de CSS únicamente",
+        "B": "La del hardware y la del software",
+        "C": "La del cálculo y la del álgebra",
+        "D": "La de TCP y la de UDP"
+      },
+      "correcta": "B"
+    }
+  ]
+}

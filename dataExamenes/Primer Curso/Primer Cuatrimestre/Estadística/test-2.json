@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Estadística",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La regresión lineal simple de la guía incluye validación del modelo. ¿Qué otra relación estudia ese mismo tema?",
+      "opciones": {
+        "A": "La correlación",
+        "B": "La independencia de sucesos",
+        "C": "La diagonalización de matrices",
+        "D": "La inducción electromagnética"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una población y una muestra se distinguen en el tema de inferencia. ¿Qué es la muestra?",
+      "opciones": {
+        "A": "El valor verdadero del parámetro",
+        "B": "El conjunto de todos los individuos de interés",
+        "C": "Un subconjunto de la población del que se obtienen los datos",
+        "D": "El error de tipo I del contraste"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La probabilidad condicionada deja de simplificarse como el producto de las probabilidades cuando los sucesos no cumplen una propiedad. ¿Cuál?",
+      "opciones": {
+        "A": "La independencia",
+        "B": "La linealidad",
+        "C": "La continuidad",
+        "D": "La normalidad"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El resumen numérico y el resumen gráfico pertenecen al primer tema. ¿Cómo se llama ese bloque?",
+      "opciones": {
+        "A": "Diseño de experimentos",
+        "B": "Estadística descriptiva",
+        "C": "Regresión múltiple",
+        "D": "Inferencia estadística"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La moda es el valor más frecuente. ¿En qué grupo de medidas la clasifica el primer tema?",
+      "opciones": {
+        "A": "En las medidas de dispersión",
+        "B": "En las medidas de tendencia",
+        "C": "En los contrastes de hipótesis",
+        "D": "En los intervalos de confianza"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El rango o amplitud es la diferencia entre el mayor y el menor valor. ¿Qué tipo de medida es?",
+      "opciones": {
+        "A": "Un estimador de la pendiente",
+        "B": "Una probabilidad condicionada",
+        "C": "Una medida de dispersión",
+        "D": "Una medida de tendencia central"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Los cuantiles, como los cuartiles, parten la distribución ordenada. ¿Junto a qué medidas los estudia la guía?",
+      "opciones": {
+        "A": "Junto al teorema de Bayes",
+        "B": "Junto al muestreo aleatorio simple únicamente",
+        "C": "Junto a la regresión múltiple",
+        "D": "Junto a la media, la moda y la mediana"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La función de distribución acumula probabilidad hasta un valor. ¿De qué objeto es una característica en el tema 3?",
+      "opciones": {
+        "A": "De un diagrama de sectores",
+        "B": "De una variable aleatoria",
+        "C": "De una muestra únicamente",
+        "D": "De un contraste de dos colas"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un contraste de hipótesis decide entre una hipótesis nula y una alternativa. ¿En qué tema aparece?",
+      "opciones": {
+        "A": "En la correlación bivariante únicamente",
+        "B": "En la probabilidad condicionada únicamente",
+        "C": "En inferencia estadística",
+        "D": "En la descripción gráfica"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La pendiente de la recta de regresión se relaciona con la covarianza y las varianzas. ¿Qué coeficiente resume antes la asociación lineal?",
+      "opciones": {
+        "A": "La mediana",
+        "B": "El coeficiente de correlación",
+        "C": "La curtosis",
+        "D": "El tamaño de la población"
+      },
+      "correcta": "B"
+    }
+  ]
+}

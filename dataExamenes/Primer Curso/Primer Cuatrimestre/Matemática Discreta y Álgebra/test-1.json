@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Matemática Discreta y Álgebra",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El método de Gauss resuelve sistemas lineales. ¿Qué otro método cita el tema de matrices junto a él?",
+      "opciones": {
+        "A": "Montecarlo",
+        "B": "Gauss-Jordan",
+        "C": "A*",
+        "D": "Newton-Raphson"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "En un espacio vectorial, una base es un sistema generador con una propiedad extra. ¿Cuál?",
+      "opciones": {
+        "A": "La ortonormalidad obligatoria",
+        "B": "El determinante igual a cero",
+        "C": "La independencia lineal",
+        "D": "La conmutatividad del producto"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El núcleo y la imagen caracterizan una aplicación lineal. ¿Qué matriz la representa respecto de bases fijadas?",
+      "opciones": {
+        "A": "La matriz de covarianzas",
+        "B": "La matriz asociada",
+        "C": "La matriz jacobiana",
+        "D": "La matriz de adyacencia"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un valor propio y sus vectores propios intervienen en un proceso del bloque de álgebra. ¿Cuál?",
+      "opciones": {
+        "A": "La aritmética modular",
+        "B": "El isomorfismo de grafos",
+        "C": "La combinatoria de variaciones",
+        "D": "La diagonalización de matrices"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El determinante de una matriz cuadrada decide, entre otras cosas, si es invertible. ¿En qué tema se estudia junto al rango?",
+      "opciones": {
+        "A": "En grafos",
+        "B": "En aritmética modular",
+        "C": "En combinatoria",
+        "D": "En matrices y sistemas de ecuaciones lineales"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un subespacio vectorial es un subconjunto cerrado por las operaciones del espacio. ¿Qué tema lo define?",
+      "opciones": {
+        "A": "Teoría de grafos",
+        "B": "Diagonalización",
+        "C": "Espacios vectoriales",
+        "D": "Combinatoria"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Dependencia lineal significa que un vector es combinación de otros. ¿Qué concepto opuesto usa el tema para construir una base?",
+      "opciones": {
+        "A": "El isomorfismo de grafos",
+        "B": "El determinante nulo",
+        "C": "La independencia lineal",
+        "D": "La congruencia"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Las coordenadas de un vector dependen de la base elegida. ¿Qué transformación las cambia de una base a otra?",
+      "opciones": {
+        "A": "La diagonalización",
+        "B": "El producto de grafos",
+        "C": "El cambio de base",
+        "D": "La combinación con repetición"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El núcleo de una aplicación lineal es el conjunto de vectores que van al cero. ¿Qué otro conjunto caracteriza la aplicación?",
+      "opciones": {
+        "A": "El conjunto de aristas",
+        "B": "El grupo de permutaciones",
+        "C": "El determinante",
+        "D": "La imagen"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Dos grafos son isomorfos cuando existe una biyección que conserva las aristas. ¿En qué tema se estudia?",
+      "opciones": {
+        "A": "En teoría de grafos",
+        "B": "En combinatoria",
+        "C": "En sistemas lineales",
+        "D": "En diagonalización"
+      },
+      "correcta": "A"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Introducción a la Informática",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El complemento a 2 representa enteros con signo. ¿Qué norma cita la guía para los números reales en coma flotante?",
+      "opciones": {
+        "A": "ASCII únicamente",
+        "B": "ISO 25010",
+        "C": "IEEE 754",
+        "D": "IEEE 802.3"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El modelo de von Neumann organiza el computador en unidades que comparten una memoria. ¿Qué arquitectura de repertorio usa la guía como ejemplo en ese tema?",
+      "opciones": {
+        "A": "x87 solamente",
+        "B": "JVM",
+        "C": "MIPS",
+        "D": "CUDA"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un compilador y un intérprete traducen o ejecutan programas de alto nivel. ¿En qué se diferencian, según el enfoque del tema?",
+      "opciones": {
+        "A": "El compilador genera un programa objeto; el intérprete ejecuta interpretando el fuente",
+        "B": "Los dos generan siempre código máquina antes de empezar",
+        "C": "El intérprete solo admite ensamblador",
+        "D": "El compilador no tiene fases de análisis"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Los modos de direccionamiento pertenecen al tema de ensamblador. ¿Qué otras construcciones estudia ese tema?",
+      "opciones": {
+        "A": "El camino de datos, las estructuras de control y las subrutinas",
+        "B": "Las ontologías OWL",
+        "C": "Los contratos informáticos",
+        "D": "Las series de Fourier"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El código hexadecimal agrupa bits de cuatro en cuatro. ¿Junto a qué otro código lo introduce el tema de representación, además de ASCII?",
+      "opciones": {
+        "A": "Junto a IEEE 802.11",
+        "B": "Junto al código Morse",
+        "C": "Junto al código binario",
+        "D": "Junto a UTF-32 únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Sumar en complemento a 2 permite usar el mismo sumador para números con signo. ¿Qué otro formato numérico trae algoritmos de suma y multiplicación en la guía?",
+      "opciones": {
+        "A": "Unicode únicamente",
+        "B": "El código Gray",
+        "C": "ASCII",
+        "D": "IEEE 754"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El camino de datos de un procesador mueve la información entre registros y la ALU. ¿En qué tema se estudia?",
+      "opciones": {
+        "A": "En gramáticas únicamente",
+        "B": "En redes únicamente",
+        "C": "En periféricos únicamente",
+        "D": "En ensamblador"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una subrutina en ensamblador se invoca y luego devuelve el control. ¿Qué otro recurso del mismo tema elige cómo se accede a un operando?",
+      "opciones": {
+        "A": "Las redes de computadores",
+        "B": "Los modos de direccionamiento",
+        "C": "Los periféricos de salida",
+        "D": "Las gramáticas formales"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un intérprete ejecuta el programa fuente sin generar antes un ejecutable independiente. ¿Qué otro traductor estudia el tema 5?",
+      "opciones": {
+        "A": "El enlazador únicamente",
+        "B": "El ensamblador de un solo paso únicamente",
+        "C": "El cargador únicamente",
+        "D": "El compilador"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Los lenguajes de alto nivel se alejan de la máquina y los de bajo nivel se acercan a ella. ¿Dónde contrasta la guía esa diferencia?",
+      "opciones": {
+        "A": "En los periféricos",
+        "B": "En el modelo de von Neumann únicamente",
+        "C": "En las redes",
+        "D": "En la traducción de programas a ensamblador"
+      },
+      "correcta": "D"
+    }
+  ]
+}

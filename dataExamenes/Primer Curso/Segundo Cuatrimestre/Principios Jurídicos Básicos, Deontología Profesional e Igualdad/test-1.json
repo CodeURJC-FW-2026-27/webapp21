@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Principios Jurídicos Básicos, Deontología Profesional e Igualdad",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Las fuentes del Derecho interno y de la Unión Europea forman parte del tema de introducción al Derecho. ¿Qué otro elemento aplica y da eficacia a las normas?",
+      "opciones": {
+        "A": "La aplicación y la eficacia de las normas jurídicas",
+        "B": "El polinomio de Taylor",
+        "C": "El algoritmo de Dijkstra",
+        "D": "La forma normal de Boyce-Codd"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La propiedad intelectual y la propiedad industrial protegen al programador en temas distintos del bloque jurídico. ¿Qué protege de forma típica la propiedad intelectual del software?",
+      "opciones": {
+        "A": "Solo el secreto de una patente de hardware",
+        "B": "El programa como obra, con los derechos del programador",
+        "C": "Solo la marca comercial del producto",
+        "D": "Solo el nombre de dominio"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El interesado, en protección de datos, es la persona a la que se refieren los datos. ¿Qué reconoce la guía respecto de esa persona?",
+      "opciones": {
+        "A": "Sus derechos",
+        "B": "El derecho a modificar el núcleo del sistema",
+        "C": "La obligación de cifrar con DES",
+        "D": "La exención total de cualquier norma"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un código deontológico recoge deberes de la profesión. ¿En qué bloque de la guía se estudia?",
+      "opciones": {
+        "A": "En el bloque de cálculo integral",
+        "B": "En el bloque de redes",
+        "C": "En el bloque de deontología profesional",
+        "D": "En el bloque de álgebra lineal"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La norma jurídica es la regla del Derecho. ¿Qué tema presenta el Derecho y sus fuentes?",
+      "opciones": {
+        "A": "La introducción al Derecho",
+        "B": "La deontología",
+        "C": "Las licencias",
+        "D": "La protección del software"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un contrato informático regula el desarrollo o la cesión de un sistema. ¿En qué tema está?",
+      "opciones": {
+        "A": "En la profesión de ingeniero únicamente",
+        "B": "En el Derecho digital y de las TIC",
+        "C": "En la introducción al Derecho únicamente",
+        "D": "En los códigos deontológicos únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Transmitir los derechos del programador puede hacerse por cesión o por licencia. ¿Qué tema lo estudia?",
+      "opciones": {
+        "A": "La deontología únicamente",
+        "B": "La protección jurídica del software",
+        "C": "Los portales profesionales únicamente",
+        "D": "La estadística"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La autoridad de control vigila el cumplimiento de la protección de datos. ¿Qué otro elemento de ese tema fija las obligaciones del responsable?",
+      "opciones": {
+        "A": "El marco jurídico de protección",
+        "B": "El nombre de dominio",
+        "C": "La licencia GPL únicamente",
+        "D": "El código deontológico de la ACM únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Las asociaciones profesionales internacionales publican criterios de conducta. ¿En qué tema se citan?",
+      "opciones": {
+        "A": "En la propiedad industrial",
+        "B": "En las fuentes del Derecho",
+        "C": "En los contratos informáticos",
+        "D": "En la importancia de la ética profesional"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un perfil informático describe un papel dentro de la empresa. ¿Qué tema sigue su evolución y las áreas profesionales?",
+      "opciones": {
+        "A": "La profesión de ingeniero informático",
+        "B": "Las licencias",
+        "C": "La protección de datos",
+        "D": "La introducción al Derecho"
+      },
+      "correcta": "A"
+    }
+  ]
+}

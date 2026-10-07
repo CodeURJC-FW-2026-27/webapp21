@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Análisis e Ingeniería de Requisitos",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El análisis de requisitos construye modelos del problema. ¿En qué se diferencia de la extracción, según el orden del temario?",
+      "opciones": {
+        "A": "El análisis solo trata el hardware",
+        "B": "Son el mismo tema en la guía",
+        "C": "El análisis entrevista y la extracción escribe código",
+        "D": "La extracción obtiene información; el análisis la modela"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un actor, en la extracción de requisitos, es quien interactúa con el sistema o tiene un interés. ¿En qué tema aparece?",
+      "opciones": {
+        "A": "En el tema de extracción",
+        "B": "En el tema de series de Taylor",
+        "C": "En el tema de historia de la ingeniería únicamente",
+        "D": "En el tema de buses"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un modelo de proceso software ordena las actividades del desarrollo. ¿En qué bloque está la introducción a esos modelos?",
+      "opciones": {
+        "A": "En el bloque de grafos",
+        "B": "En el bloque de validación exclusivamente",
+        "C": "En el bloque de fundamentos",
+        "D": "En el bloque de criptografía"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La calidad de un requisito incluye que sea claro y comprobable. ¿Qué tema de la guía trata esa calidad de forma explícita?",
+      "opciones": {
+        "A": "La extracción, solo como entrevista",
+        "B": "El lenguaje unificado, solo como sintaxis gráfica",
+        "C": "La introducción histórica únicamente",
+        "D": "La validación"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Los niveles de la ingeniería del software separan detalle de organización y de proyecto. ¿En qué tema se presentan?",
+      "opciones": {
+        "A": "En la introducción a la ingeniería del software",
+        "B": "En el análisis",
+        "C": "En la extracción",
+        "D": "En la validación"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El lenguaje unificado de modelado sirve para dibujar el sistema. ¿En qué tema de requisitos lo cita la guía?",
+      "opciones": {
+        "A": "En la introducción a la ingeniería de requisitos",
+        "B": "En la definición de proceso únicamente",
+        "C": "En la validación únicamente",
+        "D": "En la gestión del cambio únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Los actores participan en la obtención de requisitos. ¿Qué tema habla de ellos?",
+      "opciones": {
+        "A": "La extracción",
+        "B": "La especificación únicamente",
+        "C": "La historia",
+        "D": "Los estándares aislados"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La calidad de un requisito incluye que sea necesario, claro y verificable. ¿Qué tema la trata junto con el cambio?",
+      "opciones": {
+        "A": "Los modelos de proceso",
+        "B": "La validación",
+        "C": "El UML como notación aislada",
+        "D": "La introducción histórica"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Especificar no es lo mismo que analizar. ¿Cuál de las dos produce el documento de requisitos?",
+      "opciones": {
+        "A": "La extracción, que solo observa",
+        "B": "La validación, que solo firma",
+        "C": "La especificación",
+        "D": "El análisis, que solo ejecuta pruebas"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Validar un requisito comprueba que responde a la necesidad real. ¿Qué no basta con hacer, según la distinción del temario?",
+      "opciones": {
+        "A": "Comprobar su calidad",
+        "B": "Gestionar los cambios",
+        "C": "Dejarlo escrito sin contrastarlo con el cliente",
+        "D": "Revisarlo con los interesados"
+      },
+      "correcta": "C"
+    }
+  ]
+}
