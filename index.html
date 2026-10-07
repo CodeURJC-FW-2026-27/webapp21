@@ -66,9 +66,13 @@
                 </div>
             </div>
         </header>
-        <!-- Section-->
-        <section class="py-5">
+        <!-- Catalog section-->
+        <section class="py-5" id="simulacros">
             <div class="container px-4 px-lg-5 mt-5">
+                <!-- Action button to create a new simulation -->
+                <div class="d-flex justify-content-end mb-4">
+                    <a href="nuevo-simulacro.html" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nuevo simulacro</a>
+                </div>
                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
                     <div class="col mb-5">
                         <div class="card h-100">
@@ -264,6 +268,43 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About section (About us)-->
+        <section class="py-5 bg-light border-top" id="about">
+            <div class="container px-4 px-lg-5">
+                <!-- Centered Grid Layout:
+                    - justify-content-center: centers columns horizontally along the Flexbox row
+                    - col-lg-8: Limits width to 8 out of 12 columns on large screens -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-4">
+                            <!--title in bold-->
+                            <h2 class="fw-bolder">Sobre nosotros</h2>
+                            <!--subtitle-->
+                            <p class="text-muted mb-0">Por qué nació Ensaya</p>
+                        </div>
+                        <!-- Content Card:
+                            - border-0 & shadow-sm: Modern flat design using subtle box-shadow instead of standard borders.
+                            - p-4 p-md-5: Responsive internal padding (increases from level 4 to 5 on medium+ screens).
+                            - lead & fs-6: Introductory text styling with normalized font sizing. -->
+                        <div class="card border-0 shadow-sm p-4 p-md-5">
+                            <p class="lead fs-6 mb-3">
+                                Somos Antonio, Irene y David, tres estudiantes de Ingeniería del Software y Matemáticas en la URJC.
+                            </p>
+                            <p class="mb-3">
+                                La idea de montar esta página viene de nuestra propia experiencia en los primeros cursos: cuando estábamos perdidos con las asignaturas, tuvimos la suerte de que gente de cursos superiores nos echó un cable pasándonos preguntas tipo test, exámenes de convocatorias pasadas y consejos de  como debíamos enfrentarnos a cada asignatura.
+                            </p>
+                            <p class="mb-3">
+                                Ahora que estamos acabando la carrera, creemos que lo justo es hacer lo mismo. Queremos que los compañeros que venís por detrás tengáis un sitio cómodo donde ensayar con preguntas reales de las asignaturas sin tener que andar buscando PDFs con publicidad o recopilatorios por mil sitios.
+                            </p>
+                            <p class="mb-0 fw-bold">
+                                Un mismo <span class="text-urjc" >sitio</span>. Toda la <span class="text-urjc" >carrera</span>.
+                            </p>
                         </div>
                     </div>
                 </div>
