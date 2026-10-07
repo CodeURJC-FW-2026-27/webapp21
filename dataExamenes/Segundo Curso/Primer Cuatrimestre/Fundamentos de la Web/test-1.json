@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Fundamentos de la Web",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "HTML y CSS son tecnologías de maquetación en el cliente. ¿Qué parte de la guía las agrupa?",
+      "opciones": {
+        "A": "La parte de tecnologías de maquetación en el cliente web",
+        "B": "La parte de ensamblador",
+        "C": "La parte de bases de datos relacionales",
+        "D": "La parte de web semántica exclusivamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "JSON y XML son formatos de intercambio del tema 3. ¿Qué tienen en común en ese contexto?",
+      "opciones": {
+        "A": "Sirven para estructurar datos que viajan entre componentes de la web",
+        "B": "Sustituyen a CSS para el estilo visual",
+        "C": "Son lenguajes de consulta de grafos",
+        "D": "Son protocolos de transporte"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "AJAX permite actualizar una página sin recargarla por completo. ¿En qué parte del temario está?",
+      "opciones": {
+        "A": "En la historia de la web únicamente",
+        "B": "En la web semántica únicamente",
+        "C": "En las tecnologías de interactividad en el cliente",
+        "D": "En el tema de redes de computadores de otra asignatura"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "RDF, en el contexto de la web semántica de esta guía, no es el único tema: el temario habla de introducción y de tecnologías. ¿Qué problema aborda la web semántica?",
+      "opciones": {
+        "A": "Cifrar el correo con Kerberos",
+        "B": "Eliminar JavaScript del navegador",
+        "C": "Dar significado procesable a los datos de la web, no solo presentación",
+        "D": "Sustituir HTTP por FTP"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "La web nació como sistema de documentos enlazados. ¿Qué tema cubre esa historia y los conceptos básicos?",
+      "opciones": {
+        "A": "AJAX",
+        "B": "Historia de la web y conceptos básicos",
+        "C": "HTML",
+        "D": "Web semántica"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una arquitectura web reparte responsabilidades entre cliente y servidor. ¿En qué tema se estudia, junto con las tecnologías?",
+      "opciones": {
+        "A": "En tecnologías y arquitecturas web",
+        "B": "En librerías CSS",
+        "C": "En la web semántica",
+        "D": "En la base de datos únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "XML marca la estructura con etiquetas propias. ¿Qué otro formato de datos lo acompaña en el tema 3?",
+      "opciones": {
+        "A": "SQL",
+        "B": "SVG únicamente",
+        "C": "CSS",
+        "D": "JSON"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "CSS separa la presentación del contenido HTML. ¿En qué parte del temario están ambos?",
+      "opciones": {
+        "A": "En el tema de historia únicamente",
+        "B": "En la web semántica",
+        "C": "En el servidor, solo como base de datos",
+        "D": "En la maquetación en el cliente"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "JavaScript en el servidor permite construir la aplicación que responde las peticiones. ¿Qué tema lo sitúa en la parte de servidor?",
+      "opciones": {
+        "A": "El tema de JavaScript dentro de las tecnologías de servidor",
+        "B": "El de formatos JSON y XML",
+        "C": "El de historia de la web",
+        "D": "El de librerías CSS"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La web semántica busca datos con significado para las máquinas. ¿Cuántos temas le dedica la última parte de la guía?",
+      "opciones": {
+        "A": "Uno solo",
+        "B": "Ninguno",
+        "C": "Dos: introducción y tecnologías",
+        "D": "Cinco"
+      },
+      "correcta": "C"
+    }
+  ]
+}

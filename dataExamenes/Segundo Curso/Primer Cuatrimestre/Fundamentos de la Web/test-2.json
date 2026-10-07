@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Fundamentos de la Web",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "JavaScript aparece en la parte de servidor y también en la de interactividad del cliente. ¿Qué tema del cliente lo usa para hacer HTML interactivo?",
+      "opciones": {
+        "A": "Librerías CSS exclusivamente",
+        "B": "Formatos JSON y XML exclusivamente",
+        "C": "HTML interactivo con JavaScript",
+        "D": "Historia de la web"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una librería CSS acelera la maquetación con estilos ya definidos. ¿En qué parte está ese tema?",
+      "opciones": {
+        "A": "En la protección de datos",
+        "B": "En la web semántica",
+        "C": "En el ensamblador MIPS",
+        "D": "En la maquetación en el cliente, junto con HTML y CSS"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Las arquitecturas web del tema 2 describen cómo se reparten cliente y servidor. ¿Qué otro tema introduce la historia y los conceptos básicos?",
+      "opciones": {
+        "A": "Historia de la web y conceptos básicos",
+        "B": "Base de datos únicamente",
+        "C": "Web semántica únicamente",
+        "D": "AJAX únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una aplicación web con JavaScript del temario de servidor no es lo mismo que una hoja de estilo. ¿Qué tecnología de marcado estructura el documento?",
+      "opciones": {
+        "A": "CSS",
+        "B": "HTML",
+        "C": "SQL",
+        "D": "SPARQL"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una librería CSS aporta componentes visuales ya diseñados. ¿Después de qué tecnologías del cliente la sitúa la guía?",
+      "opciones": {
+        "A": "Antes de la historia de la web",
+        "B": "Después de AJAX",
+        "C": "Después de la web semántica",
+        "D": "Después de HTML y CSS"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una base de datos en una aplicación web guarda el estado persistente. ¿En qué parte del temario está ese tema?",
+      "opciones": {
+        "A": "En la historia",
+        "B": "En la maquetación",
+        "C": "En la web semántica",
+        "D": "En las tecnologías de servidor"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Hacer HTML interactivo con JavaScript modifica el documento en el navegador. ¿En qué parte está?",
+      "opciones": {
+        "A": "En la web semántica",
+        "B": "En la interactividad en el cliente",
+        "C": "En los formatos de intercambio únicamente",
+        "D": "En la historia"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "AJAX pide datos al servidor y actualiza una zona de la página. ¿Qué tecnología de cliente lo usa en la guía?",
+      "opciones": {
+        "A": "XML como único lenguaje de programación",
+        "B": "CSS únicamente",
+        "C": "SQL en el navegador",
+        "D": "JavaScript"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Las tecnologías de web semántica dan forma a esos datos con significado. ¿Qué tema las precede?",
+      "opciones": {
+        "A": "La introducción a la web semántica",
+        "B": "Las librerías CSS",
+        "C": "El tema de base de datos",
+        "D": "La historia de la web"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El cliente web maqueta con HTML. ¿Qué lenguaje del mismo bloque define el aspecto?",
+      "opciones": {
+        "A": "Ensamblador",
+        "B": "CSS",
+        "C": "Java de servidor",
+        "D": "SQL"
+      },
+      "correcta": "B"
+    }
+  ]
+}

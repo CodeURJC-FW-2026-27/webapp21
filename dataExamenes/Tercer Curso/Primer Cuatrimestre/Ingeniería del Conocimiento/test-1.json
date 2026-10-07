@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Ingeniería del Conocimiento",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La búsqueda en anchura es una búsqueda no informada. ¿Qué propiedad tiene si el coste de cada paso es constante?",
+      "opciones": {
+        "A": "Resuelve juegos de suma no nula",
+        "B": "Equivale al algoritmo A*",
+        "C": "Encuentra una solución con el menor número de pasos",
+        "D": "Siempre usa una heurística admisible"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "A* combina el coste acumulado y una estimación hasta la meta. ¿Cómo llama la guía a esa familia?",
+      "opciones": {
+        "A": "Aprendizaje por refuerzo",
+        "B": "Búsqueda no informada",
+        "C": "Búsqueda heurística",
+        "D": "Lógica de descripciones"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Minimax supone que el adversario también juega de forma óptima. ¿Qué poda reduce el árbol sin cambiar el resultado habitual?",
+      "opciones": {
+        "A": "La poda alfa-beta",
+        "B": "El algoritmo MAC",
+        "C": "La poda de un árbol AVL",
+        "D": "El forward checking"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "ID3 construye un árbol de decisión. ¿En qué tema de aprendizaje está?",
+      "opciones": {
+        "A": "En las ontologías",
+        "B": "En el aprendizaje supervisado",
+        "C": "En la búsqueda no informada",
+        "D": "En el razonamiento borroso"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un agente inteligente percibe y actúa. ¿En qué tema de introducción se presenta, junto con la historia de la IA?",
+      "opciones": {
+        "A": "En las ontologías",
+        "B": "En la introducción a la inteligencia artificial",
+        "C": "En la búsqueda heurística",
+        "D": "En Q-learning"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La búsqueda en anchura explora por niveles. ¿Cómo llama la guía a esa familia, frente a la heurística?",
+      "opciones": {
+        "A": "Lógica de descripciones",
+        "B": "Aprendizaje supervisado",
+        "C": "Búsqueda heurística",
+        "D": "Búsqueda no informada"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una heurística admisible no sobreestima el coste restante. ¿Qué algoritmo de la guía depende de la calidad de esa función?",
+      "opciones": {
+        "A": "A*",
+        "B": "ID3",
+        "C": "La búsqueda en anchura",
+        "D": "El minimax sin heurística"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Expect-minimax incorpora el azar además del adversario. ¿En qué tema está, junto a minimax?",
+      "opciones": {
+        "A": "En la lógica ALC",
+        "B": "En la búsqueda multiagente",
+        "C": "En el aprendizaje subsimbólico",
+        "D": "En las ontologías"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "ALC es una lógica de descripciones con una sintaxis y una semántica. ¿Para qué sirve en ese tema?",
+      "opciones": {
+        "A": "Para entrenar una red neuronal",
+        "B": "Para simular una cola",
+        "C": "Para inferir conocimiento a partir de conceptos y roles",
+        "D": "Para podar un árbol de juego"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "RDF y OWL describen datos enlazados y ontologías. ¿Qué lenguaje los consulta en la guía?",
+      "opciones": {
+        "A": "SPARQL",
+        "B": "Prolog únicamente",
+        "C": "XQuery únicamente",
+        "D": "SQL"
+      },
+      "correcta": "A"
+    }
+  ]
+}

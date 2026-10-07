@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Interacción Persona-Ordenador",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El diseño centrado en el usuario empieza por las personas que usarán el sistema. ¿Qué tres temas forman ese primer bloque?",
+      "opciones": {
+        "A": "Introducción, diseño de la interacción y diseño de la interfaz",
+        "B": "Caja blanca, caja negra y regresión",
+        "C": "Usabilidad, accesibilidad y evaluación",
+        "D": "Solo la evaluación heurística"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La usabilidad mide lo fácil y eficaz que resulta usar un sistema. ¿En qué bloque está, junto con la accesibilidad?",
+      "opciones": {
+        "A": "En un bloque de redes",
+        "B": "En el bloque de usabilidad y accesibilidad",
+        "C": "En el bloque de evaluación únicamente",
+        "D": "En el diseño de la interacción únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La accesibilidad busca que más personas puedan usar el sistema, incluidas quienes tienen limitaciones. ¿De qué tema forma parte?",
+      "opciones": {
+        "A": "Del tema de accesibilidad",
+        "B": "Del tema de introducción únicamente",
+        "C": "Del tema de evaluación únicamente",
+        "D": "Del tema de microservicios"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Evaluar una interfaz comprueba si cumple los objetivos de uso. ¿En qué bloque cierra la guía ese estudio?",
+      "opciones": {
+        "A": "En el bloque de diseño centrado, como único contenido",
+        "B": "En el bloque de evaluación de interfaces de usuario",
+        "C": "Fuera del temario",
+        "D": "En el bloque de usabilidad, sin tema propio"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El diseño centrado en el usuario toma a las personas como referencia. ¿Qué tema abre ese bloque?",
+      "opciones": {
+        "A": "La evaluación",
+        "B": "La usabilidad",
+        "C": "La accesibilidad",
+        "D": "La introducción a la interacción persona-ordenador"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Diseñar la interacción define los pasos del diálogo. ¿Qué tema diseña después los elementos visibles?",
+      "opciones": {
+        "A": "La introducción únicamente",
+        "B": "El diseño de la interfaz de usuario",
+        "C": "La evaluación",
+        "D": "La accesibilidad"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La usabilidad incluye eficacia, eficiencia y satisfacción. ¿En qué bloque está su tema?",
+      "opciones": {
+        "A": "Fuera de la guía",
+        "B": "En usabilidad y accesibilidad",
+        "C": "En la evaluación únicamente",
+        "D": "En el diseño centrado, como tema 1"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una barrera de accesibilidad impide usar el sistema a parte de las personas. ¿Qué tema la trata?",
+      "opciones": {
+        "A": "El de accesibilidad",
+        "B": "El de diseño de la interacción únicamente",
+        "C": "El de evaluación únicamente",
+        "D": "El de introducción"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Evaluar una interfaz contrasta el diseño con el uso real o con criterios. ¿Qué bloque cierra la guía?",
+      "opciones": {
+        "A": "El de usabilidad",
+        "B": "El de diseño centrado",
+        "C": "Ninguno",
+        "D": "El de evaluación de interfaces de usuario"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Diseñar la interfaz elige controles, disposición y respuesta visual. ¿Después de qué tema del primer bloque va?",
+      "opciones": {
+        "A": "Antes de la introducción",
+        "B": "Después del diseño de la interacción",
+        "C": "Después de la evaluación",
+        "D": "Después de la accesibilidad"
+      },
+      "correcta": "B"
+    }
+  ]
+}

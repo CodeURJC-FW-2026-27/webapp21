@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Metodología de la Programación",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La especificación con predicados describe qué debe cumplir un programa. ¿En qué bloque está?",
+      "opciones": {
+        "A": "En especificación y derivación formal",
+        "B": "En interacción persona-ordenador únicamente",
+        "C": "En pruebas de caja negra únicamente",
+        "D": "En repositorios únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La verificación formal comprueba que el código cumple la especificación. ¿Qué bloque la trata?",
+      "opciones": {
+        "A": "El bloque de diseño de experimentos",
+        "B": "El bloque de redes",
+        "C": "El bloque de corrección de programas",
+        "D": "El bloque de codificación en equipo"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Las pruebas de caja blanca miran la estructura interna. ¿Qué otras pruebas introduce el último tema?",
+      "opciones": {
+        "A": "Las de usabilidad exclusivamente",
+        "B": "Las de certificación TOEIC",
+        "C": "Las de carga eléctrica",
+        "D": "Las de caja negra"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un patrón de diseño es una solución reutilizable a un problema habitual. ¿En qué fase del temario se estudian?",
+      "opciones": {
+        "A": "En la especificación formal únicamente",
+        "B": "En la fase de análisis únicamente",
+        "C": "En la verificación de bucles únicamente",
+        "D": "En la fase de diseño"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Especificar un problema con predicados dice qué debe cumplir la entrada y la salida. ¿En qué bloque está?",
+      "opciones": {
+        "A": "En especificación y derivación formal",
+        "B": "En interacción persona-ordenador",
+        "C": "En repositorios",
+        "D": "En pruebas de caja negra únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Derivar un algoritmo transforma la especificación en pasos correctos. ¿Qué técnicas cita el primer tema?",
+      "opciones": {
+        "A": "Las de diseño formal de algoritmos",
+        "B": "Las de control de versiones",
+        "C": "Las de caja negra",
+        "D": "Las de maquetación"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Verificar un programa demuestra que cumple la especificación. ¿Qué bloque lo introduce?",
+      "opciones": {
+        "A": "El de análisis orientado a objetos",
+        "B": "El de pruebas de caja blanca únicamente",
+        "C": "El de corrección de programas",
+        "D": "El de codificación en equipo"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El análisis orientado a objetos modela el problema antes de diseñar. ¿Qué fase es, según el temario?",
+      "opciones": {
+        "A": "La fase de pruebas",
+        "B": "La fase de análisis",
+        "C": "La fase de codificación",
+        "D": "La derivación formal"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Programar en equipo exige acuerdos y un histórico común. ¿Qué herramienta cita el tema de codificación para ese histórico?",
+      "opciones": {
+        "A": "Los repositorios",
+        "B": "Los invariantes únicamente",
+        "C": "Los predicados",
+        "D": "Las pruebas de caja blanca únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La interacción persona-ordenador aparece en la fase de codificación de esta guía. ¿Junto a qué otra práctica?",
+      "opciones": {
+        "A": "Junto a la verificación de bucles únicamente",
+        "B": "Junto a la especificación algebraica",
+        "C": "Junto a la derivación formal",
+        "D": "Junto a la programación en equipo"
+      },
+      "correcta": "D"
+    }
+  ]
+}

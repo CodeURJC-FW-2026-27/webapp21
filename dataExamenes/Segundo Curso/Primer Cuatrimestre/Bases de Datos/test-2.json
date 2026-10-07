@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Bases de Datos",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "SQL se divide en la guía en tres lenguajes. ¿Cuáles?",
+      "opciones": {
+        "A": "Compilación, enlace y carga",
+        "B": "Extracción, transformación y carga únicamente",
+        "C": "Definición de datos, manipulación de datos y control",
+        "D": "Análisis, diseño y pruebas"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "CREATE TABLE es una sentencia de definición. ¿A qué sublenguaje de SQL pertenece?",
+      "opciones": {
+        "A": "Al lenguaje de marcas",
+        "B": "Al lenguaje de manipulación de datos",
+        "C": "Al lenguaje de control",
+        "D": "Al lenguaje de definición de datos"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "SELECT, INSERT, UPDATE y DELETE modifican o consultan el contenido. ¿A qué sublenguaje pertenecen?",
+      "opciones": {
+        "A": "Al lenguaje de control",
+        "B": "Al lenguaje de manipulación de datos",
+        "C": "Al lenguaje anfitrión",
+        "D": "Al lenguaje de definición de datos"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El diseño conceptual precede al diseño lógico en la metodología de la guía. ¿Qué modelo usa el tema para el esquema conceptual?",
+      "opciones": {
+        "A": "El modelo de von Neumann",
+        "B": "El modelo entidad-relación extendido",
+        "C": "El modelo OSI",
+        "D": "El modelo de colas M/M/1"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un buen diseño conceptual evita entidades ambiguas y relaciones mal elegidas. ¿Qué pregunta formula ese tema?",
+      "opciones": {
+        "A": "Cómo elegir un índice hash",
+        "B": "Cómo cifrar una columna",
+        "C": "Cómo realizar un buen diseño conceptual",
+        "D": "Cómo escribir un disparador"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Pasar del entidad-relación a tablas es parte del diseño lógico. ¿Qué teoría acompaña a esa metodología en la guía?",
+      "opciones": {
+        "A": "La teoría de grafos",
+        "B": "La teoría de la demostración",
+        "C": "La teoría de colas",
+        "D": "La teoría de la normalización"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "INSERT añade filas y DELETE las borra. ¿A qué sublenguaje pertenecen?",
+      "opciones": {
+        "A": "Al de control",
+        "B": "Al de marcas",
+        "C": "Al de manipulación de datos",
+        "D": "Al de definición"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "CREATE y ALTER definen o cambian el esquema. ¿A qué sublenguaje pertenecen?",
+      "opciones": {
+        "A": "Al de definición de datos",
+        "B": "Al de control",
+        "C": "Al de consulta únicamente",
+        "D": "Al de manipulación"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una forma normal más alta reduce ciertas anomalías. ¿En qué bloque está la normalización?",
+      "opciones": {
+        "A": "En los fundamentos, solo como historia",
+        "B": "En el diseño de bases de datos",
+        "C": "En los sistemas de ficheros",
+        "D": "En la implementación, solo como SQL de consulta"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El SGBD ofrece un lenguaje y un control comunes sobre los datos. ¿Frente a qué solución lo contrasta el tema 2?",
+      "opciones": {
+        "A": "Frente a una red local",
+        "B": "Frente a una hoja de cálculo obligatoria",
+        "C": "Frente a un compilador",
+        "D": "Frente a los sistemas de ficheros"
+      },
+      "correcta": "D"
+    }
+  ]
+}

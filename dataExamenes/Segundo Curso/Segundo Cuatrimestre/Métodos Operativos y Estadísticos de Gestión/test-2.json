@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Métodos Operativos y Estadísticos de Gestión",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Un gráfico de control X-R vigila un proceso de fabricación. ¿En qué tema está?",
+      "opciones": {
+        "A": "En programación matemática",
+        "B": "En gestión de la calidad y diseño de experimentos",
+        "C": "En introducción a la empresa",
+        "D": "En teoría de la decisión multicriterio"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La postoptimización estudia cómo cambia la solución si cambian los datos. ¿De qué tema forma parte?",
+      "opciones": {
+        "A": "De la programación matemática",
+        "B": "De la introducción",
+        "C": "De la gestión de proyectos",
+        "D": "Del diseño de experimentos"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una actividad crítica de un proyecto no admite retraso sin retrasar el fin. ¿Qué diagrama temporal cita la guía?",
+      "opciones": {
+        "A": "El diagrama de secuencia únicamente",
+        "B": "El diagrama de dispersión",
+        "C": "El diagrama de clases",
+        "D": "El diagrama de Gantt"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "El papel de la investigación de operaciones, según el primer tema, es apoyar la organización. ¿De qué tipo de organización habla el apartado?",
+      "opciones": {
+        "A": "De la empresa",
+        "B": "Del compilador",
+        "C": "Del sistema operativo",
+        "D": "De la red local"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La investigación de operaciones aporta modelos a la dirección. ¿Qué papel le asigna el primer tema?",
+      "opciones": {
+        "A": "Sustituir la contabilidad legal",
+        "B": "Apoyar la organización de la empresa",
+        "C": "Redactar contratos",
+        "D": "Diseñar el hardware"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Las técnicas de resolución de un modelo matemático buscan el óptimo. ¿Qué se hace después, según el tema, si cambian los datos?",
+      "opciones": {
+        "A": "Un diagrama entidad-relación",
+        "B": "Postoptimización",
+        "C": "Un contraste de usabilidad",
+        "D": "Una prueba de caja blanca"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un caso de aplicación muestra el método sobre un problema de empresa. ¿En qué temas los incluye la guía de forma explícita?",
+      "opciones": {
+        "A": "Solo en la introducción",
+        "B": "En ninguno",
+        "C": "Solo en calidad",
+        "D": "En programación matemática y en decisión multicriterio"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Balancear costes y recursos ajusta el plan del proyecto. ¿Qué diagrama temporal lo acompaña?",
+      "opciones": {
+        "A": "El de clases",
+        "B": "El de Gantt",
+        "C": "El de dispersión",
+        "D": "El de flujo de datos"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Diseñar un experimento en control de calidad cambia factores y observa la respuesta. ¿Junto a qué gráfico se estudia?",
+      "opciones": {
+        "A": "Junto al gráfico de control X-R",
+        "B": "Junto a la recta de regresión de otra asignatura únicamente",
+        "C": "Junto al diagrama de Gantt",
+        "D": "Junto al modelo de von Neumann"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Otros métodos de gestión completan la planificación clásica. ¿En qué tema se mencionan?",
+      "opciones": {
+        "A": "En la decisión multicriterio",
+        "B": "En la gestión de proyectos",
+        "C": "En la introducción",
+        "D": "En la programación matemática"
+      },
+      "correcta": "B"
+    }
+  ]
+}

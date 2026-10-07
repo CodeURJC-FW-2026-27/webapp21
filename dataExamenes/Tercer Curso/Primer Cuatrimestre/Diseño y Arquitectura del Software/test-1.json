@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Diseño y Arquitectura del Software",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Un estilo arquitectónico describe una forma habitual de organizar el sistema. ¿Qué tres familias de patrones de diseño cita el tema correspondiente?",
+      "opciones": {
+        "A": "Simétricas, NUMA y vectoriales",
+        "B": "De caja blanca, de caja negra y de regresión",
+        "C": "Unitarias, de integración y de sistema",
+        "D": "Creacionales, estructurales y de comportamiento"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "ATAM es un método de evaluación arquitectónica. ¿Qué evalúa según la guía?",
+      "opciones": {
+        "A": "La cobertura gramatical de un compilador",
+        "B": "Atributos de calidad de la arquitectura",
+        "C": "El certificado TOEIC",
+        "D": "El coste eléctrico de la CPU"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "MADR es un formato para registrar decisiones. ¿Qué tipo de decisiones documenta el tema?",
+      "opciones": {
+        "A": "Decisiones de compra de hardware",
+        "B": "Decisiones del planificador del sistema operativo",
+        "C": "Decisiones de diseño arquitectónico",
+        "D": "Decisiones judiciales"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Los microservicios aparecen como patrón en el bloque de estilos. ¿Qué caracteriza a ese estilo?",
+      "opciones": {
+        "A": "Un fichero secuencial de Pascal",
+        "B": "Una memoria compartida uniforme",
+        "C": "Partir el sistema en servicios pequeños y desplegables por separado",
+        "D": "Un único ejecutable sin módulos"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un principio de diseño orienta cómo partir responsabilidades. ¿En qué tema se presenta junto al concepto de arquitectura?",
+      "opciones": {
+        "A": "En el de arquitectura software y principios de diseño",
+        "B": "En ATAM únicamente",
+        "C": "En MADR únicamente",
+        "D": "En los microservicios únicamente"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La Industria 4.0 sirve de escenario para arquitecturas reales. ¿Qué bloque la incluye?",
+      "opciones": {
+        "A": "El de patrones de comportamiento únicamente",
+        "B": "El de decisiones MADR únicamente",
+        "C": "El de introducción a la arquitectura",
+        "D": "El de evaluación de calidad"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un patrón creacional organiza la construcción de objetos. ¿Con qué otras dos familias lo agrupa el tema de estilos?",
+      "opciones": {
+        "A": "Con los de microservicios y los de despliegue",
+        "B": "Con ATAM y MADR",
+        "C": "Con SOLID y Clean Architecture",
+        "D": "Con los estructurales y los de comportamiento"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Una decisión de diseño elige una opción y descarta otras. ¿Qué formato propone la guía para dejarla escrita?",
+      "opciones": {
+        "A": "IEEE 754",
+        "B": "Gantt",
+        "C": "MADR",
+        "D": "BPMN únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un atributo de calidad es una propiedad medible, como el rendimiento o la modificabilidad. ¿Qué método lo evalúa sobre la arquitectura?",
+      "opciones": {
+        "A": "Montecarlo",
+        "B": "ATAM",
+        "C": "TOEIC",
+        "D": "CMMI"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Los patrones de microservicios aparecen en el bloque de estilos. ¿Qué caracterizan?",
+      "opciones": {
+        "A": "Servicios pequeños con responsabilidades separadas",
+        "B": "Una única clase con todo el sistema",
+        "C": "Un fichero secuencial",
+        "D": "Un monolito sin interfaces"
+      },
+      "correcta": "A"
+    }
+  ]
+}

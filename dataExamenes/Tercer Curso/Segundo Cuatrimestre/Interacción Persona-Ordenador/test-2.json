@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Interacción Persona-Ordenador",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Segundo Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Diseñar la interacción define el diálogo entre la persona y el sistema. ¿Qué tema diseña después la presentación y los controles?",
+      "opciones": {
+        "A": "La accesibilidad únicamente",
+        "B": "El diseño de la interfaz de usuario",
+        "C": "La introducción histórica únicamente",
+        "D": "La evaluación únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una evaluación puede hacerse con usuarios o con expertos. ¿Qué bloque agrupa ese tema?",
+      "opciones": {
+        "A": "El de diseño centrado, tema 1",
+        "B": "El de evaluación de interfaces",
+        "C": "Ninguno: la guía no evalúa interfaces",
+        "D": "El de usabilidad y accesibilidad, sin evaluación"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La introducción a la interacción persona-ordenador abre la asignatura. ¿Cuál es el enfoque del primer bloque?",
+      "opciones": {
+        "A": "El diseño centrado en la base de datos",
+        "B": "El diseño centrado en el compilador",
+        "C": "El diseño centrado en el cifrado",
+        "D": "El diseño centrado en el usuario"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Usabilidad y accesibilidad no son el mismo requisito. ¿Cuál se ocupa de forma específica de las barreras de las personas con discapacidad?",
+      "opciones": {
+        "A": "La evaluación de caja blanca",
+        "B": "La usabilidad, como sinónimo exacto",
+        "C": "El control de versiones",
+        "D": "La accesibilidad"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Centrar el diseño en el usuario evita partir solo de la tecnología. ¿Cuál es el primer bloque?",
+      "opciones": {
+        "A": "Usabilidad y accesibilidad",
+        "B": "Diseño centrado en el usuario",
+        "C": "Evaluación",
+        "D": "Pruebas de caja blanca"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La accesibilidad no se reduce a cumplir la usabilidad media. ¿A quién incluye de forma explícita?",
+      "opciones": {
+        "A": "A personas con limitaciones o discapacidad",
+        "B": "Solo a usuarios expertos",
+        "C": "Solo a administradores",
+        "D": "Solo a desarrolladores"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Una evaluación con usuarios observa a personas reales. ¿En qué bloque está ese tema?",
+      "opciones": {
+        "A": "En la introducción",
+        "B": "En la accesibilidad, como único método",
+        "C": "En la evaluación de interfaces",
+        "D": "En el diseño de la interacción, sin evaluación"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El diseño de la interacción precede a la apariencia. ¿Qué se decide en la interacción?",
+      "opciones": {
+        "A": "El protocolo de red",
+        "B": "El motor de base de datos",
+        "C": "El color corporativo únicamente",
+        "D": "Cómo dialogan la persona y el sistema"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Usabilidad y accesibilidad comparten bloque y no son intercambiables. ¿Cuál mide lo fácil que resulta el uso para el público previsto?",
+      "opciones": {
+        "A": "La usabilidad",
+        "B": "La accesibilidad, como sinónimo",
+        "C": "La evaluación de caja blanca",
+        "D": "El control de versiones"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "La guía dedica un tema propio a evaluar la interfaz. ¿Qué se comprueba?",
+      "opciones": {
+        "A": "Si la base de datos está normalizada",
+        "B": "Si el código compila",
+        "C": "Si el certificado TLS es válido",
+        "D": "Si la interfaz cumple los objetivos de uso"
+      },
+      "correcta": "D"
+    }
+  ]
+}

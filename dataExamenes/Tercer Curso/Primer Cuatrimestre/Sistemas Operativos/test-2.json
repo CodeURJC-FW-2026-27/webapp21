@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 2",
+  "asignatura": "Sistemas Operativos",
+  "curso": "Tercer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "Una llamada al sistema es la puerta de la aplicación hacia el núcleo. ¿En qué tema aparece?",
+      "opciones": {
+        "A": "En el intérprete de mandatos únicamente",
+        "B": "En entrada y salida: llamadas al sistema",
+        "C": "En la organización de directorios",
+        "D": "En los estados del proceso únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El espacio libre de un disco se administra para crear ficheros. ¿Qué tema lo estudia?",
+      "opciones": {
+        "A": "La planificación de procesos",
+        "B": "El scripting",
+        "C": "La memoria de un proceso únicamente",
+        "D": "El sistema de ficheros"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un directorio organiza nombres de ficheros. ¿Qué otra estructura cita el tema junto con la interfaz del sistema de ficheros?",
+      "opciones": {
+        "A": "El árbol de decisión ID3",
+        "B": "La organización de archivos y las estructuras del propio sistema de ficheros",
+        "C": "La cola de preparados",
+        "D": "La DMZ"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Depurar una aplicación modular es parte de la programación de sistemas. ¿Qué abstrae el sistema operativo según el tema de su estructura?",
+      "opciones": {
+        "A": "Solo el certificado digital",
+        "B": "Solo el navegador",
+        "C": "El hardware, mediante sus servicios",
+        "D": "Solo el compilador de Pascal"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una llamada al sistema cambia a modo privilegiado. ¿En qué tema de programación de sistemas está?",
+      "opciones": {
+        "A": "En el intérprete",
+        "B": "En los directorios",
+        "C": "En entrada y salida: llamadas al sistema",
+        "D": "En los estados del proceso únicamente"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Depurar un programa de sistemas exige ver fallos de bajo nivel. ¿Junto a qué estilo de construcción lo cita la guía?",
+      "opciones": {
+        "A": "Junto a la planificación a corto plazo",
+        "B": "Junto a la organización de directorios",
+        "C": "Junto al scripting de usuario únicamente",
+        "D": "Junto a las aplicaciones modulares"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "Un fichero ejecutable contiene el código cargable de un programa. ¿En qué tema se relaciona con la memoria del proceso?",
+      "opciones": {
+        "A": "En el sistema de ficheros únicamente",
+        "B": "En la sincronización",
+        "C": "En el intérprete",
+        "D": "En la gestión de memoria"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "La interfaz del sistema de ficheros es lo que ven los programas: abrir, leer y escribir. ¿Qué hay por debajo, según el tema?",
+      "opciones": {
+        "A": "Solo el planificador",
+        "B": "Solo el intérprete",
+        "C": "La organización interna y las estructuras del sistema de ficheros",
+        "D": "Solo los hilos"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Gestionar el espacio libre evita dar el mismo bloque a dos ficheros. ¿En qué tema está?",
+      "opciones": {
+        "A": "En la planificación de la CPU",
+        "B": "En el sistema de ficheros",
+        "C": "En el scripting",
+        "D": "En la creación de procesos"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Los sistemas de ficheros actuales concretan esas ideas en implementaciones reales. ¿Al final de qué tema se citan?",
+      "opciones": {
+        "A": "Del sistema de ficheros",
+        "B": "De las llamadas de E/S",
+        "C": "De la memoria dinámica",
+        "D": "De la introducción"
+      },
+      "correcta": "A"
+    }
+  ]
+}

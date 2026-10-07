@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Arquitectura e Ingeniería de Computadores",
+  "curso": "Segundo Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "La guía distingue arquitectura y organización ya en el primer tema. ¿Qué modelo clásico de computador presenta?",
+      "opciones": {
+        "A": "El modelo en espiral",
+        "B": "El modelo de von Neumann",
+        "C": "El modelo OSI",
+        "D": "El modelo entidad-relación"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Una ALU sencilla se construye de forma incremental en el tema de unidad aritmético-lógica. ¿Qué circuitos la preceden en ese tema?",
+      "opciones": {
+        "A": "Firewalls y DMZ",
+        "B": "Circuitos aritmético-lógicos básicos",
+        "C": "Memoria caché y memoria virtual",
+        "D": "Sockets de la capa de aplicación"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El camino de datos uniciclo y el multiciclo difieren en el número de ciclos por instrucción. ¿Qué unidad genera las señales que los gobiernan?",
+      "opciones": {
+        "A": "El controlador DMA",
+        "B": "La unidad de control",
+        "C": "El árbitro del bus PCI Express",
+        "D": "La unidad de coma flotante exclusivamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La jerarquía de memoria de la guía tiene dos partes explícitas. ¿Cuáles?",
+      "opciones": {
+        "A": "Registros y disco óptico únicamente",
+        "B": "Memoria caché y memoria virtual",
+        "C": "TLB y DMA únicamente",
+        "D": "ROM y firmware únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Arquitectura y organización no nombran el mismo nivel de detalle. ¿Qué modelo presenta el tema de introducción?",
+      "opciones": {
+        "A": "El entidad-relación",
+        "B": "El OSI",
+        "C": "El de von Neumann",
+        "D": "El de colas"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Construir una ALU de forma incremental parte de circuitos más simples. ¿Qué tema lo desarrolla?",
+      "opciones": {
+        "A": "Las arquitecturas avanzadas",
+        "B": "La unidad aritmético-lógica",
+        "C": "La jerarquía de memoria",
+        "D": "Los buses"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un camino de datos multiciclo reparte la instrucción en varios ciclos. ¿Qué otro camino estudia el mismo tema?",
+      "opciones": {
+        "A": "El de la memoria virtual",
+        "B": "El uniciclo",
+        "C": "El del bus PCI Express",
+        "D": "El de una GPU"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "La memoria caché guarda copias de los datos más usados. ¿Qué otra parte de la jerarquía estudia el tema 4?",
+      "opciones": {
+        "A": "La memoria virtual",
+        "B": "La ALU",
+        "C": "El controlador de interrupciones únicamente",
+        "D": "El árbitro del bus"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "El DMA transfiere datos entre periférico y memoria sin ocupar al procesador en cada palabra. ¿Junto a qué otras técnicas de E/S está?",
+      "opciones": {
+        "A": "Junto a la caché y a la TLB únicamente",
+        "B": "Junto al sondeo y a las interrupciones",
+        "C": "Junto a la segmentación y al renombre",
+        "D": "Junto al arbitraje del bus únicamente"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un riesgo RAW aparece cuando una instrucción necesita un dato que aún no ha escrito la anterior. ¿En qué bloque se estudia?",
+      "opciones": {
+        "A": "En la jerarquía de memoria",
+        "B": "En los periféricos",
+        "C": "En la ALU",
+        "D": "En las arquitecturas avanzadas, dentro de la segmentación"
+      },
+      "correcta": "D"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "titulo": "Test 1",
+  "asignatura": "Fundamentos Físicos de la Informática",
+  "curso": "Primer Curso",
+  "cuatrimestre": "Primer Cuatrimestre",
+  "fuente": "Guía docente 2025-26 del Grado en Ingeniería del Software, URJC",
+  "preguntas": [
+    {
+      "enunciado": "El apartado de electromagnetismo de la guía incluye condensadores. ¿Qué otro fenómeno aparece en ese mismo tema?",
+      "opciones": {
+        "A": "La ley de Ohm",
+        "B": "La unión P-N",
+        "C": "El complemento a 2",
+        "D": "La inducción electromagnética"
+      },
+      "correcta": "D"
+    },
+    {
+      "enunciado": "En circuitos de corriente continua, las leyes de Kirchhoff se usan junto con otra ley de la guía. ¿Cuál relaciona tensión, corriente y resistencia?",
+      "opciones": {
+        "A": "La ley de Ohm",
+        "B": "La ley de Faraday",
+        "C": "La ley de Amdahl",
+        "D": "La ley de Moore"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Thevenin y Norton son teoremas del tema de circuitos. ¿Para qué sirven en ese temario?",
+      "opciones": {
+        "A": "Para polarizar una unión P-N",
+        "B": "Para simplificar una red lineal vista desde dos terminales",
+        "C": "Para construir un biestable",
+        "D": "Para distinguir un diodo LED de un Zener"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "Un semiconductor extrínseco se obtiene al dopar un semiconductor intrínseco. ¿Qué unión estudia a continuación el tema de diodos?",
+      "opciones": {
+        "A": "La unión P-N",
+        "B": "La unión de dos condensadores en serie",
+        "C": "La unión de mallas de Kirchhoff",
+        "D": "La unión base-colector de un relé"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un condensador almacena carga entre dos armaduras. ¿En qué apartado de la guía se estudia, junto con el campo eléctrico y el magnético?",
+      "opciones": {
+        "A": "En electromagnetismo",
+        "B": "En los divisores de corriente",
+        "C": "En los sistemas digitales",
+        "D": "En la física de semiconductores"
+      },
+      "correcta": "A"
+    },
+    {
+      "enunciado": "Un divisor de tensión reparte la caída de potencial entre resistencias en serie. ¿En qué tema está?",
+      "opciones": {
+        "A": "En transistores de efecto de campo",
+        "B": "En circuitos de corriente continua",
+        "C": "En circuitos secuenciales",
+        "D": "En diodos"
+      },
+      "correcta": "B"
+    },
+    {
+      "enunciado": "El método de las corrientes de malla plantea ecuaciones en los lazos de un circuito. ¿Con qué leyes se combina en ese tema?",
+      "opciones": {
+        "A": "Con la inducción de Faraday únicamente",
+        "B": "Con la unión P-N",
+        "C": "Con las leyes de Kirchhoff",
+        "D": "Con el álgebra de Boole"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Un semiconductor intrínseco es puro y un extrínseco está dopado. ¿Qué tema lo explica?",
+      "opciones": {
+        "A": "Los sistemas digitales",
+        "B": "Los circuitos de corriente continua",
+        "C": "La física de semiconductores",
+        "D": "El electromagnetismo"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "El diodo LED emite luz al polarizarse en directa. ¿En qué tema se compara con el Zener?",
+      "opciones": {
+        "A": "En el tema de sistemas digitales",
+        "B": "En el tema de mallas",
+        "C": "En el tema de diodos",
+        "D": "En el tema de condensadores"
+      },
+      "correcta": "C"
+    },
+    {
+      "enunciado": "Una puerta lógica con transistores implementa una operación booleana. ¿Qué dispositivo usa la guía para construirlas?",
+      "opciones": {
+        "A": "El transistor",
+        "B": "El condensador ideal aislado",
+        "C": "El imán permanente",
+        "D": "La fuente de Norton sola"
+      },
+      "correcta": "A"
+    }
+  ]
+}
