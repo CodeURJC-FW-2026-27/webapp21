@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Ensaya - Lógica</title>
+        <title>Ensaya - Estadística</title>
 
         <!-- Page icon and external styles -->
         <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" />
@@ -28,6 +28,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-0">
                         <!-- Subjects dropdown -->
@@ -41,7 +42,7 @@
                                 <li><a class="dropdown-item" href="index.html#subjects">Todas las asignaturas</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown"> <!--Dropdown for the Cursos-->
                             <a class="nav-link dropdown-toggle" id="navbarDropdownCursos" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
                                 <li><a class="dropdown-item" href="index.html#course-1">1º Curso</a></li>
@@ -67,8 +68,8 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-5 fw-bolder">Lógica</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Primer Curso &middot; Primer cuatrimestre</p>
+                    <h1 class="display-5 fw-bolder">Seguridad Informática</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Tercer Curso &middot; Segundo cuatrimestre</p>
                 </div>
             </div>
         </header>
@@ -78,16 +79,15 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-5 mb-4 mb-md-0">
-                        <img class="subject-cover rounded" src="assets/logica.jpg" alt="Imagen de portada de Lógica" />
+                        <img class="subject-cover rounded" src="assets/seguridad.jpg" alt="Imagen de portada de Sistemas Operativos" />
                     </div>
                     <div class="col-md-7">
-                        <p>Asignatura de formación básica que enseña a razonar con rigor: cómo se formalizan los enunciados y cómo se demuestra que una conclusión se sigue de unas premisas.</p>
+                        <p>Asignatura obligatoria en la que se aprenden los conceptos básicos de la seguridad informática.</p>
                         <h2 class="h5 fw-bolder">Temario</h2>
                         <ul>
-                            <li>Lógica proposicional</li>
-                            <li>Lógica de predicados</li>
-                            <li>Deducción natural</li>
-                            <li>Resolución</li>
+                            <li>Introducción a la seguridad informática</li>
+                            <li>Ataques y contramedidas</li>
+                            <li>Nuevas tendencias en seguridad informática</li>
                         </ul>
                         <div class="d-flex flex-wrap gap-2 mt-4">
                             <a href="#!" class="btn btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
@@ -114,10 +114,10 @@
                         </h3>
                         <div id="simulacro1" class="accordion-collapse collapse show" data-bs-parent="#simulacrosAccordion">
                             <div class="accordion-body">
-                                <p>Formalización de enunciados, tablas de verdad y equivalencias en lógica proposicional.</p>
+                                <p>Preguntas sobre los ataques a aplicaciones y servicios web.</p>
                                 <p class="mb-3">
-                                    <span class="badge bg-success">Fácil</span>
-                                    <span class="badge bg-secondary">45 min</span>
+                                    <span class="badge bg-success">Difícil</span>
+                                    <span class="badge bg-secondary">20 min</span>
                                 </p>
                                 <div class="d-flex gap-2">
                                     <a href="#!" class="btn btn-sm btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
@@ -136,10 +136,10 @@
                         </h3>
                         <div id="simulacro2" class="accordion-collapse collapse" data-bs-parent="#simulacrosAccordion">
                             <div class="accordion-body">
-                                <p>Lógica de predicados y demostraciones con deducción natural.</p>
+                                <p>Preguntas sobre los mecanismos criptográficos.</p>
                                 <p class="mb-3">
-                                    <span class="badge bg-danger">Difícil</span>
-                                    <span class="badge bg-secondary">90 min</span>
+                                    <span class="badge bg-warning text-dark">Difícil</span>
+                                    <span class="badge bg-secondary">20 min</span>
                                 </p>
                                 <div class="d-flex gap-2">
                                     <a href="#!" class="btn btn-sm btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
@@ -165,7 +165,7 @@
                         <label for="description" class="form-label">Descripción</label>
                         <textarea class="form-control" id="description" name="description" rows="3" placeholder="Descripción"></textarea>
                     </div>
-
+                    
                     <!-- Exam duration -->
                     <div class="col-md-6">
                         <label for="duration" class="form-label">Duración</label>
@@ -175,7 +175,8 @@
                             <option value="90">90 min</option>
                         </select>
                     </div>
-
+                    
+                    
                     <!-- Exam difficulty -->
                     <div class="col-md-6">
                         <label for="difficulty" class="form-label">Dificultad</label>
