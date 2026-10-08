@@ -21,10 +21,6 @@
     </head>
 
     <body>
-        <!-- nav:
-            - navbar & navbar-expand-lg: flexbox wrapper, collapses into a toggle menu below the 992px breakpoint (lg)
-            - navbar-dark & bg-dark: dark theme palette
-            - sticky-top: locks the navigation bar at the top of the viewport during scrolling -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"> 
             <div class="container-fluid px-4 px-lg-5"> <!--with container-fluid we ensure full-width layout -->
                 <!--the web icon is the button to go back to index.html too-->
@@ -36,15 +32,24 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-0">
-                        <li class="nav-item"><a class="nav-link" href="#simulacros">Simulacros</a></li><!--this is not implemented yet-->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Asignaturas</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">Fundamentos de la Web</a></li>
-                                <li><a class="dropdown-item" href="#!">Estructuras de Datos</a></li>
-                                <li><a class="dropdown-item" href="#!">Ingeniería de Requisitos</a></li>
+                                <li><a class="dropdown-item" href="detalle-fundamentos-web.html">Fundamentos de la Web</a></li>
+                                <li><a class="dropdown-item" href="detalle-estructuras-datos.html">Estructuras de Datos</a></li>
+                                <li><a class="dropdown-item" href="detalle-bases-datos.html">Bases de Datos</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Todas las asignaturas</a></li>
+                                <li><a class="dropdown-item" href="#subjects">Todas las asignaturas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownCursos" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
+                                <li><a class="dropdown-item" href="#course-1">1º Curso</a></li>
+                                <li><a class="dropdown-item" href="#course-2">2º Curso</a></li>
+                                <li><a class="dropdown-item" href="#course-3">3º Curso</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#subjects">Todos los cursos</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros</a></li>
@@ -58,7 +63,6 @@
                 </div>
             </div>
         </nav>    
-
 
         <!--Form-->
         
