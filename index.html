@@ -6,7 +6,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Ensaya</title>
-        <!--FAV ICON (ICONO QUE APARECE EN EL NAVEGADOR)-->
+        <!--FAV ICON (icon that appears in the tab of the browser)-->
         <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" /> 
         <!-- Google Fonts: Inter (Corporative typography of the URJC) -->                                                                                    
         <link rel="preconnect" href="https://fonts.googleapis.com">                                                                                   
@@ -45,6 +45,16 @@
                                 <li><a class="dropdown-item" href="#subjects">Todas las asignaturas</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownCursos" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
+                                <li><a class="dropdown-item" href="#course-1">1º Curso</a></li>
+                                <li><a class="dropdown-item" href="#course-2">2º Curso</a></li>
+                                <li><a class="dropdown-item" href="#course-3">3º Curso</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#subjects">Todos los cursos</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros</a></li>
                     </ul>
                     <div class="d-flex">
@@ -66,7 +76,9 @@
             </div>
         </header>
         <!-- Catalog section-->
-        <section class="py-5" id="subjects">
+         <!--We are using course-anchor class to prevent half-cut cards, 
+         see the definition of the class in custom.css for more info-->
+        <section class="py-5 course-anchor" id="subjects">
             <div class="container px-4 px-lg-5 mt-5">
                 <!-- Action button to create a new simulation -->
                 <div class="d-flex justify-content-end mb-4">
@@ -75,13 +87,13 @@
                 <!-- Subjects grid: 1 column on mobile, 2 on md, 3 on lg. Each card links to the detail page of its subject -->
                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
                     <!-- Subject card: Estadística -->
-                    <div class="col mb-5">
+                    <div class="col mb-5 course-anchor" id="course-1">
                         <div class="card h-100">
                             <img class="card-img-top" src="assets/estadistica.jpg" alt="Portada de Estadística" />
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Estadística</h5>
-                                    <p class="text-muted small mb-0">Curso 1 &middot; Primer cuatrimestre</p>
+                                    <p class="text-muted small mb-0">1º Curso &middot; Primer cuatrimestre</p>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -96,7 +108,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Lógica</h5>
-                                    <p class="text-muted small mb-0">Curso 1 &middot; Primer cuatrimestre</p>
+                                    <p class="text-muted small mb-0">1º Curso &middot; Primer cuatrimestre</p>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -111,7 +123,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Estructuras de Datos</h5>
-                                    <p class="text-muted small mb-0">Curso 1 &middot; Segundo cuatrimestre</p>
+                                    <p class="text-muted small mb-0">1º Curso &middot; Segundo cuatrimestre</p>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -120,13 +132,13 @@
                         </div>
                     </div>
                     <!-- Subject card: Fundamentos de la Web -->
-                    <div class="col mb-5">
+                    <div class="col mb-5 course-anchor" id="course-2">
                         <div class="card h-100">
                             <img class="card-img-top" src="assets/fundamentos-web.jpg" alt="Portada de Fundamentos de la Web" />
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Fundamentos de la Web</h5>
-                                    <p class="text-muted small mb-0">Curso 2 &middot; Primer cuatrimestre</p>
+                                    <p class="text-muted small mb-0">2º Curso &middot; Primer cuatrimestre</p>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -141,7 +153,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Bases de Datos</h5>
-                                    <p class="text-muted small mb-0">Curso 2 &middot; Primer cuatrimestre</p>
+                                    <p class="text-muted small mb-0">2º Curso &middot; Primer cuatrimestre</p>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -156,7 +168,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Diseño y Análisis de Algoritmos</h5>
-                                    <p class="text-muted small mb-0">Curso 2 &middot; Segundo cuatrimestre</p>
+                                    <p class="text-muted small mb-0">2º Curso &middot; Segundo cuatrimestre</p>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -165,13 +177,13 @@
                         </div>
                     </div>
                     <!-- Subject card: Sistemas Operativos -->
-                    <div class="col mb-5">
+                    <div class="col mb-5 course-anchor" id="course-3">
                         <div class="card h-100">
                             <img class="card-img-top" src="assets/sistemas-operativos.jpg" alt="Portada de Sistemas Operativos" />
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Sistemas Operativos</h5>
-                                    <p class="text-muted small mb-0">Curso 3 &middot; Primer cuatrimestre</p>
+                                    <p class="text-muted small mb-0">3º Curso &middot; Primer cuatrimestre</p>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -186,7 +198,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Seguridad Informática</h5>
-                                    <p class="text-muted small mb-0">Curso 3 &middot; Segundo cuatrimestre</p>
+                                    <p class="text-muted small mb-0">3º Curso &middot; Segundo cuatrimestre</p>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -201,7 +213,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Desarrollo de Aplicaciones Web</h5>
-                                    <p class="text-muted small mb-0">Curso 3 &middot; Segundo cuatrimestre</p>
+                                    <p class="text-muted small mb-0">3º Curso &middot; Segundo cuatrimestre</p>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">

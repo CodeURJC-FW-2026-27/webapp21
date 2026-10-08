@@ -78,3 +78,10 @@
   height: 300px;
   object-fit: cover;
 }
+
+/*at first we did the #courseX section just changing the html as we did with #about but when we clicked the subject
+card was half-cut so we did some research and we found out that we could use scroll margin to prevent that*/
+/* Scroll margin to prevent sticky navbar from covering content on anchor jumps */
+.course-anchor {
+  scroll-margin-top: 90px;
+}
