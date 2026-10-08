@@ -67,62 +67,66 @@
         <!--Form-->
         
         <main class="container my-5">
-            <div class="card col-md-8 mx-auto p-4">
-                <h2 class="card-title mb-4">Nueva Asignatura</h2>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">       
+                    <div class="card p-4">        
+                        <h2 class="card-title mb-4">Nueva Asignatura</h2>
                 
-                <!-- enctype="multipart/form-data is needed as the form contains a file upload-->
-                <form id="new-subject-form" action="" method="POST" enctype="multipart/form-data">
+                        <!-- enctype="multipart/form-data is needed as the form contains a file upload-->
+                        <form id="new-subject-form" action="" method="POST" enctype="multipart/form-data">
 
-                    <!--Title-->
+                            <!--Title-->
 
-                    <div class="mb-4">
-                        <label for="title" class="form-label fw-bold"> Título de la asignatura</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Fundamentos de la Web" required>
-                    </div>
+                            <div class="mb-4">
+                                <label for="title" class="form-label fw-bold"> Título de la asignatura</label>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Fundamentos de la Web" required>
+                            </div>
 
-                    <!--Description-->
+                            <!--Description-->
 
-                    <div class="mb-4">
-                        <label for="description" class="form-label fw-bold">Descripción de la asignatura</label>
-                        <textarea class="form-control" id="description" name="description" rows="4" placeholder="Esta asignatura trata sobre los fundamentos de la web..." required></textarea>
-                    </div>
+                            <div class="mb-4">
+                                <label for="description" class="form-label fw-bold">Descripción de la asignatura</label>
+                                <textarea class="form-control" id="description" name="description" rows="4" placeholder="Esta asignatura trata sobre los fundamentos de la web..." required></textarea>
+                            </div>
 
-                    <!--Course year-->
+                            <!--Course year-->
 
-                    <div class="mb-4">
-                        <label for="course-year" class="form-label fw-bold">Curso académico</label>
-                        <select class="form-select" id="course-year" name="course-year" required>
-                            <option value="primero">1º</option>
-                            <option value="segundo">2º</option>
-                            <option value="tercero">3º</option>
-                            <option value="cuarto">4º</option>
-                        </select>
-                    </div>
+                            <div class="mb-4">
+                                <label for="course-year" class="form-label fw-bold">Curso académico</label>
+                                <select class="form-select" id="course-year" name="course-year" required>
+                                    <option value="primero">1º</option>
+                                    <option value="segundo">2º</option>
+                                    <option value="tercero">3º</option>
+                                    <option value="cuarto">4º</option>
+                                </select>
+                            </div>
 
-                    <!--Semester-->
+                            <!--Semester-->
                     
-                    <div class="mb-4">
-                        <label for="semester" class="form-label fw-bold">Semestre</label>
-                        <select class="form-select" id="semester" name="semester" required>
-                            <option value="primero">1º</option>
-                            <option value="segundo">2º</option>
-                        </select>
-                    </div>
+                            <div class="mb-4">
+                                <label for="semester" class="form-label fw-bold">Semestre</label>
+                                <select class="form-select" id="semester" name="semester" required>
+                                    <option value="primero">1º</option>
+                                    <option value="segundo">2º</option>
+                                </select>
+                            </div>
 
-                    <!--Image-->
+                            <!--Image-->
 
-                    <div class="mb-4">
-                        <label for="image" class="form-label fw-bold"> Imagen de portada </label>
-                        <input class="form-control" type="file" id="image" name="image" accept="image/*">
-                        <div class="form-text"> Formatos recomendados: JPG, PNG. Tamaño máximo: 2MB.</div>
-                    </div>
+                            <div class="mb-4">
+                                <label for="image" class="form-label fw-bold"> Imagen de portada </label>
+                                <input class="form-control" type="file" id="image" name="image" accept="image/*">
+                                <div class="form-text"> Formatos recomendados: JPG, PNG. Tamaño máximo: 2MB.</div>
+                            </div>
 
-                    <!--Buttons-->
+                            <!--Buttons-->
 
-                    <a href="index.html" class="btn btn-secondary px-4"> Cancelar</a>
-                    <button type="submit" class="btn btn-urjc px-4"><i class="bi bi-save me-2"></i>Guardar</button>
+                            <a href="index.html" class="btn btn-secondary px-4"> Cancelar</a>
+                            <button type="submit" class="btn btn-urjc px-4"><i class="bi bi-save me-2"></i>Guardar</button>
               
-                </form>
+                        </form>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -143,3 +147,4 @@
         <!-- Bootstrap core JS, we should ask if we can put this or not-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
+</html>
