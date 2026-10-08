@@ -80,10 +80,23 @@
          see the definition of the class in custom.css for more info-->
         <section class="py-5 course-anchor" id="subjects">
             <div class="container px-4 px-lg-5 mt-5">
-                <!-- Action button to create a new simulation -->
-                <div class="d-flex justify-content-end mb-4">
-                    <a href="nuevo-simulacro.html" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nuevo simulacro</a>
-                </div>
+                <!--Search bar and create a new subject button-->
+
+                <div class="d-flex justify-content-between mb-4">
+
+                    <!--Search bar-->
+                    <form action="#subjects" method="GET" role="search">
+                        <div class="input-group">
+                            <input class="form-control" type="search" name="q" placeholder="Buscar asignatura..." aria-label="Buscar asignatura">
+                            <button class="btn btn-outline-secondary" type="submit" aria-label="Buscar">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!--Button to create a new subject-->
+                    <a href="nueva-asignatura.html" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nueva asignatura</a>
+                </div>    
                 <!-- Subjects grid: 1 column on mobile, 2 on md, 3 on lg. Each card links to the detail page of its subject -->
                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
                     <!-- Subject card: Estadística -->
