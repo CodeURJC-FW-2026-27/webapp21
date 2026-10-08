@@ -60,12 +60,14 @@
         </nav>    
 
 
-        <!--form-->
+        <!--Form-->
         
         <main class="container my-5">
             <div class="card col-md-8 mx-auto p-4">
                 <h2 class="card-title mb-4">Nueva Asignatura</h2>
-                <form id="new-subject-form" action="#" method="POST" enctype="multipart/form-data">
+                
+                <!-- enctype="multipart/form-data is needed as the form contains a file upload-->
+                <form id="new-subject-form" action="" method="POST" enctype="multipart/form-data">
 
                     <!--Title-->
 
@@ -102,7 +104,6 @@
                             <option value="segundo">2º</option>
                         </select>
                     </div>
-
 
                     <!--Image-->
 
