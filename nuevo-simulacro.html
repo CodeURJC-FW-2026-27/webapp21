@@ -60,6 +60,59 @@
         </nav>    
 
 
+        <!--form-->
+        
+
+        <!--Title-->
+        <div class="mb-4">
+            <label for="title" class="form-label fw-bold"> Título de la asignatura</label>
+            <input type="text" class="form-control" id="title" placeholder="Fundamentos de la Web" required>
+        </div>
+
+        <!--Description-->
+        <div class="mb-4">
+            <label for="description" class="form-label fw-bold">Descripción de la asignatura</label>
+            <textarea class="form-control" id="description" rows="4" placeholder="Esta asignatura trata sobre los fundamentos de la web..." required></textarea>
+        </div>
+
+
+        <!--Course year-->
+        <div class="mb-4">
+            <label for="course-year" class="form-label fw-bold">Curso académico</label>
+            <select class="form-check" id="course-year" required>
+                <option value="primero">1º</option>
+                <option value="segundo">2º</option>
+                <option value="tercero">3º</option>
+                <option value="cuarto">4º</option>
+            </select>
+        </div>
+
+        <!--Semester-->
+        <div class="mb-4">
+            <label for="semester" class="form-label fw-bold">Semestre</label>
+            <select class="form-check" id="semester" required>
+                <option value="primero">1º</option>
+                <option value="segundo">2º</option>
+            </select>
+        </div>
+
+
+        <!--Image-->
+
+        <div class="mb-4">
+            <label for="image" class="form-label fw-bold"> Imagen de portada </label>
+            <input class="form-control" type="file" id="image" accept="image/*">
+            <div class="form-text"> Formatos recomendados: JPG, PNG. Tamaño máximo: 2MB.</div>
+        </div>
+
+
+        <!--Buttons-->
+
+        <a href="index.html" class="btn btn-secondary px-4"> Cancelar</a>
+        <button type="submit" class="btn btn-urjc px-4"><i class="bi bi-save me-2"></i>Guardar</button>
+
+
+
 
         <!-- Footer-->
         <footer class="py-4 footer-urjc">
