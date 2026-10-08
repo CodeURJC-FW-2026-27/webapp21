@@ -65,24 +65,27 @@
         <main class="container my-5">
             <div class="card col-md-8 mx-auto p-4">
                 <h2 class="card-title mb-4">Nueva Asignatura</h2>
-                <form id="new-simulacro-form" action="#" method="POST" enctype="multipart/form-data">
+                <form id="new-subject-form" action="#" method="POST" enctype="multipart/form-data">
+
                     <!--Title-->
+
                     <div class="mb-4">
                         <label for="title" class="form-label fw-bold"> Título de la asignatura</label>
-                        <input type="text" class="form-control" id="title" placeholder="Fundamentos de la Web" required>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Fundamentos de la Web" required>
                     </div>
 
                     <!--Description-->
+
                     <div class="mb-4">
                         <label for="description" class="form-label fw-bold">Descripción de la asignatura</label>
-                        <textarea class="form-control" id="description" rows="4" placeholder="Esta asignatura trata sobre los fundamentos de la web..." required></textarea>
+                        <textarea class="form-control" id="description" name="description" rows="4" placeholder="Esta asignatura trata sobre los fundamentos de la web..." required></textarea>
                     </div>
 
-
                     <!--Course year-->
+
                     <div class="mb-4">
                         <label for="course-year" class="form-label fw-bold">Curso académico</label>
-                        <select class="form-select" id="course-year" required>
+                        <select class="form-select" id="course-year" name="course-year" required>
                             <option value="primero">1º</option>
                             <option value="segundo">2º</option>
                             <option value="tercero">3º</option>
@@ -91,9 +94,10 @@
                     </div>
 
                     <!--Semester-->
+                    
                     <div class="mb-4">
                         <label for="semester" class="form-label fw-bold">Semestre</label>
-                        <select class="form-select" id="semester" required>
+                        <select class="form-select" id="semester" name="semester" required>
                             <option value="primero">1º</option>
                             <option value="segundo">2º</option>
                         </select>
@@ -104,7 +108,7 @@
 
                     <div class="mb-4">
                         <label for="image" class="form-label fw-bold"> Imagen de portada </label>
-                        <input class="form-control" type="file" id="image" accept="image/*">
+                        <input class="form-control" type="file" id="image" name="image" accept="image/*">
                         <div class="form-text"> Formatos recomendados: JPG, PNG. Tamaño máximo: 2MB.</div>
                     </div>
 
