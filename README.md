@@ -102,7 +102,32 @@ _Pending: Irene's tasks._
 
 **Most significant commits:**
 
-_Pending: Irene's commits._
+1. [73cfd01 - Update catalog cards to subjects with course, semester and links to    
+  detail pages](https://github.com/CodeURJC-FW-2026-                                     
+  27/webapp21/commit/73cfd011a9d0bb17f3f85c52b5004c57e7b2e179): Refactored main catalog  
+  cards into primary entity subjects with course and semester badges, establishing direct
+  navigation links to each subject detail view.                                          
+    2. [d9feebc - Add subject detail pages with intro, syllabus, simulacros and new      
+  simulacro form](https://github.com/CodeURJC-FW-2026-                                   
+  27/webapp21/commit/d9feebc829985909e622ae58e00fc0a645ff3292): Implemented five subject 
+  detail pages featuring all primary entity attributes, action buttons (Edit, Delete,    
+  Back), related secondary entities (practice exam accordion with actions), and the new  
+  simulation form.                                                                       
+    3. [b2ec581 - Add cover image styles for cards and detail pages](https://github.     
+  com/CodeURJC-FW-2026-27/webapp21/commit/b2ec5810be478e3260fa746c258d4f6c3604cfc2):     
+  Added responsive CSS styles in `custom.css` (`.card-img-top` and `.subject-cover`)     
+  ensuring consistent height and `object-fit: cover` to avoid image distortion across    
+  cards and detail headers.                                                              
+    4. [bdad554 - Add real example cards with subject, course, difficulty and            
+  duration](https://github.com/CodeURJC-FW-2026-                                         
+  27/webapp21/commit/bdad5542b092ede6ed72142f8b0c6f130aa17b49): Adapted the base template
+  catalog to the academic platform domain, replacing e-commerce items with exam          
+  simulations including course, semester, difficulty badges, and duration limits.        
+    5. [bed0945 - Add main page with simulacros grouped by course and                    
+  semester](https://github.com/CodeURJC-FW-2026-                                         
+  27/webapp21/commit/bed0945e210bde780f7db542b58bf41c6b64ad89): Built the foundational   
+  layout of `index.html` using the Bootstrap Grid System, organizing the academic catalog
+  into a responsive grid grouped by degree year and semester. 
 
 **Files with the most participation:**
 
