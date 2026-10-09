@@ -97,8 +97,25 @@ _Pending: screenshots of the main page, the detail page and the new subject page
 #### Irene Ramos Martínez-Campos
 
 **Tasks performed:**
-
-_Pending: Irene's tasks._
+                        
+      • Design and complete implementation of the  
+      Subject detail view across 5 subjects        
+      (detalle-*.html), including syllabus, primary
+      entity action buttons, secondary entity list 
+      (exam simulations accordion with individual  
+      edit/delete actions), and the new simulation 
+      creation form.                               
+      • Initial HTML structural layout of the main 
+      landing page (index.html) using Bootstrap    
+      Grid.                                        
+      • Adaptation of the catalog cards to domain  
+      entities with course, semester, difficulty,  
+      and duration metadata, connecting each card  
+      to its detail page.                          
+      • Custom CSS styling for card covers and     
+      header images (object-fit: cover) to ensure  
+      responsive design and prevent image          
+      deformation.
 
 **Most significant commits:**
 
