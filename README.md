@@ -83,3 +83,55 @@ The web application adheres to the official **Universidad Rey Juan Carlos (URJC)
 * **Base Template:** [Start Bootstrap - Shop Homepage](https://github.com/StartBootstrap/startbootstrap-shop-homepage) (customized and adapted for an academic course catalog and exam simulator).
 * **UI Framework:** [Bootstrap 5.2.3](https://getbootstrap.com/) & [Bootstrap Icons](https://icons.getbootstrap.com/).
 * **Data Sources:** Structured curriculum datasets located in `dataExamenes/`.
+
+---
+
+## Practice 1: Web Page Layout with HTML and CSS
+
+### Screenshots
+
+_Pending: screenshots of the main page, the detail page and the new subject page._
+
+### Team Participation
+
+#### Irene Ramos Martínez-Campos
+
+**Tasks performed:**
+
+_Pending: Irene's tasks._
+
+**Most significant commits:**
+
+_Pending: Irene's commits._
+
+**Files with the most participation:**
+
+_Pending: Irene's files._
+
+#### Antonio Manuel Machuca Hortelano
+
+**Tasks performed:**
+
+_Pending: Antonio's tasks._
+
+**Most significant commits:**
+
+_Pending: Antonio's commits._
+
+**Files with the most participation:**
+
+_Pending: Antonio's files._
+
+#### David Sebastián Sticea Covaciu
+
+**Tasks performed:**
+
+_Pending: David's tasks._
+
+**Most significant commits:**
+
+_Pending: David's commits._
+
+**Files with the most participation:**
+
+_Pending: David's files._
