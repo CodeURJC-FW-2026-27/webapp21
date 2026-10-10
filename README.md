@@ -97,58 +97,27 @@ _Pending: screenshots of the main page, the detail page and the new subject page
 #### Irene Ramos Martínez-Campos
 
 **Tasks performed:**
-                        
-      • Design and complete implementation of the  
-      Subject detail view across 5 subjects        
-      (detalle-*.html), including syllabus, primary
-      entity action buttons, secondary entity list 
-      (exam simulations accordion with individual  
-      edit/delete actions), and the new simulation 
-      creation form.                               
-      • Initial HTML structural layout of the main 
-      landing page (index.html) using Bootstrap    
-      Grid.                                        
-      • Adaptation of the catalog cards to domain  
-      entities with course, semester, difficulty,  
-      and duration metadata, connecting each card  
-      to its detail page.                          
-      • Custom CSS styling for card covers and     
-      header images (object-fit: cover) to ensure  
-      responsive design and prevent image          
-      deformation.
+
+* Design and complete implementation of the subject detail view across 5 subjects (`detalle-*.html`), including syllabus, primary entity action buttons, secondary entity list (exam simulations accordion with individual edit/delete actions), and the new simulation creation form.
+* Initial HTML structural layout of the main landing page (`index.html`) using Bootstrap Grid.
+* Adaptation of the catalog cards to domain entities with course, semester, difficulty, and duration metadata, connecting each card to its detail page.
+* Custom CSS styling for card covers and header images (`object-fit: cover`) to ensure responsive design and prevent image deformation.
 
 **Most significant commits:**
 
-1. [73cfd01 - Update catalog cards to subjects with course, semester and links to    
-  detail pages](https://github.com/CodeURJC-FW-2026-                                     
-  27/webapp21/commit/73cfd011a9d0bb17f3f85c52b5004c57e7b2e179): Refactored main catalog  
-  cards into primary entity subjects with course and semester badges, establishing direct
-  navigation links to each subject detail view.                                          
-    2. [d9feebc - Add subject detail pages with intro, syllabus, simulacros and new      
-  simulacro form](https://github.com/CodeURJC-FW-2026-                                   
-  27/webapp21/commit/d9feebc829985909e622ae58e00fc0a645ff3292): Implemented five subject 
-  detail pages featuring all primary entity attributes, action buttons (Edit, Delete,    
-  Back), related secondary entities (practice exam accordion with actions), and the new  
-  simulation form.                                                                       
-    3. [b2ec581 - Add cover image styles for cards and detail pages](https://github.     
-  com/CodeURJC-FW-2026-27/webapp21/commit/b2ec5810be478e3260fa746c258d4f6c3604cfc2):     
-  Added responsive CSS styles in `custom.css` (`.card-img-top` and `.subject-cover`)     
-  ensuring consistent height and `object-fit: cover` to avoid image distortion across    
-  cards and detail headers.                                                              
-    4. [bdad554 - Add real example cards with subject, course, difficulty and            
-  duration](https://github.com/CodeURJC-FW-2026-                                         
-  27/webapp21/commit/bdad5542b092ede6ed72142f8b0c6f130aa17b49): Adapted the base template
-  catalog to the academic platform domain, replacing e-commerce items with exam          
-  simulations including course, semester, difficulty badges, and duration limits.        
-    5. [bed0945 - Add main page with simulacros grouped by course and                    
-  semester](https://github.com/CodeURJC-FW-2026-                                         
-  27/webapp21/commit/bed0945e210bde780f7db542b58bf41c6b64ad89): Built the foundational   
-  layout of `index.html` using the Bootstrap Grid System, organizing the academic catalog
-  into a responsive grid grouped by degree year and semester. 
+1. [73cfd01 - Update catalog cards to subjects with course, semester and links to detail pages](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/73cfd011a9d0bb17f3f85c52b5004c57e7b2e179): Refactored main catalog cards into primary entity subjects with course and semester badges, establishing direct navigation links to each subject detail view.
+2. [d9feebc - Add subject detail pages with intro, syllabus, simulacros and new simulacro form](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/d9feebc829985909e622ae58e00fc0a645ff3292): Implemented five subject detail pages featuring all primary entity attributes, action buttons (Edit, Delete, Back), related secondary entities (practice exam accordion with actions), and the new simulation form.
+3. [b2ec581 - Add cover image styles for cards and detail pages](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/b2ec5810be478e3260fa746c258d4f6c3604cfc2): Added responsive CSS styles in `custom.css` (`.card-img-top` and `.subject-cover`) ensuring consistent height and `object-fit: cover` to avoid image distortion across cards and detail headers.
+4. [bdad554 - Add real example cards with subject, course, difficulty and duration](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/bdad5542b092ede6ed72142f8b0c6f130aa17b49): Adapted the base template catalog to the academic platform domain, replacing e-commerce items with exam simulations including course, semester, difficulty badges, and duration limits.
+5. [bed0945 - Add main page with simulacros grouped by course and semester](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/bed0945e210bde780f7db542b58bf41c6b64ad89): Built the foundational layout of `index.html` using the Bootstrap Grid System, organizing the academic catalog into a responsive grid grouped by degree year and semester.
 
 **Files with the most participation:**
 
-_Pending: Irene's files._
+1. [index.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/index.html): Built the initial HTML structural layout using the Bootstrap Grid System, adapted the academic course catalog cards with degree year, semester, difficulty badges and duration limits, and connected each card to its respective detail view.
+2. [detalle-bases-datos.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-bases-datos.html): Designed and implemented the complete detail view for *Bases de Datos* (shared architectural base with `detalle-estadistica.html` and `detalle-logica.html`), structuring syllabus competencies, entity action buttons, exam simulations accordion with individual actions, and the new simulation creation form.
+3. [detalle-estructuras-datos.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-estructuras-datos.html): Implemented the full subject detail page for *Estructuras de Datos*, including course overview, primary entity controls, related secondary entity practice exams list, and simulation creation inputs.
+4. [detalle-fundamentos-web.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-fundamentos-web.html): Built the subject detail page for *Fundamentos de la Web*, defining course metadata, syllabus units, exam simulation accordion items, and the responsive simulation form.
+5. [css/custom.css](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/css/custom.css): Added custom responsive CSS rules for catalog card covers (`.card-img-top`) and subject detail header banners (`.subject-cover`) utilizing `object-fit: cover` to prevent image distortion across different viewport sizes.
 
 #### Antonio Manuel Machuca Hortelano
 
