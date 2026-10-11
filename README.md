@@ -139,7 +139,11 @@ Form page to create a new subject. It includes specific input fields for all its
 
 **Tasks performed:**
 
-_Pending: Antonio's tasks._
+* Implementation and integration of the official Universidad Rey Juan Carlos (URJC) corporate visual identity in `css/custom.css`, including CSS root variables (`--urjc-red: #CB0017`, `--urjc-dark: #212529`), Google Fonts Inter typography, custom `.btn-urjc` buttons with interactive hover states, sticky navbar red accent border, and the `.course-anchor` scroll margin.
+* Refactoring of the main subject catalog grid in `index.html` to support responsive 1-column (mobile), 2-column (tablet), and 3-column (desktop) views, eliminating inline styling and integrating the Bootstrap JS bundle.
+* Integration of the global search bar form with search icon inside the navigation bar across the site.
+* Implementation of the navbar dropdown menus for courses (1st, 2nd, 3rd year anchors) and subjects, synchronizing page titles and navigation links across all detail views.
+* Creation of the "About Us" section (`#about`) contextualizing the platform's mission and the top call-to-action button redirecting to the subject creation form.
 
 **Most significant commits:**
 
@@ -151,29 +155,33 @@ _Pending: Antonio's tasks._
 
 **Files with the most participation:**
 
-_Pending: Antonio's files._
+1. [index.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/index.html): Reorganized the catalog grid into 1-2-3 columns, added the search bar, the "About Us" section, and the "Crear nueva asignatura" button.
+2. [css/custom.css](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/css/custom.css): Created the URJC custom styles (red theme colors, button styles, navbar border, and smooth anchor scrolling).
+3. [detalle-sistemas-operativos.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-sistemas-operativos.html): Updated the navbar with the search bar, dropdowns, and corrected the course badges.
+4. [detalle-estadistica.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-estadistica.html): Added the course anchors, updated labels, and added form placeholders.
+5. [detalle-logica.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-logica.html): Synchronized the header, navigation links, and search bar.
 
 #### David Sebastián Sticea Covaciu
 
 **Tasks performed:**
 
-* Complete design and implementation of the primary entity creation page (`nueva-asignatura.html`), developing a clean form encapsulated in a Boostrap card with fields for title, description, academic year, semester and cover file upload, alongside Save and Cancel action buttons. 
-* Implementation of additional subject detail pages (`detalle-algoritmos.html`, `detalle-daw.html`, `detalle-seguridad.html`, `detalle-sistemas-operativos.html`), including all their information and secondary entity list. 
+* Complete design and implementation of the primary entity creation page (`nueva-asignatura.html`), building a clean form encapsulated in a Boostrap card with fields for title, description, academic year, semester and cover file upload, alongside Save and Cancel action buttons. 
+* Implementation of additional subject detail pages (`detalle-algoritmos.html`, `detalle-daw.html`, `detalle-seguridad.html`, `detalle-sistemas-operativos.html`), including all their information and simulations list.
+* Refined form layout and unified action button styles to match URJC corporate identity. 
+  
 
 **Most significant commits:**
 
-1. [dd909b2 – Creado nuevo-simulacro.html. Añadido nav y footer] (https://github.com/CodeURJC-FW-2026-27/webapp21/commit/dd909b24d2e4cda46ef3eec86ec080f41b53cf8a): creation of the new subject page with the same footer and navigation as the rest of the pages.
-2. [7f96ac2 – Added form fields] (https://github.com/CodeURJC-FW-2026 27/webapp21/commit/7f96ac2d987ce3fef36457d0376604ecced81932): added all the fields (title, description, degree year, semester and cover upload) to the new subject form alongside Save and Cancel buttons.
-3. [78e82ed – Improved visuals of the form]
-(https://github.com/CodeURJC-FW-2026-27/webapp21/commit/78e82ed112835d1a235cf3e7d572ef7325672396): changed the new subject form to be inside of a card.
-4. [66e579c - Fixed new subject form layout] (https://github.com/CodeURJC-FW-2026-27/webapp21/commit/66e579c50bd7bb6215973f02dce81c60e06c8833): changed the code of the form to use a row and then a column instead of just a column.
-5. [7c53fe0 - Added detail page for the four remaining subjects]
-(https://github.com/CodeURJC-FW-2026-27/webapp21/commit/7c53fe0a2f24d1bc9aff5cee23a2e1f5333b8817): created detalle-algoritmos.html`, `detalle-daw.html`, `detalle-seguridad.html`, `detalle-sistemas-operativos.html` and completed using the layout made by Irene. 
+1. [dd909b2 – Creado nuevo-simulacro.html. Añadido nav y footer](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/dd909b24d2e4cda46ef3eec86ec080f41b53cf8a): creation of the new subject page with the same footer and navigation as the rest of the pages.
+2. [7f96ac2 – Added form fields](https://github.com/CodeURJC-FW-2026 27/webapp21/commit/7f96ac2d987ce3fef36457d0376604ecced81932): added all the fields (title, description, degree year, semester and cover upload) to the new subject form alongside Save and Cancel buttons.
+3. [78e82ed – Improved visuals of the form](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/78e82ed112835d1a235cf3e7d572ef7325672396): changed the new subject form to be inside of a card.
+4. [66e579c - Fixed new subject form layout](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/66e579c50bd7bb6215973f02dce81c60e06c8833): changed the code of the form to use a row and then a column instead of just a column.
+5. [7c53fe0 - Added detail page for the four remaining subjects](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/7c53fe0a2f24d1bc9aff5cee23a2e1f5333b8817): created detalle-algoritmos.html`, `detalle-daw.html`, `detalle-seguridad.html`, `detalle-sistemas-operativos.html` and completed using the layout made by Irene. 
 
 **Files with the most participation:**
 
-1. [nueva-asignatura.html] (https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/nueva-asignatura.html): Built the entire page
-2. [detalle-sistemas-operativos] (https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-sistemas-operativos.html): added all the subject information and its simulations. 
-3. [detalle-daw.html] (https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-daw.html): added all the subject information and its simulations. 
-4. [detalle-seguridad.html] (https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-seguridad.html): added all the subject information and its simulations. 
-5. [detalle-algoritmos.html] (https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-algoritmos.html): added all the subject information and its simulations. 
+1. [nueva-asignatura.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/nueva-asignatura.html): Created the entire page and form. 
+2. [detalle-sistemas-operativos](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-sistemas-operativos.html): added all the subject information and its simulations. 
+3. [detalle-daw.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-daw.html): added all the subject information and its simulations. 
+4. [detalle-seguridad.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-seguridad.html): added all the subject information and its simulations. 
+5. [detalle-algoritmos.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-algoritmos.html): added all the subject information and its simulations. 
