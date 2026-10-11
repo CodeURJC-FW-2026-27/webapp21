@@ -173,15 +173,15 @@ Form page to create a new subject. It includes specific input fields for all its
 **Most significant commits:**
 
 1. [dd909b2 – Creado nuevo-simulacro.html. Añadido nav y footer](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/dd909b24d2e4cda46ef3eec86ec080f41b53cf8a): creation of the new subject page with the same footer and navigation as the rest of the pages.
-2. [7f96ac2 – Added form fields](https://github.com/CodeURJC-FW-2026 27/webapp21/commit/7f96ac2d987ce3fef36457d0376604ecced81932): added all the fields (title, description, degree year, semester and cover upload) to the new subject form alongside Save and Cancel buttons.
+2. [7f96ac2 – Added form fields](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/7f96ac2d987ce3fef36457d0376604ecced81932): added all the fields (title, description, degree year, semester and cover upload) to the new subject form alongside Save and Cancel buttons.
 3. [78e82ed – Improved visuals of the form](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/78e82ed112835d1a235cf3e7d572ef7325672396): changed the new subject form to be inside of a card.
 4. [66e579c - Fixed new subject form layout](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/66e579c50bd7bb6215973f02dce81c60e06c8833): changed the code of the form to use a row and then a column instead of just a column.
-5. [7c53fe0 - Added detail page for the four remaining subjects](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/7c53fe0a2f24d1bc9aff5cee23a2e1f5333b8817): created detalle-algoritmos.html`, `detalle-daw.html`, `detalle-seguridad.html`, `detalle-sistemas-operativos.html` and completed using the layout made by Irene. 
+5. [7c53fe0 - Added detail page for the four remaining subjects](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/7c53fe0a2f24d1bc9aff5cee23a2e1f5333b8817): created `detalle-algoritmos.html`, `detalle-daw.html`, `detalle-seguridad.html`, `detalle-sistemas-operativos.html` and completed using the layout made by Irene. 
 
 **Files with the most participation:**
 
 1. [nueva-asignatura.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/nueva-asignatura.html): Created the entire page and form. 
-2. [detalle-sistemas-operativos](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-sistemas-operativos.html): added all the subject information and its simulations. 
+2. [detalle-sistemas-operativos.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-sistemas-operativos.html): added all the subject information and its simulations. 
 3. [detalle-daw.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-daw.html): added all the subject information and its simulations. 
 4. [detalle-seguridad.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-seguridad.html): added all the subject information and its simulations. 
 5. [detalle-algoritmos.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-algoritmos.html): added all the subject information and its simulations. 
