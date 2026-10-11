@@ -90,7 +90,23 @@ The web application adheres to the official **Universidad Rey Juan Carlos (URJC)
 
 ### Screenshots
 
-_Pending: screenshots of the main page, the detail page and the new subject page._
+#### 1. Main Page (Subject catalog grid) 
+Responsive catalog displaying the subjects in a 1-column (mobile), 2-column (tablet) or 3-column (desktop) grid using Boostrap. Each card shows the basic information of the main entity (subject name, cover image, academic year, and semester) along with a button to access its detail page. It also features an action button on the top-right to add a new subject
+
+![Main Page](assets/screenshots/main-page.png)
+
+#### 2. Detail Page (Subject view & simulation management) 
+Detailed view of a selected subject, showing its full information (title, academic year, semester, cover image, description, and syllabus) along with action buttons ("Edit", "Delete", and "Back to Home"). It also lists all related secondary entities (simulations) with individual "Edit" and "Delete" buttons, followed by a form to create and add a new simulation to the subject.
+
+![Detail Page](assets/screenshots/detail-page1.png)
+
+![Detail Page](assets/screenshots/detail-page2.png)
+
+#### 3. New Subject Page (Primary entity creation form) 
+Form page to create a new subject. It includes specific input fields for all its attributes (title, description, academic year, semester, and cover image upload), featuring action buttons to either save the new item or cancel and return to the main catalog.
+
+![New Subject Page](assets/screenshots/new-subject.png)
+
 
 ### Team Participation
 
@@ -141,7 +157,8 @@ _Pending: Antonio's files._
 
 **Tasks performed:**
 
-_Pending: David's tasks._
+* Complete design and implementation of the primary entity creation page (`nueva-asignatura.html`), developing a clean form encapsulated in a Boostrap card with fields for title, description, academic year, semester and cover file upload, alongside Save and Cancel action buttons. 
+* Implementation of additional subject detail pages (`detalle-algoritmos.html`, `detalle-daw.html`, `detalle-seguridad.html`, `detalle-sistemas-operativos.html`), including all their information and secondary entity list. 
 
 **Most significant commits:**
 
