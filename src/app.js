@@ -1,20 +1,17 @@
 import express from 'express';
 import mustacheExpress from 'mustache-express';
 import bodyParser from 'body-parser';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
 import router from './router.js';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+//import './load_data.js';
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static('./public'));
 
 app.set('view engine', 'html');
-app.engine('html', mustacheExpress());
-app.set('views', path.join(__dirname, '../views'));
+app.engine('html', mustacheExpress(), ".html");
+app.set('views', './views');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
