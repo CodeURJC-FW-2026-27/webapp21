@@ -33,7 +33,7 @@ nbdist/
 target/
 .gradle/
 node_modules/
-
+uploads/
 # Compiled files & packages
 *.class
 *.jar
