@@ -14,7 +14,7 @@ console.log("Connected to MongoDB");
 
 const data =client.db(DBName);
 const asignaturas = data.collection("asignaturas"); //the name of the collection is asignaturas and each document will be asignatura
-
+const tests = data.collection("tests"); //the name of the collection is tests and each document will be test
 /**
  * Escapes special characters in a string to be used in search queries, preventing regex injection attacks.
  * @param {string} text user input
@@ -29,13 +29,43 @@ function escapeRegex(text){
 //ASIGNATURAS DATABASE OPERATIONS (PRINCIPAL ENTITY)
 //===================================================
 
+
 /**
- * Get all asignaturas from the database in a array of objects
- * @returns  A array of asignaturas
+ * Get a list of asignaturas with optional filtering and pagination.
+ * @param {Object} options - The options for the query.
+ * @param {number} options.page - The page number to retrieve.
+ * @param {string} options.search - The search term to filter by.
+ * @param {string} options.courseYear - The course year to filter by.
+ * @param {string} options.semester - The semester to filter by.
+ * @returns {Object} The results of the query.
  */
-export async function getAsignaturas(){
-    return await asignaturas.find().toArray();
+export async function getAsignaturas({ page = 1, search = "", courseYear = "", semester = "" } = {}) {
+    const filter = {};
+
+    if (search && search.trim() !== "") {
+        filter.name = { $regex: escapeRegex(search.trim()), $options: "i" };
+    }
+    if (courseYear && courseYear.trim() !== "") {
+        filter.courseYear = courseYear.trim();
+    }
+    if (semester && semester.trim() !== "") {
+        filter.semester = semester.trim();
+    }
+
+    const totalItems = await asignaturas.countDocuments(filter);
+    const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE)); // Calculate the total number of pages based on the total items and page size
+    const currentPage = Math.min(Math.max(1, Number(page) || 1), totalPages); // Ensure the current page is within valid bounds
+
+    const items = await asignaturas
+        .find(filter)
+        .skip((currentPage - 1) * PAGE_SIZE)
+        .limit(PAGE_SIZE)
+        .toArray();
+
+    return { items, totalItems, totalPages, currentPage };
 }
+
+
 
 /**
  * Get a single asignatura by its object ID
@@ -106,10 +136,10 @@ export async function updateAsignatura(id, updatedAsignatura) {
  * @returns {array} an array of all the test liked to that asignatura 
  */
 export async function getTestsByAsignaturaId(asignaturaId) {
-    if (!ObjectId.isValid(asignaturaId)) { // Check if the provided ID is a valid ObjectId (error control)
-        throw new Error("Invalid asignatura ID");
+    if (!ObjectId.isValid(asignaturaId)) {
+        throw new Error("Invalid ID"); // Return an error if the provided ID is not a valid ObjectId
     }
-    return await test.find({ asignaturaId: new ObjectId(asignaturaId) }).toArray();
+    return await tests.find({ asignaturaId: new ObjectId(asignaturaId) }).toArray();
 }
 
 /**
@@ -117,11 +147,11 @@ export async function getTestsByAsignaturaId(asignaturaId) {
  * @param {ObjectId} id The object ID of the test to search
  * @returns {Object} a test object if found, otherwise undefined
  */
-export async function gettest(id){
+export async function getTest(id){
     if (!ObjectId.isValid(id)) { // Check if the provided ID is a valid ObjectId (error control)
-        throw new Error("Invalid ID");
+        return undefined;
     }
-    return await test.findOne({ _id: new ObjectId(id) });
+    return await tests.findOne({ _id: new ObjectId(id) });
 }
 
 /**
@@ -129,12 +159,16 @@ export async function gettest(id){
  * @param {Object} test The test object to add
  * @returns {ObjectId} The inserted object_ID of the new test
  */
-export async function addtest(test){
-    if (!test){ //error control: if test is undefined we don"t add it in the db
-        throw new Error("Invalid test"); 
+export async function addTest(test) {
+    if (!test || !ObjectId.isValid(test.asignaturaId)) {
+        throw new Error("Invalid test or parent asignaturaId");
     }
-    const result = await test.insertOne(test);
-    return result.insertedId; // Return the inserted object_ID of the new test
+    const testDocument = {
+        ...test,
+        asignaturaId: new ObjectId(test.asignaturaId)
+    };
+    const result = await tests.insertOne(testDocument);
+    return result.insertedId;
 }
 
 /**
@@ -147,7 +181,7 @@ export async function updateTest(id, updatedFields) {
     if (!ObjectId.isValid(id)) {
         return null;
     }
-    const { _id, subjectId, ...fieldsToUpdate } = updatedFields;
+    const { _id, asignaturaId, ...fieldsToUpdate } = updatedFields;
     return await tests.findOneAndUpdate(
         { _id: new ObjectId(id) },
         { $set: fieldsToUpdate },
@@ -187,7 +221,7 @@ export async function deleteTestsByAsignaturaId(asignaturaId) {
  * @returns true if the database is empty, otherwise false
  */
 export async function isDatabaseEmpty() {
-    return await asignaturas.countDocuments()===0;
+    return (await asignaturas.countDocuments()===0);
 }
 
 /**
@@ -196,6 +230,7 @@ export async function isDatabaseEmpty() {
  */
 export async function deleteAllAsignaturas(){
     return await asignaturas.deleteMany({}); // Delete all documents in the collection
+    return await tests.deleteMany({}); // Delete all documents in the collection
 }
 
 /**
