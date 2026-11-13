@@ -1,15 +1,11 @@
 import express from 'express';
-import multer from 'multer';
-import fs from 'node:fs';
-import * as db from './database.js';
+import { renderSuccess, renderError } from './routers/renderHelpers.js';
 
 const router = express.Router();
 export default router;
 
-const upload = multer({ dest: db.UPLOADS_FOLDER }); // Configure multer to use the uploads folder for storing uploaded files
 
-
-// Ruta principal (Home)
+// Main route (Home)
 router.get('/', (req, res) => {
     const { course, search } = req.query;
 
@@ -23,36 +19,60 @@ router.get('/', (req, res) => {
     });
 });
 
-// Redirección si se accede explícitamente a /index.html
+// Redirect explicit /index.html
 router.get('/index.html', (req, res) => {
     res.redirect('/');
 });
 
-// Ruta para la creación de una nueva asignatura (Página de nuevo elemento)
+// New subject form route
 router.get('/nueva-asignatura', (req, res) => {
-    res.render('nueva-asignatura');
+    res.render('subject-form');
 });
 
 router.get('/nueva-asignatura.html', (req, res) => {
-    res.render('nueva-asignatura');
+    res.render('subject-form');
 });
 
-// Ruta para la plantilla de detalle (Página de detalle del elemento principal)
+// Subject detail route
 router.get('/detalle', (req, res) => {
-    res.render('detalle');
+    res.render('detail');
 });
 
 router.get('/detalle.html', (req, res) => {
-    res.render('detalle');
+    res.render('detail');
 });
 
-// Compatibilidad con posibles rutas antiguas
+// Compatibility with legacy routes
 router.get('/detalle-:subject.html', (req, res) => {
-    res.render('detalle');
+    res.render('detail');
 });
 
 router.get('/detalle-:subject', (req, res) => {
-    res.render('detalle');
+    res.render('detail');
 });
 
+// Sample / verification routes for shared confirmation and error views (Task I-01)
+router.get('/sample-success', (req, res) => {
+    return renderSuccess(res, {
+        pageTitle: 'Operación completada',
+        title: 'Asignatura creada',
+        messages: ['La asignatura se ha registrado correctamente en el sistema.'],
+        buttonUrl: '/',
+        buttonText: 'Ir a la página principal'
+    });
+});
+
+router.get('/sample-error', (req, res) => {
+    return renderError(res, {
+        pageTitle: 'Error de validación',
+        title: 'No se pudo crear la asignatura',
+        messages: [
+            'El nombre de la asignatura es obligatorio y debe empezar por mayúscula.',
+            'La descripción debe tener entre 20 y 1000 caracteres.',
+            'Debe adjuntar una imagen válida en formato JPG o PNG.'
+        ],
+        buttonUrl: '/nueva-asignatura',
+        buttonText: 'Volver al formulario'
+    }, 400);
+});
 
