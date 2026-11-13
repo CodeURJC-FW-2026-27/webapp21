@@ -1,0 +1,161 @@
+[
+  {
+    "name": "Fundamentos de la Web",
+    "description": "Desarrollo de aplicaciones web cliente-servidor utilizando HTML5 semántico, CSS3, Bootstrap Grid System, JavaScript, Node.js, Express, plantillas Mustache y persistencia en MongoDB.",
+    "courseYear": "2nd Year",
+    "semester": "1st Semester",
+    "image": "fundamentos-web.jpg",
+    "tests": [
+      {
+        "title": "Parcial 1 - Maquetación Responsive con HTML5 y CSS3",
+        "description": "Evaluación práctica sobre estructura documental HTML5, estilos en cascada CSS3 y diseño adaptable mediante el sistema de rejilla de Bootstrap.",
+        "difficulty": "Medium",
+        "duration": 60
+      },
+      {
+        "title": "Parcial 2 - Arquitectura Backend en Node.js y MongoDB",
+        "description": "Simulacro completo sobre enrutamiento en Express, gestión de subida de ficheros con Multer, vistas dinámicas Mustache y consultas CRUD en MongoDB.",
+        "difficulty": "Hard",
+        "duration": 90
+      }
+    ]
+  },
+  {
+    "name": "Desarrollo de Aplicaciones Web",
+    "description": "Construcción de aplicaciones web empresariales multicapa, arquitectura RESTful, seguridad en aplicaciones web, gestión de sesiones, servicios en la nube y despliegue en producción.",
+    "courseYear": "3rd Year",
+    "semester": "2nd Semester",
+    "image": "daw.jpg",
+    "tests": [
+      {
+        "title": "Simulacro API REST y Arquitectura Multicapa",
+        "description": "Diseño de endpoints REST, controladores, validación de datos en servidor, manejo de códigos de estado HTTP y persistencia transaccional.",
+        "difficulty": "Hard",
+        "duration": 90
+      },
+      {
+        "title": "Control de Seguridad Web y Autenticación",
+        "description": "Prevención de vulnerabilidades OWASP Top 10, control de acceso basado en roles, protección CSRF y gestión segura de sesiones.",
+        "difficulty": "Medium",
+        "duration": 60
+      }
+    ]
+  },
+  {
+    "name": "Diseño y Análisis de Algoritmos",
+    "description": "Análisis asintótico de complejidad temporal y espacial, recurrencias, divide y vencerás, programación dinámica, algoritmos voraces, vuelta atrás y ramificación y poda.",
+    "courseYear": "3rd Year",
+    "semester": "1st Semester",
+    "image": "algoritmos.jpg",
+    "tests": [
+      {
+        "title": "Examen Parcial - Divide y Vencerás y Algoritmos Voraces",
+        "description": "Resolución de ecuaciones de recurrencia mediante el teorema maestro y demostración de optimalidad en estrategias voraces.",
+        "difficulty": "Medium",
+        "duration": 75
+      },
+      {
+        "title": "Simulacro Final - Programación Dinámica y Backtracking",
+        "description": "Formulación de subestructuras óptimas, tablas de memoización y poda en árboles de exploración combinatoria.",
+        "difficulty": "Hard",
+        "duration": 120
+      }
+    ]
+  },
+  {
+    "name": "Bases de Datos",
+    "description": "Modelado conceptual entidad-relación, diseño lógico relacional, dependencias funcionales, normalización hasta FNBC, consultas SQL avanzadas y bases de datos documentales NoSQL.",
+    "courseYear": "2nd Year",
+    "semester": "1st Semester",
+    "image": "bases-datos.jpg",
+    "tests": [
+      {
+        "title": "Control de Modelado E-R y Normalización",
+        "description": "Transformación de diagramas entidad-relación a esquemas relacionales y descomposición sin pérdida de información.",
+        "difficulty": "Easy",
+        "duration": 45
+      },
+      {
+        "title": "Examen Práctico de SQL y Consultas Agregadas",
+        "description": "Redacción de consultas complejas con combinaciones externas, subconsultas correlacionadas, agrupación y vistas.",
+        "difficulty": "Medium",
+        "duration": 60
+      }
+    ]
+  },
+  {
+    "name": "Sistemas Operativos",
+    "description": "Arquitectura del núcleo, gestión de procesos e hilos, algoritmos de planificación de CPU, sincronización mediante semáforos y monitores, memoria virtual paginada y sistemas de ficheros.",
+    "courseYear": "2nd Year",
+    "semester": "2nd Semester",
+    "image": "sistemas-operativos.jpg",
+    "tests": [
+      {
+        "title": "Simulacro de Concurrencia y Sincronización",
+        "description": "Resolución de problemas clásicos de exclusión mutua, interbloqueos y planificación de procesos en entornos POSIX.",
+        "difficulty": "Hard",
+        "duration": 90
+      }
+    ]
+  },
+  {
+    "name": "Estructuras de Datos",
+    "description": "Especificación e implementación de tipos abstractos de datos lineales y no lineales: pilas, colas, listas enlazadas, árboles binarios de búsqueda, árboles AVL, montículos, tablas hash y grafos.",
+    "courseYear": "1st Year",
+    "semester": "2nd Semester",
+    "image": "estructuras-datos.jpg",
+    "tests": [
+      {
+        "title": "Parcial de Árboles Balanceados y Tablas Hash",
+        "description": "Rotaciones en árboles AVL, resolución de colisiones mediante direccionamiento abierto y análisis de coste amortizado.",
+        "difficulty": "Medium",
+        "duration": 60
+      }
+    ]
+  },
+  {
+    "name": "Estadística",
+    "description": "Estadística descriptiva, espacios de probabilidad, variables aleatorias discretas y continuas, distribuciones notables, intervalos de confianza y contrastes de hipótesis paramétricos.",
+    "courseYear": "1st Year",
+    "semester": "2nd Semester",
+    "image": "estadistica.jpg",
+    "tests": [
+      {
+        "title": "Control de Probabilidad y Variables Aleatorias",
+        "description": "Cálculo de probabilidades condicionadas, teorema de Bayes, esperanza matemática y varianza.",
+        "difficulty": "Easy",
+        "duration": 50
+      }
+    ]
+  },
+  {
+    "name": "Lógica",
+    "description": "Sintaxis y semántica de la lógica proposicional y de predicados de primer orden, deducción natural, formas normales, resolución de Robinson y fundamentos de demostración formal.",
+    "courseYear": "1st Year",
+    "semester": "1st Semester",
+    "image": "logica.jpg",
+    "tests": [
+      {
+        "title": "Examen de Deducción Natural y Lógica de Primer Orden",
+        "description": "Formalización de enunciados en lenguaje natural y derivación formal mediante reglas de inferencia.",
+        "difficulty": "Medium",
+        "duration": 75
+      }
+    ]
+  },
+  {
+    "name": "Seguridad en Sistemas Informáticos",
+    "description": "Criptografía simétrica y de clave pública, funciones resumen, certificados digitales, protocolos seguros TLS, análisis de vulnerabilidades en redes y auditoría de sistemas.",
+    "courseYear": "4th Year",
+    "semester": "1st Semester",
+    "image": "seguridad.jpg",
+    "tests": [
+      {
+        "title": "Simulacro de Criptografía Aplicada y Protocolos TLS",
+        "description": "Funcionamiento de cifrado híbrido, firma digital, infraestructura de clave pública PKI y autenticación mutua.",
+        "difficulty": "Medium",
+        "duration": 60
+      }
+    ]
+  }
+]
