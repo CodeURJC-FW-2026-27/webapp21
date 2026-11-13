@@ -1,7 +1,8 @@
 import express from 'express';
 import * as db from './database.js';
 import { renderSuccess, renderError } from './routers/renderHelpers.js';
-import { upload, uploadSingleImage, deleteImage } from './imageStorage.js';
+import { uploadSingleImage, deleteImage } from './imageStorage.js';
+import { validateSubject } from './validation.js';
 
 const router = express.Router();
 
@@ -15,13 +16,54 @@ router.get('/index.html', (req, res) => {
     res.redirect('/');
 });
 
-// New subject form route
-router.get('/nueva-asignatura', (req, res) => {
-    res.render('subject-form');
+/** Render the form used to create a subject. */
+router.get(['/nueva-asignatura', '/nueva-asignatura.html'], (req, res) => {
+    res.render('subject-form', {
+        pageTitle: 'Nueva asignatura',
+        formAction: '/subjects/new',
+        isEdit: false,
+        subject: {}
+    });
 });
 
-router.get('/nueva-asignatura.html', (req, res) => {
-    res.render('subject-form');
+/** Save a subject after validating all submitted fields on the server. */
+router.post('/subjects/new', uploadSingleImage('image'), async (req, res, next) => {
+    const uploadedFilename = req.file?.filename;
+
+    try {
+        const { isValid, errors } = await validateSubject(req.body, req.file);
+        if (!isValid) {
+            await deleteImage(uploadedFilename);
+            return renderError(res, {
+                pageTitle: 'Error al crear la asignatura',
+                title: 'No se pudo crear la asignatura',
+                messages: errors,
+                buttonUrl: '/nueva-asignatura',
+                buttonText: 'Volver al formulario'
+            }, 400);
+        }
+
+        const subject = {
+            name: req.body.name.trim(),
+            description: req.body.description.trim(),
+            courseYear: String(req.body.courseYear),
+            semester: String(req.body.semester),
+            image: uploadedFilename,
+            tests: []
+        };
+        const id = await db.addAsignatura(subject);
+
+        return renderSuccess(res, {
+            pageTitle: 'Asignatura creada',
+            title: 'Asignatura creada',
+            messages: ['La asignatura se ha creado correctamente.'],
+            buttonUrl: `/subjects/${id}`,
+            buttonText: 'Ver asignatura'
+        });
+    } catch (error) {
+        await deleteImage(uploadedFilename);
+        return next(error);
+    }
 });
 
 // Subject detail route
