@@ -54,7 +54,7 @@ export async function getAsignaturas({ page = 1, search = "", courseYear = "", s
     const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
     const currentPage = Math.min(Math.max(1, Number(page) || 1), totalPages);
 
-    const items = await asignaturas
+    const items = await asignaturas //with this query we get the subjects with the given filters and pagination
         .find(filter)
         .skip((currentPage - 1) * PAGE_SIZE)
         .limit(PAGE_SIZE)

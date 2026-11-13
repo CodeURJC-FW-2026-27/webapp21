@@ -15,6 +15,18 @@ const router = express.Router();
  * Query parameters:
  * - course: Optional. Filter subjects by course year (1, 2, 3, or 4).
  * - search: Optional. Search term to filter subjects by name (case-insensitive).
+ * - page: Optional. Page number for pagination (default is 1).
+ * 
+ * The route retrieves subjects from the database based on the provided filters and pagination settings.
+ * It then renders the 'index' view with the retrieved subjects and additional context for rendering.
+ * 
+ * PAGINATION SETTINGS:     
+ * - PAGE_SIZE: The number of subjects to display per page (defined in database.js).
+ * - totalItems: The total number of subjects matching the filters.
+ * - totalPages: The total number of pages based on the PAGE_SIZE and totalItems.
+ * - currentPage: The current page number being viewed.
+ * 
+ * The route also constructs an array of page objects for rendering pagination links in the view.
  */
 router.get('/', async (req, res, next) => {
     try {
@@ -25,6 +37,25 @@ router.get('/', async (req, res, next) => {
             courseYear: course 
         });
 
+        const buildPageURL=(targetPage)=>{ //function to build the url for the pagination links
+            const params=new URLSearchParams();
+            params.set('page', targetPage);
+            return `/?${params.toString()}`;
+        };
+
+        const pages=[]; //we are creating an array with the page numbers to display in the pagination component
+        for (let i=1; i<=totalPages; i++) { //we are creating an array with the page numbers to display in the pagination component
+            pages.push({
+                number: i,
+                active: i === currentPage,
+                url: buildPageURL(i)
+            });
+        }
+        
+        const hasPrev=currentPage > 1; //check if there is a previous page (if is the first page, there is no previous page)
+        const hasNext=currentPage < totalPages; //check if there is a next page (if is the last page, there is no next page)
+        
+    
         res.render('index', { // Render the index view with the retrieved subjects and additional context
             subjects: items,
             hasSubjects: items.length > 0, //check if there are subjects to display
@@ -37,7 +68,13 @@ router.get('/', async (req, res, next) => {
             isAllCourses: !course,
             totalItems,
             totalPages,
-            currentPage
+            currentPage,
+            pages,
+            hasPagination: totalPages > 1,
+            prevUrl: hasPrev ? buildPageURL(currentPage - 1) : null, //if there is a previous page, build the url for the previous page, otherwise set it to null
+            nextUrl: hasNext ? buildPageURL(currentPage + 1) : null,//if there is a next page, build the url for the next page, otherwise set it to null
+            hasNext,
+            hasPrev
         });
     } catch (error) { //control errors 
         next(error);

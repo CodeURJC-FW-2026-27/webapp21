@@ -18,7 +18,7 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <!-- Button to create a new subject -->
                 <div class="d-flex justify-content-end mb-4">
-                    <a href="subject-form.html" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nueva asignatura</a>
+                    <a href="/subject-form" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nueva asignatura</a>
                 </div>    
                 <!-- Subjects grid: 1 column on mobile, 2 on md, 3 on lg. Each card links to the detail page of its subject -->
                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
@@ -32,8 +32,8 @@
                                 <div class="text-center">
                                     <!-- Subject name-->
                                     <h5 class="fw-bolder">{{name}}</h5>
-                                    <!-- Subject course year and semester-->
-                                    <p class="text-muted mb-2">{{courseYear}}º Curso &middot; {{semester}}º Cuatrimestre</p>
+                                    <!-- Subject course year and semester, with mustache we can render this data-->
+                                    <p class="text-muted mb-2">{{courseYear}}º Curso &middot; {{semester}}º Cuatrimestre</p> 
                                     <!-- Subject description-->
                                     <p>{{description}}</p>
                                 </div>
@@ -46,8 +46,63 @@
                     </div>
                     {{/subjects}}
                 </div>
-        </section>
+            <!-- Pagination controls -->
+            {{#hasPagination}}
+                <nav aria-label="Paginación de asignaturas" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item {{^hasPrev}}disabled{{/hasPrev}}">
+                            <a class="page-link" href="{{prevUrl}}" {{^hasPrev}}tabindex="-1" aria-disabled="true"{{/hasPrev}}>Anterior</a>
+                        </li>
+
+                        {{#pages}}
+                        <li class="page-item {{#isCurrent}}active{{/isCurrent}}" {{#isCurrent}}aria-current="page"{{/isCurrent}}>
+                            <a class="page-link" href="{{url}}">{{number}}</a>
+                        </li>
+                        {{/pages}}
+                        <li class="page-item {{^hasNext}}disabled{{/hasNext}}">
+                            <a class="page-link" href="{{nextUrl}}" {{^hasNext}}tabindex="-1" aria-disabled="true"{{/hasNext}}>Siguiente</a>
+                        </li>
+                    </ul>
+                </nav>
+            {{/hasPagination}}
+            </div>
+            
         
+        
+    
+    
+    
+        </section>
+
+        
+        
+        
+        <section class="py-5 bg-light border-top" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bolder">Sobre nosotros</h2>
+                            <p class="text-muted mb-0">Por qué nació Ensaya</p>
+                        </div>
+                        <div class="card border-0 shadow-sm p-4 p-md-5">
+                            <p class="lead fs-6 mb-3">
+                                Somos Antonio, Irene y David, tres estudiantes de Ingeniería del Software y Matemáticas en la URJC.
+                            </p>
+                            <p class="mb-3">
+                                La idea de montar esta página viene de nuestra propia experiencia en los primeros cursos: cuando estábamos perdidos con las asignaturas, tuvimos la suerte de que gente de cursos superiores nos echó un cable pasándonos preguntas tipo test, exámenes de convocatorias pasadas y consejos de cómo debíamos enfrentarnos a cada asignatura.
+                            </p>
+                            <p class="mb-3">
+                                Ahora que estamos acabando la carrera, creemos que lo justo es hacer lo mismo. Queremos que los compañeros que venís por detrás tengáis un sitio cómodo donde ensayar con preguntas reales de las asignaturas sin tener que andar buscando PDFs con publicidad o recopilatorios por mil sitios.
+                            </p>
+                            <p class="mb-0 fw-bold">
+                                Un mismo <span class="text-urjc">sitio</span>. Toda la <span class="text-urjc">carrera</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         {{>footer}} <!-- with mustache we can include partials -->
     </body>
 </html>
