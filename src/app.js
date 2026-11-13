@@ -11,7 +11,7 @@ app.use(express.static('./public')); // Serve static files from the public direc
 
 
 //Templates engine config 
-pp.set('view engine', 'html');
+app.set('view engine', 'html');
 app.engine('html', mustacheExpress('./views/partials', '.html'));
 app.set('views', './views');
 

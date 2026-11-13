@@ -1,6 +1,13 @@
 import express from 'express';
+import multer from 'multer';
+import fs from 'node:fs';
+import * as db from './database.js';
 
 const router = express.Router();
+export default router;
+
+const upload = multer({ dest: db.UPLOADS_FOLDER }); // Configure multer to use the uploads folder for storing uploaded files
+
 
 // Ruta principal (Home)
 router.get('/', (req, res) => {
@@ -39,4 +46,4 @@ router.get('/detalle-:subject', (req, res) => {
     res.render('detalle');
 });
 
-export default router;
+
