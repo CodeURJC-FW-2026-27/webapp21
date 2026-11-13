@@ -18,186 +18,91 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <!-- Button to create a new subject -->
                 <div class="d-flex justify-content-end mb-4">
-                    <a href="nueva-asignatura.html" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nueva asignatura</a>
+                    <a href="/subject-form" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nueva asignatura</a>
                 </div>    
                 <!-- Subjects grid: 1 column on mobile, 2 on md, 3 on lg. Each card links to the detail page of its subject -->
                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
-                    <!-- Subject card: Estadística -->
-                    <div class="col mb-5 course-anchor">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="/assets/estadistica.jpg" alt="Portada de Estadística" />
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Estadística</h5>
-                                    <p class="text-muted small mb-0">1º Curso &middot; Primer cuatrimestre</p>
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detalle.html">Ver asignatura</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Subject card: Lógica -->
+                    {{#subjects}}
                     <div class="col mb-5">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="/assets/logica.jpg" alt="Portada de Lógica" />
+                        <div class="card h-100 shadow-sm border-0">
+                            <!-- Subject image-->
+                            <img class="card-img-top" src="/uploads/{{image}}" alt="Imagen de {{name}}" />
+                            <!-- Subject details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="fw-bolder">Lógica</h5>
-                                    <p class="text-muted small mb-0">1º Curso &middot; Primer cuatrimestre</p>
+                                    <!-- Subject name-->
+                                    <h5 class="fw-bolder">{{name}}</h5>
+                                    <!-- Subject course year and semester, with mustache we can render this data-->
+                                    <p class="text-muted mb-2">{{courseYear}}º Curso &middot; {{semester}}º Cuatrimestre</p> 
+                                    <!-- Subject description-->
+                                    <p>{{description}}</p>
                                 </div>
                             </div>
+                            <!-- Subject actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detalle.html">Ver asignatura</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/detail/{{id}}">Ver detalles</a></div>
                             </div>
                         </div>
                     </div>
-                    <!-- Subject card: Estructuras de Datos -->
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="/assets/estructuras-datos.jpg" alt="Portada de Estructuras de Datos" />
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Estructuras de Datos</h5>
-                                    <p class="text-muted small mb-0">1º Curso &middot; Segundo cuatrimestre</p>
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detalle.html">Ver asignatura</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Subject card: Fundamentos de la Web -->
-                    <div class="col mb-5 course-anchor">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="/assets/fundamentos-web.jpg" alt="Portada de Fundamentos de la Web" />
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Fundamentos de la Web</h5>
-                                    <p class="text-muted small mb-0">2º Curso &middot; Primer cuatrimestre</p>
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detalle.html">Ver asignatura</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Subject card: Bases de Datos -->
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="/assets/bases-datos.jpg" alt="Portada de Bases de Datos" />
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Bases de Datos</h5>
-                                    <p class="text-muted small mb-0">2º Curso &middot; Primer cuatrimestre</p>
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detalle.html">Ver asignatura</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Subject card: Diseño y Análisis de Algoritmos -->
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="/assets/algoritmos.jpg" alt="Portada de Diseño y Análisis de Algoritmos" />
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Diseño y Análisis de Algoritmos</h5>
-                                    <p class="text-muted small mb-0">2º Curso &middot; Segundo cuatrimestre</p>
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detalle.html">Ver asignatura</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Subject card: Sistemas Operativos -->
-                    <div class="col mb-5 course-anchor">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="/assets/sistemas-operativos.jpg" alt="Portada de Sistemas Operativos" />
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Sistemas Operativos</h5>
-                                    <p class="text-muted small mb-0">3º Curso &middot; Primer cuatrimestre</p>
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detalle.html">Ver asignatura</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Subject card: Seguridad Informática -->
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="/assets/seguridad.jpg" alt="Portada de Seguridad Informática" />
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Seguridad Informática</h5>
-                                    <p class="text-muted small mb-0">3º Curso &middot; Segundo cuatrimestre</p>
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detalle.html">Ver asignatura</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Subject card: Desarrollo de Aplicaciones Web -->
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="/assets/daw.jpg" alt="Portada de Desarrollo de Aplicaciones Web" />
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Desarrollo de Aplicaciones Web</h5>
-                                    <p class="text-muted small mb-0">3º Curso &middot; Segundo cuatrimestre</p>
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detalle.html">Ver asignatura</a></div>
-                            </div>
-                        </div>
-                    </div>
+                    {{/subjects}}
                 </div>
+            <!-- Pagination controls -->
+            {{#hasPagination}}
+                <nav aria-label="Paginación de asignaturas" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item {{^hasPrev}}disabled{{/hasPrev}}">
+                            <a class="page-link" href="{{prevUrl}}" {{^hasPrev}}tabindex="-1" aria-disabled="true"{{/hasPrev}}>Anterior</a>
+                        </li>
+
+                        {{#pages}}
+                        <li class="page-item {{#isCurrent}}active{{/isCurrent}}" {{#isCurrent}}aria-current="page"{{/isCurrent}}>
+                            <a class="page-link" href="{{url}}">{{number}}</a>
+                        </li>
+                        {{/pages}}
+                        <li class="page-item {{^hasNext}}disabled{{/hasNext}}">
+                            <a class="page-link" href="{{nextUrl}}" {{^hasNext}}tabindex="-1" aria-disabled="true"{{/hasNext}}>Siguiente</a>
+                        </li>
+                    </ul>
+                </nav>
+            {{/hasPagination}}
             </div>
+            
+        
+        
+    
+    
+    
         </section>
 
-        <!-- About section (About us)-->
+        
+        
+        
         <section class="py-5 bg-light border-top" id="about">
             <div class="container px-4 px-lg-5">
-                <!-- Centered Grid Layout:
-                    - justify-content-center: centers columns horizontally along the Flexbox row
-                    - col-lg-8: Limits width to 8 out of 12 columns on large screens -->
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center mb-4">
-                            <!--title in bold-->
                             <h2 class="fw-bolder">Sobre nosotros</h2>
-                            <!--subtitle-->
                             <p class="text-muted mb-0">Por qué nació Ensaya</p>
                         </div>
-                        <!-- Content Card:
-                            - border-0 & shadow-sm: Modern flat design using subtle box-shadow instead of standard borders.
-                            - p-4 p-md-5: Responsive internal padding (increases from level 4 to 5 on medium+ screens).
-                            - lead & fs-6: Introductory text styling with normalized font sizing. -->
                         <div class="card border-0 shadow-sm p-4 p-md-5">
                             <p class="lead fs-6 mb-3">
                                 Somos Antonio, Irene y David, tres estudiantes de Ingeniería del Software y Matemáticas en la URJC.
                             </p>
                             <p class="mb-3">
-                                La idea de montar esta página viene de nuestra propia experiencia en los primeros cursos: cuando estábamos perdidos con las asignaturas, tuvimos la suerte de que gente de cursos superiores nos echó un cable pasándonos preguntas tipo test, exámenes de convocatorias pasadas y consejos de  como debíamos enfrentarnos a cada asignatura.
+                                La idea de montar esta página viene de nuestra propia experiencia en los primeros cursos: cuando estábamos perdidos con las asignaturas, tuvimos la suerte de que gente de cursos superiores nos echó un cable pasándonos preguntas tipo test, exámenes de convocatorias pasadas y consejos de cómo debíamos enfrentarnos a cada asignatura.
                             </p>
                             <p class="mb-3">
                                 Ahora que estamos acabando la carrera, creemos que lo justo es hacer lo mismo. Queremos que los compañeros que venís por detrás tengáis un sitio cómodo donde ensayar con preguntas reales de las asignaturas sin tener que andar buscando PDFs con publicidad o recopilatorios por mil sitios.
                             </p>
                             <p class="mb-0 fw-bold">
-                                Un mismo <span class="text-urjc" >sitio</span>. Toda la <span class="text-urjc" >carrera</span>.
+                                Un mismo <span class="text-urjc">sitio</span>. Toda la <span class="text-urjc">carrera</span>.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
         {{>footer}} <!-- with mustache we can include partials -->
     </body>
 </html>

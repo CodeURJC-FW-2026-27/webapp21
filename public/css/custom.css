@@ -85,3 +85,33 @@ card was half-cut so we did some research and we found out that we could use scr
 .course-anchor {
   scroll-margin-top: 90px;
 }
+
+/* Pagination styling matching URJC visual identity variables */
+.pagination .page-link {
+  color: var(--urjc-dark);
+  background-color: var(--urjc-white);
+  border-color: var(--urjc-border);
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.pagination .page-link:hover,
+.pagination .page-link:focus {
+  color: var(--urjc-red);
+  background-color: var(--urjc-gray-light);
+  border-color: var(--urjc-border);
+  box-shadow: 0 0 0 0.2rem rgba(203, 0, 23, 0.15);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--urjc-red);
+  border-color: var(--urjc-red);
+  color: var(--urjc-white);
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: var(--urjc-gray-light);
+  border-color: var(--urjc-border);
+  pointer-events: none;
+}

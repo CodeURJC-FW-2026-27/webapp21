@@ -2,8 +2,8 @@
   {
     "name": "Fundamentos de la Web",
     "description": "Desarrollo de aplicaciones web cliente-servidor utilizando HTML5 semántico, CSS3, Bootstrap Grid System, JavaScript, Node.js, Express, plantillas Mustache y persistencia en MongoDB.",
-    "courseYear": "2nd Year",
-    "semester": "1st Semester",
+    "courseYear": "2",
+    "semester": "1",
     "image": "fundamentos-web.jpg",
     "tests": [
       {
@@ -23,8 +23,8 @@
   {
     "name": "Desarrollo de Aplicaciones Web",
     "description": "Construcción de aplicaciones web empresariales multicapa, arquitectura RESTful, seguridad en aplicaciones web, gestión de sesiones, servicios en la nube y despliegue en producción.",
-    "courseYear": "3rd Year",
-    "semester": "2nd Semester",
+    "courseYear": "3",
+    "semester": "2",
     "image": "daw.jpg",
     "tests": [
       {
@@ -44,8 +44,8 @@
   {
     "name": "Diseño y Análisis de Algoritmos",
     "description": "Análisis asintótico de complejidad temporal y espacial, recurrencias, divide y vencerás, programación dinámica, algoritmos voraces, vuelta atrás y ramificación y poda.",
-    "courseYear": "3rd Year",
-    "semester": "1st Semester",
+    "courseYear": "3",
+    "semester": "1",
     "image": "algoritmos.jpg",
     "tests": [
       {
@@ -65,8 +65,8 @@
   {
     "name": "Bases de Datos",
     "description": "Modelado conceptual entidad-relación, diseño lógico relacional, dependencias funcionales, normalización hasta FNBC, consultas SQL avanzadas y bases de datos documentales NoSQL.",
-    "courseYear": "2nd Year",
-    "semester": "1st Semester",
+    "courseYear": "2",
+    "semester": "1",
     "image": "bases-datos.jpg",
     "tests": [
       {
@@ -86,8 +86,8 @@
   {
     "name": "Sistemas Operativos",
     "description": "Arquitectura del núcleo, gestión de procesos e hilos, algoritmos de planificación de CPU, sincronización mediante semáforos y monitores, memoria virtual paginada y sistemas de ficheros.",
-    "courseYear": "2nd Year",
-    "semester": "2nd Semester",
+    "courseYear": "2",
+    "semester": "2",
     "image": "sistemas-operativos.jpg",
     "tests": [
       {
@@ -101,8 +101,8 @@
   {
     "name": "Estructuras de Datos",
     "description": "Especificación e implementación de tipos abstractos de datos lineales y no lineales: pilas, colas, listas enlazadas, árboles binarios de búsqueda, árboles AVL, montículos, tablas hash y grafos.",
-    "courseYear": "1st Year",
-    "semester": "2nd Semester",
+    "courseYear": "1",
+    "semester": "2",
     "image": "estructuras-datos.jpg",
     "tests": [
       {
@@ -116,8 +116,8 @@
   {
     "name": "Estadística",
     "description": "Estadística descriptiva, espacios de probabilidad, variables aleatorias discretas y continuas, distribuciones notables, intervalos de confianza y contrastes de hipótesis paramétricos.",
-    "courseYear": "1st Year",
-    "semester": "2nd Semester",
+    "courseYear": "1",
+    "semester": "2",
     "image": "estadistica.jpg",
     "tests": [
       {
@@ -131,8 +131,8 @@
   {
     "name": "Lógica",
     "description": "Sintaxis y semántica de la lógica proposicional y de predicados de primer orden, deducción natural, formas normales, resolución de Robinson y fundamentos de demostración formal.",
-    "courseYear": "1st Year",
-    "semester": "1st Semester",
+    "courseYear": "1",
+    "semester": "1",
     "image": "logica.jpg",
     "tests": [
       {
@@ -146,8 +146,8 @@
   {
     "name": "Seguridad en Sistemas Informáticos",
     "description": "Criptografía simétrica y de clave pública, funciones resumen, certificados digitales, protocolos seguros TLS, análisis de vulnerabilidades en redes y auditoría de sistemas.",
-    "courseYear": "4th Year",
-    "semester": "1st Semester",
+    "courseYear": "4",
+    "semester": "1",
     "image": "seguridad.jpg",
     "tests": [
       {
