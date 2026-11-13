@@ -8,7 +8,16 @@ const router = express.Router();
 
 // Main route (Home)
 router.get('/', (req, res) => {
-    res.render('index');
+    const { course, search } = req.query;
+
+    res.render('index', {
+        search,
+        isCourse1: course === '1',
+        isCourse2: course === '2',
+        isCourse3: course === '3',
+        isCourse4: course === '4',
+        isAllCourses: !course
+    });
 });
 
 // Redirect explicit /index.html
