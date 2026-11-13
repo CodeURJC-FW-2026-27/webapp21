@@ -11,7 +11,16 @@ const upload = multer({ dest: db.UPLOADS_FOLDER }); // Configure multer to use t
 
 // Ruta principal (Home)
 router.get('/', (req, res) => {
-    res.render('index');
+    const { course, search } = req.query;
+
+    res.render('index', {
+        search,
+        isCourse1: course === '1',
+        isCourse2: course === '2',
+        isCourse3: course === '3',
+        isCourse4: course === '4',
+        isAllCourses: !course
+    });
 });
 
 // Redirección si se accede explícitamente a /index.html
