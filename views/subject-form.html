@@ -1,101 +1,116 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Ensaya - Nueva Asignatura</title>
-        <!--FAV ICON (ICON THAT APPEARS IN THE BROWSER)-->
-        <link rel="icon" type="image/svg+xml" href="/assets/logo-icon.svg" />
-        <!-- Bootstrap icons-->
-        <link href="/css/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Bootstrap CSS (v5.2.3)-->
-        <link href="/css/bootstrap.min.css" rel="stylesheet" />
-        <!-- Custom styles for the web -->
-        <link href="/css/custom.css" rel="stylesheet" />
-    </head>
+{{> head}}
+{{> header}}
 
-    <body>
-        {{>navbar}}   
+<!-- Header banner -->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-5 fw-bolder">{{#isEdit}}Editar Asignatura{{/isEdit}}{{^isEdit}}Nueva Asignatura{{/isEdit}}</h1>
+            <p class="lead fw-normal text-white-50 mb-0">
+                {{#isEdit}}Modifica los datos de la asignatura en el catálogo{{/isEdit}}
+                {{^isEdit}}Añadir una nueva asignatura al catálogo{{/isEdit}}
+            </p>
+        </div>
+    </div>
+</header>
 
-        <!-- Header -->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-5 fw-bolder">Nueva Asignatura</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Añadir una nueva asignatura al catálogo</p>
-                </div>
-            </div>
-        </header>
+<!-- Main content container -->
+<main class="container my-5 flex-grow-1">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-7">       
+            <div class="card shadow-sm border-0 p-4 p-md-5">        
+                <h2 class="card-title h3 mb-4 fw-bold">
+                    {{#isEdit}}Editar asignatura{{/isEdit}}{{^isEdit}}Nueva asignatura{{/isEdit}}
+                </h2>
 
-        <!--Form-->
-        
-        <main class="container my-5">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8">       
-                    <div class="card p-4">        
-                        <h2 class="card-title mb-4">Nueva Asignatura</h2>
-                
-                        <!-- enctype="multipart/form-data is needed as the form contains a file upload-->
-                        <form id="new-subject-form" action="" method="POST" enctype="multipart/form-data">
-
-                            <!--Title-->
-
-                            <div class="mb-4">
-                                <label for="title" class="form-label fw-bold"> Título de la asignatura</label>
-                                <input type="text" class="form-control" id="title" name="title" placeholder="Fundamentos de la Web" required>
-                            </div>
-
-                            <!--Description-->
-
-                            <div class="mb-4">
-                                <label for="description" class="form-label fw-bold">Descripción de la asignatura</label>
-                                <textarea class="form-control" id="description" name="description" rows="4" placeholder="Esta asignatura trata sobre los fundamentos de la web..." required></textarea>
-                            </div>
-
-                            <!--Course year-->
-
-                            <div class="mb-4">
-                                <label for="course-year" class="form-label fw-bold">Curso académico</label>
-                                <select class="form-select" id="course-year" name="course-year" required>
-                                    <option value="primero">1º</option>
-                                    <option value="segundo">2º</option>
-                                    <option value="tercero">3º</option>
-                                    <option value="cuarto">4º</option>
-                                </select>
-                            </div>
-
-                            <!--Cuatrimestre-->
-                    
-                            <div class="mb-4">
-                                <label for="semester" class="form-label fw-bold">Cuatrimestre</label>
-                                <select class="form-select" id="semester" name="semester" required>
-                                    <option value="primero">Primer cuatrimestre</option>
-                                    <option value="segundo">Segundo cuatrimestre</option>
-                                </select>
-                            </div>
-
-                            <!--Image-->
-
-                            <div class="mb-4">
-                                <label for="image" class="form-label fw-bold"> Imagen de portada </label>
-                                <input class="form-control" type="file" id="image" name="image" accept="image/*">
-                                <div class="form-text"> Formatos recomendados: JPG, PNG. Tamaño máximo: 2MB.</div>
-                            </div>
-
-                            <!--Buttons-->
-
-                            <a href="index.html" class="btn btn-secondary px-4"> Cancelar</a>
-                            <button type="submit" class="btn btn-urjc px-4"><i class="bi bi-save me-2"></i>Guardar</button>
-              
-                        </form>
+                <form id="subject-form" action="{{#formAction}}{{formAction}}{{/formAction}}{{^formAction}}/subjects/new{{/formAction}}" method="POST" enctype="multipart/form-data">
+                    <!-- Subject Name -->
+                    <div class="mb-4">
+                        <label for="name" class="form-label fw-bold">Título de la asignatura</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Ej. Fundamentos de la Web" 
+                            value="{{subject.name}}" 
+                            required 
+                            pattern="[A-ZÁÉÍÓÚÑ].*" 
+                            title="El nombre de la asignatura debe comenzar con una letra mayúscula."
+                        >
+                        <div class="form-text">Debe comenzar obligatoriamente con una letra mayúscula.</div>
                     </div>
-                </div>
-            </div>
-        </main>
 
-        <!-- Footer-->
-        {{>footer}} <!-- with mustache we can include partials -->
-    </body>
+                    <!-- Description -->
+                    <div class="mb-4">
+                        <label for="description" class="form-label fw-bold">Descripción de la asignatura</label>
+                        <textarea 
+                            class="form-control" 
+                            id="description" 
+                            name="description" 
+                            rows="4" 
+                            placeholder="Descripción detallada de la asignatura..." 
+                            required 
+                            minlength="20" 
+                            maxlength="1000"
+                        >{{subject.description}}</textarea>
+                        <div class="form-text">Longitud requerida: entre 20 y 1000 caracteres.</div>
+                    </div>
+
+                    <!-- Course Year (1º - 4º) -->
+                    <div class="mb-4">
+                        <label for="courseYear" class="form-label fw-bold">Curso académico</label>
+                        <select class="form-select" id="courseYear" name="courseYear" required>
+                            <option value="" disabled {{^subject.courseYear}}selected{{/subject.courseYear}}>Selecciona el curso</option>
+                            <option value="1" {{#isCourse1}}selected{{/isCourse1}}>1º Curso</option>
+                            <option value="2" {{#isCourse2}}selected{{/isCourse2}}>2º Curso</option>
+                            <option value="3" {{#isCourse3}}selected{{/isCourse3}}>3º Curso</option>
+                            <option value="4" {{#isCourse4}}selected{{/isCourse4}}>4º Curso</option>
+                        </select>
+                    </div>
+
+                    <!-- Semester (1º - 2º) -->
+                    <div class="mb-4">
+                        <label for="semester" class="form-label fw-bold">Cuatrimestre</label>
+                        <select class="form-select" id="semester" name="semester" required>
+                            <option value="" disabled {{^subject.semester}}selected{{/subject.semester}}>Selecciona el cuatrimestre</option>
+                            <option value="1" {{#isSemester1}}selected{{/isSemester1}}>Primer cuatrimestre</option>
+                            <option value="2" {{#isSemester2}}selected{{/isSemester2}}>Segundo cuatrimestre</option>
+                        </select>
+                    </div>
+
+                    <!-- Cover Image -->
+                    <div class="mb-4">
+                        <label for="image" class="form-label fw-bold">Imagen de portada</label>
+                        {{^isEdit}}
+                        <input class="form-control" type="file" id="image" name="image" accept="image/*" required>
+                        <div class="form-text">Formatos aceptados: JPG, PNG, GIF, WEBP. Tamaño máximo: 5 MB.</div>
+                        {{/isEdit}}
+                        {{#isEdit}}
+                        <input class="form-control" type="file" id="image" name="image" accept="image/*">
+                        <div class="form-text">Si no eliges imagen se mantiene la actual. Tamaño máximo: 5 MB.</div>
+                        {{#subject.image}}
+                        <div class="mt-2 d-flex align-items-center gap-3">
+                            <span class="small text-muted">Imagen actual:</span>
+                            <img src="/uploads/{{subject.image}}" alt="{{subject.name}}" class="img-thumbnail" style="height: 70px; object-fit: cover;">
+                        </div>
+                        {{/subject.image}}
+                        {{/isEdit}}
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="d-flex gap-2">
+                        <a href="/" class="btn btn-secondary px-4">Cancelar</a>
+                        <button type="submit" class="btn btn-urjc px-4">
+                            <i class="bi bi-save me-2"></i>Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+{{> footer}}
+</body>
 </html>
