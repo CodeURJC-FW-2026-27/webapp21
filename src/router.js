@@ -6,19 +6,44 @@ import { validateSubject } from './validation.js';
 
 const router = express.Router();
 
-// Main route (Home)
-router.get('/', (req, res) => {
-    const { course, search } = req.query;
 
-    res.render('index', {
-        search,
-        isCourse1: course === '1',
-        isCourse2: course === '2',
-        isCourse3: course === '3',
-        isCourse4: course === '4',
-        isAllCourses: !course
-    });
+
+// Main route (Home)
+/**
+ * GET /
+ * Renders the index page with optional filtering by course year and search term.
+ * Query parameters:
+ * - course: Optional. Filter subjects by course year (1, 2, 3, or 4).
+ * - search: Optional. Search term to filter subjects by name (case-insensitive).
+ */
+router.get('/', async (req, res, next) => {
+    try {
+        const {page = 1, course = '', search = ''}=req.query; //default values for query parameters
+        const {items, totalItems, totalPages, currentPage}=await db.getAsignaturas({ //ask db for all the subjects with the given filters and pagination
+            page,
+            search,
+            courseYear: course 
+        });
+
+        res.render('index', { // Render the index view with the retrieved subjects and additional context
+            subjects: items,
+            hasSubjects: items.length > 0, //check if there are subjects to display
+            search,
+            course,
+            isCourse1: course === '1',
+            isCourse2: course === '2',
+            isCourse3: course === '3',
+            isCourse4: course === '4',
+            isAllCourses: !course,
+            totalItems,
+            totalPages,
+            currentPage
+        });
+    } catch (error) { //control errors 
+        next(error);
+    }
 });
+
 
 // Redirect explicit /index.html
 router.get('/index.html', (req, res) => {
@@ -26,7 +51,7 @@ router.get('/index.html', (req, res) => {
 });
 
 /** Render the form used to create a subject. */
-router.get(['/nueva-asignatura', '/nueva-asignatura.html'], (req, res) => {
+router.get(['/detail', '/detail.html'], (req, res) => {
     res.render('subject-form', {
         pageTitle: 'Nueva asignatura',
         formAction: '/subjects/new',
