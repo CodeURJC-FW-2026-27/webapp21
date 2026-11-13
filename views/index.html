@@ -16,45 +16,7 @@
         <link href="/css/custom.css" rel="stylesheet" />
     </head>
     <body>
-        <!-- nav:
-            - navbar & navbar-expand-lg: flexbox wrapper, collapses into a toggle menu below the 992px breakpoint (lg)
-            - navbar-dark & bg-dark: dark theme palette
-            - sticky-top: locks the navigation bar at the top of the viewport during scrolling -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"> 
-            <div class="container-fluid px-4 px-lg-5"> <!--with container-fluid we ensure full-width layout -->
-                <!--the web icon is the button to go back to index.html too-->
-                <a class="navbar-brand d-flex align-items-center me-1" href="index.html" aria-label="Ensaya - Inicio">
-                    <img src="/assets/logo-white.svg" alt="Ensaya - Software Engineering URJC" height="55" class="d-inline-block" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownCursos" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
-                                <li><a class="dropdown-item" href="#course-1">1º Curso</a></li>
-                                <li><a class="dropdown-item" href="#course-2">2º Curso</a></li>
-                                <li><a class="dropdown-item" href="#course-3">3º Curso</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#subjects">Todos los cursos</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros</a></li>
-                    </ul>
-                    <!-- Search bar -->
-                    <form class="d-flex my-2 my-lg-0" role="search" action="#subjects" method="GET">
-                        <div class="input-group">
-                            <input class="form-control" type="search" name="q" placeholder="Buscar asignatura..." aria-label="Buscar asignatura">
-                            <button class="btn btn-urjc" type="submit" aria-label="Buscar">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </nav>    
+        {{>navbar}}<!-- with mustache we can include partials -->
         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
@@ -250,21 +212,7 @@
                 </div>
             </div>
         </section>
-        <!-- Footer-->
-        <footer class="py-4 footer-urjc">
-            <div class="container text-center text-white">
-                <p class="m-0 mb-1 fw-medium">
-                    Made by 
-                    <a href="https://github.com/irenermc" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline">Irene Ramos</a>, 
-                    <a href="https://github.com/David-2885" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline">David Sticea</a> &amp; 
-                    <a href="https://github.com/antoniomachuca" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline">Antonio Machuca</a> &mdash; 2026
-                </p>
-                <p class="m-0 small text-white-50">
-                    Ensaya &middot; Grado en Ingeniería del Software &middot; Fundamentos de la Web &middot; URJC
-                </p>
-            </div>
-        </footer>
-        <!-- Bootstrap core JS, we asked Mica 7/10/26 17:05 and he said that we can put this-->
-        <script src="/js/bootstrap.bundle.min.js"></script>
+        
+        {{>footer}} <!-- with mustache we can include partials -->
     </body>
 </html>
