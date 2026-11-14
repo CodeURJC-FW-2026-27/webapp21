@@ -81,9 +81,12 @@ export async function validateSubject(data = {}, file = null, { isEdit = false, 
  * @param {string} data.difficulty - Difficulty level ('easy', 'medium', 'hard').
  * @param {string|number} data.duration - Duration in minutes (15-240).
  * @param {string|ObjectId} subjectId - Parent subject ID to check uniqueness within.
+ * @param {Object} [options={}] - Additional validation options.
+ * @param {boolean} [options.isEdit=false] - Whether validating an existing test edit.
+ * @param {string|ObjectId} [options.testId=null] - Test ID to exclude from uniqueness check during edits.
  * @returns {Promise<{ isValid: boolean, errors: string[] }>} Validation result.
  */
-export async function validateTest(data = {}, subjectId) {
+export async function validateTest(data = {}, subjectId, { isEdit = false, testId = null } = {}) {
     const errors = [];
 
     const title = typeof data.title === 'string' ? data.title.trim() : '';
@@ -97,18 +100,35 @@ export async function validateTest(data = {}, subjectId) {
     } else if (ObjectId.isValid(subjectId)) {
         // 2. Title uniqueness within the subject using case-insensitive collation
         const subjectObjectId = new ObjectId(subjectId);
-        
-        // Exact query requested in assignment: { _id: subjectId, 'tests.title': title } with collation
-        const existingInSubject = await asignaturas.findOne(
-            { _id: subjectObjectId, 'tests.title': title },
-            { collation: { locale: 'es', strength: 2 } }
-        );
+        const testObjectId = (isEdit && testId && ObjectId.isValid(testId)) ? new ObjectId(testId) : null;
 
-        // Also check secondary tests collection in case of existing tests
-        const existingInTests = await tests.findOne(
-            { asignaturaId: subjectObjectId, title: title },
-            { collation: { locale: 'es', strength: 2 } }
-        );
+        // Query subject's embedded tests excluding current test if editing
+        const subjectQuery = {
+            _id: subjectObjectId,
+            ...(testObjectId ? {
+                tests: {
+                    $elemMatch: {
+                        title: title,
+                        _id: { $ne: testObjectId }
+                    }
+                }
+            } : {
+                'tests.title': title
+            })
+        };
+        const existingInSubject = await asignaturas.findOne(subjectQuery, {
+            collation: { locale: 'es', strength: 2 }
+        });
+
+        // Also check secondary tests collection excluding current test if editing
+        const testsQuery = {
+            asignaturaId: subjectObjectId,
+            title: title,
+            ...(testObjectId ? { _id: { $ne: testObjectId } } : {})
+        };
+        const existingInTests = await tests.findOne(testsQuery, {
+            collation: { locale: 'es', strength: 2 }
+        });
 
         if (existingInSubject || existingInTests) {
             errors.push('Ya existe un simulacro con ese título en esta asignatura.');
