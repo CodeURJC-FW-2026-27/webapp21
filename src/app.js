@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import router from './router.js';
 import { handleMulterError } from './imageStorage.js';
 import { loadSampleData } from './load_data.js';
-
+import { rendererror } from './routers/renderHelpers.js';
 const app = express();
 
 app.use(express.static('./public'));
@@ -24,6 +24,19 @@ app.use('/', router);
 
 // Global error handler for Multer upload errors
 app.use(handleMulterError);
+
+// Global error handler for unexpected server errors,
+app.use((err, req, res, next) => {
+        console.error(err);
+        renderError(res, {
+            pageTitle: 'Error del servidor',
+            title: 'Ha ocurrido un error inesperado',
+            messages: ['Se ha producido un error interno en el servidor. Por favor, inténtelo de nuevo más tarde.'],
+            buttonUrl: '/', 
+            buttonText: 'Ir al inicio'
+        }, 500); 
+    });
+
 
 // Load sample data if the database is empty
 await loadSampleData();
