@@ -87,29 +87,7 @@
             <div class="container px-4 px-lg-5">
                 <h2 class="fw-bolder mb-4">Añadir nuevo simulacro</h2>
                 <form action="/subjects/{{subject._id}}/tests/new" method="POST" class="row g-3">
-                    <div class="col-12">
-                        <label for="title" class="form-label">Título del simulacro</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Título" required maxlength="100" />
-                    </div>
-                    <div class="col-12">
-                        <label for="description" class="form-label">Descripción</label>
-                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Descripción" required minlength="10" maxlength="500"></textarea>
-                    </div>
-                    
-                    <!-- Exam duration -->
-                    <div class="col-md-6">
-                        <label for="duration" class="form-label">Duración (minutos)</label>
-                        <input type="number" class="form-control" id="duration" name="duration" min="15" max="240" step="5" value="60" required />
-                    </div>
-                    <!-- Exam difficulty -->
-                    <div class="col-md-6">
-                        <label for="difficulty" class="form-label">Dificultad</label>
-                        <select class="form-select" id="difficulty" name="difficulty" required>
-                            <option value="easy">Fácil</option>
-                            <option value="medium" selected>Intermedio</option>
-                            <option value="hard">Difícil</option>
-                        </select>
-                    </div>
+                    {{> test-fields}}
                     <div class="col-12">
                         <button type="submit" class="btn btn-urjc">Crear</button>
                     </div>
