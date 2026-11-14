@@ -326,6 +326,7 @@ router.get('/subjects/:id', async (req, res, next) => {
             subject,
             tests,
             hasTests: tests.length > 0,
+            isMedium: true
         });
     } catch (error) {
         next(error);
@@ -333,46 +334,133 @@ router.get('/subjects/:id', async (req, res, next) => {
 });
 
 /**
- * POST /subjects/:id/tests/new
- * Creates a new test linked to the specified subject after validation.
- * Returns a 404 error if the parent subject does not exist, and 400 on validation failure.
+ * GET /subjects/:id/tests/:testId/edit
+ * Renders the test form filled with current test values for editing.
  */
-router.post('/subjects/:id/tests/new', async (req, res, next) => {
+router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
     try {
-        const subject = await db.getAsignatura(req.params.id);
+        const { id: subjectId, testId } = req.params;
+        const subject = await db.getAsignatura(subjectId);
         if (!subject) {
             return renderError(res, {
                 pageTitle: 'Asignatura no encontrada',
                 title: 'No se encontró la asignatura',
-                messages: ['La asignatura a la que intentas añadir un simulacro no existe.'],
+                messages: ['La asignatura especificada no existe.'],
                 buttonUrl: '/',
                 buttonText: 'Volver al inicio'
             }, 404);
         }
 
-        const { isValid, errors } = await validateTest(req.body, req.params.id);
+        const test = await testService.getTest(subjectId, testId);
+        if (!test) {
+            return renderError(res, {
+                pageTitle: 'Simulacro no encontrado',
+                title: 'No se encontró el simulacro',
+                messages: ['El simulacro que intentas editar no existe.'],
+                buttonUrl: `/subjects/${subjectId}`,
+                buttonText: 'Volver a la asignatura'
+            }, 404);
+        }
+
+        const rawDifficulty = String(test.difficulty || '').trim().toLowerCase();
+        return res.render('test-form', {
+            pageTitle: 'Editar simulacro',
+            subject,
+            test,
+            isEasy: rawDifficulty === 'easy' || rawDifficulty === 'facil' || rawDifficulty === 'fácil',
+            isMedium: rawDifficulty === 'medium' || rawDifficulty === 'intermedio' || rawDifficulty === 'medio',
+            isHard: rawDifficulty === 'hard' || rawDifficulty === 'dificil' || rawDifficulty === 'difícil'
+        });
+    } catch (error) {
+        return next(error);
+    }
+});
+
+/**
+ * Validates and saves a new or existing test using the shared create/edit flow.
+ * @param {import('express').Request} req - Express request object.
+ * @param {import('express').Response} res - Express response object.
+ * @param {import('express').NextFunction} next - Express next handler.
+ * @param {string|null} testId - Existing test ID for edit, or null for create.
+ */
+async function saveTest(req, res, next, testId = null) {
+    const isEdit = testId !== null;
+    const subjectId = req.params.id;
+
+    try {
+        const subject = await db.getAsignatura(subjectId);
+        if (!subject) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura especificada no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+
+        if (isEdit) {
+            const existingTest = await testService.getTest(subjectId, testId);
+            if (!existingTest) {
+                return renderError(res, {
+                    pageTitle: 'Simulacro no encontrado',
+                    title: 'No se encontró el simulacro',
+                    messages: ['El simulacro que intentas editar no existe.'],
+                    buttonUrl: `/subjects/${subjectId}`,
+                    buttonText: 'Volver a la asignatura'
+                }, 404);
+            }
+        }
+
+        const { isValid, errors } = await validateTest(req.body, subjectId, {
+            isEdit,
+            testId
+        });
+
         if (!isValid) {
             return renderError(res, {
-                pageTitle: 'Error al crear el simulacro',
-                title: 'No se pudo crear el simulacro',
+                pageTitle: isEdit ? 'Error al actualizar el simulacro' : 'Error al crear el simulacro',
+                title: isEdit ? 'No se pudo actualizar el simulacro' : 'No se pudo crear el simulacro',
                 messages: errors,
-                buttonUrl: `/subjects/${req.params.id}`,
-                buttonText: 'Volver a la asignatura'
+                buttonUrl: isEdit ? `/subjects/${subjectId}/tests/${testId}/edit` : `/subjects/${subjectId}`,
+                buttonText: isEdit ? 'Volver a la edición' : 'Volver a la asignatura'
             }, 400);
         }
 
-        await testService.addTest(req.params.id, req.body);
+        if (isEdit) {
+            await testService.updateTest(subjectId, testId, req.body);
+        } else {
+            await testService.addTest(subjectId, req.body);
+        }
 
         return renderSuccess(res, {
-            pageTitle: 'Simulacro creado',
-            title: 'Simulacro creado',
-            messages: ['El simulacro se ha añadido correctamente a la asignatura.'],
-            buttonUrl: `/subjects/${req.params.id}`,
+            pageTitle: isEdit ? 'Simulacro actualizado' : 'Simulacro creado',
+            title: isEdit ? 'Simulacro actualizado' : 'Simulacro creado',
+            messages: [isEdit
+                ? 'El simulacro se ha actualizado correctamente.'
+                : 'El simulacro se ha añadido correctamente a la asignatura.'],
+            buttonUrl: `/subjects/${subjectId}`,
             buttonText: 'Volver a la asignatura'
         });
     } catch (error) {
         return next(error);
     }
+}
+
+/**
+ * POST /subjects/:id/tests/new
+ * Creates a new test linked to the specified subject using the shared save flow.
+ */
+router.post('/subjects/:id/tests/new', (req, res, next) => {
+    return saveTest(req, res, next);
+});
+
+/**
+ * POST /subjects/:id/tests/:testId/edit
+ * Updates an existing test linked to the subject using the shared save flow.
+ */
+router.post('/subjects/:id/tests/:testId/edit', (req, res, next) => {
+    return saveTest(req, res, next, req.params.testId);
 });
 
 /**
