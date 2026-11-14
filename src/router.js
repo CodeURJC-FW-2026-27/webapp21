@@ -297,6 +297,50 @@ router.get('/subjects/:id', async (req, res, next) => {
     }
 });
 
+/**
+ * POST /subjects/:id/delete
+ * Deletes the subject, its separately stored tests, and its uploaded image.
+ * Returns a 404 message page when the subject ID is invalid or no subject exists.
+ */
+router.post('/subjects/:id/delete', async (req, res, next) => {
+    try {
+        const subject = await db.getAsignatura(req.params.id);
+        if (!subject) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura que intentas eliminar no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+
+        const deletedSubject = await db.deleteAsignatura(req.params.id);
+        if (!deletedSubject) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura que intentas eliminar ya no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+
+        await db.deleteTestsByAsignaturaId(req.params.id);
+        await deleteImage(deletedSubject.image);
+
+        return renderSuccess(res, {
+            pageTitle: 'Asignatura eliminada',
+            title: 'Asignatura eliminada',
+            messages: ['La asignatura se ha eliminado correctamente.'],
+            buttonUrl: '/',
+            buttonText: 'Ir a la página principal'
+        });
+    } catch (error) {
+        return next(error);
+    }
+});
+
 
 // Sample / verification routes for shared confirmation and error views (Task I-01)
 router.get('/sample-success', (req, res) => {
