@@ -94,9 +94,11 @@ export async function validateTest(data = {}, subjectId, { isEdit = false, testI
     const difficulty = typeof data.difficulty === 'string' ? data.difficulty.trim().toLowerCase() : '';
     const rawDuration = data.duration;
 
-    // 1. Title is mandatory
+    // 1. Title is mandatory and length between 3 and 100 characters
     if (!title) {
         errors.push('El título del simulacro es obligatorio.');
+    } else if (title.length < 3 || title.length > 100) {
+        errors.push('El título del simulacro debe tener entre 3 y 100 caracteres.');
     } else if (ObjectId.isValid(subjectId)) {
         // 2. Title uniqueness within the subject using case-insensitive collation
         const subjectObjectId = new ObjectId(subjectId);

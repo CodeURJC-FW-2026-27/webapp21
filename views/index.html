@@ -45,6 +45,11 @@
                         </div>
                     </div>
                     {{/subjects}}
+                    {{^hasSubjects}}
+                    <div class="col-12 text-center py-5">
+                        <p class="lead text-muted">No se han encontrado asignaturas</p>
+                    </div>
+                    {{/hasSubjects}}
                 </div>
             <!-- Pagination controls -->
             {{#hasPagination}}

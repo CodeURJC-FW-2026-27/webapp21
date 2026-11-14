@@ -32,32 +32,34 @@ const router = express.Router();
  */
 router.get('/', async (req, res, next) => {
     try {
-        const {page = 1, course = '', search = ''}=req.query; //default values for query parameters
-        const {items, totalItems, totalPages, currentPage}=await db.getAsignaturas({ //ask db for all the subjects with the given filters and pagination
+        const { page = 1, course = '', search = '' } = req.query; //default values for query parameters
+        const { items, totalItems, totalPages, currentPage } = await db.getAsignaturas({ //ask db for all the subjects with the given filters and pagination
             page,
             search,
-            courseYear: course 
+            courseYear: course
         });
 
-        const buildPageURL=(targetPage)=>{ //function to build the url for the pagination links
-            const params=new URLSearchParams();
+        const buildPageURL = (targetPage) => { //function to build the url for the pagination links
+            const params = new URLSearchParams();
             params.set('page', targetPage);
+            if (course) params.set('course', course);
+            if (search) params.set('search', search);
             return `/?${params.toString()}`;
         };
 
-        const pages=[]; //we are creating an array with the page numbers to display in the pagination component
-        for (let i=1; i<=totalPages; i++) { //we are creating an array with the page numbers to display in the pagination component
+        const pages = []; //we are creating an array with the page numbers to display in the pagination component
+        for (let i = 1; i <= totalPages; i++) { //we are creating an array with the page numbers to display in the pagination component
             pages.push({
                 number: i,
                 active: i === currentPage,
                 url: buildPageURL(i)
             });
         }
-        
-        const hasPrev=currentPage > 1; //check if there is a previous page (if is the first page, there is no previous page)
-        const hasNext=currentPage < totalPages; //check if there is a next page (if is the last page, there is no next page)
-        
-    
+
+        const hasPrev = currentPage > 1; //check if there is a previous page (if is the first page, there is no previous page)
+        const hasNext = currentPage < totalPages; //check if there is a next page (if is the last page, there is no next page)
+
+
         res.render('index', { // Render the index view with the retrieved subjects and additional context
             subjects: items,
             hasSubjects: items.length > 0, //check if there are subjects to display
@@ -569,32 +571,6 @@ router.post('/subjects/:id/delete', async (req, res, next) => {
     } catch (error) {
         return next(error);
     }
-});
-
-
-// Sample / verification routes for shared confirmation and error views (Task I-01)
-router.get('/sample-success', (req, res) => {
-    return renderSuccess(res, {
-        pageTitle: 'Operación completada',
-        title: 'Asignatura creada',
-        messages: ['La asignatura se ha registrado correctamente en el sistema.'],
-        buttonUrl: '/',
-        buttonText: 'Ir a la página principal'
-    });
-});
-
-router.get('/sample-error', (req, res) => {
-    return renderError(res, {
-        pageTitle: 'Error de validación',
-        title: 'No se pudo crear la asignatura',
-        messages: [
-            'El nombre de la asignatura es obligatorio y debe empezar por mayúscula.',
-            'La descripción debe tener entre 20 y 1000 caracteres.',
-            'Debe adjuntar una imagen válida en formato JPG o PNG.'
-        ],
-        buttonUrl: '/nueva-asignatura',
-        buttonText: 'Volver al formulario'
-    }, 400);
 });
 
 export default router;

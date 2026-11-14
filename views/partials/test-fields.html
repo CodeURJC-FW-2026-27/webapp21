@@ -1,6 +1,6 @@
 <div class="col-12">
     <label for="title" class="form-label fw-bold">Título del simulacro</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="Título" value="{{test.title}}" required maxlength="100" />
+    <input type="text" class="form-control" id="title" name="title" placeholder="Título" value="{{test.title}}" required minlength="3" maxlength="100" />
 </div>
 <div class="col-12">
     <label for="description" class="form-label fw-bold">Descripción</label>
@@ -10,7 +10,7 @@
 <!-- Exam duration -->
 <div class="col-md-6">
     <label for="duration" class="form-label fw-bold">Duración (minutos)</label>
-    <input type="number" class="form-control" id="duration" name="duration" min="15" max="240" step="5" value="{{#test.duration}}{{test.duration}}{{/test.duration}}{{^test.duration}}60{{/test.duration}}" required />
+    <input type="number" class="form-control" id="duration" name="duration" min="15" max="240" step="1" value="{{#test.duration}}{{test.duration}}{{/test.duration}}{{^test.duration}}60{{/test.duration}}" required />
 </div>
 
 <!-- Exam difficulty -->

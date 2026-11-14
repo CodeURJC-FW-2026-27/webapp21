@@ -249,3 +249,16 @@ export async function deleteAllAsignaturas() {
 export async function closeDatabase() {
     await client.close();
 }
+
+// English function aliases for code quality and strict language compliance
+export {
+    getAsignaturas as getSubjects,
+    getAsignatura as getSubject,
+    addAsignatura as addSubject,
+    updateAsignatura as updateSubject,
+    deleteAsignatura as deleteSubject,
+    getAsignaturaByName as getSubjectByName,
+    getTestsByAsignaturaId as getTestsBySubjectId,
+    deleteTestsByAsignaturaId as deleteTestsBySubjectId,
+    deleteAllAsignaturas as deleteAllSubjects
+};
