@@ -1,4 +1,5 @@
 import express from 'express';
+import { ObjectId } from 'mongodb';
 import * as db from './database.js';
 import { renderSuccess, renderError } from './routers/renderHelpers.js';
 import { uploadSingleImage, deleteImage } from './imageStorage.js';
@@ -461,6 +462,59 @@ router.post('/subjects/:id/tests/new', (req, res, next) => {
  */
 router.post('/subjects/:id/tests/:testId/edit', (req, res, next) => {
     return saveTest(req, res, next, req.params.testId);
+});
+
+/**
+ * POST /subjects/:id/tests/:testId/delete
+ * Deletes a test from the subject using $pull.
+ * Returns an error page if IDs are invalid or test does not exist.
+ */
+router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
+    try {
+        const { id: subjectId, testId } = req.params;
+
+        if (!ObjectId.isValid(subjectId) || !ObjectId.isValid(testId)) {
+            return renderError(res, {
+                pageTitle: 'Identificador no válido',
+                title: 'Identificador no válido',
+                messages: ['El identificador de la asignatura o del simulacro no es válido.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 400);
+        }
+
+        const subject = await db.getAsignatura(subjectId);
+        if (!subject) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura especificada no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+
+        const { deleted } = await testService.deleteTest(subjectId, testId);
+        if (!deleted) {
+            return renderError(res, {
+                pageTitle: 'Simulacro no encontrado',
+                title: 'No se pudo eliminar el simulacro',
+                messages: ['El simulacro que intentas eliminar no existe o ya ha sido eliminado.'],
+                buttonUrl: `/subjects/${subjectId}`,
+                buttonText: 'Volver a la asignatura'
+            }, 404);
+        }
+
+        return renderSuccess(res, {
+            pageTitle: 'Simulacro eliminado',
+            title: 'Simulacro eliminado',
+            messages: ['El simulacro se ha eliminado correctamente.'],
+            buttonUrl: `/subjects/${subjectId}`,
+            buttonText: 'Volver a la asignatura'
+        });
+    } catch (error) {
+        return next(error);
+    }
 });
 
 /**

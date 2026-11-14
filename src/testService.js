@@ -114,3 +114,39 @@ export async function updateTest(subjectId, testId, data) {
     return result.matchedCount > 0 || result.modifiedCount > 0;
 }
 
+/**
+ * Deletes an existing test from a subject using $pull operator.
+ * Also synchronizes the secondary tests collection.
+ * 
+ * @param {string|ObjectId} subjectId - Parent subject identifier.
+ * @param {string|ObjectId} testId - Test identifier.
+ * @returns {Promise<{ deleted: boolean, modifiedCount: number }>} Deletion result.
+ */
+export async function deleteTest(subjectId, testId) {
+    if (!ObjectId.isValid(subjectId) || !ObjectId.isValid(testId)) {
+        return { deleted: false, modifiedCount: 0 };
+    }
+
+    const subjectObjectId = new ObjectId(subjectId);
+    const testObjectId = new ObjectId(testId);
+
+    // Pull from subject's embedded tests array as specified
+    const result = await asignaturas.updateOne(
+        { _id: subjectObjectId },
+        { $pull: { tests: { _id: testObjectId } } }
+    );
+
+    // Also synchronize tests collection for backwards compatibility
+    const testsResult = await tests.deleteOne({
+        _id: testObjectId,
+        asignaturaId: subjectObjectId
+    });
+
+    const isDeleted = result.modifiedCount > 0 || testsResult.deletedCount > 0;
+    return {
+        deleted: isDeleted,
+        modifiedCount: result.modifiedCount
+    };
+}
+
+
