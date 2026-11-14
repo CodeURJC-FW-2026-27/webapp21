@@ -7,8 +7,8 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-5 fw-bolder">Fundamentos de la Web</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">2º Curso &middot; Primer cuatrimestre</p>
+                    <h1 class="display-5 fw-bolder">{{subject.name}}</h1> <!-- with mustache we can display the subject's name -->
+                    <p class="lead fw-normal text-white-50 mb-0">{{subject.courseYear}}º Curso &middot; {{subject.semester}}º Cuatrimestre</p>
                 </div>
             </div>
         </header>
@@ -18,29 +18,34 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-5 mb-4 mb-md-0">
-                        <img class="subject-cover rounded" src="/assets/fundamentos-web.jpg" alt="Imagen de portada de Fundamentos de la Web" />
+                        <!--Image of the subject needs to be uploaded in the uploads folder-->
+                        <img class="subject-cover rounded" src="/uploads/{{subject.image}}" alt="Imagen de portada de {{subject.name}}" /> 
                     </div>
                     <div class="col-md-7">
-                        <p>Asignatura obligatoria que ofrece una visión general de cómo funciona la web y de las tecnologías de cliente con las que se construyen sus páginas.</p>
-                        <h2 class="h5 fw-bolder">Temario</h2>
-                        <ul>
-                            <li>Historia de la web y conceptos básicos</li>
-                            <li>Tecnologías y arquitecturas web</li>
-                            <li>Formatos XML y JSON</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Bootstrap</li>
-                        </ul>
+                        <h2 class="h5 fw-bolder">Descripción de la asignatura</h2>
+                        <p class="text-secondary leading-relaxed">{{subject.description}}</p>
+                        
                         <div class="d-flex flex-wrap gap-2 mt-4">
-                            <a href="#!" class="btn btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
-                            <a href="#!" class="btn btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</a>
-                            <a href="index.html" class="btn btn-dark">Volver a Inicio</a>
+                            <!--edit subject-->
+                            <a href="/subjects/{{subject._id}}/edit" class="btn btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
+                            
+                            <!--delete subject-->
+                            <!--with post we delete the subject from the db -->
+                            <!--return confirm allow as to confirm that the user wants to really delete the subject -->
+                            <form action="/subjects/{{subject._id}}/delete" method="POST" onsubmit="return confirm('¿Estás seguro de que quieres eliminar esta asignatura?');">
+                                <button type="submit" class="btn btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</button>
+                            </form>
+
+                            <!--back to index-->
+                            <a href="/" class="btn btn-dark"><i class="bi-arrow-left-circle me-1"></i>Volver a Inicio</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+
+        <!--ESTA PARTE ES DE DAVID LA DE LA SECCION DE TESTS-->
         <section class="py-5 bg-light">
             <div class="container px-4 px-lg-5">
                 <h2 class="fw-bolder mb-4">Simulacros disponibles</h2>

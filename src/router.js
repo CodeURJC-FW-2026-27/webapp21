@@ -148,18 +148,18 @@ router.get('/subjects/:id', async (req, res, next) => {
         const subject = await db.getAsignatura(req.params.id); // we wait for the db to give the subject id 
         if (!subject) {
             return renderError(res, {
-                pageTitle: 'Asignatura no encontrada',
                 title: 'Asignatura no encontrada',
                 messages: ['No se ha encontrado la asignatura solicitada.'],
                 buttonUrl: '/',
                 buttonText: 'Volver al inicio'
             }, 404);
         }
-        
+        const tests= await db.getTestsByAsignaturaId(subject._id); // we wait for the db to give the tests of the subject id
         res.render('detail', {
             pageTitle: subject.name,
             subject,
-            hasTests: subject.tests && subject.tests.length > 0,
+            tests,
+            hasTests: tests && tests.length > 0,
         });
     } catch (error) {
         next(error);
