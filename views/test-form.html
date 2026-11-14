@@ -1,0 +1,39 @@
+{{> head}}
+<body class="d-flex flex-column min-vh-100">
+{{> navbar}}
+
+<!-- Header banner -->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-5 fw-bolder">Editar Simulacro</h1>
+            <p class="lead fw-normal text-white-50 mb-0">{{subject.name}}</p>
+        </div>
+    </div>
+</header>
+
+<!-- Main content container -->
+<main class="container my-5 flex-grow-1">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-7">       
+            <div class="card shadow-sm border-0 p-4 p-md-5">        
+                <h2 class="card-title h3 mb-4 fw-bold">Modificar simulacro</h2>
+
+                <form action="/subjects/{{subject._id}}/tests/{{test._id}}/edit" method="POST" class="row g-3">
+                    {{> test-fields}}
+
+                    <div class="col-12 d-flex gap-2 mt-4">
+                        <a href="/subjects/{{subject._id}}" class="btn btn-secondary px-4">Cancelar</a>
+                        <button type="submit" class="btn btn-urjc px-4">
+                            <i class="bi bi-save me-2"></i>Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

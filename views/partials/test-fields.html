@@ -1,0 +1,24 @@
+<div class="col-12">
+    <label for="title" class="form-label fw-bold">Título del simulacro</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Título" value="{{test.title}}" required maxlength="100" />
+</div>
+<div class="col-12">
+    <label for="description" class="form-label fw-bold">Descripción</label>
+    <textarea class="form-control" id="description" name="description" rows="3" placeholder="Descripción" required minlength="10" maxlength="500">{{test.description}}</textarea>
+</div>
+
+<!-- Exam duration -->
+<div class="col-md-6">
+    <label for="duration" class="form-label fw-bold">Duración (minutos)</label>
+    <input type="number" class="form-control" id="duration" name="duration" min="15" max="240" step="5" value="{{#test.duration}}{{test.duration}}{{/test.duration}}{{^test.duration}}60{{/test.duration}}" required />
+</div>
+
+<!-- Exam difficulty -->
+<div class="col-md-6">
+    <label for="difficulty" class="form-label fw-bold">Dificultad</label>
+    <select class="form-select" id="difficulty" name="difficulty" required>
+        <option value="easy" {{#isEasy}}selected{{/isEasy}}>Fácil</option>
+        <option value="medium" {{#isMedium}}selected{{/isMedium}}>Intermedio</option>
+        <option value="hard" {{#isHard}}selected{{/isHard}}>Difícil</option>
+    </select>
+</div>
