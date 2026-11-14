@@ -88,7 +88,7 @@ router.get('/index.html', (req, res) => {
 });
 
 /** Render the form used to create a subject. */
-router.get(['/detail', '/detail.html'], (req, res) => {
+router.get(['/subject-form', '/subject-form.html'], (req, res) => {
     res.render('subject-form', {
         pageTitle: 'Nueva asignatura',
         formAction: '/subjects/new',
