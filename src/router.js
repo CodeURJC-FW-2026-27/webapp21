@@ -320,8 +320,7 @@ router.get('/subjects/:id', async (req, res, next) => {
             }, 404);
         }
         const rawTests = await db.getTestsByAsignaturaId(subject._id); // fetch tests belonging to this subject
-        const allRawTests = rawTests && rawTests.length > 0 ? rawTests : (subject.tests || []);
-        const tests = allRawTests.map((test) => formatTest(test, subject._id.toString()));
+        const tests = (rawTests || []).map((test) => formatTest(test, subject._id.toString()));
         res.render('detail', {
             pageTitle: subject.name,
             subject,
@@ -352,8 +351,8 @@ router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
             }, 404);
         }
 
-        const test = await testService.getTest(subjectId, testId);
-        if (!test) {
+        const test = await testService.getTest(testId);
+        if (!test || test.asignaturaId.toString() !== subject._id.toString()) {
             return renderError(res, {
                 pageTitle: 'Simulacro no encontrado',
                 title: 'No se encontró el simulacro',
@@ -401,8 +400,8 @@ async function saveTest(req, res, next, testId = null) {
         }
 
         if (isEdit) {
-            const existingTest = await testService.getTest(subjectId, testId);
-            if (!existingTest) {
+            const existingTest = await testService.getTest(testId);
+            if (!existingTest || existingTest.asignaturaId.toString() !== subject._id.toString()) {
                 return renderError(res, {
                     pageTitle: 'Simulacro no encontrado',
                     title: 'No se encontró el simulacro',
@@ -429,7 +428,7 @@ async function saveTest(req, res, next, testId = null) {
         }
 
         if (isEdit) {
-            await testService.updateTest(subjectId, testId, req.body);
+            await testService.updateTest(testId, req.body);
         } else {
             await testService.addTest(subjectId, req.body);
         }
@@ -466,7 +465,7 @@ router.post('/subjects/:id/tests/:testId/edit', (req, res, next) => {
 
 /**
  * POST /subjects/:id/tests/:testId/delete
- * Deletes a test from the subject using $pull.
+ * Deletes a test from the tests collection.
  * Returns an error page if IDs are invalid or test does not exist.
  */
 router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
@@ -494,7 +493,18 @@ router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
             }, 404);
         }
 
-        const { deleted } = await testService.deleteTest(subjectId, testId);
+        const existingTest = await testService.getTest(testId);
+        if (!existingTest || existingTest.asignaturaId.toString() !== subject._id.toString()) {
+            return renderError(res, {
+                pageTitle: 'Simulacro no encontrado',
+                title: 'No se pudo eliminar el simulacro',
+                messages: ['El simulacro que intentas eliminar no existe o ya ha sido eliminado.'],
+                buttonUrl: `/subjects/${subjectId}`,
+                buttonText: 'Volver a la asignatura'
+            }, 404);
+        }
+
+        const deleted = await testService.deleteTest(testId);
         if (!deleted) {
             return renderError(res, {
                 pageTitle: 'Simulacro no encontrado',

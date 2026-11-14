@@ -102,25 +102,6 @@ export async function validateTest(data = {}, subjectId, { isEdit = false, testI
         const subjectObjectId = new ObjectId(subjectId);
         const testObjectId = (isEdit && testId && ObjectId.isValid(testId)) ? new ObjectId(testId) : null;
 
-        // Query subject's embedded tests excluding current test if editing
-        const subjectQuery = {
-            _id: subjectObjectId,
-            ...(testObjectId ? {
-                tests: {
-                    $elemMatch: {
-                        title: title,
-                        _id: { $ne: testObjectId }
-                    }
-                }
-            } : {
-                'tests.title': title
-            })
-        };
-        const existingInSubject = await asignaturas.findOne(subjectQuery, {
-            collation: { locale: 'es', strength: 2 }
-        });
-
-        // Also check secondary tests collection excluding current test if editing
         const testsQuery = {
             asignaturaId: subjectObjectId,
             title: title,
@@ -130,7 +111,7 @@ export async function validateTest(data = {}, subjectId, { isEdit = false, testI
             collation: { locale: 'es', strength: 2 }
         });
 
-        if (existingInSubject || existingInTests) {
+        if (existingInTests) {
             errors.push('Ya existe un simulacro con ese título en esta asignatura.');
         }
     }
