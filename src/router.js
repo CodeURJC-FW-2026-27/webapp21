@@ -137,23 +137,35 @@ router.post('/subjects/new', uploadSingleImage('image'), async (req, res, next) 
     }
 });
 
-// Subject detail route
-router.get('/detalle', (req, res) => {
-    res.render('detail');
+
+/**
+ * GET /subjects/:id
+ * Renders the detail page for a specific subject by its ID.
+ * If the subject is not found, renders an error page with a 404 status.
+ */
+router.get('/subjects/:id', async (req, res, next) => {
+    try {
+        const subject = await db.getAsignatura(req.params.id); // we wait for the db to give the subject id 
+        if (!subject) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'Asignatura no encontrada',
+                messages: ['No se ha encontrado la asignatura solicitada.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+        
+        res.render('detail', {
+            pageTitle: subject.name,
+            subject,
+            hasTests: subject.tests && subject.tests.length > 0,
+        });
+    } catch (error) {
+        next(error);
+    }
 });
 
-router.get('/detalle.html', (req, res) => {
-    res.render('detail');
-});
-
-// Compatibility with legacy routes
-router.get('/detalle-:subject.html', (req, res) => {
-    res.render('detail');
-});
-
-router.get('/detalle-:subject', (req, res) => {
-    res.render('detail');
-});
 
 // Sample / verification routes for shared confirmation and error views (Task I-01)
 router.get('/sample-success', (req, res) => {
