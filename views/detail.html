@@ -50,50 +50,34 @@
             <div class="container px-4 px-lg-5">
                 <h2 class="fw-bolder mb-4">Simulacros disponibles</h2>
                 <div class="accordion" id="simulacrosAccordion">
-                    
-                    <!-- First practice exam -->
+                    {{! TESTS SECTION }}
+                    {{#tests}}
                     <div class="accordion-item mb-3">
                         <h3 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#simulacro1" aria-expanded="true" aria-controls="simulacro1">
-                                Simulacro 1
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#test-{{_id}}" aria-expanded="true" aria-controls="test-{{_id}}">
+                                {{title}}
                             </button>
                         </h3>
-                        <div id="simulacro1" class="accordion-collapse collapse show">
+                        <div id="test-{{_id}}" class="accordion-collapse collapse show">
                             <div class="accordion-body">
-                                <p>Historia de la web, tecnologías y arquitecturas, y formatos de intercambio XML y JSON.</p>
+                                <p>{{description}}</p>
                                 <p class="mb-3">
-                                    <span class="badge bg-success">Fácil</span>
-                                    <span class="badge bg-secondary">45 min</span>
+                                    <span class="badge {{difficultyBadgeClass}}">{{difficultyLabel}}</span>
+                                    <span class="badge bg-secondary">{{durationText}}</span>
                                 </p>
                                 <div class="d-flex gap-2">
-                                    <a href="#!" class="btn btn-sm btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
-                                    <a href="#!" class="btn btn-sm btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</a>
+                                    <a href="/subjects/{{subjectId}}/tests/{{_id}}/edit" class="btn btn-sm btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
+                                    <form action="/subjects/{{subjectId}}/tests/{{_id}}/delete" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este simulacro?');">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Second practice exam -->
-                    <div class="accordion-item mb-3">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#simulacro2" aria-expanded="true" aria-controls="simulacro2">
-                                Simulacro 2
-                            </button>
-                        </h3>
-                        <div id="simulacro2" class="accordion-collapse collapse show">
-                            <div class="accordion-body">
-                                <p>Maquetación con HTML, CSS y Bootstrap: etiquetas, selectores, flexbox, grid y componentes.</p>
-                                <p class="mb-3">
-                                    <span class="badge bg-warning text-dark">Intermedio</span>
-                                    <span class="badge bg-secondary">60 min</span>
-                                </p>
-                                <div class="d-flex gap-2">
-                                    <a href="#!" class="btn btn-sm btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
-                                    <a href="#!" class="btn btn-sm btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {{/tests}}
+                    {{^tests}}
+                    <p class="text-muted">Esta asignatura todavía no tiene simulacros</p>
+                    {{/tests}}
                 </div>
             </div>
         </section>

@@ -270,6 +270,38 @@ router.post('/subjects/:id/edit', uploadSingleImage('image', (req) => `/subjects
 
 
 /**
+ * Formats a test entity with user-facing labels and badge styles.
+ * @param {Object} test - The test document from MongoDB.
+ * @param {string} subjectId - The parent subject's ID string.
+ * @returns {Object} The formatted test object for rendering.
+ */
+function formatTest(test, subjectId) {
+    const rawDifficulty = String(test.difficulty || '').trim().toLowerCase();
+    let difficultyLabel = test.difficulty || '';
+    let difficultyBadgeClass = 'bg-secondary';
+
+    if (rawDifficulty === 'easy' || rawDifficulty === 'fácil' || rawDifficulty === 'facil') {
+        difficultyLabel = 'Fácil';
+        difficultyBadgeClass = 'bg-success';
+    } else if (rawDifficulty === 'medium' || rawDifficulty === 'intermedio' || rawDifficulty === 'medio') {
+        difficultyLabel = 'Intermedio';
+        difficultyBadgeClass = 'bg-warning text-dark';
+    } else if (rawDifficulty === 'hard' || rawDifficulty === 'difícil' || rawDifficulty === 'dificil') {
+        difficultyLabel = 'Difícil';
+        difficultyBadgeClass = 'bg-danger';
+    }
+
+    return {
+        ...test,
+        _id: test._id.toString(),
+        subjectId,
+        difficultyLabel,
+        difficultyBadgeClass,
+        durationText: test.duration != null ? `${test.duration} min` : ''
+    };
+}
+
+/**
  * GET /subjects/:id
  * Renders the detail page for a specific subject by its ID.
  * If the subject is not found, renders an error page with a 404 status.
@@ -285,12 +317,13 @@ router.get('/subjects/:id', async (req, res, next) => {
                 buttonText: 'Volver al inicio'
             }, 404);
         }
-        const tests= await db.getTestsByAsignaturaId(subject._id); // we wait for the db to give the tests of the subject id
+        const rawTests = await db.getTestsByAsignaturaId(subject._id); // fetch tests belonging to this subject
+        const tests = (rawTests || []).map((test) => formatTest(test, subject._id.toString()));
         res.render('detail', {
             pageTitle: subject.name,
             subject,
             tests,
-            hasTests: tests && tests.length > 0,
+            hasTests: tests.length > 0,
         });
     } catch (error) {
         next(error);
