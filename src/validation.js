@@ -1,4 +1,5 @@
-import { getAsignaturaByName } from './database.js';
+import { ObjectId } from 'mongodb';
+import { getAsignaturaByName, asignaturas, tests } from './database.js';
 
 /**
  * Validates the fields of a subject (asignatura) for both creation and editing operations.
@@ -67,3 +68,82 @@ export async function validateSubject(data = {}, file = null, { isEdit = false, 
         errors
     };
 }
+
+/**
+ * Validates the fields of a test (simulacro) linked to a parent subject.
+ * Enforces mandatory title, uniqueness within the subject via case-insensitive collation,
+ * description length min 10 characters, max 500 characters, valid difficulty (easy, medium, hard),
+ * and integer duration between 15 and 240 minutes.
+ * 
+ * @param {Object} data - Submitted test form data.
+ * @param {string} data.title - Title of the practice exam.
+ * @param {string} data.description - Overview of the test (10-500 chars).
+ * @param {string} data.difficulty - Difficulty level ('easy', 'medium', 'hard').
+ * @param {string|number} data.duration - Duration in minutes (15-240).
+ * @param {string|ObjectId} subjectId - Parent subject ID to check uniqueness within.
+ * @returns {Promise<{ isValid: boolean, errors: string[] }>} Validation result.
+ */
+export async function validateTest(data = {}, subjectId) {
+    const errors = [];
+
+    const title = typeof data.title === 'string' ? data.title.trim() : '';
+    const description = typeof data.description === 'string' ? data.description.trim() : '';
+    const difficulty = typeof data.difficulty === 'string' ? data.difficulty.trim().toLowerCase() : '';
+    const rawDuration = data.duration;
+
+    // 1. Title is mandatory
+    if (!title) {
+        errors.push('El título del simulacro es obligatorio.');
+    } else if (ObjectId.isValid(subjectId)) {
+        // 2. Title uniqueness within the subject using case-insensitive collation
+        const subjectObjectId = new ObjectId(subjectId);
+        
+        // Exact query requested in assignment: { _id: subjectId, 'tests.title': title } with collation
+        const existingInSubject = await asignaturas.findOne(
+            { _id: subjectObjectId, 'tests.title': title },
+            { collation: { locale: 'es', strength: 2 } }
+        );
+
+        // Also check secondary tests collection in case of existing tests
+        const existingInTests = await tests.findOne(
+            { asignaturaId: subjectObjectId, title: title },
+            { collation: { locale: 'es', strength: 2 } }
+        );
+
+        if (existingInSubject || existingInTests) {
+            errors.push('Ya existe un simulacro con ese título en esta asignatura.');
+        }
+    }
+
+    // 3. Description between 10 and 500 characters
+    if (!description) {
+        errors.push('La descripción del simulacro es obligatoria.');
+    } else if (description.length < 10 || description.length > 500) {
+        errors.push('La descripción debe tener entre 10 y 500 caracteres.');
+    }
+
+    // 4. Difficulty must be easy, medium or hard
+    const validDifficulties = ['easy', 'medium', 'hard'];
+    if (!validDifficulties.includes(difficulty)) {
+        errors.push('La dificultad debe ser Fácil, Intermedio o Difícil.');
+    }
+
+    // 5. Duration must be an integer between 15 and 240
+    const durationNum = Number(rawDuration);
+    if (
+        rawDuration === undefined ||
+        rawDuration === null ||
+        rawDuration === '' ||
+        !Number.isInteger(durationNum) ||
+        durationNum < 15 ||
+        durationNum > 240
+    ) {
+        errors.push('La duración debe ser un número entero entre 15 y 240 minutos.');
+    }
+
+    return {
+        isValid: errors.length === 0,
+        errors
+    };
+}
+

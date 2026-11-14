@@ -2,7 +2,8 @@ import express from 'express';
 import * as db from './database.js';
 import { renderSuccess, renderError } from './routers/renderHelpers.js';
 import { uploadSingleImage, deleteImage } from './imageStorage.js';
-import { validateSubject } from './validation.js';
+import { validateSubject, validateTest } from './validation.js';
+import * as testService from './testService.js';
 
 const router = express.Router();
 
@@ -318,7 +319,8 @@ router.get('/subjects/:id', async (req, res, next) => {
             }, 404);
         }
         const rawTests = await db.getTestsByAsignaturaId(subject._id); // fetch tests belonging to this subject
-        const tests = (rawTests || []).map((test) => formatTest(test, subject._id.toString()));
+        const allRawTests = rawTests && rawTests.length > 0 ? rawTests : (subject.tests || []);
+        const tests = allRawTests.map((test) => formatTest(test, subject._id.toString()));
         res.render('detail', {
             pageTitle: subject.name,
             subject,
@@ -327,6 +329,49 @@ router.get('/subjects/:id', async (req, res, next) => {
         });
     } catch (error) {
         next(error);
+    }
+});
+
+/**
+ * POST /subjects/:id/tests/new
+ * Creates a new test linked to the specified subject after validation.
+ * Returns a 404 error if the parent subject does not exist, and 400 on validation failure.
+ */
+router.post('/subjects/:id/tests/new', async (req, res, next) => {
+    try {
+        const subject = await db.getAsignatura(req.params.id);
+        if (!subject) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura a la que intentas añadir un simulacro no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+
+        const { isValid, errors } = await validateTest(req.body, req.params.id);
+        if (!isValid) {
+            return renderError(res, {
+                pageTitle: 'Error al crear el simulacro',
+                title: 'No se pudo crear el simulacro',
+                messages: errors,
+                buttonUrl: `/subjects/${req.params.id}`,
+                buttonText: 'Volver a la asignatura'
+            }, 400);
+        }
+
+        await testService.addTest(req.params.id, req.body);
+
+        return renderSuccess(res, {
+            pageTitle: 'Simulacro creado',
+            title: 'Simulacro creado',
+            messages: ['El simulacro se ha añadido correctamente a la asignatura.'],
+            buttonUrl: `/subjects/${req.params.id}`,
+            buttonText: 'Volver a la asignatura'
+        });
+    } catch (error) {
+        return next(error);
     }
 });
 
