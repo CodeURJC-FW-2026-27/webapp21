@@ -24,6 +24,25 @@ function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 }
 
+/**
+ * Safely parses an ObjectId from a string or returns null if invalid.
+ * Prevents application crashes from malformed IDs (e.g. /subjects/xyz/tests/123/edit).
+ * @param {string|ObjectId|null|undefined} id - The ID to parse.
+ * @returns {ObjectId|null} The parsed ObjectId or null if invalid.
+ */
+export function parseObjectId(id) {
+    if (!id) return null;
+    if (id instanceof ObjectId) return id;
+    if (typeof id !== 'string') return null;
+    if (!ObjectId.isValid(id)) return null;
+    try {
+        const parsed = new ObjectId(id);
+        return parsed.toString() === id ? parsed : null;
+    } catch {
+        return null;
+    }
+}
+
 //===================================================
 // ASIGNATURAS DATABASE OPERATIONS (PRIMARY ENTITY)
 //===================================================
@@ -69,10 +88,11 @@ export async function getAsignaturas({ page = 1, search = "", courseYear = "", s
  * @returns {Promise<Object|undefined>} An asignatura object if found, otherwise undefined
  */
 export async function getAsignatura(id) {
-    if (!ObjectId.isValid(id)) {
+    const parsedId = parseObjectId(id);
+    if (!parsedId) {
         return undefined;
     }
-    return await asignaturas.findOne({ _id: new ObjectId(id) });
+    return await asignaturas.findOne({ _id: parsedId });
 }
 
 /**
@@ -84,8 +104,9 @@ export async function getAsignatura(id) {
 export async function getAsignaturaByName(name, excludeId = null) {
     if (!name) return null;
     const query = { name: name.trim() };
-    if (excludeId && ObjectId.isValid(excludeId)) {
-        query._id = { $ne: new ObjectId(excludeId) };
+    const parsedExcludeId = parseObjectId(excludeId);
+    if (parsedExcludeId) {
+        query._id = { $ne: parsedExcludeId };
     }
     return await asignaturas.findOne(query, {
         collation: { locale: "es", strength: 2 }
@@ -111,10 +132,11 @@ export async function addAsignatura(asignatura) {
  * @returns {Promise<Object>} The deleted asignatura object if found, otherwise null
  */
 export async function deleteAsignatura(id) {
-    if (!ObjectId.isValid(id)) {
-        throw new Error("Invalid ID");
+    const parsedId = parseObjectId(id);
+    if (!parsedId) {
+        return null;
     }
-    return await asignaturas.findOneAndDelete({ _id: new ObjectId(id) });
+    return await asignaturas.findOneAndDelete({ _id: parsedId });
 }
 
 /**
@@ -124,11 +146,12 @@ export async function deleteAsignatura(id) {
  * @returns {Promise<Object>} The updated asignatura object if found, otherwise null
  */
 export async function updateAsignatura(id, updatedAsignatura) {
-    if (!ObjectId.isValid(id)) {
-        throw new Error("Invalid ID");
+    const parsedId = parseObjectId(id);
+    if (!parsedId) {
+        return null;
     }
     const result = await asignaturas.findOneAndUpdate(
-        { _id: new ObjectId(id) },
+        { _id: parsedId },
         { $set: updatedAsignatura },
         { returnDocument: "after" }
     );
@@ -145,10 +168,11 @@ export async function updateAsignatura(id, updatedAsignatura) {
  * @returns {Promise<Array>} An array of all tests linked to that asignatura
  */
 export async function getTestsByAsignaturaId(asignaturaId) {
-    if (!ObjectId.isValid(asignaturaId)) {
-        throw new Error("Invalid ID");
+    const parsedId = parseObjectId(asignaturaId);
+    if (!parsedId) {
+        return [];
     }
-    return await tests.find({ asignaturaId: new ObjectId(asignaturaId) }).toArray();
+    return await tests.find({ asignaturaId: parsedId }).toArray();
 }
 
 /**
@@ -157,10 +181,11 @@ export async function getTestsByAsignaturaId(asignaturaId) {
  * @returns {Promise<Object|undefined>} A test object if found, otherwise undefined
  */
 export async function getTest(id) {
-    if (!ObjectId.isValid(id)) {
+    const parsedId = parseObjectId(id);
+    if (!parsedId) {
         return undefined;
     }
-    return await tests.findOne({ _id: new ObjectId(id) });
+    return await tests.findOne({ _id: parsedId });
 }
 
 /**
@@ -169,12 +194,13 @@ export async function getTest(id) {
  * @returns {Promise<ObjectId>} The inserted ObjectId of the new test
  */
 export async function addTest(test) {
-    if (!test || !ObjectId.isValid(test.asignaturaId)) {
+    const parsedAsignaturaId = parseObjectId(test?.asignaturaId);
+    if (!test || !parsedAsignaturaId) {
         throw new Error("Invalid test or parent asignaturaId");
     }
     const testDocument = {
         ...test,
-        asignaturaId: new ObjectId(test.asignaturaId)
+        asignaturaId: parsedAsignaturaId
     };
     const result = await tests.insertOne(testDocument);
     return result.insertedId;
@@ -187,12 +213,13 @@ export async function addTest(test) {
  * @returns {Promise<Object|null>} The updated test object if found, otherwise null
  */
 export async function updateTest(id, updatedFields) {
-    if (!ObjectId.isValid(id)) {
+    const parsedId = parseObjectId(id);
+    if (!parsedId) {
         return null;
     }
     const { _id, asignaturaId, ...fieldsToUpdate } = updatedFields;
     return await tests.findOneAndUpdate(
-        { _id: new ObjectId(id) },
+        { _id: parsedId },
         { $set: fieldsToUpdate },
         { returnDocument: "after" }
     );
@@ -204,10 +231,11 @@ export async function updateTest(id, updatedFields) {
  * @returns {Promise<Object>} The deleted test object if found, otherwise null
  */
 export async function deleteTest(id) {
-    if (!ObjectId.isValid(id)) {
-        return undefined;
+    const parsedId = parseObjectId(id);
+    if (!parsedId) {
+        return null;
     }
-    return await tests.findOneAndDelete({ _id: new ObjectId(id) });
+    return await tests.findOneAndDelete({ _id: parsedId });
 }
 
 /**
@@ -216,12 +244,12 @@ export async function deleteTest(id) {
  * @returns {Promise<Array>} An array of the deleted tests
  */
 export async function deleteTestsByAsignaturaId(asignaturaId) {
-    if (!ObjectId.isValid(asignaturaId)) {
-        return undefined;
+    const parsedId = parseObjectId(asignaturaId);
+    if (!parsedId) {
+        return [];
     }
-    const asignaturaObjectId = new ObjectId(asignaturaId);
-    const asignaturaTest = await tests.find({ asignaturaId: asignaturaObjectId }).toArray();
-    await tests.deleteMany({ asignaturaId: asignaturaObjectId });
+    const asignaturaTest = await tests.find({ asignaturaId: parsedId }).toArray();
+    await tests.deleteMany({ asignaturaId: parsedId });
     return asignaturaTest;
 }  
 

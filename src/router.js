@@ -1,6 +1,7 @@
 import express from 'express';
 import { ObjectId } from 'mongodb';
 import * as db from './database.js';
+import { parseObjectId } from './database.js';
 import { renderSuccess, renderError } from './routers/renderHelpers.js';
 import { uploadSingleImage, deleteImage } from './imageStorage.js';
 import { validateSubject, validateTest } from './validation.js';
@@ -146,7 +147,17 @@ router.get(['/subject-form', '/subject-form.html'], (req, res) => {
 /** Render the shared subject form with the existing values for editing. */
 router.get('/subjects/:id/edit', async (req, res, next) => {
     try {
-        const subject = await db.getAsignatura(req.params.id);
+        const parsedId = parseObjectId(req.params.id);
+        if (!parsedId) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura que intentas editar no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+        const subject = await db.getAsignatura(parsedId);
         if (!subject) {
             return renderError(res, {
                 pageTitle: 'Asignatura no encontrada',
@@ -178,7 +189,18 @@ async function saveSubject(req, res, next, subjectId = null) {
 
     try {
         if (isEdit) {
-            existingSubject = await db.getAsignatura(subjectId);
+            const parsedSubjectId = parseObjectId(subjectId);
+            if (!parsedSubjectId) {
+                await deleteImage(uploadedFilename);
+                return renderError(res, {
+                    pageTitle: 'Asignatura no encontrada',
+                    title: 'No se encontró la asignatura',
+                    messages: ['La asignatura que intentas editar no existe.'],
+                    buttonUrl: '/',
+                    buttonText: 'Volver al inicio'
+                }, 404);
+            }
+            existingSubject = await db.getAsignatura(parsedSubjectId);
             if (!existingSubject) {
                 await deleteImage(uploadedFilename);
                 return renderError(res, {
@@ -312,9 +334,21 @@ function formatTest(test, subjectId) {
  */
 router.get('/subjects/:id', async (req, res, next) => {
     try {
-        const subject = await db.getAsignatura(req.params.id); // we wait for the db to give the subject id 
+        const parsedSubjectId = parseObjectId(req.params.id);
+        if (!parsedSubjectId) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'Asignatura no encontrada',
+                messages: ['No se ha encontrado la asignatura solicitada.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+
+        const subject = await db.getAsignatura(parsedSubjectId);
         if (!subject) {
             return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
                 title: 'Asignatura no encontrada',
                 messages: ['No se ha encontrado la asignatura solicitada.'],
                 buttonUrl: '/',
@@ -342,7 +376,30 @@ router.get('/subjects/:id', async (req, res, next) => {
 router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
     try {
         const { id: subjectId, testId } = req.params;
-        const subject = await db.getAsignatura(subjectId);
+        const parsedSubjectId = parseObjectId(subjectId);
+        const parsedTestId = parseObjectId(testId);
+
+        if (!parsedSubjectId) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura especificada no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+
+        if (!parsedTestId) {
+            return renderError(res, {
+                pageTitle: 'Simulacro no encontrado',
+                title: 'No se encontró el simulacro',
+                messages: ['El simulacro que intentas editar no existe.'],
+                buttonUrl: `/subjects/${subjectId}`,
+                buttonText: 'Volver a la asignatura'
+            }, 404);
+        }
+
+        const subject = await db.getAsignatura(parsedSubjectId);
         if (!subject) {
             return renderError(res, {
                 pageTitle: 'Asignatura no encontrada',
@@ -353,7 +410,7 @@ router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
             }, 404);
         }
 
-        const test = await testService.getTest(testId);
+        const test = await testService.getTest(parsedTestId);
         if (!test || test.asignaturaId.toString() !== subject._id.toString()) {
             return renderError(res, {
                 pageTitle: 'Simulacro no encontrado',
@@ -388,9 +445,20 @@ router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
 async function saveTest(req, res, next, testId = null) {
     const isEdit = testId !== null;
     const subjectId = req.params.id;
+    const parsedSubjectId = parseObjectId(subjectId);
 
     try {
-        const subject = await db.getAsignatura(subjectId);
+        if (!parsedSubjectId) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura especificada no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+
+        const subject = await db.getAsignatura(parsedSubjectId);
         if (!subject) {
             return renderError(res, {
                 pageTitle: 'Asignatura no encontrada',
@@ -401,8 +469,20 @@ async function saveTest(req, res, next, testId = null) {
             }, 404);
         }
 
+        let parsedTestId = null;
         if (isEdit) {
-            const existingTest = await testService.getTest(testId);
+            parsedTestId = parseObjectId(testId);
+            if (!parsedTestId) {
+                return renderError(res, {
+                    pageTitle: 'Simulacro no encontrado',
+                    title: 'No se encontró el simulacro',
+                    messages: ['El simulacro que intentas editar no existe.'],
+                    buttonUrl: `/subjects/${subjectId}`,
+                    buttonText: 'Volver a la asignatura'
+                }, 404);
+            }
+
+            const existingTest = await testService.getTest(parsedTestId);
             if (!existingTest || existingTest.asignaturaId.toString() !== subject._id.toString()) {
                 return renderError(res, {
                     pageTitle: 'Simulacro no encontrado',
@@ -414,9 +494,9 @@ async function saveTest(req, res, next, testId = null) {
             }
         }
 
-        const { isValid, errors } = await validateTest(req.body, subjectId, {
+        const { isValid, errors } = await validateTest(req.body, parsedSubjectId, {
             isEdit,
-            testId
+            testId: parsedTestId
         });
 
         if (!isValid) {
@@ -430,9 +510,9 @@ async function saveTest(req, res, next, testId = null) {
         }
 
         if (isEdit) {
-            await testService.updateTest(testId, req.body);
+            await testService.updateTest(parsedTestId, req.body);
         } else {
-            await testService.addTest(subjectId, req.body);
+            await testService.addTest(parsedSubjectId, req.body);
         }
 
         return renderSuccess(res, {
@@ -473,18 +553,30 @@ router.post('/subjects/:id/tests/:testId/edit', (req, res, next) => {
 router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
     try {
         const { id: subjectId, testId } = req.params;
+        const parsedSubjectId = parseObjectId(subjectId);
+        const parsedTestId = parseObjectId(testId);
 
-        if (!ObjectId.isValid(subjectId) || !ObjectId.isValid(testId)) {
+        if (!parsedSubjectId) {
             return renderError(res, {
-                pageTitle: 'Identificador no válido',
-                title: 'Identificador no válido',
-                messages: ['El identificador de la asignatura o del simulacro no es válido.'],
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura especificada no existe.'],
                 buttonUrl: '/',
                 buttonText: 'Volver al inicio'
-            }, 400);
+            }, 404);
         }
 
-        const subject = await db.getAsignatura(subjectId);
+        if (!parsedTestId) {
+            return renderError(res, {
+                pageTitle: 'Simulacro no encontrado',
+                title: 'No se pudo eliminar el simulacro',
+                messages: ['El identificador del simulacro no es válido o no existe.'],
+                buttonUrl: `/subjects/${subjectId}`,
+                buttonText: 'Volver a la asignatura'
+            }, 404);
+        }
+
+        const subject = await db.getAsignatura(parsedSubjectId);
         if (!subject) {
             return renderError(res, {
                 pageTitle: 'Asignatura no encontrada',
@@ -495,7 +587,7 @@ router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
             }, 404);
         }
 
-        const existingTest = await testService.getTest(testId);
+        const existingTest = await testService.getTest(parsedTestId);
         if (!existingTest || existingTest.asignaturaId.toString() !== subject._id.toString()) {
             return renderError(res, {
                 pageTitle: 'Simulacro no encontrado',
@@ -506,7 +598,7 @@ router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
             }, 404);
         }
 
-        const deleted = await testService.deleteTest(testId);
+        const deleted = await testService.deleteTest(parsedTestId);
         if (!deleted) {
             return renderError(res, {
                 pageTitle: 'Simulacro no encontrado',
@@ -536,7 +628,18 @@ router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
  */
 router.post('/subjects/:id/delete', async (req, res, next) => {
     try {
-        const subject = await db.getAsignatura(req.params.id);
+        const parsedSubjectId = parseObjectId(req.params.id);
+        if (!parsedSubjectId) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura que intentas eliminar no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+
+        const subject = await db.getAsignatura(parsedSubjectId);
         if (!subject) {
             return renderError(res, {
                 pageTitle: 'Asignatura no encontrada',
@@ -547,7 +650,7 @@ router.post('/subjects/:id/delete', async (req, res, next) => {
             }, 404);
         }
 
-        const deletedSubject = await db.deleteAsignatura(req.params.id);
+        const deletedSubject = await db.deleteAsignatura(parsedSubjectId);
         if (!deletedSubject) {
             return renderError(res, {
                 pageTitle: 'Asignatura no encontrada',
@@ -558,7 +661,7 @@ router.post('/subjects/:id/delete', async (req, res, next) => {
             }, 404);
         }
 
-        await db.deleteTestsByAsignaturaId(req.params.id);
+        await db.deleteTestsByAsignaturaId(parsedSubjectId);
         await deleteImage(deletedSubject.image);
 
         return renderSuccess(res, {
