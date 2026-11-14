@@ -87,54 +87,185 @@ router.get('/index.html', (req, res) => {
     res.redirect('/');
 });
 
+/**
+ * Converts legacy course and semester labels to the numeric values used by the form.
+ * @param {string|number|undefined} value - Existing value stored in MongoDB.
+ * @param {number} maxValue - Largest allowed numeric option.
+ * @param {Object<string, string>} aliases - Legacy text values mapped to their numeric options.
+ * @returns {string} The matching numeric option, or an empty string when there is no match.
+ */
+function normaliseFormOption(value, maxValue, aliases) {
+    const normalisedValue = String(value ?? '').trim().toLocaleLowerCase('es');
+    const numericMatch = normalisedValue.match(/^([1-4])(?:st|nd|rd|th|\u00ba|\u00b0)?(?:\s+(?:year|curso|semester|cuatrimestre))?$/i);
+    if (numericMatch && Number(numericMatch[1]) <= maxValue) {
+        return numericMatch[1];
+    }
+    return aliases[normalisedValue] || '';
+}
+
+/**
+ * Renders the shared subject form with its current mode, action and selected options.
+ * @param {import('express').Response} res - Express response object.
+ * @param {Object} subject - Subject values to display in the form.
+ * @param {boolean} isEdit - Whether the form is editing an existing subject.
+ * @returns {*} The Express render response.
+ */
+function renderSubjectForm(res, subject = {}, isEdit = false) {
+    const courseYear = normaliseFormOption(subject.courseYear, 4, {
+        primero: '1', segundo: '2', tercero: '3', cuarto: '4'
+    });
+    const semester = normaliseFormOption(subject.semester, 2, {
+        primero: '1', segundo: '2', 'primer cuatrimestre': '1', 'segundo cuatrimestre': '2'
+    });
+    const subjectForForm = { ...subject, courseYear, semester };
+    const subjectId = subject._id?.toString();
+
+    return res.render('subject-form', {
+        pageTitle: isEdit ? 'Editar asignatura' : 'Nueva asignatura',
+        formAction: isEdit ? `/subjects/${subjectId}/edit` : '/subjects/new',
+        isEdit,
+        subject: subjectForForm,
+        isCourse1: courseYear === '1',
+        isCourse2: courseYear === '2',
+        isCourse3: courseYear === '3',
+        isCourse4: courseYear === '4',
+        isSemester1: semester === '1',
+        isSemester2: semester === '2'
+    });
+}
+
 /** Render the form used to create a subject. */
 router.get(['/subject-form', '/subject-form.html'], (req, res) => {
-    res.render('subject-form', {
-        pageTitle: 'Nueva asignatura',
-        formAction: '/subjects/new',
-        isEdit: false,
-        subject: {}
-    });
+    return renderSubjectForm(res);
 });
 
-/** Save a subject after validating all submitted fields on the server. */
-router.post('/subjects/new', uploadSingleImage('image'), async (req, res, next) => {
+/** Render the shared subject form with the existing values for editing. */
+router.get('/subjects/:id/edit', async (req, res, next) => {
+    try {
+        const subject = await db.getAsignatura(req.params.id);
+        if (!subject) {
+            return renderError(res, {
+                pageTitle: 'Asignatura no encontrada',
+                title: 'No se encontró la asignatura',
+                messages: ['La asignatura que intentas editar no existe.'],
+                buttonUrl: '/',
+                buttonText: 'Volver al inicio'
+            }, 404);
+        }
+        return renderSubjectForm(res, subject, true);
+    } catch (error) {
+        return next(error);
+    }
+});
+
+/**
+ * Validates and saves a new or existing subject using the shared create/edit flow.
+ * @param {import('express').Request} req - Express request containing the form and optional image.
+ * @param {import('express').Response} res - Express response object.
+ * @param {import('express').NextFunction} next - Express error continuation function.
+ * @param {string|null} subjectId - Existing subject ID for edit, or null for create.
+ * @returns {Promise<*>} The rendered success/error response or the next Express error handler.
+ */
+async function saveSubject(req, res, next, subjectId = null) {
+    const isEdit = subjectId !== null;
     const uploadedFilename = req.file?.filename;
+    let existingSubject = null;
+    let saved = false;
 
     try {
-        const { isValid, errors } = await validateSubject(req.body, req.file);
+        if (isEdit) {
+            existingSubject = await db.getAsignatura(subjectId);
+            if (!existingSubject) {
+                await deleteImage(uploadedFilename);
+                return renderError(res, {
+                    pageTitle: 'Asignatura no encontrada',
+                    title: 'No se encontró la asignatura',
+                    messages: ['La asignatura que intentas editar no existe.'],
+                    buttonUrl: `/subjects/${subjectId}/edit`,
+                    buttonText: 'Volver al formulario'
+                }, 404);
+            }
+        }
+
+        const { isValid, errors } = await validateSubject(req.body, req.file, {
+            isEdit,
+            subjectId
+        });
         if (!isValid) {
             await deleteImage(uploadedFilename);
             return renderError(res, {
-                pageTitle: 'Error al crear la asignatura',
-                title: 'No se pudo crear la asignatura',
+                pageTitle: isEdit ? 'Error al actualizar la asignatura' : 'Error al crear la asignatura',
+                title: isEdit ? 'No se pudo actualizar la asignatura' : 'No se pudo crear la asignatura',
                 messages: errors,
-                buttonUrl: '/nueva-asignatura',
+                buttonUrl: isEdit ? `/subjects/${subjectId}/edit` : '/subject-form',
                 buttonText: 'Volver al formulario'
             }, 400);
         }
 
-        const subject = {
+        const subjectFields = {
             name: req.body.name.trim(),
             description: req.body.description.trim(),
             courseYear: String(req.body.courseYear),
-            semester: String(req.body.semester),
-            image: uploadedFilename,
-            tests: []
+            semester: String(req.body.semester)
         };
-        const id = await db.addAsignatura(subject);
+
+        let savedSubjectId;
+        if (isEdit) {
+            if (uploadedFilename) {
+                subjectFields.image = uploadedFilename;
+            }
+            const updatedSubject = await db.updateAsignatura(subjectId, subjectFields);
+            if (!updatedSubject) {
+                await deleteImage(uploadedFilename);
+                return renderError(res, {
+                    pageTitle: 'Asignatura no encontrada',
+                    title: 'No se encontró la asignatura',
+                    messages: ['La asignatura que intentas editar ya no existe.'],
+                    buttonUrl: `/subjects/${subjectId}/edit`,
+                    buttonText: 'Volver al formulario'
+                }, 404);
+            }
+            saved = true;
+            savedSubjectId = updatedSubject._id.toString();
+
+            if (uploadedFilename && existingSubject.image && existingSubject.image !== uploadedFilename) {
+                await deleteImage(existingSubject.image);
+            }
+        } else {
+            const newSubject = {
+                ...subjectFields,
+                image: uploadedFilename,
+                tests: []
+            };
+            savedSubjectId = (await db.addAsignatura(newSubject)).toString();
+            saved = true;
+        }
 
         return renderSuccess(res, {
-            pageTitle: 'Asignatura creada',
-            title: 'Asignatura creada',
-            messages: ['La asignatura se ha creado correctamente.'],
-            buttonUrl: `/subjects/${id}`,
+            pageTitle: isEdit ? 'Asignatura actualizada' : 'Asignatura creada',
+            title: isEdit ? 'Asignatura actualizada' : 'Asignatura creada',
+            messages: [isEdit
+                ? 'La asignatura se ha actualizado correctamente.'
+                : 'La asignatura se ha creado correctamente.'],
+            buttonUrl: `/subjects/${savedSubjectId}`,
             buttonText: 'Ver asignatura'
         });
     } catch (error) {
-        await deleteImage(uploadedFilename);
+        if (!saved) {
+            await deleteImage(uploadedFilename);
+        }
         return next(error);
     }
+}
+
+/** Save a new subject after validating all submitted fields on the server. */
+router.post('/subjects/new', uploadSingleImage('image', '/subject-form'), (req, res, next) => {
+    return saveSubject(req, res, next);
+});
+
+/** Save an edited subject through the same validation and response flow as creation. */
+router.post('/subjects/:id/edit', uploadSingleImage('image', (req) => `/subjects/${req.params.id}/edit`), (req, res, next) => {
+    return saveSubject(req, res, next, req.params.id);
 });
 
 

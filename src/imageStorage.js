@@ -63,15 +63,19 @@ export async function deleteImage(filename) {
  * Express middleware wrapper for single image upload with automatic error handling.
  *
  * @param {string} [fieldName='image'] - The form input field name.
+ * @param {string|((req: import('express').Request) => string)} [errorButtonUrl] - Error page destination, or a function that derives it from the request.
  * @returns {import('express').RequestHandler}
  */
-export function uploadSingleImage(fieldName = 'image') {
+export function uploadSingleImage(fieldName = 'image', errorButtonUrl = null) {
     const uploadMiddleware = upload.single(fieldName);
 
     return (req, res, next) => {
         uploadMiddleware(req, res, (err) => {
             if (err) {
                 let errorMessage = 'Error al subir el archivo.';
+                const buttonUrl = typeof errorButtonUrl === 'function'
+                    ? errorButtonUrl(req)
+                    : errorButtonUrl || req.headers.referer || '/';
 
                 if (err.code === 'LIMIT_FILE_SIZE') {
                     errorMessage = 'El archivo supera el tamaño máximo permitido de 5 MB.';
@@ -83,7 +87,7 @@ export function uploadSingleImage(fieldName = 'image') {
                     pageTitle: 'Error en la subida de imagen',
                     title: 'Archivo no válido',
                     messages: [errorMessage],
-                    buttonUrl: req.headers.referer || '/',
+                    buttonUrl,
                     buttonText: 'Volver'
                 }, 400);
             }
