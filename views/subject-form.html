@@ -1,5 +1,5 @@
 {{> head}}
-<body>
+<body class="d-flex flex-column min-vh-100">
 {{> navbar}}
 
 <!-- Header banner -->
@@ -93,7 +93,7 @@
                         {{#subject.image}}
                         <div class="mt-2 d-flex align-items-center gap-3">
                             <span class="small text-muted">Imagen actual:</span>
-                            <img src="/uploads/{{subject.image}}" alt="{{subject.name}}" class="img-thumbnail" style="height: 70px; object-fit: cover;">
+                            <img src="/uploads/{{subject.image}}" alt="{{subject.name}}" class="img-thumbnail subject-thumbnail-preview">
                         </div>
                         {{/subject.image}}
                         {{/isEdit}}
@@ -101,7 +101,7 @@
 
                     <!-- Action buttons -->
                     <div class="d-flex gap-2">
-                        <a href="/" class="btn btn-secondary px-4">Cancelar</a>
+                        <a href="{{#isEdit}}/subjects/{{subject._id}}{{/isEdit}}{{^isEdit}}/{{/isEdit}}" class="btn btn-secondary px-4">Cancelar</a>
                         <button type="submit" class="btn btn-urjc px-4">
                             <i class="bi bi-save me-2"></i>Guardar
                         </button>

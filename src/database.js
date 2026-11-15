@@ -2,7 +2,6 @@ import { MongoClient, ObjectId } from "mongodb";
 
 const URL = "mongodb://localhost:27017";
 const DBName = "DBWebApp21";
-export const UPLOADS_FOLDER = "./uploads"; // the files will be uploaded to the uploads folder
 
 export const PAGE_SIZE = 6; // Number of items per page for pagination
 

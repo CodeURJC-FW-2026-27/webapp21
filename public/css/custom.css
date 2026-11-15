@@ -115,3 +115,17 @@ card was half-cut so we did some research and we found out that we could use scr
   border-color: var(--urjc-border);
   pointer-events: none;
 }
+
+/* Custom utility classes replacing inline styles */
+.btn-filter-clear {
+  font-size: 0.8rem;
+}
+
+.message-icon {
+  font-size: 3.5rem;
+}
+
+.subject-thumbnail-preview {
+  height: 70px;
+  object-fit: cover;
+}

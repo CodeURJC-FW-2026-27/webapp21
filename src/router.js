@@ -1,5 +1,4 @@
 import express from 'express';
-import { ObjectId } from 'mongodb';
 import * as db from './database.js';
 import { parseObjectId } from './database.js';
 import { renderSuccess, renderError } from './routers/renderHelpers.js';

@@ -2,9 +2,11 @@ import multer from 'multer';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { renderError } from './routers/renderHelpers.js';
 
-export const UPLOADS_FOLDER = 'uploads/';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+export const UPLOADS_FOLDER = path.resolve(__dirname, '..', 'uploads');
 
 // Ensure destination folder exists
 if (!fs.existsSync(UPLOADS_FOLDER)) {

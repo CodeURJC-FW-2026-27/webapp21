@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import { getAsignaturaByName, asignaturas, tests } from './database.js';
+import { getAsignaturaByName, tests } from './database.js';
 
 /**
  * Validates the form fields for a subject on both create and edit.
