@@ -205,35 +205,75 @@ export async function getTest(id) {
 }
 
 /**
- * Add a new test to the database.
- * @param {Object} test - The test object to add
- * @returns {Promise<ObjectId>} The inserted ObjectId of the new test
+ * Add a new test linked to an asignatura in the database.
+ * Supports both signatures: addTest(subjectId, testData) and addTest(testDataWithAsignaturaId).
+ * Sanitizes input fields (trimming, lowercase difficulty, parsed integer duration).
+ * 
+ * @param {ObjectId|string|Object} firstArg - Either the parent subject ID or the test object itself.
+ * @param {Object} [secondArg] - The test object if firstArg is subjectId.
+ * @returns {Promise<ObjectId>} The inserted ObjectId of the new test.
  */
-export async function addTest(test) {
-    const parsedAsignaturaId = parseObjectId(test?.asignaturaId);
-    if (!test || !parsedAsignaturaId) {
+export async function addTest(firstArg, secondArg) {
+    let testData;
+    let parentId;
+
+    if (secondArg && typeof secondArg === 'object') {
+        parentId = parseObjectId(firstArg);
+        testData = secondArg;
+    } else if (firstArg && typeof firstArg === 'object') {
+        parentId = parseObjectId(firstArg.asignaturaId || firstArg.subjectId);
+        testData = firstArg;
+    }
+
+    if (!testData || !parentId) {
         throw new Error("Invalid test or parent asignaturaId");
     }
+
     const testDocument = {
-        ...test,
-        asignaturaId: parsedAsignaturaId
+        title: typeof testData.title === 'string' ? testData.title.trim() : '',
+        description: typeof testData.description === 'string' ? testData.description.trim() : '',
+        difficulty: typeof testData.difficulty === 'string' ? testData.difficulty.trim().toLowerCase() : '',
+        duration: parseInt(testData.duration, 10),
+        asignaturaId: parentId
     };
+
     const result = await tests.insertOne(testDocument);
     return result.insertedId;
 }
 
 /**
  * Update an existing test in the database.
+ * Sanitizes updated fields and excludes immutable identifier keys.
+ * 
  * @param {ObjectId|string} id - The object ID of the test to update
  * @param {Object} updatedFields - The fields to update
  * @returns {Promise<Object|null>} The updated test object if found, otherwise null
  */
 export async function updateTest(id, updatedFields) {
     const parsedId = parseObjectId(id);
-    if (!parsedId) {
+    if (!parsedId || !updatedFields || typeof updatedFields !== 'object') {
         return null;
     }
-    const { _id, asignaturaId, ...fieldsToUpdate } = updatedFields;
+    const { _id, asignaturaId, subjectId, ...rest } = updatedFields;
+    const fieldsToUpdate = {};
+    if (rest.title !== undefined) {
+        fieldsToUpdate.title = typeof rest.title === 'string' ? rest.title.trim() : rest.title;
+    }
+    if (rest.description !== undefined) {
+        fieldsToUpdate.description = typeof rest.description === 'string' ? rest.description.trim() : rest.description;
+    }
+    if (rest.difficulty !== undefined) {
+        fieldsToUpdate.difficulty = typeof rest.difficulty === 'string' ? rest.difficulty.trim().toLowerCase() : rest.difficulty;
+    }
+    if (rest.duration !== undefined) {
+        fieldsToUpdate.duration = parseInt(rest.duration, 10);
+    }
+    for (const key of Object.keys(rest)) {
+        if (fieldsToUpdate[key] === undefined) {
+            fieldsToUpdate[key] = rest[key];
+        }
+    }
+
     return await tests.findOneAndUpdate(
         { _id: parsedId },
         { $set: fieldsToUpdate },

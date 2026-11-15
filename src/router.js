@@ -5,7 +5,6 @@ import { parseObjectId } from './database.js';
 import { renderSuccess, renderError } from './routers/renderHelpers.js';
 import { uploadSingleImage, deleteImage } from './imageStorage.js';
 import { validateSubject, validateTest } from './validation.js';
-import * as testService from './testService.js';
 
 const router = express.Router();
 
@@ -434,7 +433,7 @@ router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
             }, 404);
         }
 
-        const test = await testService.getTest(parsedTestId);
+        const test = await db.getTest(parsedTestId);
         if (!test || test.asignaturaId.toString() !== subject._id.toString()) {
             return renderError(res, {
                 pageTitle: 'Simulacro no encontrado',
@@ -506,7 +505,7 @@ async function saveTest(req, res, next, testId = null) {
                 }, 404);
             }
 
-            const existingTest = await testService.getTest(parsedTestId);
+            const existingTest = await db.getTest(parsedTestId);
             if (!existingTest || existingTest.asignaturaId.toString() !== subject._id.toString()) {
                 return renderError(res, {
                     pageTitle: 'Simulacro no encontrado',
@@ -534,9 +533,9 @@ async function saveTest(req, res, next, testId = null) {
         }
 
         if (isEdit) {
-            await testService.updateTest(parsedTestId, req.body);
+            await db.updateTest(parsedTestId, req.body);
         } else {
-            await testService.addTest(parsedSubjectId, req.body);
+            await db.addTest(parsedSubjectId, req.body);
         }
 
         return renderSuccess(res, {
@@ -611,7 +610,7 @@ router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
             }, 404);
         }
 
-        const existingTest = await testService.getTest(parsedTestId);
+        const existingTest = await db.getTest(parsedTestId);
         if (!existingTest || existingTest.asignaturaId.toString() !== subject._id.toString()) {
             return renderError(res, {
                 pageTitle: 'Simulacro no encontrado',
@@ -622,7 +621,7 @@ router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
             }, 404);
         }
 
-        const deleted = await testService.deleteTest(parsedTestId);
+        const deleted = await db.deleteTest(parsedTestId);
         if (!deleted) {
             return renderError(res, {
                 pageTitle: 'Simulacro no encontrado',
