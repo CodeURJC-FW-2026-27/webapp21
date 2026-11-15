@@ -1,6 +1,6 @@
 import { MongoClient, ObjectId } from "mongodb";
 
-const URL = "mongodb://localhost:27017"; 
+const URL = "mongodb://localhost:27017";
 const DBName = "DBWebApp21";
 export const UPLOADS_FOLDER = "./uploads"; // the files will be uploaded to the uploads folder
 
@@ -17,10 +17,12 @@ export const subjects = asignaturas; // English collection alias
 export const tests = data.collection("tests"); // secondary entity collection
 
 /**
- * Escapes special characters in a string to be used in search queries, preventing regex injection attacks.
- * Escapes characters such as (, ), *, +, ?, ^, $, {, }, [, ], |, \, . so user input does not break queries.
- * @param {string} text - User input string
- * @returns {string} The safe text with escaped special characters for safe use in search queries
+ * Escapes special regex characters in a search string.
+ * This ensures characters like '(', '*', or '+' are treated as normal text
+ * and do not cause syntax errors in MongoDB regex queries.
+ * 
+ * @param {string} text - The search text typed by the user.
+ * @returns {string} The safe string with escaped regex characters.
  */
 export function escapeRegex(text) {
     if (!text || typeof text !== "string") return "";
@@ -28,10 +30,12 @@ export function escapeRegex(text) {
 }
 
 /**
- * Safely parses an ObjectId from a string or returns null if invalid.
- * Prevents application crashes from malformed IDs (e.g. /subjects/xyz/tests/123/edit).
- * @param {string|ObjectId|null|undefined} id - The ID to parse.
- * @returns {ObjectId|null} The parsed ObjectId or null if invalid.
+ * Safely converts a string to a MongoDB ObjectId.
+ * If the provided ID is invalid or malformed, it returns null instead of throwing
+ * an error, protecting our routes from crashing on invalid URLs.
+ * 
+ * @param {string|ObjectId|null|undefined} id - The ID string to parse.
+ * @returns {ObjectId|null} A valid ObjectId, or null if invalid.
  */
 export function parseObjectId(id) {
     if (!id) return null;
@@ -40,7 +44,10 @@ export function parseObjectId(id) {
     if (!ObjectId.isValid(id)) return null;
     try {
         const parsed = new ObjectId(id);
-        return parsed.toString() === id ? parsed : null;
+        if (parsed.toString() === id) {
+            return parsed;
+        }
+        return null;
     } catch {
         return null;
     }
@@ -136,7 +143,7 @@ export async function getAsignaturaByName(name, excludeId = null) {
  */
 export async function addAsignatura(asignatura) {
     if (!asignatura) {
-        throw new Error("Invalid asignatura"); 
+        throw new Error("Invalid asignatura");
     }
     const result = await asignaturas.insertOne(asignatura);
     return result.insertedId;
@@ -205,13 +212,13 @@ export async function getTest(id) {
 }
 
 /**
- * Add a new test linked to an asignatura in the database.
- * Supports both signatures: addTest(subjectId, testData) and addTest(testDataWithAsignaturaId).
- * Sanitizes input fields (trimming, lowercase difficulty, parsed integer duration).
+ * Adds a new test to the database linked to its parent subject.
+ * Supports being called either as addTest(subjectId, testData) or addTest({ ...testData, asignaturaId }).
+ * Automatically cleans text strings and parses duration to an integer.
  * 
- * @param {ObjectId|string|Object} firstArg - Either the parent subject ID or the test object itself.
- * @param {Object} [secondArg] - The test object if firstArg is subjectId.
- * @returns {Promise<ObjectId>} The inserted ObjectId of the new test.
+ * @param {string|ObjectId|Object} firstArg - Either the parent subject ID or the test object itself.
+ * @param {Object} [secondArg] - The test data object if firstArg is the subject ID.
+ * @returns {Promise<ObjectId>} The generated ObjectId of the inserted test.
  */
 export async function addTest(firstArg, secondArg) {
     let testData;
@@ -242,19 +249,21 @@ export async function addTest(firstArg, secondArg) {
 }
 
 /**
- * Update an existing test in the database.
- * Sanitizes updated fields and excludes immutable identifier keys.
+ * Updates an existing test with new values for its fields.
+ * Only updates the allowed fields (title, description, difficulty, duration).
  * 
- * @param {ObjectId|string} id - The object ID of the test to update
- * @param {Object} updatedFields - The fields to update
- * @returns {Promise<Object|null>} The updated test object if found, otherwise null
+ * @param {string|ObjectId} id - The ID of the test to update.
+ * @param {Object} updatedFields - The fields to update (title, description, difficulty, duration).
+ * @returns {Promise<Object|null>} The updated test document, or null if not found.
  */
 export async function updateTest(id, updatedFields) {
     const parsedId = parseObjectId(id);
     if (!parsedId || !updatedFields || typeof updatedFields !== 'object') {
         return null;
     }
+
     const fieldsToUpdate = {};
+
     if (updatedFields.title !== undefined) {
         fieldsToUpdate.title = typeof updatedFields.title === 'string' ? updatedFields.title.trim() : updatedFields.title;
     }
@@ -276,9 +285,10 @@ export async function updateTest(id, updatedFields) {
 }
 
 /**
- * Delete an existing test from the database.
- * @param {ObjectId|string} id - The object ID of the test to delete
- * @returns {Promise<Object>} The deleted test object if found, otherwise null
+ * Deletes a single test from the database by its ID.
+ * 
+ * @param {string|ObjectId} id - The ID of the test to delete.
+ * @returns {Promise<Object|null>} The deleted test document if found, or null.
  */
 export async function deleteTest(id) {
     const parsedId = parseObjectId(id);
@@ -301,7 +311,7 @@ export async function deleteTestsByAsignaturaId(asignaturaId) {
     const asignaturaTest = await tests.find({ asignaturaId: parsedId }).toArray();
     await tests.deleteMany({ asignaturaId: parsedId });
     return asignaturaTest;
-}  
+}
 
 /**
  * Check if the database is empty (no asignaturas).

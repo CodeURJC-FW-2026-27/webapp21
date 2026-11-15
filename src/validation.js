@@ -2,21 +2,17 @@ import { ObjectId } from 'mongodb';
 import { getAsignaturaByName, asignaturas, tests } from './database.js';
 
 /**
- * Validates the fields of a subject (asignatura) for both creation and editing operations.
- * Enforces mandatory title starting with uppercase, case-insensitive uniqueness in MongoDB,
- * description length between 20 and 1000 characters, valid course year (1-4), semester (1-2),
- * and mandatory image on create.
- *
- * @param {Object} data - Form data submitted in the request body.
- * @param {string} data.name - Name/title of the subject.
- * @param {string} data.description - Comprehensive overview (20 to 1000 characters).
- * @param {string|number} data.courseYear - Academic year (1, 2, 3, or 4).
- * @param {string|number} data.semester - Academic term/semester (1 or 2).
- * @param {Object} [file] - Uploaded file object from Multer (req.file).
- * @param {Object} [options={}] - Additional validation configuration.
- * @param {boolean} [options.isEdit=false] - Whether this validation is for an existing subject update.
- * @param {string|import('mongodb').ObjectId} [options.subjectId=null] - Subject ID to exclude from uniqueness check during edits.
- * @returns {Promise<{ isValid: boolean, errors: string[] }>} Validation result containing status flag and error list.
+ * Validates the form fields for a subject on both create and edit.
+ * Ensures the name starts with an uppercase letter and is unique in MongoDB,
+ * description is between 20 and 1000 characters, course year is 1-4, semester is 1-2,
+ * and a cover image is uploaded when creating.
+ * 
+ * @param {Object} data - Submitted form fields (name, description, courseYear, semester).
+ * @param {Object} [file=null] - Uploaded image file from Multer (req.file).
+ * @param {Object} [options={}] - Extra validation options.
+ * @param {boolean} [options.isEdit=false] - True if editing an existing subject.
+ * @param {string|ObjectId} [options.subjectId=null] - Subject ID to exclude from duplicate check during edits.
+ * @returns {Promise<{ isValid: boolean, errors: string[] }>} Validation result with status and error messages.
  */
 export async function validateSubject(data = {}, file = null, { isEdit = false, subjectId = null } = {}) {
     const errors = [];
@@ -70,21 +66,17 @@ export async function validateSubject(data = {}, file = null, { isEdit = false, 
 }
 
 /**
- * Validates the fields of a test (simulacro) linked to a parent subject.
- * Enforces mandatory title, uniqueness within the subject via case-insensitive collation,
- * description length min 10 characters, max 500 characters, valid difficulty (easy, medium, hard),
- * and integer duration between 15 and 240 minutes.
+ * Validates the form fields for a test linked to a parent subject.
+ * Ensures the title is required (3-100 characters) and unique within the subject,
+ * description is between 10 and 500 characters, difficulty is easy/medium/hard,
+ * and duration is an integer between 15 and 240 minutes.
  * 
- * @param {Object} data - Submitted test form data.
- * @param {string} data.title - Title of the practice exam.
- * @param {string} data.description - Overview of the test (10-500 chars).
- * @param {string} data.difficulty - Difficulty level ('easy', 'medium', 'hard').
- * @param {string|number} data.duration - Duration in minutes (15-240).
- * @param {string|ObjectId} subjectId - Parent subject ID to check uniqueness within.
- * @param {Object} [options={}] - Additional validation options.
- * @param {boolean} [options.isEdit=false] - Whether validating an existing test edit.
- * @param {string|ObjectId} [options.testId=null] - Test ID to exclude from uniqueness check during edits.
- * @returns {Promise<{ isValid: boolean, errors: string[] }>} Validation result.
+ * @param {Object} data - Submitted form data (title, description, difficulty, duration).
+ * @param {string|ObjectId} subjectId - Parent subject ID to check title uniqueness within.
+ * @param {Object} [options={}] - Extra validation options.
+ * @param {boolean} [options.isEdit=false] - True if editing an existing test.
+ * @param {string|ObjectId} [options.testId=null] - Test ID to exclude from duplicate check during edits.
+ * @returns {Promise<{ isValid: boolean, errors: string[] }>} Validation result with status and error messages.
  */
 export async function validateTest(data = {}, subjectId, { isEdit = false, testId = null } = {}) {
     const errors = [];

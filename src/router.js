@@ -394,7 +394,8 @@ router.get('/subjects/:id', async (req, res, next) => {
 
 /**
  * GET /subjects/:id/tests/:testId/edit
- * Renders the test form filled with current test values for editing.
+ * Displays the edit form for a test pre-filled with its current values.
+ * Verifies that both the subject and test exist, and that the test belongs to this subject.
  */
 router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
     try {
@@ -459,11 +460,14 @@ router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
 });
 
 /**
- * Validates and saves a new or existing test using the shared create/edit flow.
- * @param {import('express').Request} req - Express request object.
+ * Handles both creating and updating a test.
+ * Verifies the parent subject, checks that the test title is not duplicate,
+ * validates all form fields, and performs the database insert or update.
+ * 
+ * @param {import('express').Request} req - Express request object containing form body and params.
  * @param {import('express').Response} res - Express response object.
- * @param {import('express').NextFunction} next - Express next handler.
- * @param {string|null} testId - Existing test ID for edit, or null for create.
+ * @param {import('express').NextFunction} next - Express next middleware handler.
+ * @param {string|null} [testId=null] - Test ID if editing, or null if creating a new test.
  */
 async function saveTest(req, res, next, testId = null) {
     const isEdit = testId !== null;
@@ -577,8 +581,8 @@ router.post('/subjects/:id/tests/:testId/edit', (req, res, next) => {
 
 /**
  * POST /subjects/:id/tests/:testId/delete
- * Deletes a test from the tests collection.
- * Returns an error page if IDs are invalid or test does not exist.
+ * Deletes a test from the database after verifying that both the parent subject
+ * and the test exist and that the test belongs to this subject.
  */
 router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
     try {
