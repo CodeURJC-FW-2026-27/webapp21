@@ -33,23 +33,34 @@ const router = express.Router();
  */
 router.get('/', async (req, res, next) => {
     try {
-        const { page = 1, course = '', search = '' } = req.query; //default values for query parameters
-        const { items, totalItems, totalPages, currentPage } = await db.getAsignaturas({ //ask db for all the subjects with the given filters and pagination
+        const { page = 1, course = '', search = '' } = req.query;
+        const cleanSearch = typeof search === 'string' ? search.trim() : '';
+        const cleanCourse = typeof course === 'string' ? course.trim() : '';
+
+        const { items, totalItems, totalPages, currentPage } = await db.getAsignaturas({
             page,
-            search,
-            courseYear: course
+            search: cleanSearch,
+            courseYear: cleanCourse
         });
 
-        const buildPageURL = (targetPage) => { //function to build the url for the pagination links
+        const buildPageURL = (targetPage) => {
             const params = new URLSearchParams();
             params.set('page', targetPage);
-            if (course) params.set('course', course);
-            if (search) params.set('search', search);
+            if (cleanCourse) params.set('course', cleanCourse);
+            if (cleanSearch) params.set('search', cleanSearch);
             return `/?${params.toString()}`;
         };
 
-        const pages = []; //we are creating an array with the page numbers to display in the pagination component
-        for (let i = 1; i <= totalPages; i++) { //we are creating an array with the page numbers to display in the pagination component
+        const buildFilterURL = (targetCourse) => {
+            const params = new URLSearchParams();
+            if (targetCourse) params.set('course', targetCourse);
+            if (cleanSearch) params.set('search', cleanSearch);
+            const qs = params.toString();
+            return qs ? `/?${qs}` : '/';
+        };
+
+        const pages = [];
+        for (let i = 1; i <= totalPages; i++) {
             pages.push({
                 number: i,
                 active: i === currentPage,
@@ -57,31 +68,44 @@ router.get('/', async (req, res, next) => {
             });
         }
 
-        const hasPrev = currentPage > 1; //check if there is a previous page (if is the first page, there is no previous page)
-        const hasNext = currentPage < totalPages; //check if there is a next page (if is the last page, there is no next page)
+        const hasPrev = currentPage > 1;
+        const hasNext = currentPage < totalPages;
 
+        let emptyMessage = 'No se han encontrado asignaturas';
+        if (cleanSearch) {
+            emptyMessage = `No hay asignaturas que coincidan con '${cleanSearch}'`;
+        } else if (cleanCourse) {
+            emptyMessage = `No hay asignaturas que coincidan con el curso ${cleanCourse}º`;
+        }
 
-        res.render('index', { // Render the index view with the retrieved subjects and additional context
+        res.render('index', {
             subjects: items,
-            hasSubjects: items.length > 0, //check if there are subjects to display
-            search,
-            course,
-            isCourse1: course === '1',
-            isCourse2: course === '2',
-            isCourse3: course === '3',
-            isCourse4: course === '4',
-            isAllCourses: !course,
+            hasSubjects: items.length > 0,
+            search: cleanSearch,
+            course: cleanCourse,
+            isCourse1: cleanCourse === '1',
+            isCourse2: cleanCourse === '2',
+            isCourse3: cleanCourse === '3',
+            isCourse4: cleanCourse === '4',
+            isAllCourses: !cleanCourse,
+            urlCourseAll: buildFilterURL(''),
+            urlCourse1: buildFilterURL('1'),
+            urlCourse2: buildFilterURL('2'),
+            urlCourse3: buildFilterURL('3'),
+            urlCourse4: buildFilterURL('4'),
+            hasFilters: Boolean(cleanSearch || cleanCourse),
+            emptyMessage,
             totalItems,
             totalPages,
             currentPage,
             pages,
             hasPagination: totalPages > 1,
-            prevUrl: hasPrev ? buildPageURL(currentPage - 1) : null, //if there is a previous page, build the url for the previous page, otherwise set it to null
-            nextUrl: hasNext ? buildPageURL(currentPage + 1) : null,//if there is a next page, build the url for the next page, otherwise set it to null
+            prevUrl: hasPrev ? buildPageURL(currentPage - 1) : null,
+            nextUrl: hasNext ? buildPageURL(currentPage + 1) : null,
             hasNext,
             hasPrev
         });
-    } catch (error) { //control errors 
+    } catch (error) {
         next(error);
     }
 });

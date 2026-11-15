@@ -16,12 +16,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownCursos" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
-                        <li><a class="dropdown-item" href="/?course=1">1º Curso</a></li>
-                        <li><a class="dropdown-item" href="/?course=2">2º Curso</a></li>
-                        <li><a class="dropdown-item" href="/?course=3">3º Curso</a></li>
-                        <li><a class="dropdown-item" href="/?course=4">4º Curso</a></li>
+                        <li><a class="dropdown-item" href="{{#urlCourse1}}{{{urlCourse1}}}{{/urlCourse1}}{{^urlCourse1}}/?course=1{{/urlCourse1}}">1º Curso</a></li>
+                        <li><a class="dropdown-item" href="{{#urlCourse2}}{{{urlCourse2}}}{{/urlCourse2}}{{^urlCourse2}}/?course=2{{/urlCourse2}}">2º Curso</a></li>
+                        <li><a class="dropdown-item" href="{{#urlCourse3}}{{{urlCourse3}}}{{/urlCourse3}}{{^urlCourse3}}/?course=3{{/urlCourse3}}">3º Curso</a></li>
+                        <li><a class="dropdown-item" href="{{#urlCourse4}}{{{urlCourse4}}}{{/urlCourse4}}{{^urlCourse4}}/?course=4{{/urlCourse4}}">4º Curso</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="/">Todos los cursos</a></li>
+                        <li><a class="dropdown-item" href="{{#urlCourseAll}}{{{urlCourseAll}}}{{/urlCourseAll}}{{^urlCourseAll}}/{{/urlCourseAll}}">Todos los cursos</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="/#about">Sobre nosotros</a></li>
@@ -30,6 +30,9 @@
             <form class="d-flex my-2 my-lg-0" role="search" action="/" method="GET">
                 <div class="input-group">
                     <input class="form-control" type="search" name="search" value="{{search}}" placeholder="Buscar asignatura..." aria-label="Buscar asignatura">
+                    {{#course}}
+                    <input type="hidden" name="course" value="{{course}}">
+                    {{/course}}
                     <button class="btn btn-urjc" type="submit" aria-label="Buscar">
                     <i class="bi bi-search"></i>
                     </button>

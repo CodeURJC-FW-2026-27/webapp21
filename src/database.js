@@ -13,15 +13,18 @@ console.log("Connected to MongoDB");
 
 const data = client.db(DBName);
 export const asignaturas = data.collection("asignaturas"); // primary entity collection
+export const subjects = asignaturas; // English collection alias
 export const tests = data.collection("tests"); // secondary entity collection
 
 /**
  * Escapes special characters in a string to be used in search queries, preventing regex injection attacks.
+ * Escapes characters such as (, ), *, +, ?, ^, $, {, }, [, ], |, \, . so user input does not break queries.
  * @param {string} text - User input string
  * @returns {string} The safe text with escaped special characters for safe use in search queries
  */
-function escapeRegex(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+export function escapeRegex(text) {
+    if (!text || typeof text !== "string") return "";
+    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 /**
@@ -59,14 +62,27 @@ export function parseObjectId(id) {
 export async function getAsignaturas({ page = 1, search = "", courseYear = "", semester = "" } = {}) {
     const filter = {};
 
-    if (search && search.trim() !== "") {
-        filter.name = { $regex: escapeRegex(search.trim()), $options: "i" };
+    const cleanSearch = typeof search === "string" ? search.trim() : "";
+    if (cleanSearch !== "") {
+        filter.name = { $regex: escapeRegex(cleanSearch), $options: "i" };
     }
-    if (courseYear && courseYear.trim() !== "") {
-        filter.courseYear = courseYear.trim();
+    if (courseYear !== undefined && courseYear !== null && String(courseYear).trim() !== "") {
+        const cleanCourse = String(courseYear).trim();
+        const courseNum = Number(cleanCourse);
+        if (!isNaN(courseNum)) {
+            filter.courseYear = { $in: [cleanCourse, courseNum] };
+        } else {
+            filter.courseYear = cleanCourse;
+        }
     }
-    if (semester && semester.trim() !== "") {
-        filter.semester = semester.trim();
+    if (semester !== undefined && semester !== null && String(semester).trim() !== "") {
+        const cleanSemester = String(semester).trim();
+        const semNum = Number(cleanSemester);
+        if (!isNaN(semNum)) {
+            filter.semester = { $in: [cleanSemester, semNum] };
+        } else {
+            filter.semester = cleanSemester;
+        }
     }
 
     const totalItems = await asignaturas.countDocuments(filter);
