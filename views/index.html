@@ -1,135 +1,160 @@
+{{> head}} <!-- with mustache we can include partials -->
 
-    {{> head}} <!-- with mustache we can include partials -->
-    <body>
-        {{>navbar}}<!-- with mustache we can include partials -->
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Ensaya</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Por estudiantes. Para estudiantes.</p>
+<body>
+    {{>navbar}}<!-- with mustache we can include partials -->
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Ensaya</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Por estudiantes. Para estudiantes.</p>
+            </div>
+        </div>
+    </header>
+    <!-- Catalog section-->
+    <!--We are using course-anchor class to prevent half-cut cards, 
+         see the definition of the class in custom.css for more info-->
+    <section class="py-5 course-anchor" id="subjects">
+        <div class="container px-4 px-lg-5 mt-5">
+            <!-- Category buttons: Todos · 1º · 2º · 3º · 4º and button to create new subject -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                <div class="btn-group flex-wrap" role="group" aria-label="Filtrar por curso">
+                    <a href="{{{urlCourseAll}}}"
+                        class="btn {{#isAllCourses}}btn-urjc active{{/isAllCourses}}{{^isAllCourses}}btn-outline-dark{{/isAllCourses}}"
+                        {{#isAllCourses}}aria-current="page" {{/isAllCourses}}>Todos</a>
+                    <a href="{{{urlCourse1}}}"
+                        class="btn {{#isCourse1}}btn-urjc active{{/isCourse1}}{{^isCourse1}}btn-outline-dark{{/isCourse1}}"
+                        {{#isCourse1}}aria-current="page" {{/isCourse1}}>1º</a>
+                    <a href="{{{urlCourse2}}}"
+                        class="btn {{#isCourse2}}btn-urjc active{{/isCourse2}}{{^isCourse2}}btn-outline-dark{{/isCourse2}}"
+                        {{#isCourse2}}aria-current="page" {{/isCourse2}}>2º</a>
+                    <a href="{{{urlCourse3}}}"
+                        class="btn {{#isCourse3}}btn-urjc active{{/isCourse3}}{{^isCourse3}}btn-outline-dark{{/isCourse3}}"
+                        {{#isCourse3}}aria-current="page" {{/isCourse3}}>3º</a>
+                    <a href="{{{urlCourse4}}}"
+                        class="btn {{#isCourse4}}btn-urjc active{{/isCourse4}}{{^isCourse4}}btn-outline-dark{{/isCourse4}}"
+                        {{#isCourse4}}aria-current="page" {{/isCourse4}}>4º</a>
+                </div>
+                <div>
+                    <a href="/subject-form" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nueva
+                        asignatura</a>
                 </div>
             </div>
-        </header>
-        <!-- Catalog section-->
-         <!--We are using course-anchor class to prevent half-cut cards, 
-         see the definition of the class in custom.css for more info-->
-        <section class="py-5 course-anchor" id="subjects">
-            <div class="container px-4 px-lg-5 mt-5">
-                <!-- Category buttons: Todos · 1º · 2º · 3º · 4º and button to create new subject -->
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
-                    <div class="btn-group flex-wrap" role="group" aria-label="Filtrar por curso">
-                        <a href="{{{urlCourseAll}}}" class="btn {{#isAllCourses}}btn-urjc active{{/isAllCourses}}{{^isAllCourses}}btn-outline-dark{{/isAllCourses}}" {{#isAllCourses}}aria-current="page"{{/isAllCourses}}>Todos</a>
-                        <a href="{{{urlCourse1}}}" class="btn {{#isCourse1}}btn-urjc active{{/isCourse1}}{{^isCourse1}}btn-outline-dark{{/isCourse1}}" {{#isCourse1}}aria-current="page"{{/isCourse1}}>1º</a>
-                        <a href="{{{urlCourse2}}}" class="btn {{#isCourse2}}btn-urjc active{{/isCourse2}}{{^isCourse2}}btn-outline-dark{{/isCourse2}}" {{#isCourse2}}aria-current="page"{{/isCourse2}}>2º</a>
-                        <a href="{{{urlCourse3}}}" class="btn {{#isCourse3}}btn-urjc active{{/isCourse3}}{{^isCourse3}}btn-outline-dark{{/isCourse3}}" {{#isCourse3}}aria-current="page"{{/isCourse3}}>3º</a>
-                        <a href="{{{urlCourse4}}}" class="btn {{#isCourse4}}btn-urjc active{{/isCourse4}}{{^isCourse4}}btn-outline-dark{{/isCourse4}}" {{#isCourse4}}aria-current="page"{{/isCourse4}}>4º</a>
-                    </div>
-                    <div>
-                        <a href="/subject-form" class="btn btn-urjc"><i class="bi-plus-circle me-1"></i>Crear nueva asignatura</a>
-                    </div>
-                </div>
 
-                {{#hasFilters}}
-                <div class="mb-4 d-flex align-items-center gap-2 flex-wrap">
-                    <span class="text-muted small">Filtros activos:</span>
-                    {{#course}}<span class="badge bg-secondary">{{course}}º Curso</span>{{/course}}
-                    {{#search}}<span class="badge bg-secondary">Búsqueda: "{{search}}"</span>{{/search}}
-                    <a href="/" class="btn btn-outline-secondary btn-sm py-0 px-2" style="font-size: 0.8rem;"><i class="bi bi-x-circle me-1"></i>Limpiar</a>
-                </div>
-                {{/hasFilters}}
+            {{#hasFilters}}
+            <div class="mb-4 d-flex align-items-center gap-2 flex-wrap">
+                <span class="text-muted small">Filtros activos:</span>
+                {{#course}}<span class="badge bg-secondary">{{course}}º Curso</span>{{/course}}
+                {{#search}}<span class="badge bg-secondary">Búsqueda: "{{search}}"</span>{{/search}}
+                <a href="/" class="btn btn-outline-secondary btn-sm py-0 px-2" style="font-size: 0.8rem;"><i
+                        class="bi bi-x-circle me-1"></i>Limpiar</a>
+            </div>
+            {{/hasFilters}}
 
-                <!-- Subjects grid: 1 column on mobile, 2 on md, 3 on lg. Each card links to the detail page of its subject -->
-                <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
-                    {{#subjects}}
-                    <div class="col mb-5">
-                        <div class="card h-100 shadow-sm border-0">
-                            <!-- Subject image-->
-                            <img class="card-img-top" src="/uploads/{{image}}" alt="Imagen de {{name}}" />
-                            <!-- Subject details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Subject name-->
-                                    <h5 class="fw-bolder">{{name}}</h5>
-                                    <!-- Subject course year and semester, with mustache we can render this data-->
-                                    <p class="text-muted mb-2">{{courseYear}}º Curso &middot; {{semester}}º Cuatrimestre</p> 
-                                    <!-- Subject description-->
-                                    <p>{{description}}</p>
-                                </div>
-                            </div>
-                            <!-- Subject actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/subjects/{{_id}}">Ver detalles</a></div>
+            <!-- Subjects grid: 1 column on mobile, 2 on md, 3 on lg. Each card links to the detail page of its subject -->
+            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
+                {{#subjects}}
+                <div class="col mb-5">
+                    <div class="card h-100 shadow-sm border-0">
+                        <!-- Subject image-->
+                        <img class="card-img-top" src="/uploads/{{image}}" alt="Imagen de {{name}}" />
+                        <!-- Subject details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Subject name-->
+                                <h5 class="fw-bolder">{{name}}</h5>
+                                <!-- Subject course year and semester, with mustache we can render this data-->
+                                <p class="text-muted mb-2">{{courseYear}}º Curso &middot; {{semester}}º Cuatrimestre</p>
+                                <!-- Subject description-->
+                                <p>{{description}}</p>
                             </div>
                         </div>
+                        <!-- Subject actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                    href="/subjects/{{_id}}">Ver detalles</a></div>
+                        </div>
                     </div>
-                    {{/subjects}}
-                    {{^hasSubjects}}
-                    <div class="col-12 text-center py-5">
-                        <i class="bi bi-search fs-1 text-muted d-block mb-3"></i>
-                        <h3 class="h5 text-muted mb-2">{{{emptyMessage}}}</h3>
-                        <p class="text-muted small">Prueba a buscar con otros términos o limpia los filtros.</p>
-                        <a href="/" class="btn btn-outline-dark mt-2"><i class="bi bi-arrow-counterclockwise me-1"></i>Limpiar filtros</a>
-                    </div>
-                    {{/hasSubjects}}
                 </div>
+                {{/subjects}}
+                {{^hasSubjects}}
+                <div class="col-12 text-center py-5">
+                    <i class="bi bi-search fs-1 text-muted d-block mb-3"></i>
+                    <h3 class="h5 text-muted mb-2">{{emptyMessage}}</h3>
+                    <p class="text-muted small">Prueba a buscar con otros términos o limpia los filtros.</p>
+                    <a href="/" class="btn btn-outline-dark mt-2"><i
+                            class="bi bi-arrow-counterclockwise me-1"></i>Limpiar filtros</a>
+                </div>
+                {{/hasSubjects}}
+            </div>
             <!-- Pagination controls -->
             {{#hasPagination}}
-                <nav aria-label="Paginación de asignaturas" class="mt-4">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item {{^hasPrev}}disabled{{/hasPrev}}">
-                            <a class="page-link" href="{{prevUrl}}" {{^hasPrev}}tabindex="-1" aria-disabled="true"{{/hasPrev}}>Anterior</a>
-                        </li>
+            <nav aria-label="Paginación de asignaturas" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item {{^hasPrev}}disabled{{/hasPrev}}">
+                        <a class="page-link" href="{{prevUrl}}" {{^hasPrev}}tabindex="-1" aria-disabled="true"
+                            {{/hasPrev}}>Anterior</a>
+                    </li>
 
-                        {{#pages}}
-                        <li class="page-item {{#active}}active{{/active}}" {{#active}}aria-current="page"{{/active}}>
-                            <a class="page-link" href="{{url}}">{{number}}</a>
-                        </li>
-                        {{/pages}}
-                        <li class="page-item {{^hasNext}}disabled{{/hasNext}}">
-                            <a class="page-link" href="{{nextUrl}}" {{^hasNext}}tabindex="-1" aria-disabled="true"{{/hasNext}}>Siguiente</a>
-                        </li>
-                    </ul>
-                </nav>
+                    {{#pages}}
+                    <li class="page-item {{#active}}active{{/active}}" {{#active}}aria-current="page" {{/active}}>
+                        <a class="page-link" href="{{url}}">{{number}}</a>
+                    </li>
+                    {{/pages}}
+                    <li class="page-item {{^hasNext}}disabled{{/hasNext}}">
+                        <a class="page-link" href="{{nextUrl}}" {{^hasNext}}tabindex="-1" aria-disabled="true"
+                            {{/hasNext}}>Siguiente</a>
+                    </li>
+                </ul>
+            </nav>
             {{/hasPagination}}
-            </div>
-            
-        
-        
-    
-    
-    
-        </section>
+        </div>
 
-        
-        
-        
-        <section class="py-5 bg-light border-top" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="text-center mb-4">
-                            <h2 class="fw-bolder">Sobre nosotros</h2>
-                            <p class="text-muted mb-0">Por qué nació Ensaya</p>
-                        </div>
-                        <div class="card border-0 shadow-sm p-4 p-md-5">
-                            <p class="lead fs-6 mb-3">
-                                Somos Antonio, Irene y David, tres estudiantes de Ingeniería del Software y Matemáticas en la URJC.
-                            </p>
-                            <p class="mb-3">
-                                La idea de montar esta página viene de nuestra propia experiencia en los primeros cursos: cuando estábamos perdidos con las asignaturas, tuvimos la suerte de que gente de cursos superiores nos echó un cable pasándonos preguntas tipo test, exámenes de convocatorias pasadas y consejos de cómo debíamos enfrentarnos a cada asignatura.
-                            </p>
-                            <p class="mb-3">
-                                Ahora que estamos acabando la carrera, creemos que lo justo es hacer lo mismo. Queremos que los compañeros que venís por detrás tengáis un sitio cómodo donde ensayar con preguntas reales de las asignaturas sin tener que andar buscando PDFs con publicidad o recopilatorios por mil sitios.
-                            </p>
-                            <p class="mb-0 fw-bold">
-                                Un mismo <span class="text-urjc">sitio</span>. Toda la <span class="text-urjc">carrera</span>.
-                            </p>
-                        </div>
+
+
+
+
+
+    </section>
+
+
+
+
+    <section class="py-5 bg-light border-top" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bolder">Sobre nosotros</h2>
+                        <p class="text-muted mb-0">Por qué nació Ensaya</p>
+                    </div>
+                    <div class="card border-0 shadow-sm p-4 p-md-5">
+                        <p class="lead fs-6 mb-3">
+                            Somos Antonio, Irene y David, tres estudiantes de Ingeniería del Software y Matemáticas en
+                            la URJC.
+                        </p>
+                        <p class="mb-3">
+                            La idea de montar esta página viene de nuestra propia experiencia en los primeros cursos:
+                            cuando estábamos perdidos con las asignaturas, tuvimos la suerte de que gente de cursos
+                            superiores nos echó un cable pasándonos preguntas tipo test, exámenes de convocatorias
+                            pasadas y consejos de cómo debíamos enfrentarnos a cada asignatura.
+                        </p>
+                        <p class="mb-3">
+                            Ahora que estamos acabando la carrera, creemos que lo justo es hacer lo mismo. Queremos que
+                            los compañeros que venís por detrás tengáis un sitio cómodo donde ensayar con preguntas
+                            reales de las asignaturas sin tener que andar buscando PDFs con publicidad o recopilatorios
+                            por mil sitios.
+                        </p>
+                        <p class="mb-0 fw-bold">
+                            Un mismo <span class="text-urjc">sitio</span>. Toda la <span
+                                class="text-urjc">carrera</span>.
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
-        {{>footer}} <!-- with mustache we can include partials -->
-    </body>
+        </div>
+    </section>
+    {{>footer}} <!-- with mustache we can include partials -->
+</body>
+
 </html>

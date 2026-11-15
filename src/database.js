@@ -254,24 +254,18 @@ export async function updateTest(id, updatedFields) {
     if (!parsedId || !updatedFields || typeof updatedFields !== 'object') {
         return null;
     }
-    const { _id, asignaturaId, subjectId, ...rest } = updatedFields;
     const fieldsToUpdate = {};
-    if (rest.title !== undefined) {
-        fieldsToUpdate.title = typeof rest.title === 'string' ? rest.title.trim() : rest.title;
+    if (updatedFields.title !== undefined) {
+        fieldsToUpdate.title = typeof updatedFields.title === 'string' ? updatedFields.title.trim() : updatedFields.title;
     }
-    if (rest.description !== undefined) {
-        fieldsToUpdate.description = typeof rest.description === 'string' ? rest.description.trim() : rest.description;
+    if (updatedFields.description !== undefined) {
+        fieldsToUpdate.description = typeof updatedFields.description === 'string' ? updatedFields.description.trim() : updatedFields.description;
     }
-    if (rest.difficulty !== undefined) {
-        fieldsToUpdate.difficulty = typeof rest.difficulty === 'string' ? rest.difficulty.trim().toLowerCase() : rest.difficulty;
+    if (updatedFields.difficulty !== undefined) {
+        fieldsToUpdate.difficulty = typeof updatedFields.difficulty === 'string' ? updatedFields.difficulty.trim().toLowerCase() : updatedFields.difficulty;
     }
-    if (rest.duration !== undefined) {
-        fieldsToUpdate.duration = parseInt(rest.duration, 10);
-    }
-    for (const key of Object.keys(rest)) {
-        if (fieldsToUpdate[key] === undefined) {
-            fieldsToUpdate[key] = rest[key];
-        }
+    if (updatedFields.duration !== undefined) {
+        fieldsToUpdate.duration = parseInt(updatedFields.duration, 10);
     }
 
     return await tests.findOneAndUpdate(

@@ -517,7 +517,14 @@ async function saveTest(req, res, next, testId = null) {
             }
         }
 
-        const { isValid, errors } = await validateTest(req.body, parsedSubjectId, {
+        const testData = {
+            title: req.body.title,
+            description: req.body.description,
+            difficulty: req.body.difficulty,
+            duration: req.body.duration
+        };
+
+        const { isValid, errors } = await validateTest(testData, parsedSubjectId, {
             isEdit,
             testId: parsedTestId
         });
@@ -533,9 +540,9 @@ async function saveTest(req, res, next, testId = null) {
         }
 
         if (isEdit) {
-            await db.updateTest(parsedTestId, req.body);
+            await db.updateTest(parsedTestId, testData);
         } else {
-            await db.addTest(parsedSubjectId, req.body);
+            await db.addTest(parsedSubjectId, testData);
         }
 
         return renderSuccess(res, {
