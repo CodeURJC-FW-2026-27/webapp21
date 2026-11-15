@@ -1,5 +1,4 @@
-import { ObjectId } from 'mongodb';
-import { getAsignaturaByName, tests } from './database.js';
+import { getSubjectByName, getTestByTitle, parseObjectId } from './database.js';
 
 /**
  * Validates the form fields for a subject on both create and edit.
@@ -29,7 +28,7 @@ export async function validateSubject(data = {}, file = null, { isEdit = false, 
         errors.push('El nombre de la asignatura debe comenzar con una letra mayúscula.');
     } else {
         // 2. Name uniqueness check in MongoDB with case-insensitive collation
-        const existingSubject = await getAsignaturaByName(name, isEdit ? subjectId : null);
+        const existingSubject = await getSubjectByName(name, isEdit ? subjectId : null);
         if (existingSubject) {
             errors.push('Ya existe una asignatura con ese nombre.');
         }
@@ -91,21 +90,10 @@ export async function validateTest(data = {}, subjectId, { isEdit = false, testI
         errors.push('El título del simulacro es obligatorio.');
     } else if (title.length < 3 || title.length > 100) {
         errors.push('El título del simulacro debe tener entre 3 y 100 caracteres.');
-    } else if (ObjectId.isValid(subjectId)) {
+    } else if (parseObjectId(subjectId)) {
         // 2. Title uniqueness within the subject using case-insensitive collation
-        const subjectObjectId = new ObjectId(subjectId);
-        const testObjectId = (isEdit && testId && ObjectId.isValid(testId)) ? new ObjectId(testId) : null;
-
-        const testsQuery = {
-            asignaturaId: subjectObjectId,
-            title: title,
-            ...(testObjectId ? { _id: { $ne: testObjectId } } : {})
-        };
-        const existingInTests = await tests.findOne(testsQuery, {
-            collation: { locale: 'es', strength: 2 }
-        });
-
-        if (existingInTests) {
+        const existingTest = await getTestByTitle(title, subjectId, isEdit ? testId : null);
+        if (existingTest) {
             errors.push('Ya existe un simulacro con ese título en esta asignatura.');
         }
     }

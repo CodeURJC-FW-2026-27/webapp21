@@ -14,7 +14,7 @@ const SAMPLE_IMAGES_FOLDER = path.join(DATA_FOLDER, "images");
 
 /**
  * Loads sample data into MongoDB on server startup if the database is empty.
- * Reads sample asignaturas and their associated tests from data/data.json,
+ * Reads sample subjects and their associated tests from data/data.json,
  * ensures initial images exist inside uploads/, and inserts all records.
  */
 export async function loadSampleData() {
@@ -38,20 +38,19 @@ export async function loadSampleData() {
         );
     }
 
-const rawJson = await fs.readFile(path.join(DATA_FOLDER, DATA_FILE), "utf8");
-    const sampleAsignaturas = JSON.parse(rawJson);
+    const rawJson = await fs.readFile(path.join(DATA_FOLDER, DATA_FILE), "utf8");
+    const sampleSubjects = JSON.parse(rawJson);
 
-    for (const item of sampleAsignaturas) { //separate the parent asignatura data from its linked tests
-        const { tests = [], ...asignaturaData } = item;
+    for (const item of sampleSubjects) { // Separate the parent subject data from its linked tests
+        const { tests = [], ...subjectData } = item;
 
-        // insert parent asignatura and capture its generated MongoDB ObjectId
-        const asignaturaId = await db.addAsignatura(asignaturaData);
+        // Insert parent subject and capture its generated MongoDB ObjectId
+        const subjectId = await db.addSubject(subjectData);
 
-        
-        for (const test of tests) { // insert every secondary test linked to the parent asignaturaId
+        for (const test of tests) { // Insert every secondary test linked to the parent subjectId
             await db.addTest({
                 ...test,
-                asignaturaId
+                subjectId
             });
         }
     }

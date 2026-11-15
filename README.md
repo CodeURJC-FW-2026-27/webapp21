@@ -1,5 +1,13 @@
 # Ensaya — Exam Simulation Platform
 
+## Table of Contents
+
+* [Practice 1: Web Page Layout with HTML and CSS](#practice-1-web-page-layout-with-html-and-css)
+* [Practice 2: Server-Side Web Application with Node.js](#practice-2-server-side-web-application-with-nodejs)
+  * [Execution Instructions](#execution-instructions)
+  * [File Description](#file-description)
+  * [Demo Video](#demo-video)
+  * [Team Participation](#team-participation-1)
 
 ---
 
@@ -182,4 +190,151 @@ Form page to create a new subject. It includes specific input fields for all its
 2. [detalle-sistemas-operativos.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-sistemas-operativos.html): added all the subject information and its simulations. 
 3. [detalle-daw.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-daw.html): added all the subject information and its simulations. 
 4. [detalle-seguridad.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-seguridad.html): added all the subject information and its simulations. 
-5. [detalle-algoritmos.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-algoritmos.html): added all the subject information and its simulations. 
+5. [detalle-algoritmos.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/detalle-algoritmos.html): added all the subject information and its simulations.
+
+---
+
+## Practice 2: Server-Side Web Application with Node.js
+
+### Execution Instructions
+
+#### Prerequisites
+
+* **Node.js:** `v24.0.0` or higher (`"node": ">=24.0.0"` in `package.json`)
+* **npm:** Included with Node.js
+* **MongoDB:** Local MongoDB Community Server running on `mongodb://localhost:27017` (database name: `DBWebApp21`)
+
+#### Steps to Run the Application
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodeURJC-FW-2026-27/webapp21.git
+   cd webapp21
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start MongoDB:**
+   Ensure the MongoDB service (`mongod`) is running on port `27017`.
+   * On Windows (if installed as a service):
+     ```powershell
+     net start MongoDB
+     ```
+   * On macOS / Linux:
+     ```bash
+     sudo systemctl start mongod
+     ```
+
+4. **Start the server:**
+   ```bash
+   npm start
+   ```
+   *(For development with automatic reload on file changes, you can run `npm run watch`.)*
+
+5. **Open in browser:**
+   Navigate to [http://localhost:3000/](http://localhost:3000/). On first startup, if the database is empty, the server automatically loads the sample subjects, tests, and cover images into MongoDB and the `uploads/` folder.
+
+---
+
+### File Description
+
+#### Backend (`src/`)
+
+| File | Responsibility |
+| :--- | :--- |
+| `src/app.js` | Application entry point. Configures Express, static files (`public/` and `/uploads`), Mustache template engine, request body parsers, main router, 404 handler, Multer upload error handler, and global error middleware. Loads initial sample data on startup. |
+| `src/database.js` | MongoDB connection and data access layer (`subjects` and `tests` collections). Implements pagination, search/course filtering (`escapeRegex`), safe `ObjectId` parsing (`parseObjectId`), and CRUD helpers for both entities. |
+| `src/router.js` | Defines all HTTP routes for listing, searching, filtering, viewing details, creating, editing, and deleting subjects and tests, sharing unified create/edit flows (`saveSubject`, `saveTest`). |
+| `src/validation.js` | Server-side form validation (`validateSubject` and `validateTest`) verifying required fields, lengths, numeric ranges, formats, uppercase subject start, and case-insensitive duplicate checks in MongoDB. |
+| `src/imageStorage.js` | Multer configuration (`UPLOADS_FOLDER`), MIME type filtering (images only), 5 MB size limit, unique UUID filename generation, upload error middleware, and safe file deletion (`deleteImage`). |
+| `src/load_data.js` | Startup seed loader (`loadSampleData`). Checks if MongoDB is empty and populates sample subjects, linked tests, and sample images from `data/` into `uploads/`. |
+| `src/routers/renderHelpers.js` | Shared view helpers (`renderSuccess` and `renderError`) used across routes and error handlers to render the unified feedback page `views/message.html`. |
+
+#### Views & Templates (`views/`)
+
+| File | Responsibility |
+| :--- | :--- |
+| `views/index.html` | Main catalog page displaying the paginated 1-2-3 responsive subject grid, course category filters, active filter badges, empty-state feedback, and pagination controls. |
+| `views/detail.html` | Subject detail view displaying subject metadata, cover image, Edit/Delete actions, the list of linked tests in an accordion with individual Edit/Delete buttons, and the embedded form to create a new test. |
+| `views/subject-form.html` | Shared Mustache form view for both creating a new subject and editing an existing one, including HTML5 validation attributes and current image preview on edit. |
+| `views/test-form.html` | Edit page for an existing test, reusing the `test-fields` partial pre-filled with current values. |
+| `views/message.html` | Unified confirmation and error feedback page used for all form submissions, deletions, 404 pages, and server errors. |
+| `views/partials/head.html` | Shared `<head>` partial including metadata, favicon, Bootstrap CSS, Bootstrap Icons, and `custom.css`. |
+| `views/partials/navbar.html` | Shared navigation bar partial with brand link, course filter dropdown, and search bar preserving active course filters. |
+| `views/partials/footer.html` | Shared footer partial with team links and Bootstrap JS bundle. |
+| `views/partials/test-fields.html` | Shared form fields partial for creating and editing tests (title, description, duration, difficulty). |
+
+#### Data & Static Assets (`data/`, `public/`)
+
+| File | Responsibility |
+| :--- | :--- |
+| `data/data.json` & `data/images/` | Initial seed dataset (9 subjects and 13 tests) and cover images copied to `uploads/` when the database starts empty. |
+| `public/css/custom.css` | Custom URJC brand styling, responsive cover rules, pagination styling, and utility classes. |
+| `package.json` | Project metadata, Node engine requirement, npm scripts (`start`, `watch`), and dependencies (`express`, `mongodb`, `mustache-express`, `multer`, `body-parser`). |
+
+---
+
+### Demo Video
+
+* **YouTube Video (minimum 1 minute):** *[Pending link]*
+
+---
+
+### Team Participation
+
+#### Irene Ramos Martínez-Campos
+
+**Tasks performed:**
+
+* *Pending*
+
+**Most significant commits:**
+
+1. *Pending*
+
+**Files with the most participation:**
+
+1. *Pending*
+
+#### Antonio Manuel Machuca Hortelano
+
+**Tasks performed:**
+
+* *Pending*
+
+**Most significant commits:**
+
+1. *Pending*
+
+**Files with the most participation:**
+
+1. *Pending*
+
+#### David Sebastián Sticea Covaciu
+
+**Tasks performed:**
+
+* Implemented full CRUD functionality for the secondary entity (`Test` / *Simulacros*) in [src/database.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/database.js) and [src/router.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/router.js), including listing tests on the subject detail page, creating new tests, editing existing ones with a shared `test-fields.html` partial and `test-form.html`, and deleting tests.
+* Implemented server-side validation for tests (`validateTest`) and duplicate-prevention checks in MongoDB on both creation and editing, alongside shared `saveTest` logic.
+* Implemented combined catalog search by subject name (with escaped regex) and course category filtering in MongoDB, preserving active filters and search terms across pagination links and navigation controls.
+* Improved application robustness and error handling by adding `parseObjectId` validation across all routes, 404 and global error handlers, and fixing layout/styling details in `message.html` and `subject-form.html`.
+* Consolidated test database operations into `src/database.js`, unified `UPLOADS_FOLDER` configuration, and refactored identifiers and comments to English.
+
+**Most significant commits:**
+
+1. [07e9fb8 - Implemented search and category filtering](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/07e9fb8c7addf4318fe8902fab51a21157321320): Implemented MongoDB regex search (with escaped special characters) and course category buttons (`Todos`, `1º`–`4º`), preserving filters across pagination.
+2. [e1730a1 - Improved error control](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/e1730a1bb82f02da1fa1c503a0451deeff463251): Added `parseObjectId` route protection, 404 handler, and global error middleware using `message.html` so invalid IDs or URLs never crash the server.
+3. [0c1c7d8 - Added test deletion](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/0c1c7d858845a57d83fb90de772f436f7a669645): Implemented test deletion route and database operation verifying parent subject ownership and showing feedback via `message.html`.
+4. [eb240aa - Created test-form and test-fields partial view](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/eb240aaecd1dd9f3adc6e178a67cb2a35d074d88): Created the reusable `test-fields.html` partial and `test-form.html` view to share form fields between test creation and editing.
+5. [99e06c7 - Added test creation](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/99e06c784311c8d46583149771aca13527a87890): Implemented test creation endpoint, server-side validation, and integration with the subject detail view.
+
+**Files with the most participation:**
+
+1. [src/router.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/router.js): Implemented search/category filtering routes, test CRUD endpoints, `parseObjectId` guards, and shared save flows.
+2. [src/database.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/database.js): Implemented test CRUD queries, `escapeRegex` and `parseObjectId` helpers, and MongoDB search/course filter queries.
+3. [src/validation.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/validation.js): Implemented and refined server-side test validation (`validateTest`) including duplicate title checks during edits.
+4. [views/index.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/views/index.html): Added category filter buttons, active filter badges, empty search state message, and pagination links preserving filters.
+5. [views/detail.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/views/detail.html): Integrated the dynamic test accordion list, edit/delete actions, and the `test-fields` partial for creating tests.
