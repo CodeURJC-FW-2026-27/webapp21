@@ -315,15 +315,26 @@ Form page to create a new subject. It includes specific input fields for all its
 
 **Tasks performed:**
 
-* *Pending*
+* Prepared the Practice 2 application structure and configuration, including package dependencies, Node.js requirements, and the removal of obsolete Practice 1 files.
+* Implemented the MongoDB connection and subject database operations, and added the startup loader for sample subjects, tests, and images.
+* Created and integrated reusable Mustache navigation and footer partials, with catalog search and course-filter navigation.
+* Implemented the MongoDB-backed subject catalog and pagination, and built the subject detail routes and view with image delivery and not-found handling.
 
 **Most significant commits:**
 
-1. *Pending*
+1. [8b75ce7 - Implement MongoDB connection and subject CRUD operations](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/8b75ce72d60621fd2e0e9f93484a39e91795eee4): Connected the application to MongoDB and added database operations for subjects.
+2. [a9d5c32 - Implement sample data loading](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/a9d5c32b366ccc33eae9a4413279119f1c43f0d9): Added startup loading for sample subjects, tests, and images when the database is empty.
+3. [b7f2ae2 - Refactor views to use Mustache partials](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/b7f2ae2a02bb143cb66d0bfeb5f23a2bf07abd76): Replaced duplicated navigation and footer markup with reusable partials.
+4. [e97ea2c - Implement catalog pagination](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/e97ea2cbec4791a66fbb4918f745235bef56b86f): Added MongoDB-backed pagination and pagination controls to the subject catalog.
+5. [8a1861f - Update subject detail view and routing](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/8a1861f431b28b597cd55a6b257a0c65b5defef4): Connected the detail page to subject data and improved subject detail routes.
 
 **Files with the most participation:**
 
-1. *Pending*
+1. [views/index.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/views/index.html): Built the MongoDB-backed catalog display, course filters, and pagination controls.
+2. [src/router.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/router.js): Implemented catalog, pagination, and subject detail routing and request handling.
+3. [src/app.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/app.js): Configured application startup, database initialization, and global error handling.
+4. [src/database.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/database.js): Added MongoDB connection and subject queries, including the operations used by the catalog.
+5. [views/detail.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/views/detail.html): Created the subject detail layout and integrated its data and image display.
 
 #### David Sebastián Sticea Covaciu
 
