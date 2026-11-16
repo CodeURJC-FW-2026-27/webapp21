@@ -26,6 +26,8 @@ export async function validateSubject(data = {}, file = null, { isEdit = false, 
         errors.push('El nombre de la asignatura es obligatorio.');
     } else if (!/^\p{Lu}/u.test(name)) {
         errors.push('El nombre de la asignatura debe comenzar con una letra mayúscula.');
+    } else if (name.length > 100) {
+        errors.push('El nombre de la asignatura no puede superar los 100 caracteres.');
     } else {
         // 2. Name uniqueness check in MongoDB with case-insensitive collation
         const existingSubject = await getSubjectByName(name, isEdit ? subjectId : null);

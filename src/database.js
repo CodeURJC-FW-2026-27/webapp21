@@ -97,6 +97,7 @@ export async function getSubjects({ page = 1, search = "", courseYear = "", seme
 
     const items = await subjects
         .find(filter)
+        .sort({ _id: 1 })
         .skip((currentPage - 1) * PAGE_SIZE)
         .limit(PAGE_SIZE)
         .toArray();

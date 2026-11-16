@@ -251,7 +251,7 @@ Form page to create a new subject. It includes specific input fields for all its
 | `src/validation.js` | Server-side form validation (`validateSubject` and `validateTest`) verifying required fields, lengths, numeric ranges, formats, uppercase subject start, and case-insensitive duplicate checks in MongoDB. |
 | `src/imageStorage.js` | Multer configuration (`UPLOADS_FOLDER`), MIME type filtering (images only), 5 MB size limit, unique UUID filename generation, upload error middleware, and safe file deletion (`deleteImage`). |
 | `src/load_data.js` | Startup seed loader (`loadSampleData`). Checks if MongoDB is empty and populates sample subjects, linked tests, and sample images from `data/` into `uploads/`. |
-| `src/routers/renderHelpers.js` | Shared view helpers (`renderSuccess` and `renderError`) used across routes and error handlers to render the unified feedback page `views/message.html`. |
+| `src/renderHelpers.js` | Shared view helpers (`renderSuccess` and `renderError`) used across routes and error handlers to render the unified feedback page `views/message.html`. |
 
 #### Views & Templates (`views/`)
 

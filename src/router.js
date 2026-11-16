@@ -1,7 +1,7 @@
 import express from 'express';
 import * as db from './database.js';
 import { parseObjectId } from './database.js';
-import { renderSuccess, renderError } from './routers/renderHelpers.js';
+import { renderSuccess, renderError } from './renderHelpers.js';
 import { uploadSingleImage, deleteImage } from './imageStorage.js';
 import { validateSubject, validateTest } from './validation.js';
 
@@ -53,7 +53,8 @@ router.get('/', async (req, res, next) => {
     try {
         const { page = 1, course = '', search = '' } = req.query;
         const cleanSearch = typeof search === 'string' ? search.trim() : '';
-        const cleanCourse = typeof course === 'string' ? course.trim() : '';
+        const requestedCourse = typeof course === 'string' ? course.trim() : '';
+        const cleanCourse = ['1', '2', '3', '4'].includes(requestedCourse) ? requestedCourse : '';
 
         const { items, totalItems, totalPages, currentPage } = await db.getSubjects({
             page,

@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import router from './router.js';
 import { handleMulterError } from './imageStorage.js';
 import { loadSampleData } from './load_data.js';
-import { renderError } from './routers/renderHelpers.js';
+import { renderError } from './renderHelpers.js';
 const app = express();
 
 app.use(express.static('./public'));
