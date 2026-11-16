@@ -297,7 +297,11 @@ Form page to create a new subject. It includes specific input fields for all its
 
 **Most significant commits:**
 
-1. *Pending*
+1. [af4d849 - Implement shared confirmation and error view](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/af4d849f257335d4709c8e5107e0b34909a746ed): Added the reusable `message.html` feedback page and `renderSuccess` / `renderError` helpers.
+2. [0b10aa0 - Implement image upload storage](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/0b10aa070f54ef876af967e5aa5dfa6036596487): Added Multer image uploads with type and size restrictions, unique filenames, error handling, and image deletion.
+3. [3d677c0 - Implement subject creation with server-side validation](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/3d677c0e91e0d5d578ab4b1f9a3ca94626d8d4d9): Implemented subject creation with server-side validation, duplicate-name checks, image handling, and confirmation or error feedback.
+4. [b9ef612 - Implement subject editing](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/b9ef612367244ecd5c32ccf788ffd27936f1810f): Added subject editing while retaining the current image when no replacement is uploaded.
+5. [607e51e - Implement subject deletion](https://github.com/CodeURJC-FW-2026-27/webapp21/commit/607e51e51cafc0dca2c5505882d7fb0c35a0edb4): Added subject deletion, including its image, with confirmation and not-found handling.
 
 **Files with the most participation:**
 
