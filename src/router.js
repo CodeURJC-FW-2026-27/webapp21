@@ -1,7 +1,7 @@
 import express from 'express';
 import * as db from './database.js';
 import { parseObjectId } from './database.js';
-import { renderSuccess, renderError } from './routers/renderHelpers.js';
+import { renderSuccess, renderError } from './renderHelpers.js';
 import { uploadSingleImage, deleteImage } from './imageStorage.js';
 import { validateSubject, validateTest } from './validation.js';
 

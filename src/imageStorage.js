@@ -3,7 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { renderError } from './routers/renderHelpers.js';
+import { renderError } from './renderHelpers.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const UPLOADS_FOLDER = path.resolve(__dirname, '..', 'uploads');
