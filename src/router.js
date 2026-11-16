@@ -248,8 +248,8 @@ async function saveSubject(req, res, next, subjectId = null) {
                     'Asignatura no encontrada',
                     'No se encontró la asignatura',
                     'La asignatura que intentas editar no existe.',
-                    `/subjects/${subjectId}/edit`,
-                    'Volver al formulario'
+                    '/',
+                    'Volver al inicio'
                 );
             }
         }
