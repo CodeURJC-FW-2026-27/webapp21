@@ -27,6 +27,9 @@ export async function loadSampleData() {
         return;
     }
 
+    // Remove orphaned tests left behind when the subjects collection is empty
+    await db.deleteAllSubjects();
+
     // Reset the uploads folder and copy sample images into it
     await fs.rm(UPLOADS_FOLDER, { recursive: true, force: true }); // Remove the uploads folder and its contents to ensure a clean state
     await fs.mkdir(UPLOADS_FOLDER, { recursive: true }); // Recreate the uploads folder to ensure it exists
