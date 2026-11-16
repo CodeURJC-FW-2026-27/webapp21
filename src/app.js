@@ -40,10 +40,13 @@ app.use(handleMulterError);
 app.use((err, req, res, next) => {
     console.error(err);
     const status = err.status && Number.isInteger(err.status) ? err.status : 500;
+    const message = status >= 500
+        ? 'Se ha producido un error interno en el servidor. Por favor, inténtelo de nuevo más tarde.'
+        : err.message || 'Se ha producido un error al procesar la solicitud.';
     renderError(res, {
         pageTitle: status === 404 ? 'Página no encontrada' : 'Error del servidor',
         title: status === 404 ? '404 - No encontrado' : 'Ha ocurrido un error inesperado',
-        messages: [err.message || 'Se ha producido un error interno en el servidor. Por favor, inténtelo de nuevo más tarde.'],
+        messages: [message],
         buttonUrl: '/', 
         buttonText: 'Volver al inicio'
     }, status); 
