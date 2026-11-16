@@ -289,7 +289,11 @@ Form page to create a new subject. It includes specific input fields for all its
 
 **Tasks performed:**
 
-* *Pending*
+* Implemented the shared success and error feedback page and rendering helpers, including HTTP status handling for validation errors and missing resources.
+* Implemented image uploads with Multer, including image type and size restrictions, generated filenames, and safe image deletion.
+* Implemented subject creation, editing, and deletion with server-side validation, duplicate-name checks, image retention or replacement, and confirmation and error feedback.
+* Improved the application with deterministic subject pagination, a maximum subject-name length, validation of the course filter, helper text for test fields, sticky footers, and fallback image backgrounds.
+* Fixed the `renderError` import and moved `renderHelpers.js` to `src/`; fixed seed loading so orphaned tests are removed before sample data is reloaded.
 
 **Most significant commits:**
 
