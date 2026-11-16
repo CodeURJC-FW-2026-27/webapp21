@@ -69,6 +69,33 @@ export async function deleteImage(filename) {
 }
 
 /**
+ * Checks whether an error was raised by Multer or by the image type filter.
+ * @param {Error & { code?: string }} error - Error reported by the upload middleware.
+ * @returns {boolean} Whether the error should be rendered as an upload error.
+ */
+function isMulterUploadError(error) {
+    return error instanceof multer.MulterError || error.code === 'INVALID_FILE_TYPE';
+}
+
+/**
+ * Converts an upload error into a user-facing message.
+ * @param {Error & { code?: string }} error - Error reported by Multer or the image type filter.
+ * @returns {string} A message suitable for the upload error page.
+ */
+function getMulterErrorMessage(error) {
+    if (error.code === 'LIMIT_FILE_SIZE') {
+        return 'El archivo supera el tamaño máximo permitido de 5 MB.';
+    }
+    if (error.code === 'INVALID_FILE_TYPE') {
+        return error.message;
+    }
+    if (error instanceof multer.MulterError && error.message) {
+        return error.message;
+    }
+    return 'Error al subir el archivo.';
+}
+
+/**
  * Express middleware wrapper for single image upload with automatic error handling.
  *
  * @param {string} [fieldName='image'] - The form input field name.
@@ -81,21 +108,17 @@ export function uploadSingleImage(fieldName = 'image', errorButtonUrl = null) {
     return (req, res, next) => {
         uploadMiddleware(req, res, (err) => {
             if (err) {
-                let errorMessage = 'Error al subir el archivo.';
+                if (!isMulterUploadError(err)) {
+                    return next(err);
+                }
                 const buttonUrl = typeof errorButtonUrl === 'function'
                     ? errorButtonUrl(req)
                     : errorButtonUrl || req.headers.referer || '/';
 
-                if (err.code === 'LIMIT_FILE_SIZE') {
-                    errorMessage = 'El archivo supera el tamaño máximo permitido de 5 MB.';
-                } else if (err.code === 'INVALID_FILE_TYPE' || err.message) {
-                    errorMessage = err.message;
-                }
-
                 return renderError(res, {
                     pageTitle: 'Error en la subida de imagen',
                     title: 'Archivo no válido',
-                    messages: [errorMessage],
+                    messages: [getMulterErrorMessage(err)],
                     buttonUrl,
                     buttonText: 'Volver'
                 }, 400);
@@ -109,19 +132,11 @@ export function uploadSingleImage(fieldName = 'image', errorButtonUrl = null) {
  * Express error-handling middleware for Multer errors.
  */
 export function handleMulterError(err, req, res, next) {
-    if (err instanceof multer.MulterError || err.code === 'INVALID_FILE_TYPE') {
-        let message = 'Error al subir el archivo.';
-
-        if (err.code === 'LIMIT_FILE_SIZE') {
-            message = 'El archivo supera el tamaño máximo permitido de 5 MB.';
-        } else if (err.message) {
-            message = err.message;
-        }
-
+    if (isMulterUploadError(err)) {
         return renderError(res, {
             pageTitle: 'Error en la subida de imagen',
             title: 'Archivo no válido',
-            messages: [message],
+            messages: [getMulterErrorMessage(err)],
             buttonUrl: req.headers.referer || '/',
             buttonText: 'Volver'
         }, 400);
