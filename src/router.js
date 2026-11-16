@@ -337,23 +337,38 @@ router.post('/subjects/:id/edit', uploadSingleImage('image', (req) => `/subjects
 
 
 /**
+ * Normalises supported English and Spanish difficulty values.
+ * @param {string} difficulty - The stored difficulty value.
+ * @returns {'easy'|'medium'|'hard'|null} The canonical value, or null if unsupported.
+ */
+function normaliseDifficulty(difficulty) {
+    const rawDifficulty = String(difficulty || '').trim().toLowerCase();
+
+    if (['easy', 'fácil', 'facil'].includes(rawDifficulty)) return 'easy';
+    if (['medium', 'intermedio', 'medio'].includes(rawDifficulty)) return 'medium';
+    if (['hard', 'difícil', 'dificil'].includes(rawDifficulty)) return 'hard';
+
+    return null;
+}
+
+/**
  * Formats a test entity with user-facing labels and badge styles.
  * @param {Object} test - The test document from MongoDB.
  * @param {string} subjectId - The parent subject's ID string.
  * @returns {Object} The formatted test object for rendering.
  */
 function formatTest(test, subjectId) {
-    const rawDifficulty = String(test.difficulty || '').trim().toLowerCase();
+    const difficulty = normaliseDifficulty(test.difficulty);
     let difficultyLabel = test.difficulty || '';
     let difficultyBadgeClass = 'bg-secondary';
 
-    if (rawDifficulty === 'easy' || rawDifficulty === 'fácil' || rawDifficulty === 'facil') {
+    if (difficulty === 'easy') {
         difficultyLabel = 'Fácil';
         difficultyBadgeClass = 'bg-success';
-    } else if (rawDifficulty === 'medium' || rawDifficulty === 'intermedio' || rawDifficulty === 'medio') {
+    } else if (difficulty === 'medium') {
         difficultyLabel = 'Intermedio';
         difficultyBadgeClass = 'bg-warning text-dark';
-    } else if (rawDifficulty === 'hard' || rawDifficulty === 'difícil' || rawDifficulty === 'dificil') {
+    } else if (difficulty === 'hard') {
         difficultyLabel = 'Difícil';
         difficultyBadgeClass = 'bg-danger';
     }
@@ -461,14 +476,14 @@ router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
             );
         }
 
-        const rawDifficulty = String(test.difficulty || '').trim().toLowerCase();
+        const difficulty = normaliseDifficulty(test.difficulty);
         return res.render('test-form', {
             pageTitle: 'Editar simulacro',
             subject,
             test,
-            isEasy: rawDifficulty === 'easy' || rawDifficulty === 'facil' || rawDifficulty === 'fácil',
-            isMedium: rawDifficulty === 'medium' || rawDifficulty === 'intermedio' || rawDifficulty === 'medio',
-            isHard: rawDifficulty === 'hard' || rawDifficulty === 'dificil' || rawDifficulty === 'difícil'
+            isEasy: difficulty === 'easy',
+            isMedium: difficulty === 'medium',
+            isHard: difficulty === 'hard'
         });
     } catch (error) {
         return next(error);
