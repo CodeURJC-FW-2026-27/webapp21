@@ -25,9 +25,16 @@ const storage = multer.diskStorage({
     }
 });
 
-// File filter restricting uploads strictly to image/* MIME types
+// Restrict uploads to the image formats supported by the application.
+const ALLOWED_IMAGE_MIME_TYPES = new Set([
+    'image/jpeg',
+    'image/png',
+    'image/gif',
+    'image/webp'
+]);
+
 const fileFilter = (req, file, cb) => {
-    if (file && file.mimetype && file.mimetype.startsWith('image/')) {
+    if (file && ALLOWED_IMAGE_MIME_TYPES.has(file.mimetype)) {
         cb(null, true);
     } else {
         const error = new Error('Solo se permiten archivos de imagen (PNG, JPG, JPEG, GIF, WEBP). No se admiten documentos PDF ni otros formatos.');
