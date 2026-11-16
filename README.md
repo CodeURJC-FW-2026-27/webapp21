@@ -305,7 +305,11 @@ Form page to create a new subject. It includes specific input fields for all its
 
 **Files with the most participation:**
 
-1. *Pending*
+1. [src/router.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/router.js): Implemented and refined the subject creation, editing, and deletion routes and their response handling.
+2. [src/imageStorage.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/imageStorage.js): Configured image uploads, upload error handling, and safe image deletion.
+3. [src/validation.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/validation.js): Implemented server-side validation for subject creation and editing, including name uniqueness and field constraints.
+4. [views/subject-form.html](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/views/subject-form.html): Built the shared subject form for creation and editing, with field constraints and current-image guidance.
+5. [src/renderHelpers.js](https://github.com/CodeURJC-FW-2026-27/webapp21/blob/main/src/renderHelpers.js): Added shared success and error rendering helpers and later moved them to the common `src/` directory.
 
 #### Antonio Manuel Machuca Hortelano
 
