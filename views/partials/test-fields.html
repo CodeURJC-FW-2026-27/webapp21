@@ -1,16 +1,19 @@
 <div class="col-12">
     <label for="title" class="form-label fw-bold">Título del simulacro</label>
     <input type="text" class="form-control" id="title" name="title" placeholder="Título" value="{{test.title}}" required minlength="3" maxlength="100" />
+    <div class="form-text">Longitud requerida: entre 3 y 100 caracteres.</div>
 </div>
 <div class="col-12">
     <label for="description" class="form-label fw-bold">Descripción</label>
     <textarea class="form-control" id="description" name="description" rows="3" placeholder="Descripción" required minlength="10" maxlength="500">{{test.description}}</textarea>
+    <div class="form-text">Longitud requerida: entre 10 y 500 caracteres.</div>
 </div>
 
 <!-- Exam duration -->
 <div class="col-md-6">
     <label for="duration" class="form-label fw-bold">Duración (minutos)</label>
     <input type="number" class="form-control" id="duration" name="duration" min="15" max="240" step="1" value="{{#test.duration}}{{test.duration}}{{/test.duration}}{{^test.duration}}60{{/test.duration}}" required />
+    <div class="form-text">Número entero entre 15 y 240 minutos.</div>
 </div>
 
 <!-- Exam difficulty -->
