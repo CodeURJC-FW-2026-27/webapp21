@@ -90,7 +90,7 @@ The web application adheres to the official **Universidad Rey Juan Carlos (URJC)
 
 * **Base Template:** [Start Bootstrap - Shop Homepage](https://github.com/StartBootstrap/startbootstrap-shop-homepage) (customized and adapted for an academic course catalog and exam simulator).
 * **UI Framework:** [Bootstrap 5.2.3](https://getbootstrap.com/) & [Bootstrap Icons](https://icons.getbootstrap.com/).
-* **Data Sources:** Structured curriculum datasets located in `dataExamenes/`.
+* **Data Sources:** Structured curriculum datasets located in `data/`.
 
 ---
 
