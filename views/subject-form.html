@@ -85,11 +85,11 @@
                     <div class="mb-4">
                         <label for="image" class="form-label fw-bold">Imagen de portada</label>
                         {{^isEdit}}
-                        <input class="form-control" type="file" id="image" name="image" accept="image/*" required>
+                        <input class="form-control" type="file" id="image" name="image" accept="image/jpeg,image/png,image/gif,image/webp" required>
                         <div class="form-text">Formatos aceptados: JPG, PNG, GIF, WEBP. Tamaño máximo: 5 MB.</div>
                         {{/isEdit}}
                         {{#isEdit}}
-                        <input class="form-control" type="file" id="image" name="image" accept="image/*">
+                        <input class="form-control" type="file" id="image" name="image" accept="image/jpeg,image/png,image/gif,image/webp">
                         <div class="form-text">Si no eliges imagen se mantiene la actual. Tamaño máximo: 5 MB.</div>
                         {{#subject.image}}
                         <div class="mt-2 d-flex align-items-center gap-3">
