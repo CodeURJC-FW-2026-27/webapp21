@@ -31,8 +31,7 @@
                             
                             <!--delete subject-->
                             <!--with post we delete the subject from the db -->
-                            <!--return confirm allow as to confirm that the user wants to really delete the subject -->
-                            <form action="/subjects/{{subject._id}}/delete" method="POST" onsubmit="return confirm('¿Estás seguro de que quieres eliminar esta asignatura?');">
+                            <form action="/subjects/{{subject._id}}/delete" method="POST">
                                 <button type="submit" class="btn btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</button>
                             </form>
 
@@ -67,7 +66,7 @@
                                 </p>
                                 <div class="d-flex gap-2">
                                     <a href="/subjects/{{subjectId}}/tests/{{_id}}/edit" class="btn btn-sm btn-outline-dark"><i class="bi-pencil-fill me-1"></i>Editar</a>
-                                    <form action="/subjects/{{subjectId}}/tests/{{_id}}/delete" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este simulacro?');">
+                                    <form action="/subjects/{{subjectId}}/tests/{{_id}}/delete" method="POST" class="d-inline">
                                         <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi-trash-fill me-1"></i>Borrar</button>
                                     </form>
                                 </div>
