@@ -55,6 +55,8 @@
                             required 
                             minlength="20" 
                             maxlength="1000"
+                            oninvalid="this.setCustomValidity(this.validity.valueMissing ? 'Por favor, rellena este campo.' : (this.validity.tooShort ? 'La descripción debe tener al menos 20 caracteres (actualmente tiene ' + this.value.length + (this.value.length === 1 ? ' carácter).' : ' caracteres).') : ''))"
+                            oninput="this.setCustomValidity('')"
                         >{{subject.description}}</textarea>
                         <div class="form-text">Longitud requerida: entre 20 y 1000 caracteres.</div>
                     </div>

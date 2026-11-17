@@ -69,7 +69,7 @@ export async function validateSubject(data = {}, file = null, { isEdit = false, 
 /**
  * Validates the form fields for a test linked to a parent subject.
  * Ensures the title is required (3-100 characters) and unique within the subject,
- * description is between 10 and 500 characters, difficulty is easy/medium/hard,
+ * description is between 20 and 500 characters, difficulty is easy/medium/hard,
  * and duration is an integer between 15 and 240 minutes.
  * 
  * @param {Object} data - Submitted form data (title, description, difficulty, duration).
@@ -100,11 +100,11 @@ export async function validateTest(data = {}, subjectId, { isEdit = false, testI
         }
     }
 
-    // 3. Description between 10 and 500 characters
+    // 3. Description between 20 and 500 characters
     if (!description) {
         errors.push('La descripción del simulacro es obligatoria.');
-    } else if (description.length < 10 || description.length > 500) {
-        errors.push('La descripción debe tener entre 10 y 500 caracteres.');
+    } else if (description.length < 20 || description.length > 500) {
+        errors.push('La descripción debe tener entre 20 y 500 caracteres.');
     }
 
     // 4. Difficulty must be easy, medium or hard
