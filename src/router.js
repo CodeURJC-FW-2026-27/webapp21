@@ -29,6 +29,94 @@ function renderNotFound(res, pageTitle, title, message, buttonUrl = '/', buttonT
 
 
 
+/**
+ * We use this helper to render a subject not found error page with a default back button to the home page.
+ * So we dont duplicate a lot of code.
+ * @param {*} res 
+ * @param {*} buttonUrl 
+ * @param {*} buttonText 
+ * @returns 
+ */
+function renderSubjectNotFound(res, buttonUrl = '/', buttonText = 'Volver al inicio') {
+    return renderNotFound(
+        res,
+        'Asignatura no encontrada',
+        'No se encontró la asignatura',
+        'La asignatura solicitada no existe o ya ha sido eliminada.',
+        buttonUrl,
+        buttonText
+    );
+}
+
+
+/**
+ * Renders a test not found error page.
+ * @param {*} res 
+ * @param {*} subjectId 
+ * @returns 
+ */
+function renderTestNotFound(res, subjectId) {
+    return renderNotFound(
+        res,
+        'Simulacro no encontrado',
+        'No se encontró el simulacro',
+        'El simulacro solicitado no existe o ya ha sido eliminado.',
+        `/subjects/${subjectId}`,
+        'Volver a la asignatura'
+    );
+}
+
+
+/**
+ * Function to make sure the subject exists before proceeding to the next middleware or route handler.
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
+ */
+async function requireSubject(req, res, next) {
+    try {
+        const parsedId = parseObjectId(req.params.id);
+        const subject = parsedId ? await db.getSubject(parsedId) : null;
+
+        if (!subject) {
+            await deleteImage(req.file?.filename);
+            return renderSubjectNotFound(res);
+        }
+
+        req.subjectId = parsedId;
+        req.subject = subject;
+        return next();
+    } catch (error) {
+        await deleteImage(req.file?.filename);
+        return next(error);
+    }
+}
+
+/**
+ * With this function we make sure the test exists and belongs to the subject before proceeding.
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
+ */
+async function requireTest(req, res, next) {
+    try {
+        const parsedTestId = parseObjectId(req.params.testId);
+        const test = parsedTestId ? await db.getTest(parsedTestId) : null;
+
+        if (!test || test.subjectId?.toString() !== req.subject._id.toString()) {
+            return renderTestNotFound(res, req.params.id);
+        }
+
+        req.testId = parsedTestId;
+        req.test = test;
+        return next();
+    } catch (error) {
+        return next(error);
+    }
+}
+
 // Main route (Home)
 /**
  * GET /
@@ -188,73 +276,28 @@ router.get(['/subject-form', '/subject-form.html'], (req, res) => {
 });
 
 /** Render the shared subject form with the existing values for editing. */
-router.get('/subjects/:id/edit', async (req, res, next) => {
-    try {
-        const parsedId = parseObjectId(req.params.id);
-        if (!parsedId) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura que intentas editar no existe.'
-            );
-        }
-        const subject = await db.getSubject(parsedId);
-        if (!subject) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura que intentas editar no existe.'
-            );
-        }
-        return renderSubjectForm(res, subject, true);
-    } catch (error) {
-        return next(error);
-    }
+router.get('/subjects/:id/edit', requireSubject, (req, res) => {
+    return renderSubjectForm(res, req.subject, true);
 });
 
+
 /**
- * Validates and saves a new or existing subject using the shared create/edit flow.
- * @param {import('express').Request} req - Express request containing the form and optional image.
- * @param {import('express').Response} res - Express response object.
- * @param {import('express').NextFunction} next - Express error continuation function.
- * @param {string|null} subjectId - Existing subject ID for edit, or null for create.
- * @returns {Promise<*>} The rendered success/error response or the next Express error handler.
+ * Handles both creating and updating a subject.
+ * Validates the submitted form data, saves the subject to the database,
+ * and renders a success or error page based on the outcome.
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
  */
-async function saveSubject(req, res, next, subjectId = null) {
-    const isEdit = subjectId !== null;
+async function saveSubject(req, res, next) {
+    const isEdit = Boolean(req.subject);
+    const subjectId = req.params.id || null;
     const uploadedFilename = req.file?.filename;
-    let existingSubject = null;
     let saved = false;
 
     try {
-        if (isEdit) {
-            const parsedSubjectId = parseObjectId(subjectId);
-            if (!parsedSubjectId) {
-                await deleteImage(uploadedFilename);
-                return renderNotFound(
-                    res,
-                    'Asignatura no encontrada',
-                    'No se encontró la asignatura',
-                    'La asignatura que intentas editar no existe.'
-                );
-            }
-            existingSubject = await db.getSubject(parsedSubjectId);
-            if (!existingSubject) {
-                await deleteImage(uploadedFilename);
-                return renderNotFound(
-                    res,
-                    'Asignatura no encontrada',
-                    'No se encontró la asignatura',
-                    'La asignatura que intentas editar no existe.',
-                    '/',
-                    'Volver al inicio'
-                );
-            }
-        }
-
-        const { isValid, errors } = await validateSubject(req.body, req.file, {
+        const { isValid, errors } = await validateSubject(req.body, req.file, {//we use the function validateSubject to check
             isEdit,
             subjectId
         });
@@ -273,38 +316,26 @@ async function saveSubject(req, res, next, subjectId = null) {
             name: req.body.name.trim(),
             description: req.body.description.trim(),
             courseYear: String(req.body.courseYear),
-            semester: String(req.body.semester)
+            semester: String(req.body.semester),
+            //the 3 dots operator is used to conditionally add the image field only if a new image was uploaded
+            ...(uploadedFilename ? { image: uploadedFilename } : {})
         };
 
         let savedSubjectId;
         if (isEdit) {
-            if (uploadedFilename) {
-                subjectFields.image = uploadedFilename;
-            }
             const updatedSubject = await db.updateSubject(subjectId, subjectFields);
             if (!updatedSubject) {
                 await deleteImage(uploadedFilename);
-                return renderNotFound(
-                    res,
-                    'Asignatura no encontrada',
-                    'No se encontró la asignatura',
-                    'La asignatura que intentas editar ya no existe.',
-                    `/subjects/${subjectId}/edit`,
-                    'Volver al formulario'
-                );
+                return renderSubjectNotFound(res, `/subjects/${subjectId}/edit`, 'Volver al formulario');
             }
             saved = true;
             savedSubjectId = updatedSubject._id.toString();
 
-            if (uploadedFilename && existingSubject.image && existingSubject.image !== uploadedFilename) {
-                await deleteImage(existingSubject.image);
+            if (uploadedFilename && req.subject.image && req.subject.image !== uploadedFilename) {
+                await deleteImage(req.subject.image);
             }
         } else {
-            const newSubject = {
-                ...subjectFields,
-                image: uploadedFilename
-            };
-            savedSubjectId = (await db.addSubject(newSubject)).toString();
+            savedSubjectId = (await db.addSubject(subjectFields)).toString();
             saved = true;
         }
 
@@ -325,15 +356,16 @@ async function saveSubject(req, res, next, subjectId = null) {
     }
 }
 
-/** Save a new subject after validating all submitted fields on the server. */
-router.post('/subjects/new', uploadSingleImage('image', '/subject-form'), (req, res, next) => {
-    return saveSubject(req, res, next);
-});
+// Save a new subject after validating all submitted fields on the server.
+router.post('/subjects/new', uploadSingleImage('image', '/subject-form'), saveSubject);
 
-/** Save an edited subject through the same validation and response flow as creation. */
-router.post('/subjects/:id/edit', uploadSingleImage('image', (req) => `/subjects/${req.params.id}/edit`), (req, res, next) => {
-    return saveSubject(req, res, next, req.params.id);
-});
+// Save an edited subject through the same validation and response flow as creation. 
+router.post(
+    '/subjects/:id/edit',
+    uploadSingleImage('image', (req) => `/subjects/${req.params.id}/edit`),
+    requireSubject,
+    saveSubject
+);
 
 
 /**
@@ -388,32 +420,13 @@ function formatTest(test, subjectId) {
  * Renders the detail page for a specific subject by its ID.
  * If the subject is not found, renders an error page with a 404 status.
  */
-router.get('/subjects/:id', async (req, res, next) => {
+router.get('/subjects/:id', requireSubject, async (req, res, next) => {
     try {
-        const parsedSubjectId = parseObjectId(req.params.id);
-        if (!parsedSubjectId) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'Asignatura no encontrada',
-                'No se ha encontrado la asignatura solicitada.'
-            );
-        }
-
-        const subject = await db.getSubject(parsedSubjectId);
-        if (!subject) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'Asignatura no encontrada',
-                'No se ha encontrado la asignatura solicitada.'
-            );
-        }
-        const rawTests = await db.getTestsBySubjectId(subject._id); // Fetch tests belonging to this subject
-        const tests = (rawTests || []).map((test) => formatTest(test, subject._id.toString()));
+        const rawTests = await db.getTestsBySubjectId(req.subject._id);
+        const tests = (rawTests || []).map((test) => formatTest(test, req.subject._id.toString()));
         res.render('detail', {
-            pageTitle: subject.name,
-            subject,
+            pageTitle: req.subject.name,
+            subject: req.subject,
             tests,
             hasTests: tests.length > 0,
             isMedium: true
@@ -428,130 +441,32 @@ router.get('/subjects/:id', async (req, res, next) => {
  * Displays the edit form for a test pre-filled with its current values.
  * Verifies that both the subject and test exist, and that the test belongs to this subject.
  */
-router.get('/subjects/:id/tests/:testId/edit', async (req, res, next) => {
-    try {
-        const { id: subjectId, testId } = req.params;
-        const parsedSubjectId = parseObjectId(subjectId);
-        const parsedTestId = parseObjectId(testId);
-
-        if (!parsedSubjectId) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura especificada no existe.'
-            );
-        }
-
-        if (!parsedTestId) {
-            return renderNotFound(
-                res,
-                'Simulacro no encontrado',
-                'No se encontró el simulacro',
-                'El simulacro que intentas editar no existe.',
-                `/subjects/${subjectId}`,
-                'Volver a la asignatura'
-            );
-        }
-
-        const subject = await db.getSubject(parsedSubjectId);
-        if (!subject) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura especificada no existe.'
-            );
-        }
-
-        const test = await db.getTest(parsedTestId);
-        if (!test || test.subjectId?.toString() !== subject._id.toString()) {
-            return renderNotFound(
-                res,
-                'Simulacro no encontrado',
-                'No se encontró el simulacro',
-                'El simulacro que intentas editar no existe.',
-                `/subjects/${subjectId}`,
-                'Volver a la asignatura'
-            );
-        }
-
-        const difficulty = normaliseDifficulty(test.difficulty);
-        return res.render('test-form', {
-            pageTitle: 'Editar simulacro',
-            subject,
-            test,
-            isEasy: difficulty === 'easy',
-            isMedium: difficulty === 'medium',
-            isHard: difficulty === 'hard'
-        });
-    } catch (error) {
-        return next(error);
-    }
+router.get('/subjects/:id/tests/:testId/edit', requireSubject, requireTest, (req, res) => {
+    const difficulty = normaliseDifficulty(req.test.difficulty);
+    return res.render('test-form', {
+        pageTitle: 'Editar simulacro',
+        subject: req.subject,
+        test: req.test,
+        isEasy: difficulty === 'easy',
+        isMedium: difficulty === 'medium',
+        isHard: difficulty === 'hard'
+    });
 });
 
 /**
- * Handles both creating and updating a test.
- * Verifies the parent subject, checks that the test title is not duplicate,
- * validates all form fields, and performs the database insert or update.
- * 
- * @param {import('express').Request} req - Express request object containing form body and params.
- * @param {import('express').Response} res - Express response object.
- * @param {import('express').NextFunction} next - Express next middleware handler.
- * @param {string|null} [testId=null] - Test ID if editing, or null if creating a new test.
+ * with this function we handle both creating and updating a test, 
+ * validating the submitted form data, saving the test to the database, 
+ * and rendering a success or error page based on the outcome.
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
  */
-async function saveTest(req, res, next, testId = null) {
-    const isEdit = testId !== null;
+async function saveTest(req, res, next) {
+    const isEdit = Boolean(req.test);
     const subjectId = req.params.id;
-    const parsedSubjectId = parseObjectId(subjectId);
 
     try {
-        if (!parsedSubjectId) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura especificada no existe.'
-            );
-        }
-
-        const subject = await db.getSubject(parsedSubjectId);
-        if (!subject) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura especificada no existe.'
-            );
-        }
-
-        let parsedTestId = null;
-        if (isEdit) {
-            parsedTestId = parseObjectId(testId);
-            if (!parsedTestId) {
-                return renderNotFound(
-                    res,
-                    'Simulacro no encontrado',
-                    'No se encontró el simulacro',
-                    'El simulacro que intentas editar no existe.',
-                    `/subjects/${subjectId}`,
-                    'Volver a la asignatura'
-                );
-            }
-
-            const existingTest = await db.getTest(parsedTestId);
-            if (!existingTest || existingTest.subjectId?.toString() !== subject._id.toString()) {
-                return renderNotFound(
-                    res,
-                    'Simulacro no encontrado',
-                    'No se encontró el simulacro',
-                    'El simulacro que intentas editar no existe.',
-                    `/subjects/${subjectId}`,
-                    'Volver a la asignatura'
-                );
-            }
-        }
-
         const testData = {
             title: req.body.title,
             description: req.body.description,
@@ -559,9 +474,9 @@ async function saveTest(req, res, next, testId = null) {
             duration: req.body.duration
         };
 
-        const { isValid, errors } = await validateTest(testData, parsedSubjectId, {
+        const { isValid, errors } = await validateTest(testData, req.subjectId, {
             isEdit,
-            testId: parsedTestId
+            testId: req.testId || null
         });
 
         if (!isValid) {
@@ -569,25 +484,18 @@ async function saveTest(req, res, next, testId = null) {
                 pageTitle: isEdit ? 'Error al actualizar el simulacro' : 'Error al crear el simulacro',
                 title: isEdit ? 'No se pudo actualizar el simulacro' : 'No se pudo crear el simulacro',
                 messages: errors,
-                buttonUrl: isEdit ? `/subjects/${subjectId}/tests/${testId}/edit` : `/subjects/${subjectId}`,
+                buttonUrl: isEdit ? `/subjects/${subjectId}/tests/${req.params.testId}/edit` : `/subjects/${subjectId}`,
                 buttonText: isEdit ? 'Volver a la edición' : 'Volver a la asignatura'
             }, 400);
         }
 
         if (isEdit) {
-            const updatedTest = await db.updateTest(parsedTestId, testData);
+            const updatedTest = await db.updateTest(req.testId, testData);
             if (!updatedTest) {
-                return renderNotFound(
-                    res,
-                    'Simulacro no encontrado',
-                    'No se encontró el simulacro',
-                    'El simulacro que intentas editar ya no existe.',
-                    `/subjects/${subjectId}`,
-                    'Volver a la asignatura'
-                );
+                return renderTestNotFound(res, subjectId);
             }
         } else {
-            await db.addTest(parsedSubjectId, testData);
+            await db.addTest(req.subjectId, testData);
         }
 
         return renderSuccess(res, {
@@ -608,88 +516,33 @@ async function saveTest(req, res, next, testId = null) {
  * POST /subjects/:id/tests/new
  * Creates a new test linked to the specified subject using the shared save flow.
  */
-router.post('/subjects/:id/tests/new', (req, res, next) => {
-    return saveTest(req, res, next);
-});
+router.post('/subjects/:id/tests/new', requireSubject, saveTest);
+
 
 /**
  * POST /subjects/:id/tests/:testId/edit
  * Updates an existing test linked to the subject using the shared save flow.
  */
-router.post('/subjects/:id/tests/:testId/edit', (req, res, next) => {
-    return saveTest(req, res, next, req.params.testId);
-});
+router.post('/subjects/:id/tests/:testId/edit', requireSubject, requireTest, saveTest);
+
 
 /**
  * POST /subjects/:id/tests/:testId/delete
  * Deletes a test from the database after verifying that both the parent subject
  * and the test exist and that the test belongs to this subject.
  */
-router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
+router.post('/subjects/:id/tests/:testId/delete', requireSubject, requireTest, async (req, res, next) => {
     try {
-        const { id: subjectId, testId } = req.params;
-        const parsedSubjectId = parseObjectId(subjectId);
-        const parsedTestId = parseObjectId(testId);
-
-        if (!parsedSubjectId) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura especificada no existe.'
-            );
-        }
-
-        if (!parsedTestId) {
-            return renderNotFound(
-                res,
-                'Simulacro no encontrado',
-                'No se pudo eliminar el simulacro',
-                'El identificador del simulacro no es válido o no existe.',
-                `/subjects/${subjectId}`,
-                'Volver a la asignatura'
-            );
-        }
-
-        const subject = await db.getSubject(parsedSubjectId);
-        if (!subject) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura especificada no existe.'
-            );
-        }
-
-        const existingTest = await db.getTest(parsedTestId);
-        if (!existingTest || existingTest.subjectId?.toString() !== subject._id.toString()) {
-            return renderNotFound(
-                res,
-                'Simulacro no encontrado',
-                'No se pudo eliminar el simulacro',
-                'El simulacro que intentas eliminar no existe o ya ha sido eliminado.',
-                `/subjects/${subjectId}`,
-                'Volver a la asignatura'
-            );
-        }
-
-        const deleted = await db.deleteTest(parsedTestId);
+        const deleted = await db.deleteTest(req.testId);
         if (!deleted) {
-            return renderNotFound(
-                res,
-                'Simulacro no encontrado',
-                'No se pudo eliminar el simulacro',
-                'El simulacro que intentas eliminar no existe o ya ha sido eliminado.',
-                `/subjects/${subjectId}`,
-                'Volver a la asignatura'
-            );
+            return renderTestNotFound(res, req.params.id);
         }
 
         return renderSuccess(res, {
             pageTitle: 'Simulacro eliminado',
             title: 'Simulacro eliminado',
             messages: ['El simulacro se ha eliminado correctamente.'],
-            buttonUrl: `/subjects/${subjectId}`,
+            buttonUrl: `/subjects/${req.params.id}`,
             buttonText: 'Volver a la asignatura'
         });
     } catch (error) {
@@ -702,39 +555,14 @@ router.post('/subjects/:id/tests/:testId/delete', async (req, res, next) => {
  * Deletes the subject, its separately stored tests, and its uploaded image.
  * Returns a 404 message page when the subject ID is invalid or no subject exists.
  */
-router.post('/subjects/:id/delete', async (req, res, next) => {
+router.post('/subjects/:id/delete', requireSubject, async (req, res, next) => {
     try {
-        const parsedSubjectId = parseObjectId(req.params.id);
-        if (!parsedSubjectId) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura que intentas eliminar no existe.'
-            );
-        }
-
-        const subject = await db.getSubject(parsedSubjectId);
-        if (!subject) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura que intentas eliminar no existe.'
-            );
-        }
-
-        const deletedSubject = await db.deleteSubject(parsedSubjectId);
+        const deletedSubject = await db.deleteSubject(req.subjectId);
         if (!deletedSubject) {
-            return renderNotFound(
-                res,
-                'Asignatura no encontrada',
-                'No se encontró la asignatura',
-                'La asignatura que intentas eliminar ya no existe.'
-            );
+            return renderSubjectNotFound(res);
         }
 
-        await db.deleteTestsBySubjectId(parsedSubjectId);
+        await db.deleteTestsBySubjectId(req.subjectId);
         await deleteImage(deletedSubject.image);
 
         return renderSuccess(res, {
@@ -748,5 +576,4 @@ router.post('/subjects/:id/delete', async (req, res, next) => {
         return next(error);
     }
 });
-
 export default router;
